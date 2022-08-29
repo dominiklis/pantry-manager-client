@@ -1,5 +1,7 @@
+import { LoadingPage } from "components";
+
 const App = () => {
-  return <div>App</div>;
+  return <LoadingPage />;
 };
 
 export default App;
