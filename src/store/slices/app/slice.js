@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { localStorageKeys } from "constants";
+import { localStorageKeys, themes } from "constantStrings";
 import { v4 as uuid } from "uuid";
-import { setSettings, updateSettings } from "./updateSettings";
+import { setSettings, updateSettings } from "./extraReducers";
 
 const initialState = {
   initialLoad: false,
   toasts: [],
   language: localStorage.getItem(localStorageKeys.language) ?? "en",
-  theme: localStorage.getItem(localStorageKeys.theme) ?? "light",
+  theme: localStorage.getItem(localStorageKeys.theme) ?? themes.light,
   defaultNumberOfDaysForWarning: 3,
   loading: {
     getSettings: true,
@@ -47,7 +47,7 @@ const appSlice = createSlice({
     },
 
     toggleTheme: (state) => {
-      const theme = state.theme === "dark" ? "light" : "dark";
+      const theme = state.theme === themes.dark ? themes.light : themes.dark;
       localStorage.setItem(localStorageKeys.theme, theme);
       state.theme = theme;
     },
