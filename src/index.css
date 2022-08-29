@@ -1,13 +1,126 @@
-body {
+:root {
+  --clr-gray1: #212121;
+  --clr-gray2: #424242;
+  --clr-gray3: #757575;
+  --clr-gray4: #bdbdbd;
+  --clr-gray5: #e0e0e0;
+  --clr-gray6: #eeeeee;
+  --clr-gray7: #fafafa;
+
+  --clr-prim1: #c3e8d9;
+  --clr-prim2: #92bdac;
+  --clr-prim3: #7eac9a;
+  --clr-prim4: #5c9980;
+  --clr-prim5: #4d806a;
+  --clr-prim6: #36594a;
+
+  --clr-sec1: #c4cce9;
+  --clr-sec2: #929bbd;
+  --clr-sec3: #7c85a5;
+  --clr-sec4: #54608c;
+  --clr-sec5: #475175;
+  --clr-sec6: #363d59;
+
+  --clr-suc: #81c784;
+
+  --clr-war1: #ffb74d;
+  --clr-war2: #e07924;
+
+  --clr-err1: #e57373;
+  --clr-err2: #d12424;
+
+  --clr-inf: #4fc3f7;
+
+  --clr-red: #f44336;
+  --clr-pink: #e91e63;
+  --clr-purple: #9c27b0;
+  --clr-deepPurple: #673ab7;
+  --clr-indigo: #3f51b5;
+  --clr-blue: #2196f3;
+  --clr-lightBlue: #03a9f4;
+  --clr-cyan: #00bcd4;
+  --clr-teal: #009688;
+  --clr-green: #4caf50;
+  --clr-lightGreen: #8bc34a;
+  --clr-lime: #cddc39;
+  --clr-yellow: #ffeb3b;
+  --clr-amber: #ffc107;
+  --clr-orange: #ff9800;
+  --clr-deepOrange: #ff5722;
+  --clr-white: #fafafa;
+}
+
+[data-dark-theme="true"] {
+  --clr-gray1: #e4e6eb;
+  --clr-gray2: #bbc1ca;
+  --clr-gray3: #717375;
+  --clr-gray4: #4c4d4e;
+  --clr-gray5: #3a3b3c;
+  --clr-gray6: #2a2b2c;
+  --clr-gray7: #18191a;
+
+  --clr-red: #ef9a9a;
+  --clr-pink: #f48fb1;
+  --clr-purple: #ce93d8;
+  --clr-deepPurple: #b39ddb;
+  --clr-indigo: #9fa8da;
+  --clr-blue: #90caf9;
+  --clr-lightBlue: #81d4fa;
+  --clr-cyan: #80deea;
+  --clr-teal: #80cbc4;
+  --clr-green: #a5d6a7;
+  --clr-lightGreen: #c5e1a5;
+  --clr-lime: #e6ee9c;
+  --clr-yellow: #fff59d;
+  --clr-amber: #ffe082;
+  --clr-orange: #ffcc80;
+  --clr-deepOrange: #ffab91;
+  --clr-white: #e4e6eb;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+ol,
+li,
+div,
+input,
+textarea {
+  color: var(--clr-gray1);
+}
+
+ul {
+  list-style: none;
+}
+
+*,
+::after,
+::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+body * {
+  font-family: "Lato", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+::-webkit-scrollbar {
+  width: 0.6em;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-gray6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--clr-gray4);
 }
