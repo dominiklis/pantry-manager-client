@@ -1,4 +1,4 @@
-import { requests } from "../axios";
+import requests from "../axios";
 
 const products = {
   get: () => requests.get("/products"),

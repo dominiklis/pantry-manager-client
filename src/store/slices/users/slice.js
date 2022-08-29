@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { localStorageKeys } from "constants";
+import { localStorageKeys } from "constantStrings";
 import { editUser, loginUser, registerUser, renewToken } from "./extraReducers";
 
 const saveTokenInLocalStorage = (token) => {

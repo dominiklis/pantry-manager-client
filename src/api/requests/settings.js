@@ -1,4 +1,4 @@
-import { requests } from "../axios";
+import requests from "../axios";
 
 const settings = {
   get: (userId) => requests.get(`/settings/${userId}`),

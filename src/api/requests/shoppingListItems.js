@@ -1,4 +1,4 @@
-import { requests } from "../axios";
+import requests from "../axios";
 
 const shoppingListItems = {
   get: () => requests.get("/shopping-lists-items"),
