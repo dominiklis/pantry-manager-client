@@ -3,7 +3,7 @@ import { useIsDarkTheme } from "hooks";
 import React from "react";
 import styles from "./Input.module.css";
 
-const Input = ({ label, name, type, value, handleChange, disabled, error }) => {
+const Input = ({ label, name, type, value, onChange, disabled, error }) => {
   const darkTheme = useIsDarkTheme();
 
   const getStyles = () => {
@@ -23,7 +23,7 @@ const Input = ({ label, name, type, value, handleChange, disabled, error }) => {
         name={name}
         type={type}
         value={value}
-        onChange={handleChange}
+        onChange={onChange}
         disabled={disabled}
       />
       <Errors error={error} />

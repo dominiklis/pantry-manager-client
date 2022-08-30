@@ -6,6 +6,7 @@
   transition: 0.2s ease-in;
   transition-property: color;
   margin-bottom: 4px;
+  color: var(--clr-gray2);
 }
 
 .input {
@@ -39,8 +40,7 @@
 }
 
 .container[data-dark-theme="true"] .input {
-  background-color: var(--clr-gray4);
-  border-color: var(--clr-gray4);
+  background-color: var(--clr-gray6);
 }
 
 /* disabled input styles */
