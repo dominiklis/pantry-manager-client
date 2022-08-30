@@ -1,0 +1,13 @@
+.link {
+  color: var(--clr-prim3);
+  text-decoration: none;
+  transition: 0.1s;
+}
+
+.link:hover {
+  color: var(--clr-sec3);
+}
+
+.white {
+  color: var(--clr-gray1);
+}
