@@ -1,0 +1,42 @@
+@keyframes moveIntoTheScreen {
+  0% {
+    transform: translateX(-120%);
+  }
+  12% {
+    transform: translateX(0);
+  }
+  88% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-120%);
+  }
+}
+
+.container {
+  background-color: var(--clr-suc);
+  border-radius: 8px;
+  padding: 4px 8px;
+  animation-name: moveIntoTheScreen;
+  animation-duration: 3.1s;
+  margin-top: 0.25em;
+  cursor: pointer;
+  transition: filter 0.2s;
+  max-width: 400px;
+}
+
+.container > * {
+  color: var(--clr-gray1);
+}
+
+.container:hover {
+  filter: brightness(85%);
+}
+
+.container:active {
+  filter: brightness(115%);
+}
+
+.errorContainer {
+  background-color: var(--clr-err1);
+}

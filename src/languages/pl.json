@@ -1,0 +1,21 @@
+{
+  "validateInput": {
+    "invalidEmail": "niepoprawny email",
+    "tooShortUserName": "nazwa użytkownika musi mieć min. 3 znaki",
+    "tooLongUserName": "nazwa użytkownika może składać się maks. z 255 znaków",
+    "passwordLength": "* 6 znaków",
+    "passwordNumber": "* 1 cyfra",
+    "passwordLowercase": "* 1 mała litera",
+    "passwordUppercase": "* 1 wielka litera",
+    "passwordSpecialCharacter": "* 1 znak specjalny"
+  },
+
+  "Login": {
+    "pageHeader": "Logowanie",
+    "buttonText": "Zaloguj",
+    "footer": "Nie posiadasz konta?",
+    "link": "Zarejestruj się!",
+    "welcomeBack": "Witaj ponownie, ",
+    "error": "niepoprawny login lub hasło"
+  }
+}

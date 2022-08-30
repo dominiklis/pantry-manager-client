@@ -1,0 +1,13 @@
+.container {
+  position: fixed;
+  bottom: 2em;
+  left: 1em;
+  z-index: 99999;
+  width: 75%;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: calc(100% - 2em);
+  }
+}

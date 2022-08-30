@@ -1,12 +1,11 @@
 import { LoadingIndicator } from "components";
-import { componentSizes, themes } from "constantStrings";
+import { componentSizes } from "constantStrings";
+import { useIsDarkTheme } from "hooks";
 import React from "react";
-import { useSelector } from "react-redux";
 import styles from "./LoadingPage.module.css";
 
 const LoadingPage = () => {
-  const { theme } = useSelector((state) => state.app);
-  const darkTheme = theme === themes.dark;
+  const darkTheme = useIsDarkTheme();
 
   return (
     <div className={styles.container} data-dark-theme={darkTheme}>

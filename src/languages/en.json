@@ -14,6 +14,8 @@
     "pageHeader": "Log in",
     "buttonText": "Log in",
     "footer": "Don't have an account?",
-    "link": "Sign up!"
+    "link": "Sign up!",
+    "welcomeBack": "Welcome back, ",
+    "error": "invalid login or password"
   }
 }

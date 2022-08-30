@@ -1,3 +1,5 @@
-import { normalizeArrayState } from "utils/normalizeArrayState";
+import normalizeArrayState from "./normalizeArrayState";
+import validateInput from "./validateInput";
+import getTranslatedText from "./getTranslatedText";
 
-export { normalizeArrayState };
+export { normalizeArrayState, validateInput, getTranslatedText };

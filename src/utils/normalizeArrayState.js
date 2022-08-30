@@ -1,4 +1,4 @@
-export const normalizeArrayState = (array, idPropertyName) => {
+const normalizeArrayState = (array, idPropertyName) => {
   const byId = {};
   const allIds = [];
 
@@ -9,3 +9,5 @@ export const normalizeArrayState = (array, idPropertyName) => {
 
   return [byId, allIds];
 };
+
+export default normalizeArrayState;

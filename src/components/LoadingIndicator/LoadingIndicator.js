@@ -1,11 +1,10 @@
-import { componentColors, componentSizes, themes } from "constantStrings";
+import { useIsDarkTheme } from "hooks";
+import { componentColors, componentSizes } from "constantStrings";
 import React from "react";
-import { useSelector } from "react-redux";
 import styles from "./LoadingIndicator.module.css";
 
 const LoadingIndicator = ({ size, color }) => {
-  const { theme } = useSelector((state) => state.app);
-  const darkTheme = theme === themes.dark;
+  const darkTheme = useIsDarkTheme();
 
   const getStyles = () => {
     let res = styles.indicator;
