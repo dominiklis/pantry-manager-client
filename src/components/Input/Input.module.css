@@ -1,0 +1,86 @@
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  display: block;
+  transition: 0.2s ease-in;
+  transition-property: color;
+  margin-bottom: 4px;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  border: 2px solid var(--clr-gray4);
+  border-radius: 8px;
+  padding: 8px 16px;
+  outline: none;
+  transition: 0.2s ease-in;
+  transition-property: border-color;
+  background-color: transparent;
+}
+
+/* focused input styles */
+
+.container:focus-within .label {
+  color: var(--clr-prim4);
+}
+
+.container:focus-within .input {
+  border-color: var(--clr-prim4);
+}
+
+.container[data-dark-theme="true"]:focus-within .label {
+  color: var(--clr-prim2);
+}
+
+.container[data-dark-theme="true"]:focus-within .input {
+  border-color: var(--clr-prim2);
+}
+
+.container[data-dark-theme="true"] .input {
+  background-color: var(--clr-gray4);
+  border-color: var(--clr-gray4);
+}
+
+/* disabled input styles */
+
+.disabled .label {
+  color: var(--clr-gray5);
+}
+
+.disabled .input {
+  border-color: var(--clr-gray5);
+  background-color: var(--clr-gray6);
+}
+
+.disabled[data-dark-theme="true"] .label {
+  color: var(--clr-gray3);
+}
+
+.disabled[data-dark-theme="true"] .input {
+  border-color: var(--clr-gray5);
+  background-color: var(--clr-gray5);
+}
+
+/* error styles */
+
+.error .label,
+.container:focus-within.error .label {
+  color: var(--clr-err2);
+}
+
+.error .input,
+.container:focus-within.error .input {
+  border-color: var(--clr-err2);
+}
+
+.error[data-dark-theme="true"] .label,
+.container:focus-within.error[data-dark-theme="true"] .label {
+  color: var(--clr-err1);
+}
+
+.error[data-dark-theme="true"] .input,
+.container:focus-within.error[data-dark-theme="true"] .input {
+  border-color: var(--clr-err1);
+}
