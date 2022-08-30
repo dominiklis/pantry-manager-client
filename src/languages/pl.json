@@ -16,6 +16,8 @@
     "footer": "Nie posiadasz konta?",
     "link": "Zarejestruj się!",
     "welcomeBack": "Witaj ponownie, ",
-    "error": "niepoprawny login lub hasło"
+    "error": "niepoprawny login lub hasło",
+    "loginInput": "email lub nazwa użytkownika *",
+    "passwordInput": "hasło *"
   }
 }

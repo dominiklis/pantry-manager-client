@@ -13,7 +13,6 @@ import {
   getStorages,
   loginUser,
   setSettings,
-  toggleTheme,
 } from "store/actions";
 import { validateInput } from "utils";
 import image from "../../images/undraw_secure_login_pdn4.svg";
@@ -111,27 +110,20 @@ const Login = () => {
       link="/register"
     >
       <Input
-        label="login"
+        label={<Translate section={componentName} text="loginInput" />}
         name="login"
         value={input.login}
         onChange={handleChange}
         error={errors.login}
       />
       <Input
-        label="password"
+        label={<Translate section={componentName} text="passwordInput" />}
         name="password"
         type="password"
         value={input.password}
         onChange={handleChange}
         error={errors.password}
       />
-      <button
-        onClick={() => {
-          dispatch(toggleTheme());
-        }}
-      >
-        theme
-      </button>
     </AuthPageContainer>
   );
 };

@@ -16,6 +16,8 @@
     "footer": "Don't have an account?",
     "link": "Sign up!",
     "welcomeBack": "Welcome back, ",
-    "error": "invalid login or password"
+    "error": "invalid login or password",
+    "loginInput": "email or username *",
+    "passwordInput": "password *"
   }
 }
