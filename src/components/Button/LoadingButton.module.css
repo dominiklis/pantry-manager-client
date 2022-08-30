@@ -1,0 +1,51 @@
+@keyframes changingBrightness {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(0.8);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  justify-content: center;
+  animation: changingBrightness 1.5s ease-in-out infinite;
+  height: 16px;
+}
+
+@keyframes scaling {
+  0% {
+    transform: scale(0.2);
+    background-color: var(--clr-gray3);
+  }
+  50% {
+    transform: scale(1);
+    background-color: var(--clr-prim2);
+  }
+  100% {
+    transform: scale(0.2);
+    background-color: var(--clr-gray3);
+  }
+}
+
+.loadingDot {
+  background-color: var(--clr-gray3);
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  animation: scaling 1s ease-in-out infinite;
+}
+
+.loadingDot:nth-child(1) {
+  animation-delay: 0.25s;
+}
+
+.loadingDot:nth-child(2) {
+  animation-delay: 0.5s;
+}
