@@ -1,0 +1,19 @@
+{
+  "validateInput": {
+    "invalidEmail": "invalid email",
+    "tooShortUserName": "username length cannot be less than 3 characters",
+    "tooLongUserName": "username length cannot be more than 255 characters",
+    "passwordLength": "* 6 characters long",
+    "passwordNumber": "* 1 number",
+    "passwordLowercase": "* 1 lowercase letter",
+    "passwordUppercase": "* 1 uppercase letter",
+    "passwordSpecialCharacter": "* 1 special character"
+  },
+
+  "Login": {
+    "pageHeader": "Log in",
+    "buttonText": "Log in",
+    "footer": "Don't have an account?",
+    "link": "Sign up!"
+  }
+}
