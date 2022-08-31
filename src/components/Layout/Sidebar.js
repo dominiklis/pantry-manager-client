@@ -109,7 +109,7 @@ const Sidebar = ({ hidden, onHideMenu }) => {
           {items.map((item, index) => {
             const styles = getItemStyles(item.path);
             return (
-              <li className={styles} data-dark-theme={darkTheme}>
+              <li className={styles} data-dark-theme={darkTheme} key={index}>
                 <Link to={item.path} key={index}>
                   {item.icon}
                   <span>{item.text}</span>
