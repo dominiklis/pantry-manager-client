@@ -1,6 +1,6 @@
 import { Button } from "components";
 import { componentColors, languages } from "constantStrings";
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setLanguage, updateSettings } from "store/actions";
 
@@ -9,10 +9,6 @@ const AppLanguage = () => {
 
   const { user } = useSelector((state) => state.users);
   const { language } = useSelector((state) => state.app);
-
-  useEffect(() => {
-    console.log(language);
-  }, [language]);
 
   const setAppLanguage = (language) => {
     dispatch(setLanguage(language));

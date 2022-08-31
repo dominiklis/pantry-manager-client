@@ -34,5 +34,16 @@
 
   "AuthPageContainer": {
     "changeLanguage": "app language:"
+  },
+
+  "Sidebar": {
+    "create": "Create",
+    "myPantry": "My Pantry",
+    "products": "Products",
+    "storages": "Storages",
+    "labels": "Labels",
+    "shoppingLists": "Shopping Lists",
+    "settings": "Settings",
+    "logOut": "Log out"
   }
 }

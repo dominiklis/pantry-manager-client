@@ -34,5 +34,16 @@
 
   "AuthPageContainer": {
     "changeLanguage": "język aplikacji:"
+  },
+
+  "Sidebar": {
+    "create": "Utwórz",
+    "myPantry": "Moja Spiżarnia",
+    "products": "Produkty",
+    "storages": "Magazyny",
+    "labels": "Etykiety",
+    "shoppingLists": "Listy Zakupów",
+    "settings": "Ustawienia",
+    "logOut": "Wyloguj się"
   }
 }
