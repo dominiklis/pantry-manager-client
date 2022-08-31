@@ -82,8 +82,6 @@ const Register = () => {
   }, [error]);
 
   useEffect(() => {
-    console.log("NO TUTAJ");
-
     if (token && user?.userId) {
       if (showWelcomeToast)
         dispatch(
