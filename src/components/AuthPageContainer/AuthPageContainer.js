@@ -2,6 +2,7 @@ import { AppLanguage, AppLink, Button, Translate } from "components";
 import { authPagesImages, componentColors } from "constantStrings";
 import { useIsDarkTheme } from "hooks";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styles from "./AuthPageContainer.module.css";
 
 const componentName = "AuthPageContainer";
@@ -30,7 +31,7 @@ const AuthPageContainer = ({
         <img className={styles.columnImage} src={pageImage} alt="pantry" />
       </div>
 
-      <div className={styles.rightColumn}>
+      <div className={styles.rightColumn} data-dark-theme={darkTheme}>
         <h2 className={styles.appName} data-dark-theme={darkTheme}>
           Pantry Manager
         </h2>

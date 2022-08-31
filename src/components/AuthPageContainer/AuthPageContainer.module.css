@@ -37,6 +37,11 @@
   flex-direction: column;
   height: 100vh;
   position: relative;
+  background-color: var(--clr-gray7);
+}
+
+.rightColumn[data-dark-theme="true"] {
+  background-color: var(--clr-gray7);
 }
 
 .appName {
@@ -62,15 +67,14 @@
   width: 100%;
   max-width: 400px;
   border-radius: 8px;
-  background-color: var(--clr-gray7);
   padding: 8px;
   margin: 16px auto 0;
   gap: 8px;
 }
 
 .form[data-dark-theme="true"] {
-  background-color: var(--clr-gray6);
   border-color: transparent;
+  background-color: var(--clr-gray6);
 }
 
 .submitButton {
