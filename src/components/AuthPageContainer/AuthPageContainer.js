@@ -33,7 +33,7 @@ const AuthPage = ({
           Pantry Manager
         </h2>
 
-        <img className={styles.image} src={image} alt="login" />
+        <img className={styles.image} src={image} alt="authenticate" />
         <form
           className={styles.form}
           onSubmit={handleSubmit}

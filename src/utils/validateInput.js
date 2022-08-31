@@ -112,6 +112,35 @@ const validateInput = (inputName, value, noErrorOnEmpty = false) => {
 
       return errors;
     }
+
+    case "userName":
+      if (!value && noErrorOnEmpty) return "";
+
+      if (value.length < maxAndMinValues.minNameLength)
+        return (
+          <Translate
+            section={sectionName}
+            text={errorsProperties.tooShortUserName}
+          />
+        );
+
+      if (value.length > maxAndMinValues.maxNameLength)
+        return (
+          <Translate
+            section={sectionName}
+            text={errorsProperties.tooLongUserName}
+          />
+        );
+
+      return "";
+
+    case "email":
+      if (!value && noErrorOnEmpty) return "";
+
+      if (validator.isEmail(value)) return "";
+      return (
+        <Translate section={sectionName} text={errorsProperties.invalidEmail} />
+      );
   }
 };
 

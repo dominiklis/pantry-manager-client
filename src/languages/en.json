@@ -19,5 +19,16 @@
     "error": "invalid login or password",
     "loginInput": "email or username *",
     "passwordInput": "password *"
+  },
+
+  "Register": {
+    "username": "username *",
+    "email": "email *",
+    "password": "password *",
+    "pageHeader": "Register",
+    "buttonText": "Register",
+    "footer": "Already have an account?",
+    "link": "Sign in!",
+    "weAreGlad": "Nice to see you, "
   }
 }

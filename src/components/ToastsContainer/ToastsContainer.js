@@ -12,7 +12,6 @@ const ToastContainer = () => {
   const dispatch = useDispatch();
 
   const { toasts } = useSelector((state) => state.app);
-  console.log(toasts);
 
   const [toastToRemove, setToastToRemove] = useState("");
 

@@ -19,5 +19,16 @@
     "error": "niepoprawny login lub hasło",
     "loginInput": "email lub nazwa użytkownika *",
     "passwordInput": "hasło *"
+  },
+
+  "Register": {
+    "username": "nazwa użytkownika *",
+    "email": "email *",
+    "password": "hasło *",
+    "pageHeader": "Logowanie",
+    "buttonText": "Zaloguj",
+    "footer": "Nie posiadasz konta?",
+    "link": "Zarejestruj się!",
+    "weAreGlad": "Miło, że do nas dołączyłeś, "
   }
 }
