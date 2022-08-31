@@ -1,11 +1,13 @@
 .container {
+  --menu-item-height: 48px;
+  --menu-top-row-heigh: 64px;
+
   max-width: 100vw;
   min-height: 100vh;
   background-color: var(--clr-gray7);
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  --menu-item-height: 48px;
   grid-template-rows: var(--menu-item-height) auto;
 }
 
@@ -48,9 +50,8 @@
 @media screen and (min-width: 650px) {
   .container {
     margin-top: 0;
-    /* display: grid; */
     grid-template-columns: 200px 1fr;
-    grid-template-rows: 64px auto;
+    grid-template-rows: var(--menu-top-row-heigh) auto;
   }
 
   .topBar {

@@ -150,6 +150,7 @@
 @media screen and (min-width: 650px) {
   .container {
     position: static;
+    height: calc(100vh - var(--menu-top-row-heigh));
   }
 
   .container.hidden {
