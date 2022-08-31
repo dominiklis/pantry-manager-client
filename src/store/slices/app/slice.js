@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { localStorageKeys, themes } from "constantStrings";
+import { languages, localStorageKeys, themes } from "constantStrings";
 import { v4 as uuid } from "uuid";
 import { setSettings, updateSettings } from "./extraReducers";
 
 const initialState = {
   initialLoad: false,
   toasts: [],
-  language: localStorage.getItem(localStorageKeys.language) ?? "en",
+  language:
+    localStorage.getItem(localStorageKeys.language) ?? languages.english,
   theme: localStorage.getItem(localStorageKeys.theme) ?? themes.light,
   defaultNumberOfDaysForWarning: 3,
   loading: {

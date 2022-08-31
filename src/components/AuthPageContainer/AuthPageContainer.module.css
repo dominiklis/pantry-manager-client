@@ -100,3 +100,18 @@
   font-weight: normal;
   text-align: center;
 }
+
+.language {
+  border-top: 1px solid var(--clr-gray4);
+  margin-top: 8px;
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--clr-gray3);
+}
+
+.language * {
+  font-size: 14px;
+}

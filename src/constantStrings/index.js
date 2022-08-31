@@ -5,7 +5,8 @@ import themes from "./themes";
 import authPagesImages from "./authPagesImages";
 import errorsProperties from "./errorsProperties";
 import maxAndMinValues from "./maxAndMinValues";
-import toastColors from "../constantStrings/toastColors";
+import toastColors from "./toastColors";
+import languages from "./languages";
 
 export {
   localStorageKeys,
@@ -16,4 +17,5 @@ export {
   errorsProperties,
   maxAndMinValues,
   toastColors,
+  languages,
 };

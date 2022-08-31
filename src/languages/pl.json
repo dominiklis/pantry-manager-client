@@ -25,10 +25,14 @@
     "username": "nazwa użytkownika *",
     "email": "email *",
     "password": "hasło *",
-    "pageHeader": "Logowanie",
+    "pageHeader": "Rejestracja",
     "buttonText": "Zaloguj",
     "footer": "Nie posiadasz konta?",
     "link": "Zarejestruj się!",
     "weAreGlad": "Miło, że do nas dołączyłeś, "
+  },
+
+  "AuthPageContainer": {
+    "changeLanguage": "język aplikacji:"
   }
 }

@@ -1,10 +1,12 @@
-import { AppLink, Button } from "components";
+import { AppLanguage, AppLink, Button, Translate } from "components";
 import { authPagesImages, componentColors } from "constantStrings";
 import { useIsDarkTheme } from "hooks";
 import React, { useState } from "react";
 import styles from "./AuthPageContainer.module.css";
 
-const AuthPage = ({
+const componentName = "AuthPageContainer";
+
+const AuthPageContainer = ({
   children,
   disabled,
   image,
@@ -54,11 +56,14 @@ const AuthPage = ({
 
         <div className={styles.footer}>
           {footerText} <AppLink to={link}>{linkText}</AppLink>
-          {/* <AppLanguage className={styles.languages} /> */}
+          <div className={styles.language}>
+            <Translate section={componentName} text="changeLanguage" />{" "}
+            <AppLanguage />
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default AuthPage;
+export default AuthPageContainer;

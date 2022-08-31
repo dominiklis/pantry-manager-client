@@ -11,6 +11,7 @@ const Button = ({
   backgroundColor,
   loading,
   icon,
+  onClick,
 }) => {
   const darkTheme = useIsDarkTheme();
 
@@ -38,6 +39,7 @@ const Button = ({
       className={getStyles()}
       disabled={disabled}
       type={type}
+      onClick={onClick}
     >
       {loading ? (
         <LoadingButton />
