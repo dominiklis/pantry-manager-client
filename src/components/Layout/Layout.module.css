@@ -10,6 +10,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: var(--menu-item-height) auto;
+  padding-bottom: 120px;
 }
 
 .topBar {
@@ -27,7 +28,7 @@
 }
 
 .mobileMenuButton {
-  position: absolute;
+  position: fixed;
   top: 8px;
   left: 8px;
   border: none;

@@ -1,7 +1,7 @@
 .container {
   z-index: 9999;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   transition: 0.2s ease-in-out;
