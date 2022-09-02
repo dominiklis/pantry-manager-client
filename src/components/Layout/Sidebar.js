@@ -97,7 +97,7 @@ const Sidebar = ({ hidden, onHideMenu }) => {
           <IoClose />
         </button>
         <ul>
-          <li
+          {/* <li
             className={`${styles.sidebarItem} ${styles.sidebarItemSecondary} ${styles.hideOnMobile}`}
             data-dark-theme={darkTheme}
           >
@@ -105,7 +105,7 @@ const Sidebar = ({ hidden, onHideMenu }) => {
               <IoAdd />
               <span>Create</span>
             </button>
-          </li>
+          </li> */}
           {items.map((item, index) => {
             const styles = getItemStyles(item.path);
             return (
@@ -123,7 +123,9 @@ const Sidebar = ({ hidden, onHideMenu }) => {
           >
             <button>
               <IoLogOut />
-              <span>Logout</span>
+              <span>
+                <Translate section={componentName} text="logout" />
+              </span>
             </button>
           </li>
         </ul>
