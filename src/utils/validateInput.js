@@ -141,6 +141,26 @@ const validateInput = (inputName, value, noErrorOnEmpty = false) => {
       return (
         <Translate section={sectionName} text={errorsProperties.invalidEmail} />
       );
+
+    case "productName":
+      if (value.length > maxAndMinValues.maxNameLength)
+        return (
+          <Translate
+            section={sectionName}
+            text={errorsProperties.tooLongName}
+          />
+        );
+
+      return "";
+
+    case "amount":
+      if (value.length > maxAndMinValues.maxNameLength)
+        return (
+          <Translate
+            section={sectionName}
+            text={errorsProperties.tooLongAmount}
+          />
+        );
   }
 };
 

@@ -151,10 +151,21 @@
   .container {
     position: static;
     height: calc(100vh - var(--menu-top-row-heigh));
+    height: 100%;
   }
 
   .container.hidden {
     left: 0;
+  }
+
+  .content {
+    position: fixed;
+    top: 64px;
+    height: 100%;
+  }
+
+  .content[data-dark-theme="true"] {
+    background-color: var(--clr-gray6);
   }
 
   .hideButton {

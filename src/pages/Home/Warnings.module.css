@@ -1,0 +1,49 @@
+.container {
+  border: 1px solid var(--clr-gray4);
+  border-radius: 8px;
+  padding: 8px;
+  max-height: 360px;
+  overflow: auto;
+}
+
+.container[data-dark-theme="true"] {
+  border-color: transparent;
+  background-color: var(--clr-gray6);
+}
+
+.header {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.2s ease-in;
+  transition-property: margin-bottom;
+}
+
+.header.warningHeader {
+  color: var(--clr-war2);
+}
+
+.header[data-dark-theme="true"].warningHeader {
+  color: var(--clr-war1);
+}
+
+.header.errorHeader {
+  color: var(--clr-err2);
+}
+
+.header[data-dark-theme="true"].errorHeader {
+  color: var(--clr-err1);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.2s ease-in;
+  transition-property: transform;
+}
+
+.icon.rotated {
+  transform: rotate(90deg);
+}

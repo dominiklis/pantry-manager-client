@@ -1,0 +1,10 @@
+.header {
+  margin-bottom: 8px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--clr-gray3);
+}

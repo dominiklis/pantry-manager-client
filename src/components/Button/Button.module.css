@@ -17,7 +17,8 @@
   gap: 0.5em;
 }
 
-.text {
+.text,
+.icon {
   font-size: 16px;
   transition: 0.2s ease-out;
   transition-property: color;
@@ -27,7 +28,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  color: var(--clr-gray1);
+  width: 16px;
+  height: 16px;
+}
+
+.button[data-dark-theme="true"] .icon {
+  color: var(--clr-gray7);
 }
 
 .button:hover {
@@ -118,6 +125,44 @@
   background-color: var(--clr-sec3);
 }
 
+/* tranparent */
+.transparent:focus {
+  outline: 1px solid var(--clr-prim1);
+}
+
+.transparent,
+.transparent[data-dark-theme="true"],
+.transparent:hover,
+.transparent[data-dark-theme="true"]:hover,
+.transparent:active,
+.transparent[data-dark-theme="true"]:active {
+  background-color: transparent;
+}
+
+.transparent .text,
+.transparent .icon,
+.transparent[data-dark-theme="true"] .text,
+.transparent[data-dark-theme="true"] .icon {
+  color: var(--clr-gray1);
+}
+
+.transparent:hover .text,
+.transparent:hover .icon,
+.transparent[data-dark-theme="true"]:hover .text,
+.transparent[data-dark-theme="true"]:hover .icon {
+  color: var(--clr-gray2);
+}
+
+.transparent:active .text,
+.transparent:active .icon {
+  color: var(--clr-prim4);
+}
+
+.transparent[data-dark-theme="true"]:active .text,
+.transparent[data-dark-theme="true"]:active .icon {
+  color: var(--clr-prim2);
+}
+
 /* disabled button */
 .button:disabled,
 .button[data-dark-theme="true"]:disabled,
@@ -135,4 +180,44 @@
 .button[data-dark-theme="true"]:disabled:hover *,
 .button[data-dark-theme="true"]:disabled:active * {
   color: var(--clr-gray3);
+}
+
+/* small button */
+.small {
+  padding: 4px 8px;
+}
+
+.small .text,
+.small .icon {
+  font-size: 14px;
+}
+
+/* large button */
+.large {
+  padding: 12px 18px;
+}
+
+.large .text,
+.large .icon {
+  font-size: 18px;
+}
+
+/* iconButton */
+.iconButton {
+  border-radius: 50%;
+  padding: 8px;
+  height: 32px;
+  width: 32px;
+}
+
+.iconButton.small {
+  padding: 4px;
+  height: 24px;
+  width: 24px;
+}
+
+.iconButton.large {
+  padding: 12px;
+  height: 42px;
+  width: 42px;
 }

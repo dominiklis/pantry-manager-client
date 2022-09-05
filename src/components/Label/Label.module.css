@@ -1,0 +1,15 @@
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  display: block;
+  transition: 0.2s ease-in;
+  transition-property: color;
+  margin-bottom: 4px;
+  color: var(--clr-gray2);
+}
+
+.sublabel {
+  font-weight: normal;
+  letter-spacing: 0.025em;
+}

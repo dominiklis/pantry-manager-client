@@ -1,0 +1,17 @@
+.selectStorage {
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.labelsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.submitButtonWrapper {
+  margin-top: 16px;
+  text-align: center;
+}

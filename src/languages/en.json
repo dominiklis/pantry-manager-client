@@ -7,7 +7,9 @@
     "passwordNumber": "* 1 number",
     "passwordLowercase": "* 1 lowercase letter",
     "passwordUppercase": "* 1 uppercase letter",
-    "passwordSpecialCharacter": "* 1 special character"
+    "passwordSpecialCharacter": "* 1 special character",
+    "tooLongName": "name length cannot be more than 255 characters",
+    "tooLongAmount": "amount length cannot be more than 255 characters"
   },
 
   "Login": {
@@ -44,6 +46,109 @@
     "labels": "Labels",
     "shoppingLists": "Shopping Lists",
     "settings": "Settings",
-    "logOut": "Log out"
+    "logout": "Logout"
+  },
+
+  "Home": {
+    "myPantry": "My Pantry"
+  },
+
+  "ExpiredProducts": {
+    "header": "Expired"
+  },
+
+  "CloseToExpiryProducts": {
+    "header": "Close to expiry"
+  },
+
+  "ProductsGroupedByStorages": {
+    "withoutStorage": "products without storage"
+  },
+
+  "getDaysFromTodayText": {
+    "today": "today",
+    "inMultipleDays": "in "
+  },
+
+  "StorageHeader": { "warningFor": "warning for " },
+
+  "StoragesList": {
+    "header": "Storages"
+  },
+
+  "ProductsWithoutStoragesList": {
+    "header": "Products without storage"
+  },
+
+  "SortByButton": {
+    "name": "Name"
+  },
+
+  "ToolBar": {
+    "highlight": "highlight:",
+    "filter": "filter:",
+    "name": "Name",
+    "expirationDate": "Expirationd date",
+    "none": "None",
+    "closeToExpiry": "Close to expiry",
+    "expired": "Expired",
+    "showAll": "Show all"
+  },
+
+  "ProductDetails": {
+    "expirationDate": "expiration date:",
+    "dateNotSet": "no date set",
+    "storage": "storage:",
+    "noStorage": "none",
+    "labels": "labels:",
+    "noLabels": "no labels"
+  },
+
+  "getExpirationInfo": {
+    "expired": "expired",
+    "ago": "ago",
+    "expires": "expires"
+  },
+
+  "ProductActions": {
+    "addToList": "Add to shopping list",
+    "edit": "Edit",
+    "delete": "Delete",
+    "editActionHeader": "Edit product",
+    "addToListActionHeader": "Add to shopping list",
+    "toast": "product deleted"
+  },
+
+  "EditProduct": {
+    "toastText": "changes saved",
+    "submitButtonText": "Save Changes",
+    "nameInputLabel": "product name",
+    "expDateInputLabel": "expiration date",
+    "amountInputLabel": "amount",
+    "selectStorageLabel": "storage",
+    "submitButton": "Submit Changes",
+    "noSelectedLabels": "no selected labels"
+  },
+
+  "SelectStorage": {
+    "noStorageOption": "no storage"
+  },
+
+  "SelectLabels": {
+    "labelsLabel": "labels",
+    "selectedLabelsLabel": "selected labels",
+    "labelsToSelectLabel": "labels to select"
+  },
+
+  "AddProductToShoppingList": {
+    "toast": "item created",
+    "addItem": "Add item",
+    "name": "name",
+    "amount": "amount",
+    "shoppingListLabel": "shopping list"
+  },
+
+  "SelectShoppingList": {
+    "noShoppingOption": "no shopping list"
   }
 }

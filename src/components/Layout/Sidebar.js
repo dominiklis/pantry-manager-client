@@ -4,7 +4,6 @@ import styles from "./Sidebar.module.css";
 import { toggleTheme } from "store/actions";
 import { useDispatch } from "react-redux";
 import {
-  IoAdd,
   IoAlbumsOutline,
   IoBookmarkOutline,
   IoClipboardOutline,
@@ -88,7 +87,7 @@ const Sidebar = ({ hidden, onHideMenu }) => {
 
   return (
     <nav className={getContainerStyles()} data-dark-theme={darkTheme}>
-      <div className={styles.content}>
+      <div className={styles.content} data-dark-theme={darkTheme}>
         <button
           onClick={onHideMenu}
           className={styles.hideButton}
@@ -97,15 +96,6 @@ const Sidebar = ({ hidden, onHideMenu }) => {
           <IoClose />
         </button>
         <ul>
-          {/* <li
-            className={`${styles.sidebarItem} ${styles.sidebarItemSecondary} ${styles.hideOnMobile}`}
-            data-dark-theme={darkTheme}
-          >
-            <button>
-              <IoAdd />
-              <span>Create</span>
-            </button>
-          </li> */}
           {items.map((item, index) => {
             const styles = getItemStyles(item.path);
             return (

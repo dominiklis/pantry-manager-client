@@ -1,11 +1,16 @@
 .link {
   color: var(--clr-prim3);
   text-decoration: none;
-  transition: 0.1s;
+  transition: 0.1s ease-in;
+  transition-property: color;
 }
 
 .link:hover {
   color: var(--clr-sec3);
+}
+
+.link[data-dark-theme="true"]:hover {
+  color: var(--clr-sec2);
 }
 
 .white {

@@ -7,6 +7,8 @@ const errorsProperties = {
   passwordLowercase: "passwordLowercase",
   passwordUppercase: "passwordUppercase",
   passwordSpecialCharacter: "passwordSpecialCharacter",
+  tooLongName: "tooLongName",
+  tooLongAmount: "tooLongAmount",
 };
 
 export default errorsProperties;

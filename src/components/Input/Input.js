@@ -2,8 +2,18 @@ import Errors from "./Errors";
 import { useIsDarkTheme } from "hooks";
 import React from "react";
 import styles from "./Input.module.css";
+import { Label } from "components";
 
-const Input = ({ label, name, type, value, onChange, disabled, error }) => {
+const Input = ({
+  label,
+  name,
+  type,
+  value,
+  onChange,
+  disabled,
+  error,
+  autoFocus,
+}) => {
   const darkTheme = useIsDarkTheme();
 
   const getStyles = () => {
@@ -17,7 +27,7 @@ const Input = ({ label, name, type, value, onChange, disabled, error }) => {
 
   return (
     <div className={getStyles()} data-dark-theme={darkTheme}>
-      <label className={styles.label}>{label}</label>
+      <Label>{label}</Label>
       <input
         className={styles.input}
         name={name}
@@ -25,6 +35,7 @@ const Input = ({ label, name, type, value, onChange, disabled, error }) => {
         value={value}
         onChange={onChange}
         disabled={disabled}
+        autoFocus={autoFocus}
       />
       <Errors error={error} />
     </div>

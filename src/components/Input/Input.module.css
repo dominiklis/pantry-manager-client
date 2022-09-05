@@ -1,4 +1,4 @@
-.label {
+label {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -23,7 +23,7 @@
 
 /* focused input styles */
 
-.container:focus-within .label {
+.container:focus-within label {
   color: var(--clr-prim4);
 }
 
@@ -31,7 +31,7 @@
   border-color: var(--clr-prim4);
 }
 
-.container[data-dark-theme="true"]:focus-within .label {
+.container[data-dark-theme="true"]:focus-within label {
   color: var(--clr-prim2);
 }
 
@@ -46,7 +46,7 @@
 
 /* disabled input styles */
 
-.disabled .label {
+.disabled label {
   color: var(--clr-gray5);
 }
 
@@ -55,7 +55,7 @@
   background-color: var(--clr-gray6);
 }
 
-.disabled[data-dark-theme="true"] .label {
+.disabled[data-dark-theme="true"] label {
   color: var(--clr-gray3);
 }
 
@@ -66,8 +66,8 @@
 
 /* error styles */
 
-.error .label,
-.container:focus-within.error .label {
+.error label,
+.container:focus-within.error label {
   color: var(--clr-err2);
 }
 
@@ -76,8 +76,8 @@
   border-color: var(--clr-err2);
 }
 
-.error[data-dark-theme="true"] .label,
-.container:focus-within.error[data-dark-theme="true"] .label {
+.error[data-dark-theme="true"] label,
+.container:focus-within.error[data-dark-theme="true"] label {
   color: var(--clr-err1);
 }
 

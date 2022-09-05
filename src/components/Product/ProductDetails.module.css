@@ -1,0 +1,14 @@
+.container {
+  padding: 8px 0;
+}
+
+.section {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.sectionLabel,
+.numberOfDays {
+  color: var(--clr-gray2);
+}

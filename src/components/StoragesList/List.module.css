@@ -1,0 +1,33 @@
+.list.grid {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.listItem {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--clr-gray3);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.list.grid .listItem {
+  border: 1px solid transparent;
+  padding: 0;
+}
+
+.list.grid .listItem a {
+  background-color: var(--clr-gray6);
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+.list[data-dark-theme="true"].grid .listItem a {
+  background-color: var(--clr-gray5);
+}

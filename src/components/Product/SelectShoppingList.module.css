@@ -1,0 +1,23 @@
+.container {
+  position: static;
+  width: 100%;
+}
+
+.selectShoppingListList {
+  position: static;
+  width: 100%;
+}
+
+.buttonStyles,
+.buttonStyles[data-dark-theme="true"] {
+  border: 1px solid var(--clr-gray2);
+}
+
+.buttonStyles:hover {
+  border-color: var(--clr-prim4);
+  background-color: var(--clr-prim1);
+}
+
+.buttonStyles[data-dark-theme="true"]:hover {
+  border-color: var(--clr-prim2);
+}

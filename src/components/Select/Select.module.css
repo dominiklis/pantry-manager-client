@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.container button {
+  width: 100%;
+}
+
+.selectedButton {
+  z-index: 1;
+}
+
+.backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.showBackdrop {
+  display: block;
+}
+
+.list {
+  border-radius: 0 0 8px 8px;
+  background-color: var(--clr-gray6);
+  position: absolute;
+  left: 0;
+  top: 28px;
+  z-index: 3;
+}
+
+.listItem {
+  display: flex;
+  align-content: center;
+}
+
+.listItem:hover {
+  background-color: var(--clr-prim1);
+}
+
+.listItem[data-dark-theme="true"]:hover {
+  background-color: var(--clr-gray5);
+}
+
+.listItem:last-child {
+  border-radius: 0 0 8px 8px;
+}

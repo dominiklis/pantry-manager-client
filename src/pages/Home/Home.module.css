@@ -1,0 +1,21 @@
+.section {
+  margin: 48px 0;
+}
+
+.warnings {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.warnings > div {
+  flex: 1;
+}
+
+@media screen and (min-width: 720px) {
+  .warnings {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}

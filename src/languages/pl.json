@@ -7,7 +7,9 @@
     "passwordNumber": "* 1 cyfra",
     "passwordLowercase": "* 1 mała litera",
     "passwordUppercase": "* 1 wielka litera",
-    "passwordSpecialCharacter": "* 1 znak specjalny"
+    "passwordSpecialCharacter": "* 1 znak specjalny",
+    "tooLongName": "nazwa może składać się maks. z 255 znaków",
+    "tooLongAmount": "wartość w polu ilość nie może być dłuższa niż 255 znaków"
   },
 
   "Login": {
@@ -44,6 +46,109 @@
     "labels": "Etykiety",
     "shoppingLists": "Listy Zakupów",
     "settings": "Ustawienia",
-    "logOut": "Wyloguj się"
+    "logout": "Wyloguj się"
+  },
+
+  "Home": {
+    "myPantry": "Moja Spiżarnia"
+  },
+
+  "ExpiredProducts": {
+    "header": "Przeterminowane"
+  },
+
+  "CloseToExpiryProducts": {
+    "header": "Bliskie wygaśnięciu"
+  },
+
+  "ProductsGroupedByStorages": {
+    "withoutStorage": "produkty bez magazynu"
+  },
+
+  "getDaysFromTodayText": {
+    "today": "dzisiaj",
+    "inMultipleDays": "za "
+  },
+
+  "StorageHeader": { "warningFor": "ostrzeganie dla " },
+
+  "StoragesList": {
+    "header": "Magazyny"
+  },
+
+  "ProductsWithoutStoragesList": {
+    "header": "Produkty bez przypisanego magazynu"
+  },
+
+  "SortByButton": {
+    "name": "Nazwa"
+  },
+
+  "ToolBar": {
+    "highlight": "podświetl:",
+    "filter": "filtruj:",
+    "name": "Nazwa",
+    "expirationDate": "Data ważności",
+    "none": "Brak",
+    "closeToExpiry": "Bliskie wygaśnięciu",
+    "expired": "Przeterminowane",
+    "showAll": "Pokaż wszystkie"
+  },
+
+  "ProductDetails": {
+    "expirationDate": "data ważności:",
+    "dateNotSet": "brak ustawionej daty",
+    "storage": "magazyn:",
+    "noStorage": "brak",
+    "labels": "etykiety:",
+    "noLabels": "brak przypisanych etykiet"
+  },
+
+  "getExpirationInfo": {
+    "expired": "przterminowane od",
+    "ago": "",
+    "expires": "wygasa"
+  },
+
+  "ProductActions": {
+    "addToList": "Dodaj do listy zakupów",
+    "edit": "Edytuj",
+    "delete": "Usuń",
+    "editActionHeader": "Edycja produktu",
+    "addToListActionHeader": "Dodaj listę zakupów",
+    "toast": "produkt został usunięty"
+  },
+
+  "EditProduct": {
+    "toastText": "zmiany zostały zapisane",
+    "submitButtonText": "Zapisz zmiany",
+    "nameInputLabel": "nazwa produktu",
+    "expDateInputLabel": "termin ważności",
+    "amountInputLabel": "ilość",
+    "selectStorageLabel": "magazyn",
+    "submitButton": "Zapisz zmiany",
+    "noSelectedLabels": "brak wybranych etykiet"
+  },
+
+  "SelectStorage": {
+    "noStorageOption": "brak magazynu"
+  },
+
+  "SelectLabels": {
+    "labelsLabel": "etykiety",
+    "selectedLabelsLabel": "wybrane etykiety",
+    "labelsToSelectLabel": "etykiety do wybrania"
+  },
+
+  "AddProductToShoppingList": {
+    "toast": "pozycja została dodana",
+    "addItem": "Dodaj",
+    "name": "nazwa",
+    "amount": "ilość",
+    "shoppingListLabel": "lista zakupów"
+  },
+
+  "SelectShoppingList": {
+    "noShoppingOption": "brak listy"
   }
 }

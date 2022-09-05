@@ -1,8 +1,11 @@
 import React from "react";
 import styles from "styles/links.module.css";
 import { Link } from "react-router-dom";
+import { useIsDarkTheme } from "hooks";
 
 const AppLink = ({ children, className, to, color }) => {
+  const darkTheme = useIsDarkTheme();
+
   const getStyle = () => {
     let res = styles.link;
 
@@ -20,7 +23,7 @@ const AppLink = ({ children, className, to, color }) => {
     return res;
   };
   return (
-    <Link to={to ?? "/"} className={getStyle()}>
+    <Link to={to ?? "/"} className={getStyle()} data-dark-theme={darkTheme}>
       {children}
     </Link>
   );

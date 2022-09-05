@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  transition-property: color;
+}
+
+.header:hover {
+  color: var(--clr-prim4);
+}
+
+.header[data-dark-theme="true"]:hover {
+  color: var(--clr-prim2);
+}
+
+.amountAndUnit {
+  color: var(--clr-gray2);
+}
+
+.warning {
+  color: var(--clr-war2);
+}
+
+.error {
+  color: var(--clr-err2);
+}
+
+.warning[data-dark-theme="true"] {
+  color: var(--clr-war1);
+}
+
+.error[data-dark-theme="true"] {
+  color: var(--clr-err1);
+}

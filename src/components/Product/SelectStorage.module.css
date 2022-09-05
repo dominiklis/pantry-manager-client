@@ -1,0 +1,9 @@
+.container {
+  position: static;
+  width: 100%;
+}
+
+.selectStorageList {
+  position: static;
+  width: 100%;
+}

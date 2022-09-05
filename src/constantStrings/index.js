@@ -7,6 +7,13 @@ import errorsProperties from "./errorsProperties";
 import maxAndMinValues from "./maxAndMinValues";
 import toastColors from "./toastColors";
 import languages from "./languages";
+import sortProductsBy from "constantStrings/sortProductsBy";
+import filterProductsBy from "constantStrings/filterProductsBy";
+import various from "constantStrings/various";
+import storageColors from "constantStrings/storageColors";
+import sortStoragesBy from "constantStrings/sortStoragesBy";
+import displayAs from "constantStrings/displayAs";
+import highlightProducts from "constantStrings/highlightProducts";
 
 export {
   localStorageKeys,
@@ -18,4 +25,11 @@ export {
   maxAndMinValues,
   toastColors,
   languages,
+  sortProductsBy,
+  filterProductsBy,
+  various,
+  storageColors,
+  sortStoragesBy,
+  displayAs,
+  highlightProducts,
 };

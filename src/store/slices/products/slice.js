@@ -8,17 +8,18 @@ import {
 import { normalizeArrayState } from "utils";
 
 const initialState = {
-  user: null,
-  token: null,
+  byId: {},
+  allIds: [],
   loading: {
-    login: false,
-    register: false,
+    getting: true,
+    create: false,
     edit: false,
+    deleting: false,
   },
   errors: {
-    login: "",
-    register: "",
+    create: "",
     edit: "",
+    deleting: "",
   },
 };
 
@@ -119,7 +120,7 @@ const productsSlice = createSlice({
 
       // delete product
       .addCase(deleteProduct.pending, (state) => {
-        state.loading.delete = true;
+        state.loading.deleting = true;
       })
       .addCase(deleteProduct.fulfilled, (state, action) => {
         delete state.byId[action.payload.productId];
@@ -129,12 +130,12 @@ const productsSlice = createSlice({
           1
         );
 
-        state.errors.delete = "";
-        state.loading.delete = false;
+        state.errors.deleting = "";
+        state.loading.deleting = false;
       })
       .addCase(deleteProduct.rejected, (state, action) => {
-        state.errors.delete = action.payload;
-        state.loading.delete = false;
+        state.errors.deleting = action.payload;
+        state.loading.deleting = false;
       }),
 });
 

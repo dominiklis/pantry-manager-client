@@ -1,0 +1,23 @@
+.label {
+  border-radius: 16px;
+  padding: 4px 8px;
+  background-color: var(--clr-gray5);
+  color: var(--clr-gray1);
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  transition: 0.2s ease-in;
+  transition-property: background-color;
+}
+
+.label:hover {
+  background-color: var(--clr-gray6);
+}
+
+.label[data-dark-theme="true"] {
+  background-color: var(--clr-gray4);
+}
+
+.label:hover[data-dark-theme="true"] {
+  background-color: var(--clr-gray5);
+}

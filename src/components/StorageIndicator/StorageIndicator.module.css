@@ -1,0 +1,182 @@
+.indicator {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--clr-gray1);
+  border-radius: 8px;
+  transition: 0.2s ease-in;
+  transition-property: background-color, border-color, filter;
+}
+
+.indicatorWhite {
+  background-color: var(--clr-white);
+  color: var(--clr-white);
+}
+
+.indicatorRed {
+  background-color: var(--clr-red);
+  color: var(--clr-red);
+}
+
+.indicatorRed[data-dark-theme="true"] {
+  border-color: var(--clr-red);
+}
+
+.indicatorPink {
+  background-color: var(--clr-pink);
+  color: var(--clr-pink);
+}
+
+.indicatorPink[data-dark-theme="true"] {
+  border-color: var(--clr-pink);
+}
+
+.indicatorPurple {
+  background-color: var(--clr-purple);
+  color: var(--clr-purple);
+}
+
+.indicatorPurple[data-dark-theme="true"] {
+  border-color: var(--clr-purple);
+}
+
+.indicatorDeepPurple {
+  background-color: var(--clr-deepPurple);
+  color: var(--clr-deepPurple);
+}
+
+.indicatorDeepPurple[data-dark-theme="true"] {
+  border-color: var(--clr-deepPurple);
+}
+
+.indicatorIndigo {
+  background-color: var(--clr-indigo);
+  color: var(--clr-indigo);
+}
+
+.indicatorIndigo[data-dark-theme="true"] {
+  border-color: var(--clr-indigo);
+}
+
+.indicatorBlue {
+  background-color: var(--clr-blue);
+  color: var(--clr-blue);
+}
+
+.indicatorBlue[data-dark-theme="true"] {
+  border-color: var(--clr-blue);
+}
+
+.indicatorLightBlue {
+  background-color: var(--clr-lightBlue);
+  color: var(--clr-lightBlue);
+}
+
+.indicatorLightBlue[data-dark-theme="true"] {
+  border-color: var(--clr-lightBlue);
+}
+
+.indicatorCyan {
+  background-color: var(--clr-cyan);
+  color: var(--clr-cyan);
+}
+
+.indicatorCyan[data-dark-theme="true"] {
+  border-color: var(--clr-cyan);
+}
+
+.indicatorTeal {
+  background-color: var(--clr-teal);
+  color: var(--clr-teal);
+}
+
+.indicatorTeal[data-dark-theme="true"] {
+  border-color: var(--clr-teal);
+}
+
+.indicatorGreen {
+  background-color: var(--clr-green);
+  color: var(--clr-green);
+}
+
+.indicatorGreen[data-dark-theme="true"] {
+  border-color: var(--clr-green);
+}
+
+.indicatorLightGreen {
+  background-color: var(--clr-lightGreen);
+  color: var(--clr-lightGreen);
+}
+
+.indicatorLightGreen[data-dark-theme="true"] {
+  border-color: var(--clr-lightGreen);
+}
+
+.indicatorLime {
+  background-color: var(--clr-lime);
+  color: var(--clr-lime);
+}
+
+.indicatorLime[data-dark-theme="true"] {
+  border-color: var(--clr-lime);
+}
+
+.indicatorYellow {
+  background-color: var(--clr-yellow);
+  color: var(--clr-yellow);
+}
+
+.indicatorYellow[data-dark-theme="true"] {
+  border-color: var(--clr-yellow);
+}
+
+.indicatorAmber {
+  background-color: var(--clr-amber);
+  color: var(--clr-amber);
+}
+
+.indicatorAmber[data-dark-theme="true"] {
+  border-color: var(--clr-amber);
+}
+
+.indicatorOrange {
+  background-color: var(--clr-orange);
+  color: var(--clr-orange);
+}
+
+.indicatorOrange[data-dark-theme="true"] {
+  border-color: var(--clr-orange);
+}
+
+.indicatorDeepOrange {
+  background-color: var(--clr-deepOrange);
+  color: var(--clr-deepOrange);
+}
+
+.indicatorDeepOrange[data-dark-theme="true"] {
+  border-color: var(--clr-deepOrange);
+}
+
+.large {
+  width: 16px;
+  height: 16px;
+}
+
+.icon {
+  background-color: transparent;
+  border: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.icon[data-dark-theme="false"].indicatorWhite {
+  color: var(--clr-gray1);
+}
+
+.icon.large {
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+}

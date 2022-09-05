@@ -1,0 +1,19 @@
+.days {
+  margin-left: 8px;
+}
+
+.warning {
+  color: var(--clr-war2);
+}
+
+.warning[data-dark-theme="true"] {
+  color: var(--clr-war1);
+}
+
+.error {
+  color: var(--clr-err2);
+}
+
+.error[data-dark-theme="true"] {
+  color: var(--clr-err1);
+}
