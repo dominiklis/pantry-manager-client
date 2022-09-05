@@ -31,7 +31,7 @@ const useStoragesList = ({ className }) => {
     });
 
   const getContainerStyles = () => {
-    let res = styles.container;
+    let res = "";
 
     if (className) res += ` ${className}`;
 

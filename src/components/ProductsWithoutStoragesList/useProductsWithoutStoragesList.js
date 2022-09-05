@@ -6,7 +6,6 @@ import {
 import { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { makeSelectProducts } from "store/selectors";
-import styles from "./ProductsWithoutStoragesList.module.css";
 
 const useProductsWithoutStoragesList = ({ className }) => {
   const [sortBy, setSortBy] = useState(sortProductsBy.sortByNameAsc);
@@ -27,7 +26,7 @@ const useProductsWithoutStoragesList = ({ className }) => {
   const handleFilterByChange = (value) => setFilterBy(value);
 
   const getContainerStyles = () => {
-    let res = styles.container;
+    let res = "";
 
     if (className) res += ` ${className}`;
 
