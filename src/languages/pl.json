@@ -122,10 +122,6 @@
   "EditProduct": {
     "toastText": "zmiany zostały zapisane",
     "submitButtonText": "Zapisz zmiany",
-    "nameInputLabel": "nazwa produktu",
-    "expDateInputLabel": "termin ważności",
-    "amountInputLabel": "ilość",
-    "selectStorageLabel": "magazyn",
     "submitButton": "Zapisz zmiany",
     "noSelectedLabels": "brak wybranych etykiet"
   },
@@ -150,5 +146,21 @@
 
   "SelectShoppingList": {
     "noShoppingOption": "brak listy"
+  },
+
+  "CreateOverlay": {
+    "header": "Utwórz",
+    "createProduct": "Produkt",
+    "createStorage": "Magazyn",
+    "createLabel": "Etykieta",
+    "createShoppingList": "Lista zakupów",
+    "createShoppingListItem": "Pozycja do kupienia"
+  },
+
+  "ProductForm": {
+    "nameInputLabel": "nazwa produktu",
+    "expDateInputLabel": "termin ważności",
+    "amountInputLabel": "ilość",
+    "selectStorageLabel": "magazyn"
   }
 }

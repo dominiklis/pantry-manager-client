@@ -17,6 +17,7 @@ import Select from "components/Select/Select";
 import Product from "components/Product/Product";
 import LabelChip from "components/LabelChip/LabelChip";
 import Label from "components/Label/Label";
+import ProductForm from "components/ProductForm/ProductForm";
 
 export {
   App,
@@ -38,4 +39,5 @@ export {
   Product,
   LabelChip,
   Label,
+  ProductForm,
 };

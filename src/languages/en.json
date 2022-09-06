@@ -122,10 +122,6 @@
   "EditProduct": {
     "toastText": "changes saved",
     "submitButtonText": "Save Changes",
-    "nameInputLabel": "product name",
-    "expDateInputLabel": "expiration date",
-    "amountInputLabel": "amount",
-    "selectStorageLabel": "storage",
     "submitButton": "Submit Changes",
     "noSelectedLabels": "no selected labels"
   },
@@ -150,5 +146,21 @@
 
   "SelectShoppingList": {
     "noShoppingOption": "no shopping list"
+  },
+
+  "CreateOverlay": {
+    "header": "Create",
+    "createProduct": "Product",
+    "createStorage": "Storage",
+    "createLabel": "Label",
+    "createShoppingList": "Shopping List",
+    "createShoppingListItem": "Shopping List Item"
+  },
+
+  "ProductForm": {
+    "nameInputLabel": "product name",
+    "expDateInputLabel": "expiration date",
+    "amountInputLabel": "amount",
+    "selectStorageLabel": "storage"
   }
 }
