@@ -41,10 +41,6 @@ const useToolbar = ({ componentName }) => {
       <Translate section={componentName} text="closeToExpiry" />
     ),
     new SelectOption(
-      sortProductsBy.sortByExpDateAsc,
-      <Translate section={componentName} text="expirationDate" />
-    ),
-    new SelectOption(
       highlightProducts.expired,
       <Translate section={componentName} text="expired" />
     ),
