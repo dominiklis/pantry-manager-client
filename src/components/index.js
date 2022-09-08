@@ -21,6 +21,8 @@ import ProductForm from "components/ProductForm/ProductForm";
 import StorageForm from "components/StorageForm/StorageForm";
 import LabelForm from "components/LabelForm/LabelForm";
 import ShoppingListForm from "components/ShoppingListForm/ShoppingListForm";
+import ShoppingListItemForm from "components/ShoppingListItemForm/ShoppingListItemForm";
+import SelectShoppingList from "components/SelectShoppingList/SelectShoppingList";
 
 export {
   App,
@@ -46,4 +48,6 @@ export {
   StorageForm,
   LabelForm,
   ShoppingListForm,
+  ShoppingListItemForm,
+  SelectShoppingList,
 };

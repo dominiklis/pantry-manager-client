@@ -152,6 +152,7 @@
     position: static;
     height: calc(100vh - var(--menu-top-row-heigh));
     height: 100%;
+    z-index: 1;
   }
 
   .container.hidden {

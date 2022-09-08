@@ -12,6 +12,8 @@ import CreateLabel from "components/Layout/CreateLabel";
 import useCreateLabel from "components/Layout/useCreateLabel";
 import CreateShoppingList from "components/Layout/CreateShoppingList";
 import useCreateShoppingList from "components/Layout/useCreateShoppingList";
+import CreateShoppingListItem from "components/Layout/CreateShoppingListItem";
+import useCreateShoppingListItem from "components/Layout/useCreateShoppingListItem";
 
 export {
   AppName,
@@ -28,4 +30,6 @@ export {
   useCreateLabel,
   CreateShoppingList,
   useCreateShoppingList,
+  CreateShoppingListItem,
+  useCreateShoppingListItem,
 };

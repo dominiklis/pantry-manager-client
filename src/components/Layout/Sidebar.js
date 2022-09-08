@@ -1,89 +1,27 @@
 import { useIsDarkTheme } from "hooks";
-import React, { useMemo } from "react";
+import React from "react";
 import styles from "./Sidebar.module.css";
 import { toggleTheme } from "store/actions";
 import { useDispatch } from "react-redux";
-import {
-  IoAlbumsOutline,
-  IoBookmarkOutline,
-  IoClipboardOutline,
-  IoClose,
-  IoFastFood,
-  IoHomeOutline,
-  IoLogOut,
-  IoSettingsSharp,
-} from "react-icons/io5";
+import { IoClose, IoLogOut } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
 import { Translate } from "components";
+import { useSidebar } from "components/Layout";
 
 const componentName = "Sidebar";
 
 const Sidebar = ({ hidden, onHideMenu }) => {
-  const dispatch = useDispatch();
   const darkTheme = useIsDarkTheme();
 
-  const items = useMemo(() => {
-    return [
-      {
-        path: "/",
-        icon: <IoHomeOutline />,
-        text: <Translate section={componentName} text="myPantry" />,
-      },
-      {
-        path: "/products",
-        icon: <IoFastFood />,
-        text: <Translate section={componentName} text="products" />,
-      },
-      {
-        path: "/storages",
-        icon: <IoAlbumsOutline />,
-        text: <Translate section={componentName} text="storages" />,
-      },
-      {
-        path: "/labels",
-        icon: <IoBookmarkOutline />,
-        text: <Translate section={componentName} text="labels" />,
-      },
-      {
-        path: "/lists",
-        icon: <IoClipboardOutline />,
-        text: <Translate section={componentName} text="shoppingLists" />,
-      },
-      {
-        path: "/settings",
-        icon: <IoSettingsSharp />,
-        text: <Translate section={componentName} text="settings" />,
-      },
-    ];
-  }, []);
-
-  const getContainerStyles = () => {
-    let res = styles.container;
-
-    if (hidden) res += ` ${styles.hidden}`;
-
-    return res;
-  };
-
-  const getBackdropStyles = () => {
-    let res = styles.backdrop;
-
-    if (hidden) res += ` ${styles.hidden}`;
-
-    return res;
-  };
-
   let location = useLocation();
+  const { items, getContainerStyles, getBackdropStyles, getItemStyles } =
+    useSidebar({
+      componentName,
+      pathname: location.pathname,
+      hidden,
+    });
 
-  const getItemStyles = (path) => {
-    let res = styles.sidebarItem;
-
-    if (location.pathname.split("/")[1] === path?.split("/")[1]) {
-      res += ` ${styles.sidebarItemSelected}`;
-    }
-
-    return res;
-  };
+  const dispatch = useDispatch();
 
   return (
     <nav className={getContainerStyles()} data-dark-theme={darkTheme}>

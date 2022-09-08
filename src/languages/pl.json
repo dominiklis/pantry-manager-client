@@ -11,7 +11,8 @@
     "tooLongName": "nazwa może składać się maks. z 255 znaków",
     "tooLongAmount": "wartość w polu ilość nie może być dłuższa niż 255 znaków",
     "tooLongLabel": "etykieta może składać maks. ze 90 znaków",
-    "daysForWarning": "niepoprawna wartość"
+    "daysForWarning": "niepoprawna wartość",
+    "tooLongQuantity": "wartość może składać się maks. z 255 znaków"
   },
 
   "Login": {
@@ -186,5 +187,35 @@
   "CreateStorage": {
     "submitButton": "Dodaj magazyn",
     "createStorageToast": "magazyn został dodany"
+  },
+
+  "LabelForm": {
+    "nameInputLabel": "nazwa etykiety"
+  },
+
+  "CreateLabel": {
+    "submitButtonText": "Dodaj etykietę",
+    "labelCreatedToast": "etykieta została dodana"
+  },
+
+  "ShoppingListForm": {
+    "nameInputLabel": "nazwa listy zakupów"
+  },
+
+  "CreateShoppingList": {
+    "submitButtonText": "Dodaj listę",
+    "listCreatedToast": "lista zakupów została dodana"
+  },
+
+  "ShoppingListItemForm": {
+    "nameInputLabel": "nazwa pozycji do kupienia",
+    "shoppingListLabel": "lista zakupów",
+    "itemCreatedToast": "pozycja do zakupienia została dodana",
+    "quantityLabel": "ilość"
+  },
+
+  "CreateShoppingListItem": {
+    "submitButtonText": "Dodaj pozycję do kupienia",
+    "itemCreatedToast": "pozycja została dodana"
   }
 }
