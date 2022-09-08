@@ -1,15 +1,15 @@
 import { Button } from "components";
 import { componentColors, componentSizes } from "constantStrings";
 import { useAccordion, useIsDarkTheme } from "hooks";
-import React from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import styles from "./Select.module.css";
 
 const Select = ({
   buttonStyles,
+  listStyles,
   options,
   selectedValue,
   onChange,
-  listStyles,
 }) => {
   const darkTheme = useIsDarkTheme();
   const { showContent, toggleShowContent, getContentStyles, closeAccordion } =
@@ -19,6 +19,19 @@ const Select = ({
     onChange(value);
     closeAccordion();
   };
+
+  const [inLeftHalf, setInLeftHalf] = useState(true);
+
+  const selectListRef = useRef(null);
+
+  useLayoutEffect(() => {
+    if (selectListRef.current) {
+      setInLeftHalf(
+        window.innerWidth / 2 <
+          selectListRef.current.getBoundingClientRect().left
+      );
+    }
+  }, []);
 
   const getBackdropStyles = () => {
     let res = styles.backdrop;
@@ -32,6 +45,7 @@ const Select = ({
     let res = `${styles.list} ${getContentStyles()}`;
 
     if (listStyles) res += ` ${listStyles}`;
+    if (inLeftHalf) res += ` ${styles.listRight}`;
 
     return res;
   };
@@ -56,7 +70,11 @@ const Select = ({
 
       <div className={getBackdropStyles()} onClick={closeAccordion} />
 
-      <ul className={getListStyles()}>
+      <ul
+        className={getListStyles()}
+        data-dark-theme={darkTheme}
+        ref={selectListRef}
+      >
         {options.map((option, index) => (
           <li
             key={index}

@@ -29,11 +29,17 @@
 
 .list {
   border-radius: 0 0 8px 8px;
+  border: 1px solid transparent;
   background-color: var(--clr-gray6);
   position: absolute;
   left: 0;
   top: 28px;
   z-index: 3;
+}
+
+.listRight {
+  left: auto;
+  right: 0;
 }
 
 .listItem {
