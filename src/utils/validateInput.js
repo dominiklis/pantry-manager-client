@@ -192,6 +192,17 @@ const validateInput = (inputName, value, noErrorOnEmpty = false) => {
         );
 
       return "";
+
+    case "quantity":
+      if (value.length > maxAndMinValues.maxNameLength)
+        return (
+          <Translate
+            section={sectionName}
+            text={errorsProperties.tooLongQuantity}
+          />
+        );
+
+      return "";
   }
 };
 

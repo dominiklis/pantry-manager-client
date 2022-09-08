@@ -1,8 +1,5 @@
-import { Button, Input, Translate } from "components";
-import {
-  SelectShoppingList,
-  useAddProductToShoppingList,
-} from "components/Product";
+import { Button, Input, SelectShoppingList, Translate } from "components";
+import { useAddProductToShoppingList } from "components/Product";
 import { componentColors } from "constantStrings";
 import React from "react";
 

@@ -1,5 +1,5 @@
 import { Label, Select } from "components";
-import { useSelectShoppingList } from "components/Product";
+import useSelectShoppingList from "components/SelectShoppingList/useSelectShoppingList";
 import { various } from "constantStrings";
 import React from "react";
 
@@ -7,8 +7,16 @@ import styles from "./SelectShoppingList.module.css";
 
 const componentName = "SelectShoppingList";
 
-const SelectShoppingList = ({ onChange, selectedShoppingList, label }) => {
-  const { selectStorageOptions } = useSelectShoppingList({ componentName });
+const SelectShoppingList = ({
+  selectedShoppingList,
+  label,
+  setInput,
+  onChange,
+}) => {
+  const { selectStorageOptions } = useSelectShoppingList({
+    componentName,
+    setInput,
+  });
 
   return (
     <div className={styles.container}>
