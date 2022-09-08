@@ -1,0 +1,29 @@
+.submitButtonWrapper {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.daysAndColor {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.numberOfDaysForWarning {
+  flex: 1;
+}
+
+.storageColor {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.colorButtonsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

@@ -2,9 +2,13 @@
   width: 8px;
   height: 8px;
   border: 1px solid var(--clr-gray1);
-  border-radius: 8px;
+  border-radius: 50%;
   transition: 0.2s ease-in;
   transition-property: background-color, border-color, filter;
+}
+
+.indicator.transparentBorder {
+  border-color: transparent;
 }
 
 .indicatorWhite {
@@ -159,6 +163,11 @@
 .large {
   width: 16px;
   height: 16px;
+}
+
+.veryLarge {
+  width: 32px;
+  height: 32px;
 }
 
 .icon {

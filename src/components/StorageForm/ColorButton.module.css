@@ -1,0 +1,21 @@
+.button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  border-color: var(--clr-gray1);
+  transition-property: border-color;
+}
+
+.button[data-dark-theme="true"] {
+  border-color: var(--clr-gray7);
+}
+
+.button:hover {
+  border-color: var(--clr-prim2);
+}

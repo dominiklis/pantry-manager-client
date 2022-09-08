@@ -9,6 +9,7 @@ const errorsProperties = {
   passwordSpecialCharacter: "passwordSpecialCharacter",
   tooLongName: "tooLongName",
   tooLongAmount: "tooLongAmount",
+  daysForWarning: "daysForWarning",
 };
 
 export default errorsProperties;

@@ -9,7 +9,9 @@
     "passwordUppercase": "* 1 wielka litera",
     "passwordSpecialCharacter": "* 1 znak specjalny",
     "tooLongName": "nazwa może składać się maks. z 255 znaków",
-    "tooLongAmount": "wartość w polu ilość nie może być dłuższa niż 255 znaków"
+    "tooLongAmount": "wartość w polu ilość nie może być dłuższa niż 255 znaków",
+    "tooLongLabel": "etykieta może składać maks. ze 90 znaków",
+    "daysForWarning": "niepoprawna wartość"
   },
 
   "Login": {
@@ -154,7 +156,12 @@
     "createStorage": "Magazyn",
     "createLabel": "Etykieta",
     "createShoppingList": "Lista zakupów",
-    "createShoppingListItem": "Pozycja do kupienia"
+    "createShoppingListItem": "Pozycja do kupienia",
+    "createProductHeader": "Dodaj produkt",
+    "createStorageHeader": "Dodaj magazyn",
+    "createLabelHeader": "Dodaj etykietę",
+    "createShoppingListHeader": "Dodaj listę zakupów",
+    "createShoppingListItemHeader": "Dodaj pozycję do kupienia"
   },
 
   "ProductForm": {
@@ -162,5 +169,22 @@
     "expDateInputLabel": "termin ważności",
     "amountInputLabel": "ilość",
     "selectStorageLabel": "magazyn"
+  },
+
+  "CreateProduct": {
+    "submitButton": "Dodaj produkt",
+    "createProductToast": "produkt został dodany"
+  },
+
+  "StorageForm": {
+    "nameInputLabel": "nazwa",
+    "daysLabel": "liczba dni, dla których aplikacja będzie ostrzegać (zostaw puste by użyć domyślnej wartości)",
+    "storageColorLabel": "kolor magazynu",
+    "colorsToChooseLabel": "kolory do wyboru"
+  },
+
+  "CreateStorage": {
+    "submitButton": "Dodaj magazyn",
+    "createStorageToast": "magazyn został dodany"
   }
 }

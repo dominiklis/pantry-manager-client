@@ -9,7 +9,9 @@
     "passwordUppercase": "* 1 uppercase letter",
     "passwordSpecialCharacter": "* 1 special character",
     "tooLongName": "name length cannot be more than 255 characters",
-    "tooLongAmount": "amount length cannot be more than 255 characters"
+    "tooLongAmount": "amount length cannot be more than 255 characters",
+    "tooLongLabel": "label length cannot be more than 90 characters",
+    "daysForWarning": "invalid value"
   },
 
   "Login": {
@@ -137,7 +139,7 @@
   },
 
   "AddProductToShoppingList": {
-    "toast": "item created",
+    "toast": "item has been created",
     "addItem": "Add item",
     "name": "name",
     "amount": "amount",
@@ -154,7 +156,12 @@
     "createStorage": "Storage",
     "createLabel": "Label",
     "createShoppingList": "Shopping List",
-    "createShoppingListItem": "Shopping List Item"
+    "createShoppingListItem": "Shopping List Item",
+    "createProductHeader": "Create Product",
+    "createStorageHeader": "Create Storage",
+    "createLabelHeader": "Create Label",
+    "createShoppingListHeader": "Create Shopping List",
+    "createShoppingListItemHeader": "Create Shopping List Item"
   },
 
   "ProductForm": {
@@ -162,5 +169,22 @@
     "expDateInputLabel": "expiration date",
     "amountInputLabel": "amount",
     "selectStorageLabel": "storage"
+  },
+
+  "CreateProduct": {
+    "submitButton": "Create Product",
+    "createProductToast": "product has been created"
+  },
+
+  "StorageForm": {
+    "nameInputLabel": "name",
+    "daysLabel": "number of days for warning (leave empty to use default value)",
+    "storageColorLabel": "storage color",
+    "colorsToChooseLabel": "colors to choose"
+  },
+
+  "CreateStorage": {
+    "submitButton": "Create Storage",
+    "createStorageToast": "storage has been created"
   }
 }

@@ -5,6 +5,7 @@ import styles from "./Input.module.css";
 import { Label } from "components";
 
 const Input = ({
+  className,
   label,
   name,
   type,
@@ -16,9 +17,10 @@ const Input = ({
 }) => {
   const darkTheme = useIsDarkTheme();
 
-  const getStyles = () => {
+  const getContainerStyles = () => {
     let res = styles.container;
 
+    if (className) res += ` ${className}`;
     if (disabled) res += ` ${styles.disabled}`;
     if (error) res += ` ${styles.error}`;
 
@@ -26,7 +28,7 @@ const Input = ({
   };
 
   return (
-    <div className={getStyles()} data-dark-theme={darkTheme}>
+    <div className={getContainerStyles()} data-dark-theme={darkTheme}>
       <Label>{label}</Label>
       <input
         className={styles.input}

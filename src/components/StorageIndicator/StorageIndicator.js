@@ -4,13 +4,19 @@ import React from "react";
 import { IoAlbums, IoAlbumsOutline } from "react-icons/io5";
 import styles from "./StorageIndicator.module.css";
 
-const StorageIndicator = ({ className, color, size, hover, active, icon }) => {
+const StorageIndicator = ({
+  className,
+  color,
+  size,
+  hover,
+  active,
+  icon,
+  transparentBorder,
+}) => {
   const darkTheme = useIsDarkTheme();
 
   const getStyles = () => {
     let res = styles.indicator;
-
-    if (className) res += ` ${className}`;
 
     switch (color) {
       case storageColors.white:
@@ -85,9 +91,24 @@ const StorageIndicator = ({ className, color, size, hover, active, icon }) => {
         break;
     }
 
-    if (size === componentSizes.large) res += ` ${styles.large}`;
+    switch (size) {
+      default:
+        break;
+
+      case componentSizes.large:
+        res += ` ${styles.large}`;
+        break;
+
+      case componentSizes.veryLarge:
+        res += ` ${styles.veryLarge}`;
+        break;
+    }
+
     if (hover) res += ` ${styles.hover}`;
     if (active) res += ` ${styles.active}`;
+    if (transparentBorder) res += ` ${styles.transparentBorder}`;
+
+    if (className) res += ` ${className}`;
 
     return res;
   };

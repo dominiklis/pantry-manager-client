@@ -3,8 +3,8 @@ import validator from "validator";
 
 const storages = {
   get: () => requests.get("/storages"),
-  create: (storageName, color) =>
-    requests.post("/storages", { storageName, color }),
+  create: (storageName, color, numberOfDaysForWarning) =>
+    requests.post("/storages", { storageName, color, numberOfDaysForWarning }),
   edit: (storageId, storageName, color, numberOfDaysForWarning) =>
     requests.put(`/storages/${storageId}`, {
       storageName,

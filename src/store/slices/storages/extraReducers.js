@@ -13,8 +13,15 @@ export const getStorages = createAsyncThunk(
 
 export const createStorage = createAsyncThunk(
   "storages/createStorage",
-  async ({ storageName, color }, { rejectWithValue }) => {
-    const response = await api.storages.create(storageName, color);
+  async (
+    { storageName, color, numberOfDaysForWarning },
+    { rejectWithValue }
+  ) => {
+    const response = await api.storages.create(
+      storageName,
+      color,
+      numberOfDaysForWarning
+    );
     if (response.data) return response.data;
 
     return rejectWithValue(response.message);

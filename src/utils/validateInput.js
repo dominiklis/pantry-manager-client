@@ -143,11 +143,25 @@ const validateInput = (inputName, value, noErrorOnEmpty = false) => {
       );
 
     case "productName":
+    case "storageName":
+    case "shoppingListName":
+    case "shoppingListItemName":
       if (value.length > maxAndMinValues.maxNameLength)
         return (
           <Translate
             section={sectionName}
             text={errorsProperties.tooLongName}
+          />
+        );
+
+      return "";
+
+    case "labelName":
+      if (value.length > maxAndMinValues.maxLabelLength)
+        return (
+          <Translate
+            section={sectionName}
+            text={errorsProperties.tooLongLabel}
           />
         );
 
@@ -161,6 +175,23 @@ const validateInput = (inputName, value, noErrorOnEmpty = false) => {
             text={errorsProperties.tooLongAmount}
           />
         );
+
+      return "";
+
+    case "numberOfDaysForWarning":
+      if (noErrorOnEmpty && value === "") return "";
+
+      const d = parseInt(value);
+
+      if (!d || d <= 0)
+        return (
+          <Translate
+            section={sectionName}
+            text={errorsProperties.daysForWarning}
+          />
+        );
+
+      return "";
   }
 };
 
