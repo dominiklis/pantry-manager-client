@@ -18,6 +18,9 @@ import Product from "components/Product/Product";
 import LabelChip from "components/LabelChip/LabelChip";
 import Label from "components/Label/Label";
 import ProductForm from "components/ProductForm/ProductForm";
+import StorageForm from "components/StorageForm/StorageForm";
+import LabelForm from "components/LabelForm/LabelForm";
+import ShoppingListForm from "components/ShoppingListForm/ShoppingListForm";
 
 export {
   App,
@@ -40,4 +43,7 @@ export {
   LabelChip,
   Label,
   ProductForm,
+  StorageForm,
+  LabelForm,
+  ShoppingListForm,
 };

@@ -10,6 +10,8 @@ import CreateStorage from "components/Layout/CreateStorage";
 import useCreateStorage from "components/Layout/useCreateStorage";
 import CreateLabel from "components/Layout/CreateLabel";
 import useCreateLabel from "components/Layout/useCreateLabel";
+import CreateShoppingList from "components/Layout/CreateShoppingList";
+import useCreateShoppingList from "components/Layout/useCreateShoppingList";
 
 export {
   AppName,
@@ -24,4 +26,6 @@ export {
   useCreateStorage,
   CreateLabel,
   useCreateLabel,
+  CreateShoppingList,
+  useCreateShoppingList,
 };
