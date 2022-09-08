@@ -1,6 +1,5 @@
-import { Translate } from "components";
+import { StorageForm, Translate } from "components";
 import { useCreateStorage } from "components/Layout";
-import StorageForm from "components/StorageForm/StorageForm";
 import React from "react";
 
 const componentName = "CreateStorage";

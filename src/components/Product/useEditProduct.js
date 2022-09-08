@@ -1,9 +1,8 @@
-import { various } from "constantStrings";
 import { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToast, editProduct } from "store/actions";
 import { makeSelectProductById } from "store/selectors";
-import { formatDate, validateInput } from "utils";
+import { formatDate } from "utils";
 
 const useEditProduct = ({ productId, componentName }) => {
   const selectProduct = useMemo(makeSelectProductById, []);
@@ -26,35 +25,6 @@ const useEditProduct = ({ productId, componentName }) => {
     amount: null,
   });
 
-  const handleChange = (e) => {
-    setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-
-    if (e.target.name === "productName" || e.target.name === "amount") {
-      const err = validateInput(e.target.name, e.target.value);
-
-      setErrors((prev) => ({ ...prev, [e.target.name]: err }));
-    }
-  };
-
-  const handleStorageChange = (storageId) => {
-    if (storageId === various.noStorage) storageId = null;
-
-    setInput((prev) => ({
-      ...prev,
-      storageId,
-    }));
-  };
-
-  const handleLabelButtonClick = (label) =>
-    setInput((prev) => {
-      let labels = prev.labels ? [...prev?.labels] : [];
-
-      if (!labels.includes(label)) labels.push(label);
-      else labels = labels.filter((labelId) => labelId !== label);
-
-      return { ...prev, labels };
-    });
-
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
@@ -66,7 +36,6 @@ const useEditProduct = ({ productId, componentName }) => {
         productName: input.productName,
         expirationDate: input.expirationDate ? input.expirationDate : null,
         amount: input.amount ? input.amount : null,
-        unit: input.unit,
         storageId: input.storageId,
         labels: input.labels,
       })
@@ -85,10 +54,9 @@ const useEditProduct = ({ productId, componentName }) => {
   return {
     loading,
     input,
+    setInput,
+    setErrors,
     errors,
-    handleChange,
-    handleStorageChange,
-    handleLabelButtonClick,
     handleSubmit,
   };
 };

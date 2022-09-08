@@ -12,8 +12,12 @@ const Product = ({ productId, highlight }) => {
     initiallyOpen: false,
   });
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") toggleShowContent();
+  };
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} tabIndex={1} onKeyDown={handleKeyDown}>
       <ProductHeader
         toggleShowContent={toggleShowContent}
         productName={product.productName}

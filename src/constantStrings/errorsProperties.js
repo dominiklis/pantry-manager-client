@@ -10,6 +10,7 @@ const errorsProperties = {
   tooLongName: "tooLongName",
   tooLongAmount: "tooLongAmount",
   daysForWarning: "daysForWarning",
+  tooLongLabel: "tooLongLabel",
 };
 
 export default errorsProperties;

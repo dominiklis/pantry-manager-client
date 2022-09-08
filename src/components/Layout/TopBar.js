@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./TopBar.module.css";
+import styles from "./Topbar.module.css";
 import { IoSearch } from "react-icons/io5";
 import { useIsDarkTheme } from "hooks";
 
-const TopBar = () => {
+const Topbar = () => {
   const darkTheme = useIsDarkTheme();
 
   return (
@@ -18,4 +18,4 @@ const TopBar = () => {
   );
 };
 
-export default TopBar;
+export default Topbar;

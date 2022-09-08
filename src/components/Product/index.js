@@ -3,8 +3,6 @@ import LabelsList from "components/Product/LabelsList";
 import ProductActions from "components/Product/ProductActions";
 import ProductAction from "components/Product/ProductAction";
 import EditProduct from "components/Product/EditProduct";
-import SelectStorage from "components/Product/SelectStorage";
-import SelectLabels from "components/Product/SelectLabels";
 import AddProductToShoppingList from "components/Product/AddProductToShoppingList";
 import SelectShoppingList from "components/Product/SelectShoppingList";
 import useAddProductToShoppingList from "components/Product/useAddProductToShoppingList";
@@ -20,8 +18,6 @@ export {
   ProductActions,
   ProductAction,
   EditProduct,
-  SelectStorage,
-  SelectLabels,
   AddProductToShoppingList,
   SelectShoppingList,
   useAddProductToShoppingList,
