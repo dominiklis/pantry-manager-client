@@ -7,3 +7,26 @@
   position: static;
   width: 100%;
 }
+
+.selectStorageList[data-dark-theme="true"] {
+  border-left-color: var(--clr-gray3);
+  border-right-color: var(--clr-gray3);
+  border-bottom-color: var(--clr-gray3);
+}
+
+.buttonStyles {
+  border: 1px solid var(--clr-gray2);
+}
+
+.buttonStyles[data-dark-theme="true"] {
+  border-color: var(--clr-gray3);
+}
+
+.buttonStyles:hover {
+  border-color: var(--clr-prim4);
+  background-color: var(--clr-prim1);
+}
+
+.buttonStyles[data-dark-theme="true"]:hover {
+  border-color: var(--clr-prim2);
+}

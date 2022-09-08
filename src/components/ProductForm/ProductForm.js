@@ -70,7 +70,6 @@ const ProductForm = ({
         value={input.amount}
         error={errors.amount}
         onChange={handleChange}
-        keepLabelUp
       />
 
       <SelectStorage

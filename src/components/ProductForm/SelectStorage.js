@@ -17,6 +17,7 @@ const SelectStorage = ({ onChange, selectedStorage, label }) => {
         selectedValue={selectedStorage ?? various.noStorage}
         onChange={onChange}
         listStyles={styles.selectStorageList}
+        buttonStyles={styles.buttonStyles}
       />
     </div>
   );
