@@ -1,8 +1,11 @@
 import { Button } from "components";
+import { useSelect } from "components/Select";
 import { componentColors, componentSizes } from "constantStrings";
-import { useAccordion, useIsDarkTheme } from "hooks";
-import React, { useLayoutEffect, useRef, useState } from "react";
+import { useIsDarkTheme } from "hooks";
+import React from "react";
+import { CSSTransition } from "react-transition-group";
 import styles from "./Select.module.css";
+import listAnimationStyles from "./SelectList.module.css";
 
 const Select = ({
   buttonStyles,
@@ -12,43 +15,16 @@ const Select = ({
   onChange,
 }) => {
   const darkTheme = useIsDarkTheme();
-  const { showContent, toggleShowContent, getContentStyles, closeAccordion } =
-    useAccordion({ initiallyOpen: false });
 
-  const handleButtonClick = (value) => {
-    onChange(value);
-    closeAccordion();
-  };
-
-  const [inLeftHalf, setInLeftHalf] = useState(true);
-
-  const selectListRef = useRef(null);
-
-  useLayoutEffect(() => {
-    if (selectListRef.current) {
-      setInLeftHalf(
-        window.innerWidth / 2 <
-          selectListRef.current.getBoundingClientRect().left
-      );
-    }
-  }, []);
-
-  const getBackdropStyles = () => {
-    let res = styles.backdrop;
-
-    if (showContent) res += ` ${styles.showBackdrop}`;
-
-    return res;
-  };
-
-  const getListStyles = () => {
-    let res = `${styles.list} ${getContentStyles()}`;
-
-    if (listStyles) res += ` ${listStyles}`;
-    if (inLeftHalf) res += ` ${styles.listRight}`;
-
-    return res;
-  };
+  const {
+    toggleShowList,
+    getBackdropStyles,
+    handleHideList,
+    selectListRef,
+    showList,
+    getListStyles,
+    handleButtonClick,
+  } = useSelect({ onChange, listStyles });
 
   if (!options || !Array.isArray(options)) return null;
 
@@ -63,36 +39,44 @@ const Select = ({
         icon={
           options.filter((option) => option.value === selectedValue)[0]?.icon
         }
-        onClick={toggleShowContent}
+        onClick={toggleShowList}
       >
         {options.filter((option) => option.value === selectedValue)[0]?.label}
       </Button>
 
-      <div className={getBackdropStyles()} onClick={closeAccordion} />
+      <div className={getBackdropStyles()} onClick={handleHideList} />
 
-      <ul
-        className={getListStyles()}
-        data-dark-theme={darkTheme}
-        ref={selectListRef}
+      <CSSTransition
+        nodeRef={selectListRef}
+        in={showList}
+        timeout={200}
+        classNames={listAnimationStyles}
+        unmountOnExit
       >
-        {options.map((option, index) => (
-          <li
-            key={index}
-            className={styles.listItem}
-            data-dark-theme={darkTheme}
-          >
-            <Button
-              type="button"
-              icon={option.icon}
-              backgroundColor={componentColors.transparent}
-              size={componentSizes.small}
-              onClick={() => handleButtonClick(option.value)}
+        <ul
+          className={getListStyles()}
+          data-dark-theme={darkTheme}
+          ref={selectListRef}
+        >
+          {options.map((option, index) => (
+            <li
+              key={index}
+              className={styles.listItem}
+              data-dark-theme={darkTheme}
             >
-              {option.label}
-            </Button>
-          </li>
-        ))}
-      </ul>
+              <Button
+                type="button"
+                icon={option.icon}
+                backgroundColor={componentColors.transparent}
+                size={componentSizes.small}
+                onClick={() => handleButtonClick(option.value)}
+              >
+                {option.label}
+              </Button>
+            </li>
+          ))}
+        </ul>
+      </CSSTransition>
     </div>
   );
 };
