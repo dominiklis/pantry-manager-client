@@ -14,12 +14,17 @@ const Sidebar = ({ hidden, onHideMenu }) => {
   const darkTheme = useIsDarkTheme();
 
   let location = useLocation();
-  const { items, getContainerStyles, getBackdropStyles, getItemStyles } =
-    useSidebar({
-      componentName,
-      pathname: location.pathname,
-      hidden,
-    });
+  const {
+    items,
+    getContainerStyles,
+    getBackdropStyles,
+    getItemStyles,
+    handleLogout,
+  } = useSidebar({
+    componentName,
+    pathname: location.pathname,
+    hidden,
+  });
 
   const dispatch = useDispatch();
 
@@ -49,7 +54,7 @@ const Sidebar = ({ hidden, onHideMenu }) => {
             className={`${styles.sidebarItem} ${styles.sidebarItemWarning}`}
             data-dark-theme={darkTheme}
           >
-            <button>
+            <button onClick={handleLogout}>
               <IoLogOut />
               <span>
                 <Translate section={componentName} text="logout" />

@@ -8,6 +8,8 @@ import {
   IoHomeOutline,
   IoSettingsSharp,
 } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { logoutUser } from "store/actions";
 import styles from "./Sidebar.module.css";
 
 const useSidebar = ({ componentName, hidden, pathname }) => {
@@ -44,7 +46,7 @@ const useSidebar = ({ componentName, hidden, pathname }) => {
         text: <Translate section={componentName} text="settings" />,
       },
     ];
-  }, []);
+  }, [componentName]);
 
   const getContainerStyles = () => {
     let res = styles.container;
@@ -72,7 +74,17 @@ const useSidebar = ({ componentName, hidden, pathname }) => {
     return res;
   };
 
-  return { items, getContainerStyles, getBackdropStyles, getItemStyles };
+  const dispatch = useDispatch();
+
+  const handleLogout = async () => await dispatch(logoutUser());
+
+  return {
+    items,
+    getContainerStyles,
+    getBackdropStyles,
+    getItemStyles,
+    handleLogout,
+  };
 };
 
 export default useSidebar;
