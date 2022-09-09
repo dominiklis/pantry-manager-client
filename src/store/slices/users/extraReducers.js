@@ -4,20 +4,24 @@ import api from "api";
 export const loginUser = createAsyncThunk(
   "users/loginUser",
   async ({ login, password }, { rejectWithValue }) => {
-    const response = await api.users.login(login, password);
-    if (response.data) return response.data;
-
-    return rejectWithValue(response.message);
+    try {
+      const response = await api.users.login(login, password);
+      return response?.data;
+    } catch (error) {
+      return rejectWithValue(error?.message);
+    }
   }
 );
 
 export const registerUser = createAsyncThunk(
   "users/registerUser",
   async ({ userName, email, password }, { rejectWithValue }) => {
-    const response = await api.users.register(userName, email, password);
-    if (response.data) return response.data;
-
-    return rejectWithValue(response.message);
+    try {
+      const response = await api.users.register(userName, email, password);
+      return response?.data;
+    } catch (error) {
+      return rejectWithValue(error?.message);
+    }
   }
 );
 

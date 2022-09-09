@@ -32,6 +32,7 @@
     "password": "password *",
     "pageHeader": "Register",
     "buttonText": "Register",
+    "error": "user with this name or email already exists",
     "footer": "Already have an account?",
     "link": "Sign in!",
     "weAreGlad": "Nice to see you, "

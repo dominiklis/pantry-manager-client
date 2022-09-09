@@ -51,19 +51,21 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setShowWelcomToast(true);
-    const result = await dispatch(registerUser(input)).unwrap();
+    try {
+      setShowWelcomToast(true);
+      const result = await dispatch(registerUser(input)).unwrap();
 
-    if (result) {
-      const { userId } = result;
+      if (result) {
+        const { userId } = result;
 
-      dispatch(setStorages([]));
-      dispatch(setProducts([]));
-      dispatch(setLabels([]));
-      dispatch(setShoppingLists([]));
-      dispatch(setShoppingListItems([]));
-      dispatch(setSettings(userId));
-    }
+        dispatch(setStorages([]));
+        dispatch(setProducts([]));
+        dispatch(setLabels([]));
+        dispatch(setShoppingLists([]));
+        dispatch(setShoppingListItems([]));
+        dispatch(setSettings(userId));
+      }
+    } catch {}
   };
 
   useEffect(() => {
@@ -123,6 +125,7 @@ const Register = () => {
         value={input.userName}
         onChange={handleChange}
         error={errors.userName}
+        autoFocus
       />
       <Input
         name="email"

@@ -32,9 +32,10 @@
     "password": "hasło *",
     "pageHeader": "Rejestracja",
     "buttonText": "Zaloguj",
-    "footer": "Nie posiadasz konta?",
-    "link": "Zarejestruj się!",
-    "weAreGlad": "Miło, że do nas dołączyłeś, "
+    "error": "użytkownik o podanej nazwie lub emailu już istnieje",
+    "footer": "Posiadasz konto?",
+    "link": "Zaloguj się",
+    "weAreGlad": "Miło, że dołączyłeś, "
   },
 
   "AuthPageContainer": {
