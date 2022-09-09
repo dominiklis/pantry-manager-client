@@ -1,20 +1,20 @@
-.overlay-enter {
+.enter {
   opacity: 0;
   transform: translateY(100%);
 }
 
-.overlay-enter-active {
+.enterActive {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 200ms, transform 200ms;
 }
 
-.overlay-exit {
+.exit {
   opacity: 1;
   transform: translateY(0);
 }
 
-.overlay-exit-active {
+.exitActive {
   opacity: 0;
   transform: translateY(100%);
   transition: opacity 200ms, transform 200ms;

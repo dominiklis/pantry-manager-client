@@ -13,6 +13,7 @@ import {
 } from "components/Layout";
 import { various } from "constantStrings";
 import { CSSTransition } from "react-transition-group";
+import overlayStyles from "./Overlay.module.css";
 
 const Layout = () => {
   const darkTheme = useIsDarkTheme();
@@ -63,7 +64,7 @@ const Layout = () => {
         nodeRef={overlayRef}
         in={showCreateOverlay}
         timeout={200}
-        classNames="overlay"
+        classNames={overlayStyles}
         unmountOnExit
       >
         <CreateOverlay ref={overlayRef} onHideButtonClick={handleHideCreate} />

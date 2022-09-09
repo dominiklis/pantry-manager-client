@@ -21,7 +21,6 @@ import {
   setInitialLoad,
   setSettings,
 } from "store/actions";
-import "styles/overlayStyles.css";
 
 const App = () => {
   const dispatch = useDispatch();
