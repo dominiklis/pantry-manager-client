@@ -1,7 +1,7 @@
 import { LoadingPage, RequireAuth, ToastsContainer } from "components";
 import { useApp } from "components/App";
 import Layout from "components/Layout/Layout";
-import { Home, Login, Register } from "pages";
+import { Home, Login, Register, Storages } from "pages";
 import { Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -24,9 +24,17 @@ const App = () => {
               </RequireAuth>
             }
           />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
+          <Route
+            path="/storages"
+            element={
+              <RequireAuth>
+                <Storages />
+              </RequireAuth>
+            }
+          />
         </Route>
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
       </Routes>
     </div>
   );

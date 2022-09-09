@@ -49,19 +49,21 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setShowWelcomToast(true);
-    const result = await dispatch(loginUser(input)).unwrap();
+    try {
+      setShowWelcomToast(true);
+      const result = await dispatch(loginUser(input)).unwrap();
 
-    if (result) {
-      const { userId } = result;
+      if (result) {
+        const { userId } = result;
 
-      dispatch(getStorages());
-      dispatch(getProducts());
-      dispatch(getLabels());
-      dispatch(getShoppingLists());
-      dispatch(getShoppingListItems());
-      dispatch(setSettings(userId));
-    }
+        dispatch(getStorages());
+        dispatch(getProducts());
+        dispatch(getLabels());
+        dispatch(getShoppingLists());
+        dispatch(getShoppingListItems());
+        dispatch(setSettings(userId));
+      }
+    } catch {}
   };
 
   useEffect(() => {
@@ -115,6 +117,7 @@ const Login = () => {
         value={input.login}
         onChange={handleChange}
         error={errors.login}
+        autoFocus
       />
       <Input
         label={<Translate section={componentName} text="passwordInput" />}
