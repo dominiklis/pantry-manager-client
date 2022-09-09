@@ -16,18 +16,22 @@ const ToastContainer = () => {
   const [toastToRemove, setToastToRemove] = useState("");
 
   useEffect(() => {
+    let timeout = null;
+
     if (toasts.length) {
       const id = toasts[toasts.length - 1].id;
 
-      setTimeout(() => {
+      timeout = setTimeout(() => {
         setToastToRemove(id);
       }, showToastTime);
     }
+
+    return () => clearTimeout(timeout);
   }, [toasts]);
 
   useEffect(() => {
     dispatch(removeToast(toastToRemove));
-  }, [toastToRemove]);
+  }, [dispatch, toastToRemove]);
 
   return ReactDOM.createPortal(
     <div className={styles.container}>
