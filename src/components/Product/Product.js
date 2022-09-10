@@ -1,23 +1,32 @@
 import { ProductActions, ProductHeader, useProduct } from "components/Product";
 import ProductDetails from "components/Product/ProductDetails";
 import { useAccordion } from "hooks";
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Product.module.css";
 
-const Product = ({ productId, highlight }) => {
+const Product = ({ productId, highlight, initiallyOpen, open }) => {
   const { product, storage, closeToExpiry, expired, numberOfDaysForWarning } =
     useProduct({ productId });
 
-  const { toggleShowContent, getContentStyles } = useAccordion({
-    initiallyOpen: false,
+  const { toggleShowContent, getContentStyles, openAccordion } = useAccordion({
+    initiallyOpen: initiallyOpen ?? false,
   });
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") toggleShowContent();
   };
 
+  useEffect(() => {
+    if (open) openAccordion();
+  }, [open]);
+
   return (
-    <div className={styles.container} tabIndex={1} onKeyDown={handleKeyDown}>
+    <div
+      className={styles.container}
+      tabIndex={1}
+      onKeyDown={handleKeyDown}
+      id={productId}
+    >
       <ProductHeader
         toggleShowContent={toggleShowContent}
         productName={product.productName}

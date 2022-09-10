@@ -11,7 +11,7 @@ import styles from "./ProductsWithoutStoragesList.module.css";
 
 const componentName = "ProductsWithoutStoragesList";
 
-const ProductsWithoutStoragesList = ({ className }) => {
+const ProductsWithoutStoragesList = ({ className, selectedProduct }) => {
   const {
     sortBy,
     highlight,
@@ -40,7 +40,11 @@ const ProductsWithoutStoragesList = ({ className }) => {
         onFilterByChange={handleFilterByChange}
       />
 
-      <ProductsList products={products} highlight={highlight} />
+      <ProductsList
+        products={products}
+        highlight={highlight}
+        selectedProduct={selectedProduct}
+      />
     </div>
   );
 };

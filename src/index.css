@@ -78,6 +78,10 @@
   --clr-white: #e4e6eb;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 p,
 h1,
 h2,
