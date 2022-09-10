@@ -222,5 +222,12 @@
 
   "Storages": {
     "pageHeader": "Storages"
+  },
+
+  "Storage": {
+    "pageHeader": "Storage",
+    "editButtonText": "edit",
+    "deleteButtonText": "delete",
+    "warningInfoText": "number of days for warning:"
   }
 }

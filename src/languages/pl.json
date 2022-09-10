@@ -222,5 +222,12 @@
 
   "Storages": {
     "pageHeader": "Magazyny"
+  },
+
+  "Storage": {
+    "pageHeader": "Magazyn",
+    "editButtonText": "edytuj",
+    "deleteButtonText": "usuń",
+    "warningInfoText": "liczba dni, dla których aplikacja będzie informować o zbliżającym się terminie ważności:"
   }
 }

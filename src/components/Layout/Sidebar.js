@@ -5,7 +5,7 @@ import { toggleTheme } from "store/actions";
 import { useDispatch } from "react-redux";
 import { IoClose, IoLogOut } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
-import { Translate } from "components";
+import { AppLanguage, Translate } from "components";
 import { useSidebar } from "components/Layout";
 
 const componentName = "Sidebar";
@@ -69,6 +69,7 @@ const Sidebar = ({ hidden, onHideMenu }) => {
         >
           toggle theme
         </button>
+        <AppLanguage />
       </div>
       <div className={getBackdropStyles()} onClick={onHideMenu} />
     </nav>

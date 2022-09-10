@@ -11,6 +11,7 @@ const Button = ({
   disabled,
   type,
   backgroundColor,
+  colorOnHover,
   loading,
   icon,
   onClick,
@@ -58,6 +59,36 @@ const Button = ({
     return res;
   };
 
+  const getIconStyles = () => {
+    let res = styles.icon;
+
+    switch (colorOnHover) {
+      default:
+        break;
+
+      case componentColors.error:
+        res += ` ${styles.errorColorHover}`;
+        break;
+    }
+
+    return res;
+  };
+
+  const getTextStyles = () => {
+    let res = styles.text;
+
+    switch (colorOnHover) {
+      default:
+        break;
+
+      case componentColors.error:
+        res += ` ${styles.errorColorHover}`;
+        break;
+    }
+
+    return res;
+  };
+
   return (
     <button
       data-dark-theme={darkTheme}
@@ -70,8 +101,8 @@ const Button = ({
         <LoadingButton />
       ) : (
         <div className={styles.content}>
-          {icon ? <span className={styles.icon}>{icon}</span> : null}
-          {!iconButton && <span className={styles.text}>{children}</span>}
+          {icon ? <span className={getIconStyles()}>{icon}</span> : null}
+          {!iconButton && <span className={getTextStyles()}>{children}</span>}
         </div>
       )}
     </button>

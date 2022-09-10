@@ -221,3 +221,28 @@
   height: 42px;
   width: 42px;
 }
+
+/* text colors */
+.icon.errorColor,
+.text.errorColor {
+  color: var(--clr-err1);
+}
+
+.button[data-dark-theme="true"] .icon.errorColor,
+.button[data-dark-theme="true"] .text.errorColor {
+  color: var(--clr-err2);
+}
+
+.button:hover .icon.errorColor,
+.button:hover .text.errorColor,
+.button:hover .icon.errorColorHover,
+.button:hover .text.errorColorHover {
+  color: var(--clr-err2);
+}
+
+.button:hover[data-dark-theme="true"] .icon.errorColor,
+.button:hover[data-dark-theme="true"] .text.errorColor,
+.button:hover[data-dark-theme="true"] .icon.errorColorHover,
+.button:hover[data-dark-theme="true"] .text.errorColorHover {
+  color: var(--clr-err1);
+}
