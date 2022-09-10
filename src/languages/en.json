@@ -218,5 +218,9 @@
   "CreateShoppingListItem": {
     "submitButtonText": "Create Item",
     "itemCreatedToast": "shopping list item has been created"
+  },
+
+  "Storages": {
+    "pageHeader": "Storages"
   }
 }

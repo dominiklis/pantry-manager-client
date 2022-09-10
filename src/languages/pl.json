@@ -218,5 +218,9 @@
   "CreateShoppingListItem": {
     "submitButtonText": "Dodaj pozycję do kupienia",
     "itemCreatedToast": "pozycja została dodana"
+  },
+
+  "Storages": {
+    "pageHeader": "Magazyny"
   }
 }

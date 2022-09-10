@@ -11,7 +11,7 @@ import styles from "./StoragesList.module.css";
 
 const componentName = "StoragesList";
 
-const StoragesList = ({ className }) => {
+const StoragesList = ({ className, noHeader }) => {
   const {
     sortBy,
     displayAs,
@@ -23,9 +23,11 @@ const StoragesList = ({ className }) => {
 
   return (
     <div className={getContainerStyles()}>
-      <div className={styles.header}>
-        <Translate section={componentName} text="header" />
-      </div>
+      {noHeader ? null : (
+        <div className={styles.header}>
+          <Translate section={componentName} text="header" />
+        </div>
+      )}
 
       <div className={styles.toolbar}>
         <SortByButton
