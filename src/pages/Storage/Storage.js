@@ -19,8 +19,6 @@ const Storage = () => {
 
   return (
     <PageContainer>
-      <Translate section={componentName} text="pageHeader" />
-
       <div className={styles.headerWrapper}>
         <div className={styles.storageName}>
           <StorageIndicator

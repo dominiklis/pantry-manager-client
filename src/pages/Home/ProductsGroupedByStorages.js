@@ -1,6 +1,6 @@
-import { Translate } from "components";
+import { StorageHeader, Translate } from "components";
 import { various } from "constantStrings";
-import { ProductsListItem, StorageHeader } from "pages/Home";
+import { ProductsListItem } from "pages/Home";
 import React, { useMemo } from "react";
 import { useSelector } from "react-redux";
 import styles from "./ProductsGroupedByStorages.module.css";

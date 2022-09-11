@@ -6,7 +6,6 @@
   display: flex;
   gap: 8px;
   flex-direction: column;
-  margin-top: 16px;
 }
 
 .warnings > div {

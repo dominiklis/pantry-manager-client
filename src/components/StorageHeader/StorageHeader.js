@@ -16,7 +16,7 @@ const StorageHeader = ({
 
   return (
     <AppLink
-      to={`storages/${storageId}`}
+      to={`/storages/${storageId}`}
       color="white"
       className={styles.container}
     >

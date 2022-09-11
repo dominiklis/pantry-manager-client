@@ -53,10 +53,6 @@
     "logout": "Wyloguj się"
   },
 
-  "Home": {
-    "myPantry": "Moja Spiżarnia"
-  },
-
   "ExpiredProducts": {
     "header": "Przeterminowane"
   },
@@ -220,14 +216,14 @@
     "itemCreatedToast": "pozycja została dodana"
   },
 
-  "Storages": {
-    "pageHeader": "Magazyny"
-  },
-
   "Storage": {
-    "pageHeader": "Magazyn",
     "editButtonText": "edytuj",
     "deleteButtonText": "usuń",
     "warningInfoText": "liczba dni, dla których aplikacja będzie informować o zbliżającym się terminie ważności:"
+  },
+
+  "Navigation": {
+    "myPantry": "Moja spiżarnia",
+    "storages": "Magazyny"
   }
 }

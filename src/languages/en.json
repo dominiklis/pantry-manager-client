@@ -53,10 +53,6 @@
     "logout": "Logout"
   },
 
-  "Home": {
-    "myPantry": "My Pantry"
-  },
-
   "ExpiredProducts": {
     "header": "Expired"
   },
@@ -220,14 +216,14 @@
     "itemCreatedToast": "shopping list item has been created"
   },
 
-  "Storages": {
-    "pageHeader": "Storages"
-  },
-
   "Storage": {
-    "pageHeader": "Storage",
     "editButtonText": "edit",
     "deleteButtonText": "delete",
     "warningInfoText": "number of days for warning:"
+  },
+
+  "Navigation": {
+    "myPantry": "My Pantry",
+    "storages": "Storages"
   }
 }

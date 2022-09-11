@@ -9,7 +9,7 @@ import AppLink from "components/AppLink/AppLink";
 import AuthPageContainer from "components/AuthPageContainer/AuthPageContainer";
 import ToastsContainer from "components/ToastsContainer/ToastsContainer";
 import AppLanguage from "components/AppLanguage/AppLanguage";
-import PageContainer from "components/PageContainer/PageContainer";
+import { PageContainer } from "components/PageContainer";
 import StorageIndicator from "components/StorageIndicator/StorageIndicator";
 import { StoragesList } from "components/StoragesList";
 import ProductsWithoutStoragesList from "components/ProductsWithoutStoragesList/ProductsWithoutStoragesList";
@@ -23,6 +23,7 @@ import LabelForm from "components/LabelForm/LabelForm";
 import ShoppingListForm from "components/ShoppingListForm/ShoppingListForm";
 import ShoppingListItemForm from "components/ShoppingListItemForm/ShoppingListItemForm";
 import SelectShoppingList from "components/SelectShoppingList/SelectShoppingList";
+import { StorageHeader } from "components/StorageHeader";
 
 export {
   App,
@@ -50,4 +51,5 @@ export {
   ShoppingListForm,
   ShoppingListItemForm,
   SelectShoppingList,
+  StorageHeader,
 };
