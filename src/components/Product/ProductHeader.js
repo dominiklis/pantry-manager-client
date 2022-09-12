@@ -28,6 +28,11 @@ const ProductHeader = ({
       case highlightProducts.expired:
         if (expired) return styles.error;
         break;
+
+      case highlightProducts.all:
+        if (closeToExpiry) return styles.warning;
+        if (expired) return styles.error;
+        break;
     }
   };
 

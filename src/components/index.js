@@ -27,6 +27,8 @@ import { StorageHeader } from "components/StorageHeader";
 import { ProductsList } from "components/ProductsList";
 import { ExportAsCSV } from "components/ExportAsCSV";
 import { ExportAsJSON } from "components/ExportAsJSON";
+import { DropdownMenu } from "components/DropdownMenu";
+import { Dropdown } from "components/Dropdown";
 
 export {
   App,
@@ -58,4 +60,6 @@ export {
   ProductsList,
   ExportAsCSV,
   ExportAsJSON,
+  DropdownMenu,
+  Dropdown,
 };

@@ -12,12 +12,12 @@ const useToolbar = ({ componentName }) => {
     new SelectOption(
       sortProductsBy.sortByNameAsc,
       <Translate section={componentName} text="name" />,
-      <IoChevronDown />
+      <IoChevronUp />
     ),
     new SelectOption(
       sortProductsBy.sortByNameDesc,
       <Translate section={componentName} text="name" />,
-      <IoChevronUp />
+      <IoChevronDown />
     ),
     new SelectOption(
       sortProductsBy.sortByExpDateAsc,
@@ -43,6 +43,10 @@ const useToolbar = ({ componentName }) => {
     new SelectOption(
       highlightProducts.expired,
       <Translate section={componentName} text="expired" />
+    ),
+    new SelectOption(
+      highlightProducts.all,
+      <Translate section={componentName} text="all" />
     ),
   ];
 

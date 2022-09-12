@@ -2,7 +2,6 @@ import { Translate } from "components";
 import { useIsDarkTheme } from "hooks";
 import React from "react";
 import { CSVLink } from "react-csv";
-import { IoDownload } from "react-icons/io5";
 import linkStyles from "styles/links.module.css";
 import buttonStyles from "styles/exportButtons.module.css";
 
@@ -23,7 +22,6 @@ const ExportAsCSV = ({ products, filename, disabled }) => {
     <button disabled={disabled} className={buttonStyles.button}>
       {disabled ? (
         <span className={buttonStyles.disabled} data-dark-theme={darkTheme}>
-          <IoDownload />
           <Translate section={componentName} text="buttonText" />
         </span>
       ) : (
@@ -34,7 +32,6 @@ const ExportAsCSV = ({ products, filename, disabled }) => {
           filename={filename}
           disabled={disabled}
         >
-          <IoDownload />
           <Translate section={componentName} text="buttonText" />
         </CSVLink>
       )}

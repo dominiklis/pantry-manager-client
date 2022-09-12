@@ -4,6 +4,7 @@
   align-items: center;
   border: none;
   cursor: pointer;
+  width: 100%;
 }
 
 .button:disabled {
@@ -12,12 +13,10 @@
 
 .linkWrapper,
 .disabled {
-  display: flex;
-  align-items: center;
   padding: 4px 8px;
   border-radius: 8px;
-  gap: 8px;
   border: 1px solid transparent;
+  width: 100%;
 }
 
 .disabled {

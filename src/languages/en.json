@@ -91,6 +91,7 @@
     "expirationDate": "Expirationd date",
     "none": "None",
     "closeToExpiry": "Close to expiry",
+    "all": "all",
     "expired": "Expired",
     "showAll": "Show all"
   },
@@ -220,7 +221,8 @@
     "shareButtonText": "share",
     "editButtonText": "edit",
     "deleteButtonText": "delete",
-    "warningInfoText": "number of days for warning:"
+    "warningInfoText": "number of days for warning:",
+    "menuButtonText": "export"
   },
 
   "Navigation": {

@@ -91,6 +91,7 @@
     "expirationDate": "Data ważności",
     "none": "Brak",
     "closeToExpiry": "Bliskie wygaśnięciu",
+    "all": "Wszystkie",
     "expired": "Przeterminowane",
     "showAll": "Pokaż wszystkie"
   },
@@ -220,7 +221,8 @@
     "shareButtonText": "udostępnij",
     "editButtonText": "edytuj",
     "deleteButtonText": "usuń",
-    "warningInfoText": "liczba dni, dla których aplikacja będzie informować o zbliżającym się terminie ważności:"
+    "warningInfoText": "liczba dni, dla których aplikacja będzie informować o zbliżającym się terminie ważności:",
+    "menuButtonText": "eksportuj"
   },
 
   "Navigation": {
@@ -229,10 +231,10 @@
   },
 
   "ExportAsCSV": {
-    "buttonText": "exportuj CSV"
+    "buttonText": "exportuj jako CSV"
   },
 
   "ExportAsJSON": {
-    "buttonText": "exportuj JSON"
+    "buttonText": "exportuj jako JSON"
   }
 }

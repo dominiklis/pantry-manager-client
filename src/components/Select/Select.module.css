@@ -1,50 +1,5 @@
-.container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-}
-
-.container button {
+.listItem > button {
   width: 100%;
-}
-
-.selectedButton {
-  z-index: 1;
-}
-
-.backdrop {
-  display: none;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-}
-
-.showBackdrop {
-  display: block;
-}
-
-.list {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  background-color: var(--clr-gray5);
-  position: absolute;
-  left: 0;
-  top: 28px;
-  z-index: 3;
-}
-
-.listRight {
-  left: auto;
-  right: 0;
-}
-
-.listItem {
-  display: flex;
-  align-content: center;
 }
 
 .listItem:hover {

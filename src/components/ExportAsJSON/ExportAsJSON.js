@@ -1,7 +1,6 @@
 import React from "react";
 import linkStyles from "styles/links.module.css";
 import buttonStyles from "styles/exportButtons.module.css";
-import { IoDownload } from "react-icons/io5";
 import { useIsDarkTheme } from "hooks";
 import { Translate } from "components";
 import { ProductJSON } from "components/ExportAsJSON";
@@ -47,7 +46,6 @@ const ExportAsJSON = ({ disabled, products, filename }) => {
         }
         data-dark-theme={darkTheme}
       >
-        <IoDownload />
         <Translate section={componentName} text="buttonText" />
       </span>
     </button>

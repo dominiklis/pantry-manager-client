@@ -1,5 +1,6 @@
 import {
   Button,
+  DropdownMenu,
   ExportAsCSV,
   ExportAsJSON,
   PageContainer,
@@ -10,7 +11,7 @@ import {
 import { componentColors, componentSizes } from "constantStrings";
 import { useHandleProductsList, useScrollToElement } from "hooks";
 import React, { useMemo } from "react";
-import { IoPencil, IoShareSocial, IoTrash } from "react-icons/io5";
+import { IoDownload, IoPencil, IoShareSocial, IoTrash } from "react-icons/io5";
 import { useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router-dom";
 import { makeSelectStorageById } from "store/selectors";
@@ -61,33 +62,29 @@ const Storage = () => {
         </div>
 
         <div className={styles.actions}>
-          {/* <Button
-            icon={<IoDownload />}
-            size={componentSizes.small}
-            backgroundColor={componentColors.transparent}
-          >
-            <Translate section={componentName} text="exportAsCSVButtonText" />
-          </Button> */}
-
-          <ExportAsCSV
-            filename={storage.storageName}
-            products={products}
-            disabled={!products || !products.length}
+          <DropdownMenu
+            menuButton={
+              <Button
+                icon={<IoDownload />}
+                size={componentSizes.small}
+                backgroundColor={componentColors.transparent}
+              >
+                <Translate section={componentName} text="menuButtonText" />
+              </Button>
+            }
+            menuItems={[
+              <ExportAsCSV
+                filename={storage.storageName}
+                products={products}
+                disabled={!products || !products.length}
+              />,
+              <ExportAsJSON
+                filename={storage.storageName}
+                products={products}
+                disabled={!products || !products.length}
+              />,
+            ]}
           />
-
-          <ExportAsJSON
-            filename={storage.storageName}
-            products={products}
-            disabled={!products || !products.length}
-          />
-
-          {/* <Button
-            icon={<IoDownload />}
-            size={componentSizes.small}
-            backgroundColor={componentColors.transparent}
-          >
-            <Translate section={componentName} text="exportAsJsonButtonText" />
-          </Button> */}
 
           <Button icon={<IoShareSocial />} size={componentSizes.small}>
             <Translate section={componentName} text="shareButtonText" />
@@ -114,7 +111,6 @@ const Storage = () => {
         onHighlightChange={handleHighlightChange}
         filterBy={filterBy}
         onFilterByChange={handleFilterByChange}
-        // products={products?.map((product) => product.productId)}
         products={products}
         selectedProduct={hash?.replace("#", "")}
       />
