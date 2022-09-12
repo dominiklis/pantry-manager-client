@@ -1,9 +1,9 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { makeSelectProductById, makeSelectStorageById } from "store/selectors";
 import { getForDaysAhead, getToday } from "utils";
 
-const useProduct = ({ productId }) => {
+const useProduct = ({ productId, toggleShowContent, open, openAccordion }) => {
   // select product
   const selectProductById = useMemo(makeSelectProductById, []);
   const product = useSelector((state) => selectProductById(state, productId));
@@ -28,13 +28,28 @@ const useProduct = ({ productId }) => {
 
   const closeToExpiry = !product?.expirationDate
     ? false
-    : expirationDateTime >= todaysTime && expirationDateTime < warningTime;
+    : expirationDateTime >= todaysTime && expirationDateTime <= warningTime;
 
   const expired = !product?.expirationDate
     ? false
     : expirationDateTime < todaysTime;
 
-  return { product, storage, closeToExpiry, expired, numberOfDaysForWarning };
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") toggleShowContent();
+  };
+
+  useEffect(() => {
+    if (open) openAccordion();
+  }, [open]);
+
+  return {
+    product,
+    storage,
+    closeToExpiry,
+    expired,
+    numberOfDaysForWarning,
+    handleKeyDown,
+  };
 };
 
 export default useProduct;
