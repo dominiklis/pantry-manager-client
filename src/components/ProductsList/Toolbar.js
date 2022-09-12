@@ -1,5 +1,5 @@
 import { Select, Translate } from "components";
-import { useToolbar } from "components/ProductsWithoutStoragesList";
+import { useToolbar } from "components/ProductsList";
 import React from "react";
 import styles from "./Toolbar.module.css";
 

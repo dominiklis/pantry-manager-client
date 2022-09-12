@@ -3,15 +3,6 @@
   flex-direction: column;
 }
 
-@media screen and (min-width: 920px) {
-  .headerWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-  }
-}
-
 .storageName {
   display: flex;
   align-items: center;

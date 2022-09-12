@@ -1,10 +1,6 @@
-import { Translate } from "components";
-import {
-  ProductsList,
-  Toolbar,
-  useProductsWithoutStoragesList,
-} from "components/ProductsWithoutStoragesList";
+import { ProductsList, Translate } from "components";
 import { filterProductsBy } from "constantStrings";
+import { useHandleProductsList } from "hooks";
 import React from "react";
 
 import styles from "./ProductsWithoutStoragesList.module.css";
@@ -20,8 +16,17 @@ const ProductsWithoutStoragesList = ({ className, selectedProduct }) => {
     handleSortByChange,
     handleHighlightChange,
     handleFilterByChange,
-    getContainerStyles,
-  } = useProductsWithoutStoragesList({ className });
+  } = useHandleProductsList({
+    withoutStorage: true,
+  });
+
+  const getContainerStyles = () => {
+    let res = "";
+
+    if (className) res += ` ${className}`;
+
+    return res;
+  };
 
   if (!products?.length && filterBy === filterProductsBy.all) return null;
 
@@ -31,18 +36,14 @@ const ProductsWithoutStoragesList = ({ className, selectedProduct }) => {
         <Translate section={componentName} text="header" />
       </div>
 
-      <Toolbar
+      <ProductsList
         sortBy={sortBy}
         onSortByChange={handleSortByChange}
         highlight={highlight}
         onHighlightChange={handleHighlightChange}
         filterBy={filterBy}
         onFilterByChange={handleFilterByChange}
-      />
-
-      <ProductsList
         products={products}
-        highlight={highlight}
         selectedProduct={selectedProduct}
       />
     </div>

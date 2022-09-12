@@ -1,10 +1,11 @@
 import { ProductActions, ProductHeader, useProduct } from "components/Product";
 import ProductDetails from "components/Product/ProductDetails";
-import { useAccordion } from "hooks";
+import { useAccordion, useIsDarkTheme } from "hooks";
 import React from "react";
-import styles from "./Product.module.css";
 
 const Product = ({ productId, highlight, initiallyOpen, open }) => {
+  const darkTheme = useIsDarkTheme();
+
   const { toggleShowContent, getContentStyles, openAccordion } = useAccordion({
     initiallyOpen: initiallyOpen ?? false,
   });
@@ -16,14 +17,22 @@ const Product = ({ productId, highlight, initiallyOpen, open }) => {
     expired,
     numberOfDaysForWarning,
     handleKeyDown,
-  } = useProduct({ productId, toggleShowContent, open, openAccordion });
+    getContainerStyles,
+  } = useProduct({
+    productId,
+    toggleShowContent,
+    open,
+    openAccordion,
+    initiallyOpen,
+  });
 
   return (
     <div
-      className={styles.container}
+      className={getContainerStyles()}
       tabIndex={1}
       onKeyDown={handleKeyDown}
       id={productId}
+      data-dark-theme={darkTheme}
     >
       <ProductHeader
         toggleShowContent={toggleShowContent}

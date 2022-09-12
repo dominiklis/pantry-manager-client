@@ -2,8 +2,15 @@ import { useEffect, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { makeSelectProductById, makeSelectStorageById } from "store/selectors";
 import { getForDaysAhead, getToday } from "utils";
+import styles from "./Product.module.css";
 
-const useProduct = ({ productId, toggleShowContent, open, openAccordion }) => {
+const useProduct = ({
+  productId,
+  toggleShowContent,
+  open,
+  openAccordion,
+  initiallyOpen,
+}) => {
   // select product
   const selectProductById = useMemo(makeSelectProductById, []);
   const product = useSelector((state) => selectProductById(state, productId));
@@ -42,6 +49,14 @@ const useProduct = ({ productId, toggleShowContent, open, openAccordion }) => {
     if (open) openAccordion();
   }, [open]);
 
+  const getContainerStyles = () => {
+    let res = styles.container;
+
+    if (initiallyOpen) res += ` ${styles.initallyOpen}`;
+
+    return res;
+  };
+
   return {
     product,
     storage,
@@ -49,6 +64,7 @@ const useProduct = ({ productId, toggleShowContent, open, openAccordion }) => {
     expired,
     numberOfDaysForWarning,
     handleKeyDown,
+    getContainerStyles,
   };
 };
 

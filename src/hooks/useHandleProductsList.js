@@ -7,31 +7,19 @@ import { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { makeSelectProducts } from "store/selectors";
 
-const useProductsWithoutStoragesList = ({ className }) => {
+const useHandleProductsList = (selectProductsOptions) => {
   const [sortBy, setSortBy] = useState(sortProductsBy.sortByNameAsc);
   const [highlight, setHighlight] = useState(highlightProducts.none);
   const [filterBy, setFilterBy] = useState(filterProductsBy.all);
 
   const selectProducts = useMemo(makeSelectProducts, []);
   const products = useSelector((state) =>
-    selectProducts(state, {
-      sortBy,
-      filterBy,
-      withoutStorage: true,
-    })
+    selectProducts(state, { ...selectProductsOptions, sortBy, filterBy })
   );
 
   const handleSortByChange = (value) => setSortBy(value);
   const handleHighlightChange = (value) => setHighlight(value);
   const handleFilterByChange = (value) => setFilterBy(value);
-
-  const getContainerStyles = () => {
-    let res = "";
-
-    if (className) res += ` ${className}`;
-
-    return res;
-  };
 
   return {
     sortBy,
@@ -41,8 +29,7 @@ const useProductsWithoutStoragesList = ({ className }) => {
     handleSortByChange,
     handleHighlightChange,
     handleFilterByChange,
-    getContainerStyles,
   };
 };
 
-export default useProductsWithoutStoragesList;
+export default useHandleProductsList;

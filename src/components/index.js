@@ -12,7 +12,7 @@ import AppLanguage from "components/AppLanguage/AppLanguage";
 import { PageContainer } from "components/PageContainer";
 import StorageIndicator from "components/StorageIndicator/StorageIndicator";
 import { StoragesList } from "components/StoragesList";
-import ProductsWithoutStoragesList from "components/ProductsWithoutStoragesList/ProductsWithoutStoragesList";
+import { ProductsWithoutStoragesList } from "components/ProductsWithoutStoragesList";
 import { Select } from "components/Select";
 import Product from "components/Product/Product";
 import LabelChip from "components/LabelChip/LabelChip";
@@ -24,6 +24,7 @@ import ShoppingListForm from "components/ShoppingListForm/ShoppingListForm";
 import ShoppingListItemForm from "components/ShoppingListItemForm/ShoppingListItemForm";
 import SelectShoppingList from "components/SelectShoppingList/SelectShoppingList";
 import { StorageHeader } from "components/StorageHeader";
+import { ProductsList } from "components/ProductsList";
 
 export {
   App,
@@ -52,4 +53,5 @@ export {
   ShoppingListItemForm,
   SelectShoppingList,
   StorageHeader,
+  ProductsList,
 };

@@ -39,6 +39,7 @@ const ProductsGroupedByStorages = ({
             }
             showDaysInStorageHeader={showDaysInStorageHeader}
           />
+
           <ul className={styles.nestedList}>
             {productsGroupedByStorages[
               storage.storageId ?? various.noStorage
