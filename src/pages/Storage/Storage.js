@@ -20,7 +20,7 @@ const Storage = () => {
   const { id: storageId } = useParams();
   const { hash } = useLocation();
 
-  useScrollToElement(hash?.replace("#productId=", ""));
+  useScrollToElement(hash?.replace("#", ""));
 
   const selectStorage = useMemo(makeSelectStorageById, []);
   const storage = useSelector((state) => selectStorage(state, storageId));
@@ -80,7 +80,7 @@ const Storage = () => {
         filterBy={filterBy}
         onFilterByChange={handleFilterByChange}
         products={products}
-        selectedProduct={hash?.replace("#productId=", "")}
+        selectedProduct={hash?.replace("#", "")}
       />
     </PageContainer>
   );
