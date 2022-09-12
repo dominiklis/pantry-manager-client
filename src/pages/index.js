@@ -1,5 +1,5 @@
-export { default as Home } from "./Home/Home";
-export { default as Login } from "./Login/Login";
-export { default as Register } from "./Register/Register";
-export { default as Storages } from "./Storages/Storages";
+export { Home } from "./Home";
+export { Login } from "./Login";
+export { Register } from "./Register";
+export { Storages } from "./Storages";
 export { Storage } from "./Storage";
