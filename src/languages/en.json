@@ -217,6 +217,7 @@
   },
 
   "Storage": {
+    "shareButtonText": "share",
     "editButtonText": "edit",
     "deleteButtonText": "delete",
     "warningInfoText": "number of days for warning:"
@@ -225,5 +226,13 @@
   "Navigation": {
     "myPantry": "My Pantry",
     "storages": "Storages"
+  },
+
+  "ExportAsCSV": {
+    "buttonText": "export as CSV"
+  },
+
+  "ExportAsJSON": {
+    "buttonText": "export as JSON"
   }
 }

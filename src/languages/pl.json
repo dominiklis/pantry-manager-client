@@ -217,6 +217,7 @@
   },
 
   "Storage": {
+    "shareButtonText": "udostępnij",
     "editButtonText": "edytuj",
     "deleteButtonText": "usuń",
     "warningInfoText": "liczba dni, dla których aplikacja będzie informować o zbliżającym się terminie ważności:"
@@ -225,5 +226,13 @@
   "Navigation": {
     "myPantry": "Moja spiżarnia",
     "storages": "Magazyny"
+  },
+
+  "ExportAsCSV": {
+    "buttonText": "exportuj CSV"
+  },
+
+  "ExportAsJSON": {
+    "buttonText": "exportuj JSON"
   }
 }

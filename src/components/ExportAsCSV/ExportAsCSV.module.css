@@ -1,0 +1,24 @@
+.button {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  border: none;
+}
+
+.linkWrapper,
+.disabled {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 8px;
+  gap: 8px;
+  border: 1px solid transparent;
+}
+
+.disabled {
+  color: var(--clr-gray4);
+}
+
+.disabled[data-dark-theme="true"] {
+  color: var(--clr-gray3);
+}

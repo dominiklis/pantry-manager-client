@@ -24,16 +24,31 @@ const ProductsList = ({
       />
 
       <ul>
-        {products.map((productId) => (
-          <li key={productId}>
-            <Product
-              productId={productId}
-              highlight={highlight}
-              initiallyOpen={productId === selectedProduct}
-              open={productId === selectedProduct}
-            />
-          </li>
-        ))}
+        {products.map((product) => {
+          if (typeof product === "string") {
+            return (
+              <li key={product}>
+                <Product
+                  productId={product}
+                  highlight={highlight}
+                  initiallyOpen={product === selectedProduct}
+                  open={product === selectedProduct}
+                />
+              </li>
+            );
+          }
+
+          return (
+            <li key={product.productId}>
+              <Product
+                productId={product.productId}
+                highlight={highlight}
+                initiallyOpen={product.productId === selectedProduct}
+                open={product.productId === selectedProduct}
+              />
+            </li>
+          );
+        })}
       </ul>
     </>
   );

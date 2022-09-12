@@ -25,6 +25,8 @@ import ShoppingListItemForm from "components/ShoppingListItemForm/ShoppingListIt
 import SelectShoppingList from "components/SelectShoppingList/SelectShoppingList";
 import { StorageHeader } from "components/StorageHeader";
 import { ProductsList } from "components/ProductsList";
+import { ExportAsCSV } from "components/ExportAsCSV";
+import { ExportAsJSON } from "components/ExportAsJSON";
 
 export {
   App,
@@ -54,4 +56,6 @@ export {
   SelectShoppingList,
   StorageHeader,
   ProductsList,
+  ExportAsCSV,
+  ExportAsJSON,
 };
