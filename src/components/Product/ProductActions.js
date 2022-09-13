@@ -40,16 +40,7 @@ const ProductActions = ({ productId }) => {
           }
           onClick={handleEditButton}
         >
-          <Translate section={componentName} text="edit" />
-        </Button>
-
-        <Button
-          icon={<IoTrashBinOutline />}
-          size={componentSizes.small}
-          onClick={handleDeleteButton}
-          loading={deleting}
-        >
-          <Translate section={componentName} text="delete" />
+          <Translate section={componentName} text="editButtonText" />
         </Button>
 
         <Button
@@ -62,7 +53,16 @@ const ProductActions = ({ productId }) => {
           }
           onClick={handleAddToListButton}
         >
-          <Translate section={componentName} text="addToList" />
+          <Translate section={componentName} text="addToListButtonText" />
+        </Button>
+
+        <Button
+          icon={<IoTrashBinOutline />}
+          size={componentSizes.small}
+          onClick={handleDeleteButton}
+          loading={deleting}
+        >
+          <Translate section={componentName} text="deleteButtonText" />
         </Button>
       </div>
 

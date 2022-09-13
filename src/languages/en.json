@@ -112,9 +112,9 @@
   },
 
   "ProductActions": {
-    "addToList": "Add to shopping list",
-    "edit": "Edit",
-    "delete": "Delete",
+    "addToListButtonText": "Add to shopping list",
+    "editButtonText": "Edit",
+    "deleteButtonText": "Delete",
     "editActionHeader": "Edit product",
     "addToListActionHeader": "Add to shopping list",
     "toast": "product deleted"

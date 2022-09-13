@@ -112,9 +112,9 @@
   },
 
   "ProductActions": {
-    "addToList": "Dodaj do listy zakupów",
-    "edit": "Edytuj",
-    "delete": "Usuń",
+    "addToListButtonText": "Dodaj do listy zakupów",
+    "editButtonText": "Edytuj",
+    "deleteButtonText": "Usuń",
     "editActionHeader": "Edycja produktu",
     "addToListActionHeader": "Dodaj listę zakupów",
     "toast": "produkt został usunięty"

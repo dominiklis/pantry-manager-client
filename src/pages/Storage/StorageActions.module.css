@@ -1,8 +1,8 @@
 .container {
   display: flex;
   align-items: center;
-  gap: 4px;
   justify-content: flex-end;
+  gap: 4px;
   flex-wrap: wrap;
   margin: 8px 0;
   position: relative;
