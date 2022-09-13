@@ -19,7 +19,7 @@ const EditProduct = ({ productId }) => {
       errors={errors}
       setErrors={setErrors}
       submitButtonText={
-        <Translate section={componentName} text="submitButton" />
+        <Translate section={componentName} text="submitButtonText" />
       }
       loading={loading}
     />

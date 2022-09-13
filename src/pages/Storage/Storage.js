@@ -1,17 +1,17 @@
 import {
-  Button,
-  DropdownMenu,
-  ExportAsCSV,
-  ExportAsJSON,
   PageContainer,
   ProductsList,
   StorageIndicator,
   Translate,
 } from "components";
-import { componentColors, componentSizes } from "constantStrings";
-import { useHandleProductsList, useScrollToElement } from "hooks";
+import { componentSizes } from "constantStrings";
+import {
+  useHandleProductsList,
+  useIsDarkTheme,
+  useScrollToElement,
+} from "hooks";
+import { StorageActions } from "pages/Storage";
 import React, { useMemo } from "react";
-import { IoDownload, IoPencil, IoShareSocial, IoTrash } from "react-icons/io5";
 import { useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router-dom";
 import { makeSelectStorageById } from "store/selectors";
@@ -24,6 +24,8 @@ const Storage = () => {
   const { hash } = useLocation();
 
   useScrollToElement(hash?.replace("#", ""));
+
+  const darkTheme = useIsDarkTheme();
 
   const selectStorage = useMemo(makeSelectStorageById, []);
   const storage = useSelector((state) => selectStorage(state, storageId));
@@ -39,6 +41,21 @@ const Storage = () => {
     handleHighlightChange,
     handleFilterByChange,
   } = useHandleProductsList({ storageId, getProductBody: true });
+
+  if (!storage) {
+    return (
+      <PageContainer>
+        <div className={styles.storageName}>
+          <h1
+            className={`${styles.header} ${styles.error}`}
+            data-dark-theme={darkTheme}
+          >
+            <Translate section={componentName} text="notFound" />
+          </h1>
+        </div>
+      </PageContainer>
+    );
+  }
 
   return (
     <PageContainer>
@@ -61,47 +78,15 @@ const Storage = () => {
           </span>
         </div>
 
-        <div className={styles.actions}>
-          <DropdownMenu
-            menuButton={
-              <Button
-                icon={<IoDownload />}
-                size={componentSizes.small}
-                backgroundColor={componentColors.transparent}
-              >
-                <Translate section={componentName} text="menuButtonText" />
-              </Button>
-            }
-            menuItems={[
-              <ExportAsCSV
-                filename={storage.storageName}
-                products={products}
-                disabled={!products || !products.length}
-              />,
-              <ExportAsJSON
-                filename={storage.storageName}
-                products={products}
-                disabled={!products || !products.length}
-              />,
-            ]}
-          />
-
-          <Button icon={<IoShareSocial />} size={componentSizes.small}>
-            <Translate section={componentName} text="shareButtonText" />
-          </Button>
-
-          <Button icon={<IoPencil />} size={componentSizes.small}>
-            <Translate section={componentName} text="editButtonText" />
-          </Button>
-
-          <Button
-            icon={<IoTrash />}
-            colorOnHover={componentColors.error}
-            size={componentSizes.small}
-          >
-            <Translate section={componentName} text="deleteButtonText" />
-          </Button>
-        </div>
+        <StorageActions
+          storageId={storage.storageId}
+          ownerId={storage.ownerId}
+          storageName={storage.storageName}
+          color={storage.color}
+          numberOfDaysForWarning={storage.numberOfDaysForWarning}
+          users={storage.users}
+          products={products}
+        />
       </div>
 
       <ProductsList

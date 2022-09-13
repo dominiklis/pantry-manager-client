@@ -1,12 +1,14 @@
 import { StorageIndicator, Translate } from "components";
-import { various } from "constantStrings";
+import { sortStoragesBy, various } from "constantStrings";
 import { useMemo } from "react";
 import { IoClose } from "react-icons/io5";
 import { useSelector } from "react-redux";
+import { makeSelectStorages } from "store/selectors";
 
 const useSelectStorage = ({ componentName }) => {
-  const { byId: storagesInStore, allIds: storagesIds } = useSelector(
-    (state) => state.storages
+  const selectStorages = useMemo(makeSelectStorages, []);
+  const storages = useSelector((state) =>
+    selectStorages(state, { sortBy: sortStoragesBy.sortByNameAsc })
   );
 
   const selectStorageOptions = useMemo(() => {
@@ -16,15 +18,13 @@ const useSelectStorage = ({ componentName }) => {
         label: <Translate section={componentName} text="noStorageOption" />,
         icon: <IoClose />,
       },
-      ...storagesIds.map((storageId) => ({
-        value: storageId,
-        label: storagesInStore[storageId].storageName,
-        icon: (
-          <StorageIndicator icon color={storagesInStore[storageId].color} />
-        ),
+      ...storages.map((storage) => ({
+        value: storage.storageId,
+        label: storage.storageName,
+        icon: <StorageIndicator icon color={storage.color} />,
       })),
     ];
-  }, [componentName, storagesIds, storagesInStore]);
+  }, [componentName, storages]);
 
   return { selectStorageOptions };
 };

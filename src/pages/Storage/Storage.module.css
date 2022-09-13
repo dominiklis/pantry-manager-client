@@ -14,19 +14,12 @@
   font-weight: normal;
 }
 
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  margin: 8px 0;
+.header.error {
+  color: var(--clr-err2);
 }
 
-@media screen and (min-width: 920px) {
-  .actions {
-    gap: 8px;
-  }
+.header[data-dark-theme="true"].error {
+  color: var(--clr-err1);
 }
 
 .warningInfo {

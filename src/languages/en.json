@@ -121,9 +121,8 @@
   },
 
   "EditProduct": {
-    "toastText": "changes saved",
+    "toastText": "changes has been saved",
     "submitButtonText": "Save Changes",
-    "submitButton": "Submit Changes",
     "noSelectedLabels": "no selected labels"
   },
 
@@ -218,11 +217,8 @@
   },
 
   "Storage": {
-    "shareButtonText": "share",
-    "editButtonText": "edit",
-    "deleteButtonText": "delete",
     "warningInfoText": "number of days for warning:",
-    "menuButtonText": "export"
+    "notFound": "Storage not found"
   },
 
   "Navigation": {
@@ -236,5 +232,38 @@
 
   "ExportAsJSON": {
     "buttonText": "export as JSON"
+  },
+
+  "EditStorage": {
+    "submitButtonText": "Save Changes",
+    "toastText": "changes has been saved"
+  },
+
+  "StorageActions": {
+    "shareButtonText": "share",
+    "editButtonText": "edit",
+    "deleteButtonText": "delete",
+    "menuButtonText": "export",
+    "shareActionHeader": "Share Storage",
+    "editActionHeader": "Edit Storage",
+    "deleteActionHeader": "Delete Storage"
+  },
+
+  "DeleteStorage": {
+    "question": "What do you want to do with products in this storage?",
+    "deleteAll": "delete all",
+    "keep": "keep without storage",
+    "productsDeletedToast": "storage and products deleted",
+    "storageDeletedToast": "storage deleted"
+  },
+
+  "ShareStorage": {
+    "loginInputLabel": "username or email",
+    "submitButtonText": "Share Storage",
+    "successToast": "storage successfully shared",
+    "error": "user already has an access",
+    "sharingLabel": "sharing",
+    "listTitleText": "users with access to this storage",
+    "canShareSpanText": "can share:"
   }
 }

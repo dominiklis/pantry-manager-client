@@ -12,7 +12,7 @@ const storages = {
       numberOfDaysForWarning: numberOfDaysForWarning || null,
     }),
   delete: (storageId, deleteProducts) =>
-    requests.delete(`/storages/${storageId}`, { deleteProducts }),
+    requests.delete(`/storages/${storageId}`, { params: { deleteProducts } }),
 
   getUsers: (storageId) => requests.get(`/storages/${storageId}/users`),
   share: (storageId, login, canShare) => {

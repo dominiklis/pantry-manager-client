@@ -123,7 +123,6 @@
   "EditProduct": {
     "toastText": "zmiany zostały zapisane",
     "submitButtonText": "Zapisz zmiany",
-    "submitButton": "Zapisz zmiany",
     "noSelectedLabels": "brak wybranych etykiet"
   },
 
@@ -218,11 +217,8 @@
   },
 
   "Storage": {
-    "shareButtonText": "udostępnij",
-    "editButtonText": "edytuj",
-    "deleteButtonText": "usuń",
     "warningInfoText": "liczba dni, dla których aplikacja będzie informować o zbliżającym się terminie ważności:",
-    "menuButtonText": "eksportuj"
+    "notFound": "Nie znaleziono magazynu"
   },
 
   "Navigation": {
@@ -236,5 +232,38 @@
 
   "ExportAsJSON": {
     "buttonText": "exportuj jako JSON"
+  },
+
+  "EditStorage": {
+    "submitButtonText": "Zapisz zmiany",
+    "toastText": "zmiany zostały zapisane"
+  },
+
+  "StorageActions": {
+    "shareButtonText": "udostępnij",
+    "editButtonText": "edytuj",
+    "deleteButtonText": "usuń",
+    "menuButtonText": "eksportuj",
+    "shareActionHeader": "Udostępnianie magazynu",
+    "editActionHeader": "Edycja magazynu",
+    "deleteActionHeader": "Usuwanie magazynu"
+  },
+
+  "DeleteStorage": {
+    "question": "Co zrobić z produktami w tym magazynie?",
+    "deleteAll": "usuń wszystkie",
+    "keep": "zachowaj bez magazynu",
+    "productsDeletedToast": "magazyn został usunięty wraz z produktami",
+    "storageDeletedToast": "magazyn został usunięty"
+  },
+
+  "ShareStorage": {
+    "loginInputLabel": "nazwa użytkownika lub email",
+    "submitButtonText": "Udostępnij",
+    "successToast": "dostęp został udzielony",
+    "error": "ten użytkownik już posiada dostęp",
+    "sharingLabel": "udostępnianie dalej",
+    "listTitleText": "użykownicy posiadający dostęp do tego magazynu",
+    "canShareSpanText": "może udostępniać:"
   }
 }
