@@ -29,6 +29,7 @@ import { ExportAsCSV } from "components/ExportAsCSV";
 import { ExportAsJSON } from "components/ExportAsJSON";
 import { DropdownMenu } from "components/DropdownMenu";
 import { Dropdown } from "components/Dropdown";
+import { Actions } from "components/Actions";
 
 export {
   App,
@@ -62,4 +63,5 @@ export {
   ExportAsJSON,
   DropdownMenu,
   Dropdown,
+  Actions,
 };

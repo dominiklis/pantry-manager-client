@@ -1,73 +1,49 @@
-import { Button, Translate } from "components";
-import { useProductActions } from "components/Product";
-import { componentColors, componentSizes } from "constantStrings";
-import { useAccordion } from "hooks";
+import { Actions, Button, Translate } from "components";
+import {
+  AddProductToShoppingList,
+  EditProduct,
+  useProductActions,
+} from "components/Product";
+import { componentSizes } from "constantStrings";
 import React from "react";
-import { IoBagAddOutline, IoPencil, IoTrashBinOutline } from "react-icons/io5";
-
-import styles from "./ProductActions.module.css";
+import { IoBagAddOutline, IoPencil, IoTrash } from "react-icons/io5";
+import { Action } from "utils";
 
 const componentName = "ProductActions";
 
 const ProductActions = ({ productId }) => {
-  const { getContentStyles, openAccordion, closeAccordion } = useAccordion({
-    initiallyOpen: false,
-    additionalStylesToOpenedContainer: styles.actionContainer,
-  });
-
-  const {
-    selectedAction,
-    deleting,
-    handleEditButton,
-    handleAddToListButton,
-    handleDeleteButton,
-    actions,
-  } = useProductActions({
-    productId,
+  const { handleDeleteButton, deleting } = useProductActions({
     componentName,
-    openAccordion,
-    closeAccordion,
+    productId,
   });
 
   return (
-    <div className={styles.container}>
-      <div className={styles.actionButtons}>
+    <Actions
+      additionalButtonsAfter={
         <Button
-          icon={<IoPencil />}
-          size={componentSizes.small}
-          backgroundColor={
-            selectedAction === "edit" ? componentColors.primary : null
-          }
-          onClick={handleEditButton}
-        >
-          <Translate section={componentName} text="editButtonText" />
-        </Button>
-
-        <Button
-          icon={<IoBagAddOutline />}
-          size={componentSizes.small}
-          backgroundColor={
-            selectedAction === "addToShoppingList"
-              ? componentColors.primary
-              : null
-          }
-          onClick={handleAddToListButton}
-        >
-          <Translate section={componentName} text="addToListButtonText" />
-        </Button>
-
-        <Button
-          icon={<IoTrashBinOutline />}
+          icon={<IoTrash />}
           size={componentSizes.small}
           onClick={handleDeleteButton}
           loading={deleting}
         >
           <Translate section={componentName} text="deleteButtonText" />
         </Button>
-      </div>
-
-      <div className={getContentStyles()}>{actions[selectedAction]}</div>
-    </div>
+      }
+      actions={[
+        new Action(
+          <Translate section={componentName} text="editActionHeader" />,
+          <EditProduct productId={productId} />,
+          <Translate section={componentName} text="editButtonText" />,
+          <IoPencil />
+        ),
+        new Action(
+          <Translate section={componentName} text="addToListActionHeader" />,
+          <AddProductToShoppingList productId={productId} />,
+          <Translate section={componentName} text="addToListButtonText" />,
+          <IoBagAddOutline />
+        ),
+      ]}
+    />
   );
 };
 

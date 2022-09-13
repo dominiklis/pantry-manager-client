@@ -117,7 +117,7 @@
     "deleteButtonText": "Delete",
     "editActionHeader": "Edit product",
     "addToListActionHeader": "Add to shopping list",
-    "toast": "product deleted"
+    "deleteToast": "product deleted"
   },
 
   "EditProduct": {

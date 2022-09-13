@@ -1,7 +1,6 @@
 import ProductHeader from "components/Product/ProductHeader";
 import LabelsList from "components/Product/LabelsList";
 import ProductActions from "components/Product/ProductActions";
-import ProductAction from "components/Product/ProductAction";
 import EditProduct from "components/Product/EditProduct";
 import AddProductToShoppingList from "components/Product/AddProductToShoppingList";
 import useAddProductToShoppingList from "components/Product/useAddProductToShoppingList";
@@ -14,7 +13,6 @@ export {
   ProductHeader,
   LabelsList,
   ProductActions,
-  ProductAction,
   EditProduct,
   AddProductToShoppingList,
   useAddProductToShoppingList,

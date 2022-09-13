@@ -117,7 +117,7 @@
     "deleteButtonText": "Usuń",
     "editActionHeader": "Edycja produktu",
     "addToListActionHeader": "Dodaj listę zakupów",
-    "toast": "produkt został usunięty"
+    "deleteToast": "produkt został usunięty"
   },
 
   "EditProduct": {
@@ -227,11 +227,11 @@
   },
 
   "ExportAsCSV": {
-    "buttonText": "exportuj jako CSV"
+    "buttonText": "Exportuj jako CSV"
   },
 
   "ExportAsJSON": {
-    "buttonText": "exportuj jako JSON"
+    "buttonText": "Exportuj jako JSON"
   },
 
   "EditStorage": {
@@ -240,10 +240,10 @@
   },
 
   "StorageActions": {
-    "shareButtonText": "udostępnij",
-    "editButtonText": "edytuj",
-    "deleteButtonText": "usuń",
-    "menuButtonText": "eksportuj",
+    "shareButtonText": "Udostępnij",
+    "editButtonText": "Edytuj",
+    "deleteButtonText": "Usuń",
+    "menuButtonText": "Eksportuj",
     "shareActionHeader": "Udostępnianie magazynu",
     "editActionHeader": "Edycja magazynu",
     "deleteActionHeader": "Usuwanie magazynu"

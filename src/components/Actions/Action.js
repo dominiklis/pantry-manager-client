@@ -1,12 +1,12 @@
 import { Button } from "components";
 import { componentColors } from "constantStrings";
-import React from "react";
+import React, { forwardRef } from "react";
 import { IoClose } from "react-icons/io5";
-import styles from "./ProductAction.module.css";
+import styles from "./Action.module.css";
 
-const ProductAction = ({ children, onClose, header }) => {
+const Action = forwardRef(({ children, onClose, header }, ref) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={ref}>
       <div className={styles.header}>
         <span className={styles.headerText}>{header}</span>
         <Button
@@ -19,6 +19,6 @@ const ProductAction = ({ children, onClose, header }) => {
       {children}
     </div>
   );
-};
+});
 
-export default ProductAction;
+export default Action;
