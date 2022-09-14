@@ -7,12 +7,14 @@ import actionStyles from "./actionTransition.module.css";
 import { Action, useActions } from "components/Actions";
 
 const Actions = ({
+  initialValue,
   additionalButtonsBefore,
   additionalButtonsAfter,
   actions,
 }) => {
-  const { selectedAction, handleActionButton, handleCloseAction } =
-    useActions();
+  const { selectedAction, handleActionButton, handleCloseAction } = useActions({
+    initialValue,
+  });
 
   return (
     <div className={styles.container}>

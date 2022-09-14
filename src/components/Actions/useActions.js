@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const useActions = () => {
-  const [selectedAction, setSelectedAction] = useState(-1);
+const useActions = ({ initialValue }) => {
+  const [selectedAction, setSelectedAction] = useState(initialValue ?? -1);
 
   const handleCloseAction = () => {
     setSelectedAction(-1);

@@ -150,11 +150,11 @@
 
   "CreateOverlay": {
     "header": "Utwórz",
-    "createProduct": "Produkt",
-    "createStorage": "Magazyn",
-    "createLabel": "Etykieta",
-    "createShoppingList": "Lista zakupów",
-    "createShoppingListItem": "Pozycja do kupienia",
+    "createProductButtonText": "Produkt",
+    "createStorageButtonText": "Magazyn",
+    "createLabelButtonText": "Etykieta",
+    "createShoppingListButtonText": "Lista zakupów",
+    "createShoppingListItemButtonText": "Pozycja do kupienia",
     "createProductHeader": "Dodaj produkt",
     "createStorageHeader": "Dodaj magazyn",
     "createLabelHeader": "Dodaj etykietę",

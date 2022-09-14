@@ -150,11 +150,11 @@
 
   "CreateOverlay": {
     "header": "Create",
-    "createProduct": "Product",
-    "createStorage": "Storage",
-    "createLabel": "Label",
-    "createShoppingList": "Shopping List",
-    "createShoppingListItem": "Shopping List Item",
+    "createProductButtonText": "Product",
+    "createStorageButtonText": "Storage",
+    "createLabelButtonText": "Label",
+    "createShoppingListButtonText": "Shopping List",
+    "createShoppingListItemButtonText": "Shopping List Item",
     "createProductHeader": "Create Product",
     "createStorageHeader": "Create Storage",
     "createLabelHeader": "Create Label",
