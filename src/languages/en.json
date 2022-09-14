@@ -258,12 +258,25 @@
   },
 
   "ShareStorage": {
-    "loginInputLabel": "username or email",
-    "submitButtonText": "Share Storage",
     "successToast": "storage successfully shared",
     "error": "user already has an access",
+    "listTitleText": "users with access to this storage"
+  },
+
+  "ShareForm": {
+    "loginInputLabel": "username or email",
     "sharingLabel": "sharing",
-    "listTitleText": "users with access to this storage",
-    "canShareSpanText": "can share:"
+    "submitButtonText": "Share Storage",
+    "error": "user already has an access or doesn't exist"
+  },
+
+  "UsersWithAccessListItem": {
+    "canShareSpanText": "can share:",
+    "sharingLabel": "edit sharing",
+    "submitTextButton": "Save Changes",
+    "errorEditToast": "user doesn't have an access, please refresh list",
+    "submitSuccessToast": "changes saved",
+    "errorDeleteToast": "user doesn't have an access, refresh list",
+    "removingSuccessToast": "access scuccessfully remove"
   }
 }

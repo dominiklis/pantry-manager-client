@@ -1,35 +1,3 @@
-.shareInput {
-  display: flex;
-  align-items: stretch;
-  gap: 8px;
-  flex-direction: column;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--clr-gray3);
-}
-
-@media screen and (min-width: 650px) {
-  .shareInput {
-    flex-direction: row;
-  }
-}
-
-.checkbox {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-direction: row;
-}
-
-@media screen and (min-width: 650px) {
-  .checkbox {
-    flex-direction: column;
-  }
-}
-
-.input {
-  flex: 1;
-}
-
 .users {
   display: flex;
   align-items: center;
@@ -37,39 +5,4 @@
 
 .usersTitle {
   margin: 8px 0;
-}
-
-.itemContent {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.canShare {
-  display: flex;
-  align-items: flex-end;
-  gap: 4px;
-  color: var(--clr-gray2);
-}
-
-.usersListItem {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.usersListItem .userName,
-.usersListItem .canShare {
-  transition: 0.2s ease-in;
-  transition-property: color;
-}
-
-.usersListItem:hover .userName,
-.usersListItem:hover .canShare {
-  color: var(--clr-prim3);
-}
-
-.usersListItem[data-dark-theme="true"]:hover .userName,
-.usersListItem[data-dark-theme="true"]:hover .canShare {
-  color: var(--clr-prim1);
 }

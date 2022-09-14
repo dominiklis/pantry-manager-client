@@ -5,42 +5,26 @@ import {
   Translate,
 } from "components";
 import { componentSizes } from "constantStrings";
-import {
-  useHandleProductsList,
-  useIsDarkTheme,
-  useScrollToElement,
-} from "hooks";
-import { StorageActions } from "pages/Storage";
-import React, { useMemo } from "react";
-import { useSelector } from "react-redux";
-import { useLocation, useParams } from "react-router-dom";
-import { makeSelectStorageById } from "store/selectors";
+import { StorageActions, useStorage } from "pages/Storage";
+import React from "react";
 import styles from "./Storage.module.css";
 
 const componentName = "Storage";
 
 const Storage = () => {
-  const { id: storageId } = useParams();
-  const { hash } = useLocation();
-
-  useScrollToElement(hash?.replace("#", ""));
-
-  const darkTheme = useIsDarkTheme();
-
-  const selectStorage = useMemo(makeSelectStorageById, []);
-  const storage = useSelector((state) => selectStorage(state, storageId));
-
-  const { defaultNumberOfDaysForWarning } = useSelector((state) => state.app);
-
   const {
-    sortBy,
-    highlight,
-    filterBy,
+    storage,
+    darkTheme,
+    defaultNumberOfDaysForWarning,
     products,
+    sortBy,
     handleSortByChange,
+    highlight,
     handleHighlightChange,
+    filterBy,
     handleFilterByChange,
-  } = useHandleProductsList({ storageId, getProductBody: true });
+    hash,
+  } = useStorage();
 
   if (!storage) {
     return (

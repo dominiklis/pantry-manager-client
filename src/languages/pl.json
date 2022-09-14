@@ -258,12 +258,25 @@
   },
 
   "ShareStorage": {
-    "loginInputLabel": "nazwa użytkownika lub email",
-    "submitButtonText": "Udostępnij",
     "successToast": "dostęp został udzielony",
     "error": "ten użytkownik już posiada dostęp",
+    "listTitleText": "użykownicy posiadający dostęp do tego magazynu"
+  },
+
+  "ShareForm": {
+    "loginInputLabel": "nazwa użytkownika lub email",
     "sharingLabel": "udostępnianie dalej",
-    "listTitleText": "użykownicy posiadający dostęp do tego magazynu",
-    "canShareSpanText": "może udostępniać:"
+    "submitButtonText": "Udostępnij",
+    "error": "użytkownik nie istnieje lub posiada już dostęp"
+  },
+
+  "UsersWithAccessListItem": {
+    "canShareSpanText": "może udostępniać:",
+    "sharingLabel": "edycja udostępniania dalej",
+    "submitTextButton": "Zapisz",
+    "errorEditToast": "użytkownik nie posiada dostępu, proszę odświeżyć listę",
+    "submitSuccessToast": "zmiany zostały zapisane",
+    "errorDeleteToast": "ten użytkownik nie posiada dostępu, odśwież listę",
+    "removingSuccessToast": "dostęp został usunięty"
   }
 }

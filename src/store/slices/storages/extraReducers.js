@@ -70,10 +70,12 @@ export const getStorageUsers = createAsyncThunk(
 export const shareStorage = createAsyncThunk(
   "storages/shareStorage",
   async ({ storageId, login, canShare }, { rejectWithValue }) => {
-    const response = await api.storages.share(storageId, login, canShare);
-    if (response.data) return response.data;
-
-    return rejectWithValue(response.message);
+    try {
+      const response = await api.storages.share(storageId, login, canShare);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data?.message);
+    }
   }
 );
 

@@ -16,6 +16,7 @@ const DeleteStorage = ({ storageId }) => {
       <p>
         <Translate section={componentName} text="question" />
       </p>
+
       <div className={styles.buttons}>
         <Button
           backgroundColor={componentColors.secondary}
@@ -24,6 +25,7 @@ const DeleteStorage = ({ storageId }) => {
         >
           <Translate section={componentName} text="deleteAll" />
         </Button>
+
         <Button
           backgroundColor={componentColors.primary}
           onClick={handleKeepButton}
