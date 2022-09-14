@@ -4,8 +4,6 @@
   justify-content: flex-end;
   gap: 4px;
   flex-wrap: wrap;
-  /* margin: 8px 0; */
-  position: relative;
 }
 
 @media screen and (min-width: 920px) {
