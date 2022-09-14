@@ -5,7 +5,6 @@ import contentStyles from "./content.module.css";
 
 const Dropdown = ({
   className,
-  additionalContentStyles,
   dropdownButton,
   dropdownContent,
   hideOnClick,
