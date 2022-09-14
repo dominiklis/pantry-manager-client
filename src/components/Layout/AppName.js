@@ -7,7 +7,7 @@ const AppName = () => {
 
   return (
     <div className={styles.container} data-dark-theme={darkTheme}>
-      Pantry Manager
+      <span>Pantry Manager</span>
     </div>
   );
 };

@@ -14,3 +14,10 @@
   color: var(--clr-prim2);
   background-color: var(--clr-gray6);
 }
+
+@media screen and (min-width: 650px) {
+  .container span {
+    position: fixed;
+    z-index: 2;
+  }
+}
