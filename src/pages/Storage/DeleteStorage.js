@@ -6,15 +6,41 @@ import styles from "./DeleteStorage.module.css";
 
 const componentName = "DeleteStorage";
 
-const DeleteStorage = ({ storageId }) => {
-  const { handleDeleteAllButton, loading, handleKeepButton } = useDeleteStorage(
-    { componentName, storageId }
-  );
+const DeleteStorage = ({ storageId, noProducts }) => {
+  const {
+    handleDeleteButton,
+    handleDeleteAllButton,
+    handleKeepButton,
+    loading,
+  } = useDeleteStorage({ componentName, storageId });
+
+  if (noProducts) {
+    return (
+      <>
+        <p>
+          <Translate
+            section={componentName}
+            text="questionAboutDeletingEmpty"
+          />
+        </p>
+
+        <div className={styles.buttons}>
+          <Button
+            backgroundColor={componentColors.secondary}
+            onClick={handleDeleteButton}
+            loading={loading}
+          >
+            <Translate section={componentName} text="deleteButtonText" />
+          </Button>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
       <p>
-        <Translate section={componentName} text="question" />
+        <Translate section={componentName} text="questionAboutProducts" />
       </p>
 
       <div className={styles.buttons}>

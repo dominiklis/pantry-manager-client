@@ -250,9 +250,11 @@
   },
 
   "DeleteStorage": {
-    "question": "What do you want to do with products in this storage?",
-    "deleteAll": "delete all",
-    "keep": "keep without storage",
+    "questionAboutDeletingEmpty": "Are you sure you want to delete this storage?",
+    "questionAboutProducts": "What do you want to do with products in this storage?",
+    "deleteButtonText": "Yes, delete it",
+    "deleteAll": "Delete all",
+    "keep": "Keep without storage",
     "productsDeletedToast": "storage and products deleted",
     "storageDeletedToast": "storage deleted"
   },

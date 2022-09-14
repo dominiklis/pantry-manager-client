@@ -12,6 +12,22 @@ const useDeleteStorage = ({ storageId, componentName }) => {
 
   const dispatch = useDispatch();
 
+  const handleDeleteButton = async () => {
+    setLoading(true);
+
+    await dispatch(deleteStorage({ storageId, deleteProducts: true }));
+    setLoading(false);
+
+    dispatch(
+      addToast({
+        translate: {
+          section: componentName,
+          text: "storageDeletedToast",
+        },
+      })
+    );
+  };
+
   const handleDeleteAllButton = async () => {
     setLoading(true);
 
@@ -49,9 +65,10 @@ const useDeleteStorage = ({ storageId, componentName }) => {
   };
 
   return {
+    handleDeleteButton,
     handleDeleteAllButton,
-    loading,
     handleKeepButton,
+    loading,
   };
 };
 

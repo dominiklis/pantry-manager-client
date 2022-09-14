@@ -80,7 +80,12 @@ const StorageActions = ({
 
         new Action(
           <Translate section={componentName} text="deleteActionHeader" />,
-          <DeleteStorage storageId={storageId} />,
+          (
+            <DeleteStorage
+              storageId={storageId}
+              noProducts={!products || !products.length}
+            />
+          ),
           <Translate section={componentName} text="deleteButtonText" />,
           <IoTrash />
         ),

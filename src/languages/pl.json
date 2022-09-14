@@ -250,9 +250,11 @@
   },
 
   "DeleteStorage": {
-    "question": "Co zrobić z produktami w tym magazynie?",
-    "deleteAll": "usuń wszystkie",
-    "keep": "zachowaj bez magazynu",
+    "questionAboutDeletingEmpty": "Na pewno chcesz usunąć ten magazyn?",
+    "questionAboutProducts": "Co zrobić z produktami w tym magazynie?",
+    "deleteButtonText": "Tak, usuń magazyn",
+    "deleteAll": "Usuń wszystkie",
+    "keep": "Zachowaj bez magazynu",
     "productsDeletedToast": "magazyn został usunięty wraz z produktami",
     "storageDeletedToast": "magazyn został usunięty"
   },
