@@ -2,7 +2,7 @@ import { useIsDarkTheme } from "hooks";
 import { useRef, useState } from "react";
 import styles from "./Dropdown.module.css";
 
-const useDropdown = () => {
+const useDropdown = ({ className, additionalContentStyles }) => {
   const darkTheme = useIsDarkTheme();
 
   const buttonRef = useRef(null);
@@ -24,6 +24,14 @@ const useDropdown = () => {
     toggleShowContent();
   };
 
+  const getContainerStyles = () => {
+    let res = styles.container;
+
+    if (className) res += ` ${className}`;
+
+    return res;
+  };
+
   const getBackdropStyles = () => {
     let res = styles.backdrop;
 
@@ -36,6 +44,7 @@ const useDropdown = () => {
     let res = styles.content;
 
     if (!inLeftHalf) res += ` ${styles.contentRight}`;
+    if (additionalContentStyles) res += ` ${additionalContentStyles}`;
 
     return res;
   };
@@ -48,6 +57,7 @@ const useDropdown = () => {
     handleButton,
     getBackdropStyles,
     handleHideContent,
+    getContainerStyles,
     getContentStyles,
   };
 };

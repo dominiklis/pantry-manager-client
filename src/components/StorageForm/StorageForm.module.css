@@ -20,6 +20,16 @@
   gap: 2px;
 }
 
+.selectColor {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.selectColorContent {
+  top: 42px;
+}
+
 .colorButtonsWrapper {
   display: flex;
   align-items: center;

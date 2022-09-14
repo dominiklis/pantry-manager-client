@@ -1,7 +1,10 @@
-import { Button, Input, Label, Translate } from "components";
+import { Button, Dropdown, Input, Label, Translate } from "components";
 import { ColorButton } from "components/StorageForm";
-import { componentColors, storageColors } from "constantStrings";
-import { useAccordion } from "hooks";
+import {
+  componentColors,
+  componentSizes,
+  storageColors,
+} from "constantStrings";
 import React from "react";
 import { validateInput } from "utils";
 import styles from "./StorageForm.module.css";
@@ -32,10 +35,6 @@ const StorageForm = ({
   const handleStorageColorChange = (color) =>
     setInput((prev) => ({ ...prev, color }));
 
-  const { toggleShowContent, getContentStyles, closeAccordion } = useAccordion({
-    initiallyOpen: false,
-  });
-
   return (
     <form onSubmit={onSubmit}>
       <Input
@@ -63,137 +62,143 @@ const StorageForm = ({
           <Label className={styles.label}>
             <Translate section={componentName} text="storageColorLabel" />
           </Label>
-          <ColorButton color={input.color} onClick={toggleShowContent} />
+          <Dropdown
+            className={styles.selectColor}
+            additionalContentStyles={styles.selectColorContent}
+            hideOnClick
+            dropdownButton={<ColorButton color={input.color} />}
+            dropdownContent={
+              <div className={styles.colorButtonsWrapper}>
+                <ColorButton
+                  color={storageColors.white}
+                  onClick={() => {
+                    handleStorageColorChange(storageColors.white);
+                  }}
+                  size={componentSizes.small}
+                />
+                <ColorButton
+                  color={storageColors.red}
+                  onClick={() => {
+                    handleStorageColorChange(storageColors.red);
+                  }}
+                  size={componentSizes.small}
+                />
+                <ColorButton
+                  color={storageColors.pink}
+                  onClick={() => {
+                    handleStorageColorChange(storageColors.pink);
+                  }}
+                  size={componentSizes.small}
+                />
+                <ColorButton
+                  color={storageColors.purple}
+                  onClick={() => {
+                    handleStorageColorChange(storageColors.purple);
+                  }}
+                  size={componentSizes.small}
+                />
+                <ColorButton
+                  color={storageColors.deepPurple}
+                  onClick={() => {
+                    handleStorageColorChange(storageColors.deepPurple);
+                  }}
+                  size={componentSizes.small}
+                />
+                <ColorButton
+                  color={storageColors.indigo}
+                  onClick={() => {
+                    handleStorageColorChange(storageColors.indigo);
+                  }}
+                  size={componentSizes.small}
+                />
+                <ColorButton
+                  color={storageColors.blue}
+                  onClick={() => {
+                    handleStorageColorChange(storageColors.blue);
+                  }}
+                  size={componentSizes.small}
+                />
+                <ColorButton
+                  color={storageColors.lightBlue}
+                  onClick={() => {
+                    handleStorageColorChange(storageColors.lightBlue);
+                  }}
+                  size={componentSizes.small}
+                />
+                <ColorButton
+                  color={storageColors.cyan}
+                  onClick={() => {
+                    handleStorageColorChange(storageColors.cyan);
+                  }}
+                  size={componentSizes.small}
+                />
+                <ColorButton
+                  color={storageColors.teal}
+                  onClick={() => {
+                    handleStorageColorChange(storageColors.teal);
+                  }}
+                  size={componentSizes.small}
+                />
+                <ColorButton
+                  color={storageColors.green}
+                  onClick={() => {
+                    handleStorageColorChange(storageColors.green);
+                  }}
+                  size={componentSizes.small}
+                />
+                <ColorButton
+                  color={storageColors.lightGreen}
+                  onClick={() => {
+                    handleStorageColorChange(storageColors.lightGreen);
+                  }}
+                  size={componentSizes.small}
+                />
+                <ColorButton
+                  color={storageColors.lime}
+                  onClick={() => {
+                    handleStorageColorChange(storageColors.lime);
+                  }}
+                  size={componentSizes.small}
+                />
+                <ColorButton
+                  color={storageColors.yellow}
+                  onClick={() => {
+                    handleStorageColorChange(storageColors.yellow);
+                  }}
+                  size={componentSizes.small}
+                />
+                <ColorButton
+                  color={storageColors.amber}
+                  onClick={() => {
+                    handleStorageColorChange(storageColors.amber);
+                  }}
+                  size={componentSizes.small}
+                />
+                <ColorButton
+                  color={storageColors.orange}
+                  onClick={() => {
+                    handleStorageColorChange(storageColors.orange);
+                  }}
+                  size={componentSizes.small}
+                />
+                <ColorButton
+                  color={storageColors.deepOrange}
+                  onClick={() => {
+                    handleStorageColorChange(storageColors.deepOrange);
+                  }}
+                  size={componentSizes.small}
+                />
+              </div>
+            }
+          />
         </div>
       </div>
 
-      <div className={getContentStyles()}>
+      {/* <div>
         <Label sublabel className={styles.label}>
           <Translate section={componentName} text="colorsToChooseLabel" />
         </Label>
-
-        <div className={styles.colorButtonsWrapper}>
-          <ColorButton
-            color={storageColors.white}
-            onClick={() => {
-              handleStorageColorChange(storageColors.white);
-              closeAccordion();
-            }}
-          />
-          <ColorButton
-            color={storageColors.red}
-            onClick={() => {
-              handleStorageColorChange(storageColors.red);
-              closeAccordion();
-            }}
-          />
-          <ColorButton
-            color={storageColors.pink}
-            onClick={() => {
-              handleStorageColorChange(storageColors.pink);
-              closeAccordion();
-            }}
-          />
-          <ColorButton
-            color={storageColors.purple}
-            onClick={() => {
-              handleStorageColorChange(storageColors.purple);
-              closeAccordion();
-            }}
-          />
-          <ColorButton
-            color={storageColors.deepPurple}
-            onClick={() => {
-              handleStorageColorChange(storageColors.deepPurple);
-              closeAccordion();
-            }}
-          />
-          <ColorButton
-            color={storageColors.indigo}
-            onClick={() => {
-              handleStorageColorChange(storageColors.indigo);
-              closeAccordion();
-            }}
-          />
-          <ColorButton
-            color={storageColors.blue}
-            onClick={() => {
-              handleStorageColorChange(storageColors.blue);
-              closeAccordion();
-            }}
-          />
-          <ColorButton
-            color={storageColors.lightBlue}
-            onClick={() => {
-              handleStorageColorChange(storageColors.lightBlue);
-              closeAccordion();
-            }}
-          />
-          <ColorButton
-            color={storageColors.cyan}
-            onClick={() => {
-              handleStorageColorChange(storageColors.cyan);
-              closeAccordion();
-            }}
-          />
-          <ColorButton
-            color={storageColors.teal}
-            onClick={() => {
-              handleStorageColorChange(storageColors.teal);
-              closeAccordion();
-            }}
-          />
-          <ColorButton
-            color={storageColors.green}
-            onClick={() => {
-              handleStorageColorChange(storageColors.green);
-              closeAccordion();
-            }}
-          />
-          <ColorButton
-            color={storageColors.lightGreen}
-            onClick={() => {
-              handleStorageColorChange(storageColors.lightGreen);
-              closeAccordion();
-            }}
-          />
-          <ColorButton
-            color={storageColors.lime}
-            onClick={() => {
-              handleStorageColorChange(storageColors.lime);
-              closeAccordion();
-            }}
-          />
-          <ColorButton
-            color={storageColors.yellow}
-            onClick={() => {
-              handleStorageColorChange(storageColors.yellow);
-              closeAccordion();
-            }}
-          />
-          <ColorButton
-            color={storageColors.amber}
-            onClick={() => {
-              handleStorageColorChange(storageColors.amber);
-              closeAccordion();
-            }}
-          />
-          <ColorButton
-            color={storageColors.orange}
-            onClick={() => {
-              handleStorageColorChange(storageColors.orange);
-              closeAccordion();
-            }}
-          />
-          <ColorButton
-            color={storageColors.deepOrange}
-            onClick={() => {
-              handleStorageColorChange(storageColors.deepOrange);
-              closeAccordion();
-            }}
-          />
-        </div>
-      </div>
+      </div> */}
 
       <div className={styles.submitButtonWrapper}>
         <Button

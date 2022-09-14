@@ -1,23 +1,29 @@
 import { useDropdown } from "components/Dropdown";
 import React from "react";
 import { CSSTransition } from "react-transition-group";
-import styles from "./Dropdown.module.css";
 import contentStyles from "./content.module.css";
 
-const Dropdown = ({ dropdownButton, dropdownContent }) => {
+const Dropdown = ({
+  className,
+  additionalContentStyles,
+  dropdownButton,
+  dropdownContent,
+  hideOnClick,
+}) => {
   const {
     darkTheme,
     buttonRef,
     contentRef,
     showContent,
     handleButton,
-    getBackdropStyles,
     handleHideContent,
+    getContainerStyles,
+    getBackdropStyles,
     getContentStyles,
-  } = useDropdown();
+  } = useDropdown({ className, additionalContentStyles });
 
   return (
-    <div className={styles.container}>
+    <div className={getContainerStyles()}>
       <span onClick={handleButton} ref={buttonRef}>
         {dropdownButton}
       </span>
@@ -35,6 +41,7 @@ const Dropdown = ({ dropdownButton, dropdownContent }) => {
           className={getContentStyles()}
           data-dark-theme={darkTheme}
           ref={contentRef}
+          onClick={hideOnClick ? handleHideContent : null}
         >
           {dropdownContent}
         </div>
