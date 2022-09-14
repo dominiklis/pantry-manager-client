@@ -26,13 +26,10 @@
   width: 100%;
 }
 
-.selectColorContent {
-  top: 42px;
-}
-
 .colorButtonsWrapper {
   display: flex;
   align-items: center;
+  padding: 4px;
   gap: 8px;
   flex-wrap: wrap;
   justify-content: space-between;

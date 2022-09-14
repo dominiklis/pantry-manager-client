@@ -20,7 +20,7 @@ const Dropdown = ({
     getContainerStyles,
     getBackdropStyles,
     getContentStyles,
-  } = useDropdown({ className, additionalContentStyles });
+  } = useDropdown({ className });
 
   return (
     <div className={getContainerStyles()}>

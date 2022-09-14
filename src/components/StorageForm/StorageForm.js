@@ -64,7 +64,6 @@ const StorageForm = ({
           </Label>
           <Dropdown
             className={styles.selectColor}
-            additionalContentStyles={styles.selectColorContent}
             hideOnClick
             dropdownButton={<ColorButton color={input.color} />}
             dropdownContent={

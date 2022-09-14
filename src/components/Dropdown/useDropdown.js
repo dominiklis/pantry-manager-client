@@ -2,7 +2,7 @@ import { useIsDarkTheme } from "hooks";
 import { useRef, useState } from "react";
 import styles from "./Dropdown.module.css";
 
-const useDropdown = ({ className, additionalContentStyles }) => {
+const useDropdown = ({ className }) => {
   const darkTheme = useIsDarkTheme();
 
   const buttonRef = useRef(null);
@@ -44,7 +44,6 @@ const useDropdown = ({ className, additionalContentStyles }) => {
     let res = styles.content;
 
     if (!inLeftHalf) res += ` ${styles.contentRight}`;
-    if (additionalContentStyles) res += ` ${additionalContentStyles}`;
 
     return res;
   };
