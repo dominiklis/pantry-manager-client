@@ -20,6 +20,7 @@ const Toolbar = ({
   return (
     <div className={styles.toolbar}>
       <Select
+        hideOnClick
         selectedValue={sortBy}
         options={orderByOptions}
         onChange={onSortByChange}
@@ -29,6 +30,7 @@ const Toolbar = ({
         <span>
           <Translate section={componentName} text="highlight" />
           <Select
+            hideOnClick
             selectedValue={highlight}
             options={highlightOptions}
             onChange={onHighlightChange}
@@ -38,6 +40,7 @@ const Toolbar = ({
         <span>
           <Translate section={componentName} text="filter" />
           <Select
+            hideOnClick
             selectedValue={filterBy}
             options={filterOptions}
             onChange={onFilterByChange}

@@ -4,13 +4,20 @@ import { useIsDarkTheme } from "hooks";
 import React from "react";
 import styles from "./Select.module.css";
 
-const Select = ({ buttonStyles, options, selectedValue, onChange }) => {
+const Select = ({
+  buttonStyles,
+  options,
+  selectedValue,
+  onChange,
+  hideOnClick,
+}) => {
   const darkTheme = useIsDarkTheme();
 
   if (!options || !Array.isArray(options)) return null;
 
   return (
     <Dropdown
+      hideOnClick={hideOnClick}
       dropdownButton={
         <Button
           type="button"

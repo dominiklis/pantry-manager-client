@@ -22,6 +22,7 @@ const SelectShoppingList = ({
     <div className={styles.container}>
       <Label>{label}</Label>
       <Select
+        hideOnClick
         options={selectStorageOptions}
         selectedValue={selectedShoppingList ?? various.noShoppingList}
         onChange={onChange}

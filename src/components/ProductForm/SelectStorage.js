@@ -13,6 +13,7 @@ const SelectStorage = ({ onChange, selectedStorage, label }) => {
     <div className={styles.container}>
       <Label>{label}</Label>
       <Select
+        hideOnClick
         options={selectStorageOptions}
         selectedValue={selectedStorage ?? various.noStorage}
         onChange={onChange}
