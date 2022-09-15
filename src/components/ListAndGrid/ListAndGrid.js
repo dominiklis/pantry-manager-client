@@ -1,4 +1,5 @@
-import { DisplayAsButton, SortByButton, Translate } from "components";
+import { Translate } from "components";
+import { DisplayAsButton, SortByButton } from "components/ListAndGrid";
 import { sortByValues, displayAs as displayAsValues } from "constantStrings";
 import { useIsDarkTheme } from "hooks";
 import React from "react";
