@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { addToast, createProduct } from "store/actions";
 
 const useCreateProduct = ({ componentName }) => {
@@ -20,11 +21,12 @@ const useCreateProduct = ({ componentName }) => {
   });
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await dispatch(
+    const result = await dispatch(
       createProduct({
         productName: input.productName,
         expirationDate: input.expirationDate ? input.expirationDate : null,
@@ -32,7 +34,13 @@ const useCreateProduct = ({ componentName }) => {
         storageId: input.storageId,
         labels: input.labels,
       })
-    );
+    ).unwrap();
+
+    if (result?.productId) {
+      if (result?.storageId)
+        navigate(`/storages/${result.storageId}#${result.productId}`);
+      else navigate(`/products#${result.productId}`);
+    }
 
     dispatch(
       addToast({
