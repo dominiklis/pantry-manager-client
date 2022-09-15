@@ -1,50 +1,40 @@
+import { Accordion } from "components";
 import { ProductActions, ProductHeader, useProduct } from "components/Product";
 import ProductDetails from "components/Product/ProductDetails";
-import { useAccordion, useIsDarkTheme } from "hooks";
 import React from "react";
+import styles from "./Product.module.css";
 
 const Product = ({ productId, highlight, initiallyOpen, open }) => {
-  const darkTheme = useIsDarkTheme();
-
-  const { toggleShowContent, getContentStyles, openAccordion } = useAccordion({
-    initiallyOpen: initiallyOpen ?? false,
-  });
-
   const {
+    darkTheme,
     product,
     storage,
     closeToExpiry,
     expired,
     numberOfDaysForWarning,
-    handleKeyDown,
-    getContainerStyles,
-  } = useProduct({
-    productId,
-    toggleShowContent,
-    open,
-    openAccordion,
-    initiallyOpen,
-  });
+  } = useProduct({ productId });
 
   return (
     <div
-      className={getContainerStyles()}
-      tabIndex={1}
-      onKeyDown={handleKeyDown}
+      className={styles.container}
       id={productId}
       data-dark-theme={darkTheme}
     >
-      <ProductHeader
-        toggleShowContent={toggleShowContent}
-        productName={product.productName}
-        storageColor={storage?.color}
-        amount={product.amount}
-        unit={product.unit}
-        highlight={highlight}
-        closeToExpiry={closeToExpiry}
-        expired={expired}
-      />
-      <div className={getContentStyles()}>
+      <Accordion
+        open={open}
+        initiallyOpen={initiallyOpen}
+        header={
+          <ProductHeader
+            productName={product.productName}
+            storageColor={storage?.color}
+            amount={product.amount}
+            unit={product.unit}
+            highlight={highlight}
+            closeToExpiry={closeToExpiry}
+            expired={expired}
+          />
+        }
+      >
         <ProductDetails
           productName={product.productName}
           expirationDate={product.expirationDate}
@@ -56,7 +46,7 @@ const Product = ({ productId, highlight, initiallyOpen, open }) => {
         />
 
         <ProductActions productId={product.productId} />
-      </div>
+      </Accordion>
     </div>
   );
 };

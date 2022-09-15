@@ -5,7 +5,6 @@ import React from "react";
 import styles from "./ProductHeader.module.css";
 
 const ProductHeader = ({
-  toggleShowContent,
   productName,
   storageColor,
   amount,
@@ -37,11 +36,7 @@ const ProductHeader = ({
   };
 
   return (
-    <div
-      className={styles.header}
-      onClick={toggleShowContent}
-      data-dark-theme={darkTheme}
-    >
+    <div className={styles.header} data-dark-theme={darkTheme}>
       <StorageIndicator color={storageColor} />
       <span className={getNameStyles()} data-dark-theme={darkTheme}>
         {productName}

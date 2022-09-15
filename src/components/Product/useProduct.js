@@ -1,16 +1,12 @@
-import { useEffect, useMemo } from "react";
+import { useIsDarkTheme } from "hooks";
+import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { makeSelectProductById, makeSelectStorageById } from "store/selectors";
 import { getForDaysAhead, getToday } from "utils";
-import styles from "./Product.module.css";
 
-const useProduct = ({
-  productId,
-  toggleShowContent,
-  open,
-  openAccordion,
-  initiallyOpen,
-}) => {
+const useProduct = ({ productId }) => {
+  const darkTheme = useIsDarkTheme();
+
   // select product
   const selectProductById = useMemo(makeSelectProductById, []);
   const product = useSelector((state) => selectProductById(state, productId));
@@ -41,30 +37,13 @@ const useProduct = ({
     ? false
     : expirationDateTime < todaysTime;
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") toggleShowContent();
-  };
-
-  useEffect(() => {
-    if (open) openAccordion();
-  }, [open]);
-
-  const getContainerStyles = () => {
-    let res = styles.container;
-
-    if (initiallyOpen) res += ` ${styles.initallyOpen}`;
-
-    return res;
-  };
-
   return {
+    darkTheme,
     product,
     storage,
     closeToExpiry,
     expired,
     numberOfDaysForWarning,
-    handleKeyDown,
-    getContainerStyles,
   };
 };
 
