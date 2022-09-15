@@ -1,3 +1,21 @@
+@keyframes selected {
+  0% {
+    background-color: var(--clr-sec1);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes selectedDarkTheme {
+  0% {
+    background-color: var(--clr-sec5);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
 .label {
   border-radius: 16px;
   padding: 4px 8px;
@@ -30,4 +48,13 @@
 .label:hover.transparent,
 .label:hover[data-dark-theme="true"].transparent {
   background-color: transparent;
+}
+
+.label.selected {
+  animation-name: selected;
+  animation-duration: 1s;
+}
+
+.label[data-dark-theme="true"].selected {
+  animation-name: selectedDarkTheme;
 }

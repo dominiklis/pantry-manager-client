@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { addToast, createLabel } from "store/actions";
 
 const useCreateLabel = ({ componentName }) => {
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   const { create: loading } = useSelector((state) => state.labels.loading);
 
@@ -12,7 +15,9 @@ const useCreateLabel = ({ componentName }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await dispatch(createLabel(labelName));
+    const result = await dispatch(createLabel(labelName)).unwrap();
+
+    if (result?.labelId) navigate(`/labels#${result.labelId}`);
 
     dispatch(
       addToast({

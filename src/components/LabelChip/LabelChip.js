@@ -9,12 +9,14 @@ const LabelChip = ({
   useButton,
   onClick,
   transparent,
+  selected,
 }) => {
   const getLabelStyles = () => {
     let res = styles.label;
 
     if (className) res += ` ${className}`;
     if (transparent) res += ` ${styles.transparent}`;
+    if (selected) res += ` ${styles.selected}`;
 
     return res;
   };

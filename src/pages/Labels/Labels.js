@@ -6,15 +6,20 @@ import {
   Translate,
 } from "components";
 import { sortByValues, displayAs as displayAsValues } from "constantStrings";
-import { useIsDarkTheme } from "hooks";
+import { useIsDarkTheme, useScrollToElement } from "hooks";
 import React, { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import { makeSelectLabelsDetails } from "store/selectors";
 import styles from "./Labels.module.css";
 
 const componentName = "Labels";
 
 const Labels = () => {
+  const { hash } = useLocation();
+  console.log(hash);
+  useScrollToElement(hash?.replace("#", ""));
+
   const darkTheme = useIsDarkTheme();
 
   const [sortBy, setSortBy] = useState(sortByValues.nameAsc);
@@ -68,12 +73,17 @@ const Labels = () => {
 
       <ul className={getListStyles()} data-dark-theme={darkTheme}>
         {labels.map((label) => (
-          <li key={label.labelId} className={styles.listItem}>
+          <li
+            key={label.labelId}
+            className={styles.listItem}
+            id={label.labelId}
+          >
             <LabelChip
               key={label.labelId}
               labelName={label.labelName}
               className={styles.link}
               transparent={displayAs === displayAsValues.list}
+              selected={label.labelId === hash.replace("#", "")}
             />
           </li>
         ))}
