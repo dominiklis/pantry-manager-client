@@ -223,7 +223,8 @@
 
   "Navigation": {
     "myPantry": "My Pantry",
-    "storages": "Storages"
+    "storages": "Storages",
+    "products": "Products"
   },
 
   "ExportAsCSV": {

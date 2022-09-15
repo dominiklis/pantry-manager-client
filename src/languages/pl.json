@@ -223,7 +223,8 @@
 
   "Navigation": {
     "myPantry": "Moja spiżarnia",
-    "storages": "Magazyny"
+    "storages": "Magazyny",
+    "products": "Produkty"
   },
 
   "ExportAsCSV": {

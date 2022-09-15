@@ -47,6 +47,13 @@ const Navigation = () => {
           );
         }
       }
+    } else if (link[1] === "products") {
+      navbar.push(
+        <IoChevronForward key="chevron-1" />,
+        <AppLink to="/products" color="white" key="products">
+          <Translate section={componentName} text="products" />
+        </AppLink>
+      );
     }
 
     return navbar;
