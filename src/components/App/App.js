@@ -9,6 +9,7 @@ import {
   Register,
   Storage,
   Storages,
+  Label,
 } from "pages";
 import { Routes, Route } from "react-router-dom";
 
@@ -61,6 +62,14 @@ const App = () => {
             element={
               <RequireAuth>
                 <Labels />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="labels/:labelName"
+            element={
+              <RequireAuth>
+                <Label />
               </RequireAuth>
             }
           />

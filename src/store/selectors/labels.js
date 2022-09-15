@@ -8,7 +8,15 @@ export const makeSelectLabelsDetails = () =>
     selectLabels,
     (_, options = {}) => options,
     (labels, options) => {
-      const { labelsIds, sortBy } = options;
+      const { labelsIds, sortBy, labelName } = options;
+
+      if (labelName) {
+        const labelId = labels.allIds.find(
+          (id) => labels.byId[id].labelName === labelName
+        );
+
+        return labels.byId[labelId];
+      }
 
       let results = [];
 

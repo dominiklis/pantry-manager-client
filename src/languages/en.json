@@ -283,5 +283,19 @@
 
   "ListAndGrid": {
     "sortByButtonText": "Name"
+  },
+
+  "Label": {
+    "header": "Products labeld with"
+  },
+
+  "LabelNotFound": {
+    "createInfo": "The abel you are looking for does not exists, but you can create it.",
+    "buttonText": "Create",
+    "labelCraeteToast": "label has been created"
+  },
+
+  "NoProductsToDisplay": {
+    "noProductsInfo": "No products to display"
   }
 }

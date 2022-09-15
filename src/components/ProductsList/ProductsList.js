@@ -1,5 +1,5 @@
 import { Product } from "components";
-import { Toolbar } from "components/ProductsList";
+import { NoProductsToDisplay, Toolbar } from "components/ProductsList";
 import React from "react";
 
 const ProductsList = ({
@@ -12,6 +12,10 @@ const ProductsList = ({
   products,
   selectedProduct,
 }) => {
+  if (!products || !products.length) {
+    return <NoProductsToDisplay />;
+  }
+
   return (
     <>
       <Toolbar

@@ -283,5 +283,19 @@
 
   "ListAndGrid": {
     "sortByButtonText": "Nazwa"
+  },
+
+  "Label": {
+    "header": "Produkty z etykietą"
+  },
+
+  "LabelNotFound": {
+    "createInfo": "Etykieta, której szukasz, nie istnieje, ale możesz ją utworzyć.",
+    "buttonText": "Utwórz",
+    "labelCraeteToast": "etykieta została utworzona"
+  },
+
+  "NoProductsToDisplay": {
+    "noProductsInfo": "Brak produktów do pokazania"
   }
 }

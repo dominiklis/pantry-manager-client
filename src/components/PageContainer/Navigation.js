@@ -2,7 +2,7 @@ import { AppLink, StorageHeader, Translate } from "components";
 import React, { useRef, useLayoutEffect } from "react";
 import { IoChevronForward } from "react-icons/io5";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import styles from "./Navigation.module.css";
 
 const componentName = "Navigation";
@@ -11,6 +11,7 @@ const Navigation = () => {
   const { byId: storages } = useSelector((state) => state.storages);
 
   const location = useLocation();
+  const { labelName } = useParams();
 
   const navigationRef = useRef();
 
@@ -61,6 +62,15 @@ const Navigation = () => {
           <Translate section={componentName} text="labels" />
         </AppLink>
       );
+
+      if (link?.[2]) {
+        navbar.push(
+          <IoChevronForward key="chevron-2" />,
+          <AppLink to={`/labels/${link[2]}`} key="labels-name">
+            {labelName}
+          </AppLink>
+        );
+      }
     }
 
     return navbar;
