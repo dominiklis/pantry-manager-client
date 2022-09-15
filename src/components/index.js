@@ -34,6 +34,7 @@ import { SortByButton } from "components/SortByButton";
 import { DisplayAsButton } from "components/DisplayAsButton";
 import { ListAndGrid } from "components/ListAndGrid";
 import { ListAndGridItem } from "components/ListAndGridItem";
+import { Accordion } from "components/Accordion";
 
 export {
   App,
@@ -72,4 +73,5 @@ export {
   DisplayAsButton,
   ListAndGrid,
   ListAndGridItem,
+  Accordion,
 };

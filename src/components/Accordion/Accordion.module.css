@@ -1,0 +1,26 @@
+@keyframes initiallyOpen {
+  0% {
+    background-color: var(--clr-sec1);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes initiallyOpenDarkTheme {
+  0% {
+    background-color: var(--clr-sec5);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.openedAccordion {
+  animation-name: initiallyOpen;
+  animation-duration: 1s;
+}
+
+.openedAccordion[data-dark-theme="true"] {
+  animation-name: initiallyOpenDarkTheme;
+}
