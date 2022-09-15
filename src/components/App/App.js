@@ -1,7 +1,15 @@
 import { LoadingPage, RequireAuth, ToastsContainer } from "components";
 import { useApp } from "components/App";
 import Layout from "components/Layout/Layout";
-import { Home, Login, Products, Register, Storage, Storages } from "pages";
+import {
+  Home,
+  Labels,
+  Login,
+  Products,
+  Register,
+  Storage,
+  Storages,
+} from "pages";
 import { Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -45,6 +53,14 @@ const App = () => {
             element={
               <RequireAuth>
                 <Products />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/labels"
+            element={
+              <RequireAuth>
+                <Labels />
               </RequireAuth>
             }
           />

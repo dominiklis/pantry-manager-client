@@ -14,6 +14,7 @@ import storageColors from "constantStrings/storageColors";
 import sortStoragesBy from "constantStrings/sortStoragesBy";
 import displayAs from "constantStrings/displayAs";
 import highlightProducts from "constantStrings/highlightProducts";
+import sortByValues from "constantStrings/sortByValues";
 
 export {
   localStorageKeys,
@@ -32,4 +33,5 @@ export {
   sortStoragesBy,
   displayAs,
   highlightProducts,
+  sortByValues,
 };

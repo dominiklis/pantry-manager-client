@@ -8,16 +8,26 @@
   font-size: 16px;
   transition: 0.2s ease-in;
   transition-property: background-color;
-}
-
-.label:hover {
-  background-color: var(--clr-gray6);
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .label[data-dark-theme="true"] {
   background-color: var(--clr-gray4);
 }
 
+.label:hover {
+  background-color: var(--clr-gray6);
+}
+
 .label:hover[data-dark-theme="true"] {
   background-color: var(--clr-gray5);
+}
+
+.label.transparent,
+.label[data-dark-theme="true"].transparent,
+.label:hover.transparent,
+.label:hover[data-dark-theme="true"].transparent {
+  background-color: transparent;
 }

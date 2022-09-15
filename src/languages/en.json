@@ -221,7 +221,8 @@
   "Navigation": {
     "myPantry": "My Pantry",
     "storages": "Storages",
-    "products": "Products"
+    "products": "Products",
+    "labels": "Labels"
   },
 
   "ExportAsCSV": {
@@ -278,5 +279,9 @@
     "submitSuccessToast": "changes saved",
     "errorDeleteToast": "user doesn't have an access, refresh list",
     "removingSuccessToast": "access scuccessfully remove"
+  },
+
+  "Labels": {
+    "sortByButtonText": "Name"
   }
 }

@@ -221,7 +221,8 @@
   "Navigation": {
     "myPantry": "Moja spiżarnia",
     "storages": "Magazyny",
-    "products": "Produkty"
+    "products": "Produkty",
+    "labels": "Etykiety"
   },
 
   "ExportAsCSV": {
@@ -278,5 +279,9 @@
     "submitSuccessToast": "zmiany zostały zapisane",
     "errorDeleteToast": "ten użytkownik nie posiada dostępu, odśwież listę",
     "removingSuccessToast": "dostęp został usunięty"
+  },
+
+  "Labels": {
+    "sortByButtonText": "Nazwa"
   }
 }
