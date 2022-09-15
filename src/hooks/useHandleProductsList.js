@@ -1,14 +1,14 @@
 import {
   filterProductsBy,
   highlightProducts,
-  sortProductsBy,
+  sortByValues,
 } from "constantStrings";
 import { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { makeSelectProducts } from "store/selectors";
 
 const useHandleProductsList = (selectProductsOptions) => {
-  const [sortBy, setSortBy] = useState(sortProductsBy.sortByNameAsc);
+  const [sortBy, setSortBy] = useState(sortByValues.nameAsc);
   const [highlight, setHighlight] = useState(highlightProducts.none);
   const [filterBy, setFilterBy] = useState(filterProductsBy.all);
 

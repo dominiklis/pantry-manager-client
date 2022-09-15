@@ -1,4 +1,4 @@
-import { filterProductsBy, sortProductsBy } from "constantStrings";
+import { filterProductsBy, sortByValues } from "constantStrings";
 import { useGroupProductsByStorages } from "hooks";
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
@@ -10,7 +10,7 @@ const useCloseToExpiryProducts = () => {
   const productsCloseToExpiry = useSelector((state) =>
     selectCloseToExpiry(state, {
       closeToExpiry: true,
-      sortBy: sortProductsBy.sortByExpDateAsc,
+      sortBy: sortByValues.expDateAsc,
       filterBy: filterProductsBy.closeToExpiry,
       getProductBody: true,
     })

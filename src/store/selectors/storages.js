@@ -1,5 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { sortStoragesBy } from "constantStrings";
+import { sortByValues } from "constantStrings";
 import { selectStorages } from "store/selectors";
 import { sortByName } from "utils";
 
@@ -19,9 +19,9 @@ export const makeSelectStorages = () =>
         });
       } else results = storages.allIds.map((id) => storages.byId[id]);
 
-      if (sortBy === sortStoragesBy.sortByNameDesc) {
+      if (sortBy === sortByValues.nameDesc) {
         sortByName(results, "storageName", true);
-      } else if (sortBy === sortStoragesBy.sortByNameAsc) {
+      } else if (sortBy === sortByValues.nameAsc) {
         sortByName(results, "storageName");
       }
 

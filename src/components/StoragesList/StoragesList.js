@@ -1,6 +1,6 @@
 import { DisplayAsButton, SortByButton, Translate } from "components";
 import { List, useStoragesList } from "components/StoragesList";
-import { sortStoragesBy, displayAs as displayAsValues } from "constantStrings";
+import { displayAs as displayAsValues, sortByValues } from "constantStrings";
 import React from "react";
 import styles from "./StoragesList.module.css";
 
@@ -27,7 +27,7 @@ const StoragesList = ({ className, noHeader }) => {
       <div className={styles.toolbar}>
         <SortByButton
           onClick={handleSortByButton}
-          sortingAsc={sortBy === sortStoragesBy.sortByNameAsc}
+          sortingAsc={sortBy === sortByValues.nameAsc}
           buttonText={
             <Translate section={componentName} text="sortByButtonText" />
           }

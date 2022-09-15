@@ -2,7 +2,7 @@ import { Translate } from "components";
 import {
   filterProductsBy,
   highlightProducts,
-  sortProductsBy,
+  sortByValues,
 } from "constantStrings";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 import { SelectOption } from "utils";
@@ -10,22 +10,22 @@ import { SelectOption } from "utils";
 const useToolbar = ({ componentName }) => {
   const orderByOptions = [
     new SelectOption(
-      sortProductsBy.sortByNameAsc,
+      sortByValues.nameAsc,
       <Translate section={componentName} text="name" />,
       <IoChevronUp />
     ),
     new SelectOption(
-      sortProductsBy.sortByNameDesc,
+      sortByValues.nameDesc,
       <Translate section={componentName} text="name" />,
       <IoChevronDown />
     ),
     new SelectOption(
-      sortProductsBy.sortByExpDateAsc,
+      sortByValues.expDateAsc,
       <Translate section={componentName} text="expirationDate" />,
       <IoChevronDown />
     ),
     new SelectOption(
-      sortProductsBy.sortByExpDateDesc,
+      sortByValues.expDateDesc,
       <Translate section={componentName} text="expirationDate" />,
       <IoChevronUp />
     ),

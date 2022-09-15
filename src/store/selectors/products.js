@@ -1,5 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { filterProductsBy, sortProductsBy } from "constantStrings";
+import { filterProductsBy, sortByValues } from "constantStrings";
 import { selectProducts, selectStorages } from "store/selectors";
 import { sortIdsByName, sortByExpDate } from "utils/sort";
 import { store } from "store/store";
@@ -25,13 +25,13 @@ export const makeSelectProducts = () =>
 
       // sort products
       // sort products by name if no option selected or when sortByName is selected
-      if (!sortBy || sortBy === sortProductsBy.sortByNameAsc) {
+      if (!sortBy || sortBy === sortByValues.nameAsc) {
         results = sortIdsByName(
           [...products.allIds],
           products.byId,
           "productName"
         );
-      } else if (sortBy === sortProductsBy.sortByNameDesc) {
+      } else if (sortBy === sortByValues.nameDesc) {
         results = sortIdsByName(
           [...products.allIds],
           products.byId,
@@ -52,7 +52,7 @@ export const makeSelectProducts = () =>
 
         withoutDate = sortIdsByName(withoutDate, products.byId, "productName");
 
-        if (sortBy === sortProductsBy.sortByExpDateAsc) {
+        if (sortBy === sortByValues.expDateAsc) {
           withDate = sortByExpDate(withDate, products.byId);
 
           results = [...withDate, ...withoutDate];

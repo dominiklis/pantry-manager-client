@@ -1,10 +1,10 @@
-import { sortStoragesBy, displayAs as displayAsValues } from "constantStrings";
+import { displayAs as displayAsValues, sortByValues } from "constantStrings";
 import { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { makeSelectStorages } from "store/selectors";
 
 const useStoragesList = ({ className }) => {
-  const [sortBy, setSortBy] = useState(sortStoragesBy.sortByNameAsc);
+  const [sortBy, setSortBy] = useState(sortByValues.nameAsc);
   const [displayAs, setDisplay] = useState(displayAsValues.list);
 
   const selectStorages = useMemo(makeSelectStorages, []);
@@ -16,10 +16,9 @@ const useStoragesList = ({ className }) => {
 
   const handleSortByButton = () =>
     setSortBy((prev) => {
-      if (prev === sortStoragesBy.sortByNameAsc)
-        return sortStoragesBy.sortByNameDesc;
+      if (prev === sortByValues.nameAsc) return sortByValues.nameDesc;
 
-      return sortStoragesBy.sortByNameAsc;
+      return sortByValues.nameAsc;
     });
 
   const handleDisplayAsButton = () =>

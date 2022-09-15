@@ -1,5 +1,5 @@
 import { StorageIndicator, Translate } from "components";
-import { sortStoragesBy, various } from "constantStrings";
+import { sortByValues, various } from "constantStrings";
 import { useMemo } from "react";
 import { IoClose } from "react-icons/io5";
 import { useSelector } from "react-redux";
@@ -8,7 +8,7 @@ import { makeSelectStorages } from "store/selectors";
 const useSelectStorage = ({ componentName }) => {
   const selectStorages = useMemo(makeSelectStorages, []);
   const storages = useSelector((state) =>
-    selectStorages(state, { sortBy: sortStoragesBy.sortByNameAsc })
+    selectStorages(state, { sortBy: sortByValues.nameAsc })
   );
 
   const selectStorageOptions = useMemo(() => {
