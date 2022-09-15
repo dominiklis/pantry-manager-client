@@ -73,15 +73,12 @@
   "StorageHeader": { "warningFor": "ostrzeganie dla " },
 
   "StoragesList": {
-    "header": "Magazyny"
+    "header": "Magazyny",
+    "sortByButtonText": "Nazwa"
   },
 
   "ProductsWithoutStoragesList": {
     "header": "Produkty bez przypisanego magazynu"
-  },
-
-  "SortByButton": {
-    "name": "Nazwa"
   },
 
   "ToolBar": {

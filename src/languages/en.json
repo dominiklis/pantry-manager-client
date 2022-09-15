@@ -73,15 +73,12 @@
   "StorageHeader": { "warningFor": "warning for " },
 
   "StoragesList": {
-    "header": "Storages"
+    "header": "Storages",
+    "sortByButtonText": "Name"
   },
 
   "ProductsWithoutStoragesList": {
     "header": "Products without storage"
-  },
-
-  "SortByButton": {
-    "name": "Name"
   },
 
   "ToolBar": {
@@ -91,7 +88,7 @@
     "expirationDate": "Expirationd date",
     "none": "None",
     "closeToExpiry": "Close to expiry",
-    "all": "all",
+    "all": "All",
     "expired": "Expired",
     "showAll": "Show all"
   },
@@ -228,11 +225,11 @@
   },
 
   "ExportAsCSV": {
-    "buttonText": "export as CSV"
+    "buttonText": "Export as CSV"
   },
 
   "ExportAsJSON": {
-    "buttonText": "export as JSON"
+    "buttonText": "Export as JSON"
   },
 
   "EditStorage": {
@@ -241,10 +238,10 @@
   },
 
   "StorageActions": {
-    "shareButtonText": "share",
-    "editButtonText": "edit",
-    "deleteButtonText": "delete",
-    "menuButtonText": "export",
+    "shareButtonText": "Share",
+    "editButtonText": "Edit",
+    "deleteButtonText": "Delete",
+    "menuButtonText": "Export",
     "shareActionHeader": "Share Storage",
     "editActionHeader": "Edit Storage",
     "deleteActionHeader": "Delete Storage"
