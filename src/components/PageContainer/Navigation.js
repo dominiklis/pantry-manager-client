@@ -57,7 +57,7 @@ const Navigation = () => {
     } else if (link[1] === "labels") {
       navbar.push(
         <IoChevronForward key="chevron-1" />,
-        <AppLink to="/products" key="labels">
+        <AppLink to="/labels" key="labels">
           <Translate section={componentName} text="labels" />
         </AppLink>
       );
