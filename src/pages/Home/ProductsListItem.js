@@ -44,10 +44,7 @@ const ProductsListItem = ({ product, daysColor }) => {
     );
 
   return (
-    <AppLink
-      color="white"
-      to={`storages/${product.storageId}#${product.productId}`}
-    >
+    <AppLink to={`storages/${product.storageId}#${product.productId}`}>
       {product.productName}
       <span className={getDaysStyles()} data-dark-theme={darkTheme}>
         {getDaysFromTodayText(product.expirationDate, language)}

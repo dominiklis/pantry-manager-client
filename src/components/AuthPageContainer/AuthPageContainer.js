@@ -56,9 +56,14 @@ const AuthPageContainer = ({
         </form>
 
         <div className={styles.footer}>
-          {footerText} <AppLink to={link}>{linkText}</AppLink>
+          <div className={styles.footerLink}>
+            {footerText}
+            <AppLink to={link} color={componentColors.primary}>
+              {linkText}
+            </AppLink>
+          </div>
           <div className={styles.language}>
-            <Translate section={componentName} text="changeLanguage" />{" "}
+            <Translate section={componentName} text="changeLanguage" />
             <AppLanguage />
           </div>
         </div>

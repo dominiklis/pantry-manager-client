@@ -1,4 +1,4 @@
-import { StorageIndicator, Translate } from "components";
+import { AppLink, StorageIndicator, Translate } from "components";
 import { LabelsList } from "components/Product";
 import React from "react";
 import { useSelector } from "react-redux";
@@ -48,8 +48,10 @@ const ProductDetails = ({
         </span>
         {storageId ? (
           <>
-            <StorageIndicator color={storageColor} />
-            <span>{storageName}</span>
+            <AppLink to={`/storages/${storageId}`}>
+              <StorageIndicator color={storageColor} />
+              <span>{storageName}</span>
+            </AppLink>
           </>
         ) : (
           <span>

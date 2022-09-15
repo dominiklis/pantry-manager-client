@@ -15,11 +15,7 @@ const StorageHeader = ({
     return <span className={styles.container}>{storageName}</span>;
 
   return (
-    <AppLink
-      to={`/storages/${storageId}`}
-      color="white"
-      className={styles.container}
-    >
+    <AppLink to={`/storages/${storageId}`} className={styles.container}>
       <StorageIndicator icon color={storageColor} />
       {storageName}
       {showDaysInStorageHeader ? (

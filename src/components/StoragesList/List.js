@@ -20,7 +20,6 @@ const List = ({ storages, displayAsGrid }) => {
         <li key={storage.storageId} className={styles.listItem}>
           <AppLink
             to={`/storages/${storage.storageId}`}
-            color="white"
             className={styles.link}
           >
             <StorageIndicator icon color={storage.color} />

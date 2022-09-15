@@ -91,6 +91,12 @@
   color: var(--clr-gray5);
 }
 
+.footerLink {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
 .languages {
   display: flex;
   gap: 8px;

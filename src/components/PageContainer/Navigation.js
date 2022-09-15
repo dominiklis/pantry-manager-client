@@ -19,7 +19,7 @@ const Navigation = () => {
     // console.log(link);
 
     let navbar = [
-      <AppLink to="/" color="white" key="home">
+      <AppLink to="/" key="home">
         <Translate section={componentName} text="myPantry" />
       </AppLink>,
     ];
@@ -27,7 +27,7 @@ const Navigation = () => {
     if (link[1] === "storages") {
       navbar.push(
         <IoChevronForward key="chevron-1" />,
-        <AppLink to="/storages" color="white" key="storages">
+        <AppLink to="/storages" key="storages">
           <Translate section={componentName} text="storages" />
         </AppLink>
       );
@@ -50,7 +50,7 @@ const Navigation = () => {
     } else if (link[1] === "products") {
       navbar.push(
         <IoChevronForward key="chevron-1" />,
-        <AppLink to="/products" color="white" key="products">
+        <AppLink to="/products" key="products">
           <Translate section={componentName} text="products" />
         </AppLink>
       );
