@@ -48,7 +48,10 @@ const ProductDetails = ({
         </span>
         {storageId ? (
           <>
-            <AppLink to={`/storages/${storageId}`}>
+            <AppLink
+              to={`/storages/${storageId}`}
+              className={styles.storageLink}
+            >
               <StorageIndicator color={storageColor} />
               <span>{storageName}</span>
             </AppLink>

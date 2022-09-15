@@ -12,3 +12,9 @@
 .numberOfDays {
   color: var(--clr-gray2);
 }
+
+.storageLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
