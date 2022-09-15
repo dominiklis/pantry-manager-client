@@ -2,7 +2,6 @@ import { sortStoragesBy, displayAs as displayAsValues } from "constantStrings";
 import { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { makeSelectStorages } from "store/selectors";
-import styles from "./StoragesList.module.css";
 
 const useStoragesList = ({ className }) => {
   const [sortBy, setSortBy] = useState(sortStoragesBy.sortByNameAsc);

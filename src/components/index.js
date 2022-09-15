@@ -30,6 +30,8 @@ import { ExportAsJSON } from "components/ExportAsJSON";
 import { DropdownMenu } from "components/DropdownMenu";
 import { Dropdown } from "components/Dropdown";
 import { Actions } from "components/Actions";
+import { SortByButton } from "components/SortByButton";
+import { DisplayAsButton } from "components/DisplayAsButton";
 
 export {
   App,
@@ -64,4 +66,6 @@ export {
   DropdownMenu,
   Dropdown,
   Actions,
+  SortByButton,
+  DisplayAsButton,
 };
