@@ -1,13 +1,22 @@
-import { PageContainer, ProductsList, Translate } from "components";
+import {
+  Actions,
+  Button,
+  PageContainer,
+  ProductsList,
+  Translate,
+} from "components";
+import { componentSizes } from "constantStrings";
 import { useHandleProductsList } from "hooks";
-import { LabelNotFound, useLabel } from "pages/Label";
+import { EditLabel, LabelNotFound, useLabel } from "pages/Label";
 import React from "react";
+import { IoPencil, IoTrash } from "react-icons/io5";
+import { Action } from "utils";
 import styles from "./Label.module.css";
 
 const componentName = "Label";
 
 const Label = () => {
-  const { label } = useLabel();
+  const { label, handleDeleteLabel, loading } = useLabel({ componentName });
 
   const {
     sortBy,
@@ -33,6 +42,28 @@ const Label = () => {
         <Translate section={componentName} text="header" />
         <span className={styles.labelName}>{label.labelName}</span>
       </h1>
+
+      <Actions
+        additionalButtonsBefore={
+          <form onSubmit={handleDeleteLabel}>
+            <Button
+              icon={<IoTrash />}
+              size={componentSizes.small}
+              loading={loading}
+            >
+              <Translate section={componentName} text="deleteButtonText" />
+            </Button>
+          </form>
+        }
+        actions={[
+          new Action(
+            <Translate section={componentName} text="editActionHeader" />,
+            <EditLabel label={label} />,
+            <Translate section={componentName} text="editButtonText" />,
+            <IoPencil />
+          ),
+        ]}
+      />
 
       <ProductsList
         sortBy={sortBy}

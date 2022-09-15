@@ -286,7 +286,11 @@
   },
 
   "Label": {
-    "header": "Produkty z etykietą"
+    "header": "Produkty z etykietą",
+    "deleteButtonText": "Usuń",
+    "labelDeletedToast": "etykieta została usunięta",
+    "editActionHeader": "Edycja etykiety",
+    "editButtonText": "Edytuj"
   },
 
   "LabelNotFound": {
@@ -297,5 +301,10 @@
 
   "NoProductsToDisplay": {
     "noProductsInfo": "Brak produktów do pokazania"
+  },
+
+  "EditLabel": {
+    "submitButtonText": "Zapisz zmiany",
+    "labelEditedToast": "zmiany zostały zapisane"
   }
 }

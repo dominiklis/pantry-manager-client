@@ -286,7 +286,11 @@
   },
 
   "Label": {
-    "header": "Products labeld with"
+    "header": "Products labeld with",
+    "deleteButtonText": "Delete",
+    "labelDeletedToast": "label has been deleted",
+    "editActionHeader": "Edit Label",
+    "editButtonText": "Edit"
   },
 
   "LabelNotFound": {
@@ -297,5 +301,10 @@
 
   "NoProductsToDisplay": {
     "noProductsInfo": "No products to display"
+  },
+
+  "EditLabel": {
+    "submitButtonText": "Save Changes",
+    "labelEditedToast": "changes saved"
   }
 }
