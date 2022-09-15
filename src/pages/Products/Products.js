@@ -1,8 +1,12 @@
 import { PageContainer, ProductsList } from "components";
-import { useHandleProductsList } from "hooks";
+import { useHandleProductsList, useScrollToElement } from "hooks";
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 const Products = () => {
+  const { hash } = useLocation();
+  useScrollToElement(hash?.replace("#", ""));
+
   const {
     sortBy,
     highlight,
@@ -23,6 +27,7 @@ const Products = () => {
         filterBy={filterBy}
         onFilterByChange={handleFilterByChange}
         products={products}
+        selectedProduct={hash?.replace("#", "")}
       />
     </PageContainer>
   );
