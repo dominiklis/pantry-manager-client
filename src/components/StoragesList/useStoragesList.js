@@ -1,11 +1,13 @@
+import { AppLink, ListAndGridItem, StorageIndicator } from "components";
 import { displayAs as displayAsValues, sortByValues } from "constantStrings";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { makeSelectStorages } from "store/selectors";
+import styles from "./StoragesList.module.css";
 
 const useStoragesList = ({ className }) => {
   const [sortBy, setSortBy] = useState(sortByValues.nameAsc);
-  const [displayAs, setDisplay] = useState(displayAsValues.list);
+  const [displayAs, setDisplayAs] = useState(displayAsValues.list);
 
   const selectStorages = useMemo(makeSelectStorages, []);
   const storages = useSelector((state) =>
@@ -14,19 +16,29 @@ const useStoragesList = ({ className }) => {
     })
   );
 
-  const handleSortByButton = () =>
-    setSortBy((prev) => {
-      if (prev === sortByValues.nameAsc) return sortByValues.nameDesc;
+  const getLinkStyles = useCallback(() => {
+    let res = styles.link;
 
-      return sortByValues.nameAsc;
-    });
+    if (displayAs === displayAsValues.grid) res += ` ${styles.grid}`;
 
-  const handleDisplayAsButton = () =>
-    setDisplay((prev) => {
-      if (prev === displayAsValues.list) return displayAsValues.grid;
+    return res;
+  }, [displayAs]);
 
-      return displayAsValues.list;
-    });
+  const elements = useMemo(
+    () =>
+      storages.map((storage) => (
+        <ListAndGridItem key={storage.storageId}>
+          <AppLink
+            to={`/storages/${storage.storageId}`}
+            className={getLinkStyles()}
+          >
+            <StorageIndicator icon color={storage.color} />
+            {storage.storageName}
+          </AppLink>
+        </ListAndGridItem>
+      )),
+    [getLinkStyles, storages]
+  );
 
   const getContainerStyles = () => {
     let res = "";
@@ -38,11 +50,10 @@ const useStoragesList = ({ className }) => {
 
   return {
     sortBy,
+    setSortBy,
     displayAs,
-    setDisplay,
-    storages,
-    handleSortByButton,
-    handleDisplayAsButton,
+    setDisplayAs,
+    elements,
     getContainerStyles,
   };
 };

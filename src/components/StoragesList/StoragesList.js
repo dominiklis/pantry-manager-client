@@ -1,6 +1,5 @@
-import { DisplayAsButton, SortByButton, Translate } from "components";
-import { List, useStoragesList } from "components/StoragesList";
-import { displayAs as displayAsValues, sortByValues } from "constantStrings";
+import { ListAndGrid, Translate } from "components";
+import { useStoragesList } from "components/StoragesList";
 import React from "react";
 import styles from "./StoragesList.module.css";
 
@@ -8,11 +7,11 @@ const componentName = "StoragesList";
 
 const StoragesList = ({ className, noHeader }) => {
   const {
+    elements,
     sortBy,
+    setSortBy,
     displayAs,
-    storages,
-    handleSortByButton,
-    handleDisplayAsButton,
+    setDisplayAs,
     getContainerStyles,
   } = useStoragesList({ className });
 
@@ -24,24 +23,12 @@ const StoragesList = ({ className, noHeader }) => {
         </div>
       )}
 
-      <div className={styles.toolbar}>
-        <SortByButton
-          onClick={handleSortByButton}
-          sortingAsc={sortBy === sortByValues.nameAsc}
-          buttonText={
-            <Translate section={componentName} text="sortByButtonText" />
-          }
-        />
-
-        <DisplayAsButton
-          onClick={handleDisplayAsButton}
-          displayAsList={displayAs === displayAsValues.list}
-        />
-      </div>
-
-      <List
-        storages={storages}
-        displayAsGrid={displayAs === displayAsValues.grid}
+      <ListAndGrid
+        elements={elements}
+        sortBy={sortBy}
+        setSortBy={setSortBy}
+        displayAs={displayAs}
+        setDisplayAs={setDisplayAs}
       />
     </div>
   );

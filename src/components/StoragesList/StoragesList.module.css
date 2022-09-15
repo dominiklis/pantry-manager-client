@@ -2,9 +2,18 @@
   margin-bottom: 8px;
 }
 
-.toolbar {
+.link {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--clr-gray3);
+  gap: 8px;
+}
+
+.link.grid {
+  background-color: var(--clr-gray6);
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+.link.grid[data-dark-theme="true"] {
+  background-color: var(--clr-gray5);
 }

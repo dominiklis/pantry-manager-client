@@ -32,6 +32,8 @@ import { Dropdown } from "components/Dropdown";
 import { Actions } from "components/Actions";
 import { SortByButton } from "components/SortByButton";
 import { DisplayAsButton } from "components/DisplayAsButton";
+import { ListAndGrid } from "components/ListAndGrid";
+import { ListAndGridItem } from "components/ListAndGridItem";
 
 export {
   App,
@@ -68,4 +70,6 @@ export {
   Actions,
   SortByButton,
   DisplayAsButton,
+  ListAndGrid,
+  ListAndGridItem,
 };

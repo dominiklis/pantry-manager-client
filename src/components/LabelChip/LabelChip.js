@@ -30,7 +30,7 @@ const LabelChip = ({
     );
 
   return (
-    <AppLink to={`labels/${labelName}`} className={getLabelStyles()}>
+    <AppLink to={`/labels/${labelName}`} className={getLabelStyles()}>
       <IoBookmarkOutline />
       {labelName}
     </AppLink>
