@@ -11,7 +11,7 @@ const useLabels = () => {
   useScrollToElement(hash?.replace("#", ""));
 
   const [sortBy, setSortBy] = useState(sortByValues.nameAsc);
-  const [displayAs, setDisplayAs] = useState(displayAsValues.list);
+  const [displayAs, setDisplayAs] = useState(displayAsValues.grid);
 
   const selectLabels = useMemo(makeSelectLabelsDetails, []);
   const labels = useSelector((state) =>
