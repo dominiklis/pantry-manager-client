@@ -8,7 +8,7 @@ import { makeSelectLabelsDetails } from "store/selectors";
 
 const useLabels = () => {
   const { hash } = useLocation();
-  useScrollToElement(hash?.replace("#", ""));
+  useScrollToElement();
 
   const [sortBy, setSortBy] = useState(sortByValues.nameAsc);
   const [displayAs, setDisplayAs] = useState(displayAsValues.grid);

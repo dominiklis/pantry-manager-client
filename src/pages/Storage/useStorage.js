@@ -5,14 +5,13 @@ import {
 } from "hooks";
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { makeSelectStorageById } from "store/selectors";
 
 const useStorage = () => {
   const { id: storageId } = useParams();
-  const { hash } = useLocation();
 
-  useScrollToElement(hash?.replace("#", ""));
+  useScrollToElement();
 
   const darkTheme = useIsDarkTheme();
 
@@ -42,7 +41,6 @@ const useStorage = () => {
     handleHighlightChange,
     filterBy,
     handleFilterByChange,
-    hash,
   };
 };
 

@@ -1,6 +1,10 @@
 import { useLayoutEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-const useScrollToElement = (id) => {
+const useScrollToElement = () => {
+  const { hash } = useLocation();
+  const id = hash?.replace("#", "");
+
   useLayoutEffect(() => {
     if (!id) window.scrollTo(0, 0);
     else {

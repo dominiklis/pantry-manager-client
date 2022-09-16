@@ -23,7 +23,6 @@ const Storage = () => {
     handleHighlightChange,
     filterBy,
     handleFilterByChange,
-    hash,
   } = useStorage();
 
   if (!storage) {
@@ -81,7 +80,6 @@ const Storage = () => {
         filterBy={filterBy}
         onFilterByChange={handleFilterByChange}
         products={products}
-        selectedProduct={hash?.replace("#", "")}
       />
     </PageContainer>
   );
