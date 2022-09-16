@@ -4,13 +4,14 @@ import {
   DropdownMenu,
   ExportAsCSV,
   ExportAsJSON,
+  Share,
   Translate,
 } from "components";
 import { componentColors, componentSizes } from "constantStrings";
-import { DeleteStorage, EditStorage, ShareStorage } from "pages/Storage";
+import { DeleteStorage, EditStorage } from "pages/Storage";
 import React from "react";
 import { IoDownload, IoPencil, IoShareSocial, IoTrash } from "react-icons/io5";
-import { Action } from "utils";
+import { Action, sortByName } from "utils";
 
 const componentName = "StorageActions";
 
@@ -54,10 +55,10 @@ const StorageActions = ({
         new Action(
           <Translate section={componentName} text="shareActionHeader" />,
           (
-            <ShareStorage
-              storageId={storageId}
+            <Share
+              id={storageId}
               ownerId={ownerId}
-              users={users}
+              users={sortByName([...users], "userName")}
             />
           ),
           <Translate section={componentName} text="shareButtonText" />,
