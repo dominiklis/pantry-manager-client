@@ -1,9 +1,11 @@
-import { Button } from "components";
+import { Button, Translate } from "components";
 import { componentColors, componentSizes } from "constantStrings";
 import React from "react";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 
-const SortByButton = ({ onClick, sortingAsc, buttonText }) => {
+const componentName = "SortByNameButton";
+
+const SortByNameButton = ({ onClick, sortingAsc, buttonText }) => {
   return (
     <Button
       backgroundColor={componentColors.transparent}
@@ -11,9 +13,9 @@ const SortByButton = ({ onClick, sortingAsc, buttonText }) => {
       onClick={onClick}
       icon={sortingAsc ? <IoChevronDown /> : <IoChevronUp />}
     >
-      {buttonText}
+      <Translate section={componentName} text="buttonText" />
     </Button>
   );
 };
 
-export default SortByButton;
+export default SortByNameButton;

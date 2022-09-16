@@ -1,11 +1,9 @@
-import { Translate } from "components";
-import { DisplayAsButton, SortByButton } from "components/ListAndGrid";
+import { ListHeader, SortByNameButton } from "components";
+import { DisplayAsButton } from "components/ListAndGrid";
 import { sortByValues, displayAs as displayAsValues } from "constantStrings";
 import { useIsDarkTheme } from "hooks";
 import React from "react";
 import styles from "./ListAndGrid.module.css";
-
-const componentName = "ListAndGrid";
 
 const ListAndGrid = ({
   elements,
@@ -41,20 +39,17 @@ const ListAndGrid = ({
   return (
     <>
       {/* header */}
-      <div className={styles.header}>
-        <SortByButton
+      <ListHeader>
+        <SortByNameButton
           onClick={handleSortByButton}
           sortingAsc={sortBy === sortByValues.nameAsc}
-          buttonText={
-            <Translate section={componentName} text="sortByButtonText" />
-          }
         />
 
         <DisplayAsButton
           onClick={handleDisplayAsButton}
           displayAsList={displayAs === displayAsValues.list}
         />
-      </div>
+      </ListHeader>
 
       {/* list */}
       <ul className={getListStyles()} data-dark-theme={darkTheme}>
