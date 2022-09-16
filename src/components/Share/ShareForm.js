@@ -1,5 +1,5 @@
 import { Button, Input, Label, Translate } from "components";
-import { useShareForm } from "components/ShareForm";
+import { useShareForm } from "components/Share";
 import { componentColors } from "constantStrings";
 import React from "react";
 import styles from "./ShareForm.module.css";

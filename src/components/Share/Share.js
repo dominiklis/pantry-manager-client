@@ -1,6 +1,5 @@
 import { Button, Translate } from "components";
-import { UsersWithAccessListItem, useShare } from "components/Share";
-import { ShareForm } from "components/ShareForm";
+import { ShareForm, UsersWithAccessListItem, useShare } from "components/Share";
 import { componentColors } from "constantStrings";
 import React from "react";
 import { IoRefresh } from "react-icons/io5";
