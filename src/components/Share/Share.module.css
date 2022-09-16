@@ -1,0 +1,8 @@
+.users {
+  display: flex;
+  align-items: center;
+}
+
+.usersTitle {
+  margin: 8px 0;
+}
