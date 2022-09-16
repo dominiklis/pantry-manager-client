@@ -16,6 +16,9 @@
   }
 }
 
+.container {
+}
+
 .openedAccordion {
   animation-name: initiallyOpen;
   animation-duration: 1s;
@@ -23,4 +26,9 @@
 
 .openedAccordion[data-dark-theme="true"] {
   animation-name: initiallyOpenDarkTheme;
+}
+
+.header {
+  cursor: pointer;
+  width: 100%;
 }

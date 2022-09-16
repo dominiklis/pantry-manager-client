@@ -17,9 +17,9 @@ const Accordion = ({ children, header, initiallyOpen, open }) => {
   }, [open]);
 
   const getContainerStyles = () => {
-    let res = "";
+    let res = styles.container;
 
-    if (open || initiallyOpen) res += styles.openedAccordion;
+    if (open) res += ` ${styles.openedAccordion}`;
 
     return res;
   };
@@ -28,7 +28,9 @@ const Accordion = ({ children, header, initiallyOpen, open }) => {
 
   return (
     <div className={getContainerStyles()} data-dark-theme={darkTheme}>
-      <span onClick={toggleShowContent}>{header}</span>
+      <div onClick={toggleShowContent} className={styles.header}>
+        {header}
+      </div>
 
       <CSSTransition
         nodeRef={contentRef}
