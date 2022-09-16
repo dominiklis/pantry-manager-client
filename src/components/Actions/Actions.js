@@ -7,17 +7,24 @@ import actionStyles from "./actionTransition.module.css";
 import { Action, useActions } from "components/Actions";
 
 const Actions = ({
+  className,
   initialValue,
   additionalButtonsBefore,
   additionalButtonsAfter,
-  actions,
+  actions = [],
 }) => {
-  const { selectedAction, handleActionButton, handleCloseAction } = useActions({
+  const {
+    selectedAction,
+    handleActionButton,
+    handleCloseAction,
+    getContainerStyles,
+  } = useActions({
     initialValue,
+    className,
   });
 
   return (
-    <div className={styles.container}>
+    <div className={getContainerStyles()}>
       {additionalButtonsBefore}
 
       {actions.map(({ button: { icon, text } }, index) => (
