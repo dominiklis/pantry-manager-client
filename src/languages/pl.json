@@ -222,7 +222,8 @@
     "myPantry": "Moja spiżarnia",
     "storages": "Magazyny",
     "products": "Produkty",
-    "labels": "Etykiety"
+    "labels": "Etykiety",
+    "lists": "Listy zakupów"
   },
 
   "ExportAsCSV": {

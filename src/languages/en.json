@@ -222,7 +222,8 @@
     "myPantry": "My Pantry",
     "storages": "Storages",
     "products": "Products",
-    "labels": "Labels"
+    "labels": "Labels",
+    "lists": "Shopping Lists"
   },
 
   "ExportAsCSV": {

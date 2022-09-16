@@ -71,6 +71,13 @@ const Navigation = () => {
           </AppLink>
         );
       }
+    } else if (link[1] === "lists") {
+      navbar.push(
+        <IoChevronForward key="chevron-1" />,
+        <AppLink to="/lists" key="lists">
+          <Translate section={componentName} text="lists" />
+        </AppLink>
+      );
     }
 
     return navbar;
