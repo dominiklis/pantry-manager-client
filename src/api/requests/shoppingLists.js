@@ -8,7 +8,9 @@ const shoppingLists = {
   edit: (shoppingListId, shoppingListName) =>
     requests.put(`/shopping-lists/${shoppingListId}`, { shoppingListName }),
   delete: (shoppingListId, deleteItems = false) =>
-    requests.delete(`/shopping-lists/${shoppingListId}`, { deleteItems }),
+    requests.delete(`/shopping-lists/${shoppingListId}`, {
+      params: { deleteItems },
+    }),
 
   getUsers: (shoppingListId) =>
     requests.get(`/shopping-lists/${shoppingListId}/users`),
