@@ -114,7 +114,7 @@
     "deleteButtonText": "Delete",
     "editActionHeader": "Edit product",
     "addToListActionHeader": "Add to shopping list",
-    "deleteToast": "product deleted"
+    "deleteToast": "product has been deleted"
   },
 
   "EditProduct": {
@@ -255,21 +255,22 @@
     "deleteButtonText": "Yes, delete it",
     "deleteAll": "Delete all",
     "keep": "Keep without storage",
-    "productsDeletedToast": "storage and products deleted",
-    "storageDeletedToast": "storage deleted"
+    "productsDeletedToast": "storage with products have been deleted",
+    "storageDeletedToast": "storage has been deleted"
   },
 
   "ShareStorage": {
     "successToast": "storage successfully shared",
-    "error": "user already has an access",
-    "listTitleText": "users with access to this storage"
+    "error": "user already has an access"
   },
 
   "ShareForm": {
     "loginInputLabel": "username or email",
     "sharingLabel": "sharing",
     "submitButtonText": "Share Storage",
-    "error": "user already has an access or doesn't exist"
+    "error": "user already has an access or doesn't exist",
+    "storageSuccessToast": "storage successfully shared",
+    "shoppingListSuccessToast": "shopping list successfully shared"
   },
 
   "UsersWithAccessListItem": {
@@ -282,8 +283,8 @@
     "removingSuccessToast": "access scuccessfully remove"
   },
 
-  "ListAndGrid": {
-    "sortByButtonText": "Name"
+  "SortByNameButton": {
+    "buttonText": "Name"
   },
 
   "Label": {
@@ -307,5 +308,39 @@
   "EditLabel": {
     "submitButtonText": "Save Changes",
     "labelEditedToast": "changes saved"
+  },
+
+  "ShoppingList": {
+    "addItemActionHeader": "Add Item To List",
+    "addItemButtonText": "Add",
+    "editActionHeader": "Edit Shopping List",
+    "editButtonText": "Edit",
+    "shareActionHeader": "Share Shopping List",
+    "shareButtonText": "Share",
+    "deleteActionHeader": "Delete Shopping List",
+    "deleteButtonText": "Delete"
+  },
+
+  "EditShoppingList": {
+    "listEditedToast": "changes has been saved",
+    "submitButtonText": "Save Changes"
+  },
+
+  "Share": {
+    "listTitleText": "users with access to this storage"
+  },
+
+  "DeleteShoppingList": {
+    "questionAboutDeletingEmpty": "Are you sure you want to delete this list?",
+    "deleteButtonText": "Yes, delete it",
+    "listDeletedToast": "list has been deleted",
+    "questionAboutItems": "What do you want to do with items in this list?",
+    "deleteAll": "Delete all",
+    "keep": "Keep without storage",
+    "itemsDeletedToast": "list with items have been deleted"
+  },
+
+  "AddItem": {
+    "submitButtonText": "Add Item"
   }
 }

@@ -261,15 +261,16 @@
 
   "ShareStorage": {
     "successToast": "dostęp został udzielony",
-    "error": "ten użytkownik już posiada dostęp",
-    "listTitleText": "użykownicy posiadający dostęp do tego magazynu"
+    "error": "ten użytkownik już posiada dostęp"
   },
 
   "ShareForm": {
     "loginInputLabel": "nazwa użytkownika lub email",
     "sharingLabel": "udostępnianie dalej",
     "submitButtonText": "Udostępnij",
-    "error": "użytkownik nie istnieje lub posiada już dostęp"
+    "error": "użytkownik nie istnieje lub posiada już dostęp",
+    "storageSuccessToast": "magazyn został udostępniony",
+    "shoppingListSuccessToast": "lista została udostępniona"
   },
 
   "UsersWithAccessListItem": {
@@ -282,8 +283,8 @@
     "removingSuccessToast": "dostęp został usunięty"
   },
 
-  "ListAndGrid": {
-    "sortByButtonText": "Nazwa"
+  "SortByNameButton": {
+    "buttonText": "Nazwa"
   },
 
   "Label": {
@@ -307,5 +308,39 @@
   "EditLabel": {
     "submitButtonText": "Zapisz zmiany",
     "labelEditedToast": "zmiany zostały zapisane"
+  },
+
+  "ShoppingList": {
+    "addItemActionHeader": "Dodaj pozycję na listę",
+    "addItemButtonText": "Dodaj",
+    "editActionHeader": "Edycja listy",
+    "editButtonText": "Edytuj",
+    "shareActionHeader": "Udostępnianie listy",
+    "shareButtonText": "Udostępnij",
+    "deleteActionHeader": "Usuń listę",
+    "deleteButtonText": "Usuń"
+  },
+
+  "EditShoppingList": {
+    "listEditedToast": "zmiany zostały zapisane",
+    "submitButtonText": "Zapisz Zmiany"
+  },
+
+  "Share": {
+    "listTitleText": "użykownicy posiadający dostęp do tego magazynu"
+  },
+
+  "DeleteShoppingList": {
+    "questionAboutDeletingEmpty": "Na pewno chcesz usunąć ten magazyn?",
+    "deleteButtonText": "Tak, usuń listę",
+    "listDeletedToast": "lista została usunięta",
+    "questionAboutProducts": "Co zrobić z pozycjami na tej liście?",
+    "deleteAll": "Usuń wszystkie",
+    "keep": "Zachowaj bez magazynu",
+    "itemsDeletedToast": "lista została usunięta wraz z pozycjami"
+  },
+
+  "AddItem": {
+    "submitButtonText": "Dodaj"
   }
 }
