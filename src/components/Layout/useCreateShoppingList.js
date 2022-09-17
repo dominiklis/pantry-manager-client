@@ -21,8 +21,6 @@ const useCreateShoppingList = ({ componentName }) => {
       createShoppingList(shoppingListName)
     ).unwrap();
 
-    console.log(result);
-
     if (result?.shoppingListId) navigate(`/lists#${result.shoppingListId}`);
 
     dispatch(
