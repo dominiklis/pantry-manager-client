@@ -33,6 +33,11 @@ import { Actions } from "components/Actions";
 import { ListAndGrid } from "components/ListAndGrid";
 import { ListAndGridItem } from "components/ListAndGridItem";
 import { Accordion } from "components/Accordion";
+import { ListHeader } from "components/ListHeader";
+import { SortByNameButton } from "components/SortByNameButton";
+import { Share } from "components/Share";
+import { CreateShoppingListItem } from "components/CreateShoppingListItem";
+import { DeleteWithItems } from "components/DeleteWithItems";
 
 export {
   App,
@@ -70,4 +75,9 @@ export {
   ListAndGrid,
   ListAndGridItem,
   Accordion,
+  ListHeader,
+  SortByNameButton,
+  Share,
+  CreateShoppingListItem,
+  DeleteWithItems,
 };
