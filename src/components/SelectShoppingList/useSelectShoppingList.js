@@ -21,7 +21,10 @@ const useSelectShoppingList = ({ componentName }) => {
       ),
       ...shoppingLists.map(
         (shoppingLists) =>
-          new SelectOption(shoppingLists.listId, shoppingLists.shoppingListName)
+          new SelectOption(
+            shoppingLists.shoppingListId,
+            shoppingLists.shoppingListName
+          )
       ),
     ];
   }, [componentName, shoppingLists]);
