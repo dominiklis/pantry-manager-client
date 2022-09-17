@@ -109,6 +109,10 @@ ul {
   box-sizing: border-box;
 }
 
+body {
+  background-color: #18191a;
+}
+
 body,
 body * {
   font-family: "Lato", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
