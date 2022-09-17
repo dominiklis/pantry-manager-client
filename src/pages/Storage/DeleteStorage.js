@@ -12,6 +12,7 @@ const DeleteStorage = ({ storageId, noProducts }) => {
     handleDeleteAllButton,
     handleKeepButton,
     loading,
+    selectedAction,
   } = useDeleteStorage({ componentName, storageId });
 
   if (noProducts) {
@@ -24,15 +25,11 @@ const DeleteStorage = ({ storageId, noProducts }) => {
           />
         </p>
 
-        <div className={styles.buttons}>
-          <Button
-            backgroundColor={componentColors.secondary}
-            onClick={handleDeleteButton}
-            loading={loading}
-          >
+        <form className={styles.buttons} onSubmit={handleDeleteButton}>
+          <Button backgroundColor={componentColors.secondary} loading={loading}>
             <Translate section={componentName} text="deleteButtonText" />
           </Button>
-        </div>
+        </form>
       </>
     );
   }
@@ -44,21 +41,25 @@ const DeleteStorage = ({ storageId, noProducts }) => {
       </p>
 
       <div className={styles.buttons}>
-        <Button
-          backgroundColor={componentColors.secondary}
-          onClick={handleDeleteAllButton}
-          loading={loading}
-        >
-          <Translate section={componentName} text="deleteAll" />
-        </Button>
+        <form onSubmit={handleDeleteAllButton}>
+          <Button
+            backgroundColor={componentColors.secondary}
+            loading={loading && selectedAction === "delete all"}
+            disabled={selectedAction === "keep"}
+          >
+            <Translate section={componentName} text="deleteAll" />
+          </Button>
+        </form>
 
-        <Button
-          backgroundColor={componentColors.primary}
-          onClick={handleKeepButton}
-          loading={loading}
-        >
-          <Translate section={componentName} text="keep" />
-        </Button>
+        <form onSubmit={handleKeepButton}>
+          <Button
+            backgroundColor={componentColors.primary}
+            loading={loading && selectedAction === "keep"}
+            disabled={selectedAction === "delete all"}
+          >
+            <Translate section={componentName} text="keep" />
+          </Button>
+        </form>
       </div>
     </>
   );

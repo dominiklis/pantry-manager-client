@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addToast,
   deleteProductsInStorage,
@@ -8,15 +8,16 @@ import {
 } from "store/actions";
 
 const useDeleteStorage = ({ storageId, componentName }) => {
-  const [loading, setLoading] = useState(false);
+  const [selectedAction, setSelectedAction] = useState("");
+
+  const { delete: loading } = useSelector((state) => state.storages.loading);
 
   const dispatch = useDispatch();
 
-  const handleDeleteButton = async () => {
-    setLoading(true);
+  const handleDeleteButton = async (e) => {
+    e.preventDefault();
 
     await dispatch(deleteStorage({ storageId, deleteProducts: true }));
-    setLoading(false);
 
     dispatch(
       addToast({
@@ -28,13 +29,13 @@ const useDeleteStorage = ({ storageId, componentName }) => {
     );
   };
 
-  const handleDeleteAllButton = async () => {
-    setLoading(true);
+  const handleDeleteAllButton = async (e) => {
+    e.preventDefault();
+
+    setSelectedAction("delete all");
 
     await dispatch(deleteStorage({ storageId, deleteProducts: true }));
     dispatch(deleteProductsInStorage(storageId));
-
-    setLoading(false);
 
     dispatch(
       addToast({
@@ -46,13 +47,13 @@ const useDeleteStorage = ({ storageId, componentName }) => {
     );
   };
 
-  const handleKeepButton = async () => {
-    setLoading(true);
+  const handleKeepButton = async (e) => {
+    e.preventDefault();
+
+    setSelectedAction("keep");
 
     await dispatch(deleteStorage({ storageId, deleteProducts: false }));
     dispatch(setStorageToNull(storageId));
-
-    setLoading(false);
 
     dispatch(
       addToast({
@@ -69,6 +70,7 @@ const useDeleteStorage = ({ storageId, componentName }) => {
     handleDeleteAllButton,
     handleKeepButton,
     loading,
+    selectedAction,
   };
 };
 
