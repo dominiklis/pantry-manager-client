@@ -1,13 +1,15 @@
 import { Translate } from "components";
-import { various } from "constantStrings";
+import { sortByValues, various } from "constantStrings";
 import { useMemo } from "react";
 import { IoClose } from "react-icons/io5";
 import { useSelector } from "react-redux";
+import { makeSelectShoppingLists } from "store/selectors";
 import { SelectOption } from "utils";
 
 const useSelectShoppingList = ({ componentName }) => {
-  const { byId: shoppingListsInStore, allIds: shoppingListsIds } = useSelector(
-    (state) => state.shoppingLists
+  const selectShoppingLists = useMemo(makeSelectShoppingLists, []);
+  const shoppingLists = useSelector((state) =>
+    selectShoppingLists(state, { sortBy: sortByValues.nameAsc })
   );
 
   const selectStorageOptions = useMemo(() => {
@@ -17,15 +19,12 @@ const useSelectShoppingList = ({ componentName }) => {
         <Translate section={componentName} text="noShoppingOption" />,
         <IoClose />
       ),
-      ...shoppingListsIds.map(
-        (listId) =>
-          new SelectOption(
-            listId,
-            shoppingListsInStore[listId].shoppingListName
-          )
+      ...shoppingLists.map(
+        (shoppingLists) =>
+          new SelectOption(shoppingLists.listId, shoppingLists.shoppingListName)
       ),
     ];
-  }, [shoppingListsInStore, shoppingListsIds, componentName]);
+  }, [componentName, shoppingLists]);
 
   return { selectStorageOptions };
 };
