@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToast, createShoppingListItem } from "store/actions";
 
-const useCreateShoppingListItem = ({ componentName }) => {
+const useCreateShoppingListItem = ({ componentName, chosenList }) => {
   const { create: loading } = useSelector(
     (state) => state.shoppingListItems.loading
   );
@@ -10,7 +10,7 @@ const useCreateShoppingListItem = ({ componentName }) => {
   const [input, setInput] = useState({
     shoppingListItemName: "",
     quantity: "",
-    shoppingListId: null,
+    shoppingListId: chosenList ?? "",
   });
 
   const [errors, setErrors] = useState({

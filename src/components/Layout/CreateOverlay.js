@@ -1,9 +1,8 @@
-import { Actions, Button, Translate } from "components";
+import { Actions, Button, CreateShoppingListItem, Translate } from "components";
 import {
   CreateLabel,
   CreateProduct,
   CreateShoppingList,
-  CreateShoppingListItem,
   CreateStorage,
 } from "components/Layout";
 import { componentColors, componentSizes } from "constantStrings";
