@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { addToast, createShoppingList } from "store/actions";
 
 const useCreateShoppingList = ({ componentName }) => {
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   const { create: loading } = useSelector(
     (state) => state.shoppingLists.loading
@@ -14,7 +17,13 @@ const useCreateShoppingList = ({ componentName }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await dispatch(createShoppingList(shoppingListName));
+    const result = await dispatch(
+      createShoppingList(shoppingListName)
+    ).unwrap();
+
+    console.log(result);
+
+    if (result?.shoppingListId) navigate(`/lists#${result.shoppingListId}`);
 
     dispatch(
       addToast({
