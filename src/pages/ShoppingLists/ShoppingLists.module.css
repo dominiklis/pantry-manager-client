@@ -1,0 +1,9 @@
+.listHeader {
+  margin-bottom: 8px;
+}
+
+.list {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}

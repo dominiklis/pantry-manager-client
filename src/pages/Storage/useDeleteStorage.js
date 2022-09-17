@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToast,
@@ -8,15 +7,11 @@ import {
 } from "store/actions";
 
 const useDeleteStorage = ({ storageId, componentName }) => {
-  const [selectedAction, setSelectedAction] = useState("");
-
   const { delete: loading } = useSelector((state) => state.storages.loading);
 
   const dispatch = useDispatch();
 
-  const handleDeleteButton = async (e) => {
-    e.preventDefault();
-
+  const handleDeleteButton = async () => {
     await dispatch(deleteStorage({ storageId, deleteProducts: true }));
 
     dispatch(
@@ -29,11 +24,7 @@ const useDeleteStorage = ({ storageId, componentName }) => {
     );
   };
 
-  const handleDeleteAllButton = async (e) => {
-    e.preventDefault();
-
-    setSelectedAction("delete all");
-
+  const handleDeleteAllButton = async () => {
     await dispatch(deleteStorage({ storageId, deleteProducts: true }));
     dispatch(deleteProductsInStorage(storageId));
 
@@ -47,11 +38,7 @@ const useDeleteStorage = ({ storageId, componentName }) => {
     );
   };
 
-  const handleKeepButton = async (e) => {
-    e.preventDefault();
-
-    setSelectedAction("keep");
-
+  const handleKeepButton = async () => {
     await dispatch(deleteStorage({ storageId, deleteProducts: false }));
     dispatch(setStorageToNull(storageId));
 
@@ -66,11 +53,10 @@ const useDeleteStorage = ({ storageId, componentName }) => {
   };
 
   return {
+    loading,
     handleDeleteButton,
     handleDeleteAllButton,
     handleKeepButton,
-    loading,
-    selectedAction,
   };
 };
 

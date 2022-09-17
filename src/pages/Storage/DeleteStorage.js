@@ -1,8 +1,6 @@
-import { Button, Translate } from "components";
-import { componentColors } from "constantStrings";
+import { DeleteWithItems, Translate } from "components";
 import { useDeleteStorage } from "pages/Storage";
 import React from "react";
-import styles from "./DeleteStorage.module.css";
 
 const componentName = "DeleteStorage";
 
@@ -12,56 +10,31 @@ const DeleteStorage = ({ storageId, noProducts }) => {
     handleDeleteAllButton,
     handleKeepButton,
     loading,
-    selectedAction,
   } = useDeleteStorage({ componentName, storageId });
 
-  if (noProducts) {
-    return (
-      <>
-        <p>
-          <Translate
-            section={componentName}
-            text="questionAboutDeletingEmpty"
-          />
-        </p>
-
-        <form className={styles.buttons} onSubmit={handleDeleteButton}>
-          <Button backgroundColor={componentColors.secondary} loading={loading}>
-            <Translate section={componentName} text="deleteButtonText" />
-          </Button>
-        </form>
-      </>
-    );
-  }
-
   return (
-    <>
-      <p>
+    <DeleteWithItems
+      noItems={noProducts}
+      questionAboutEmptyText={
+        <Translate section={componentName} text="questionAboutDeletingEmpty" />
+      }
+      deleteEmptyButtonText={
+        <Translate section={componentName} text="deleteButtonText" />
+      }
+      onDeleteEmpty={handleDeleteButton}
+      questionNotEmptyText={
         <Translate section={componentName} text="questionAboutProducts" />
-      </p>
-
-      <div className={styles.buttons}>
-        <form onSubmit={handleDeleteAllButton}>
-          <Button
-            backgroundColor={componentColors.secondary}
-            loading={loading && selectedAction === "delete all"}
-            disabled={selectedAction === "keep"}
-          >
-            <Translate section={componentName} text="deleteAll" />
-          </Button>
-        </form>
-
-        <form onSubmit={handleKeepButton}>
-          <Button
-            backgroundColor={componentColors.primary}
-            loading={loading && selectedAction === "keep"}
-            disabled={selectedAction === "delete all"}
-          >
-            <Translate section={componentName} text="keep" />
-          </Button>
-        </form>
-      </div>
-    </>
+      }
+      onDeleteAllButton={handleDeleteAllButton}
+      deleteWthItemsButtonText={
+        <Translate section={componentName} text="deleteAll" />
+      }
+      onKeepItemsButton={handleKeepButton}
+      deleteWithoutItemsButtonText={
+        <Translate section={componentName} text="keep" />
+      }
+      loading={loading}
+    />
   );
 };
 

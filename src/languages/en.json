@@ -302,7 +302,7 @@
   },
 
   "NoProductsToDisplay": {
-    "noProductsInfo": "No products to display"
+    "noProductsInfo": "No products to display."
   },
 
   "EditLabel": {
@@ -342,5 +342,9 @@
 
   "AddItem": {
     "submitButtonText": "Add Item"
+  },
+
+  "NoItemsToDisplay": {
+    "noItemsInfo": "No items to display."
   }
 }

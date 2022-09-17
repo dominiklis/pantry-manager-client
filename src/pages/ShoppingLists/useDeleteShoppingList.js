@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToast,
@@ -8,17 +7,13 @@ import {
 } from "store/actions";
 
 const useDeleteShoppingList = ({ componentName, shoppingListId }) => {
-  const [selectedAction, setSelectedAction] = useState("");
-
-  const dispatch = useDispatch();
-
   const { delete: loading } = useSelector(
     (state) => state.shoppingLists.loading
   );
 
-  const handleDeleteButton = async (e) => {
-    e.preventDefault();
+  const dispatch = useDispatch();
 
+  const handleDeleteButton = async () => {
     await dispatch(deleteShoppingList({ shoppingListId }));
 
     dispatch(
@@ -31,11 +26,7 @@ const useDeleteShoppingList = ({ componentName, shoppingListId }) => {
     );
   };
 
-  const handleDeleteAllButton = async (e) => {
-    e.preventDefault();
-
-    setSelectedAction("delete all");
-
+  const handleDeleteAllButton = async () => {
     await dispatch(deleteShoppingList({ shoppingListId, deleteItems: true }));
     dispatch(deleteItemsInList(shoppingListId));
 
@@ -49,11 +40,7 @@ const useDeleteShoppingList = ({ componentName, shoppingListId }) => {
     );
   };
 
-  const handleKeepButton = async (e) => {
-    e.preventDefault();
-
-    setSelectedAction("keep");
-
+  const handleKeepButton = async () => {
     await dispatch(deleteShoppingList({ shoppingListId, deleteItems: false }));
     dispatch(setListToNull(shoppingListId));
 
@@ -69,7 +56,6 @@ const useDeleteShoppingList = ({ componentName, shoppingListId }) => {
 
   return {
     loading,
-    selectedAction,
     handleDeleteButton,
     handleDeleteAllButton,
     handleKeepButton,
