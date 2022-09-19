@@ -26,71 +26,22 @@ const App = () => {
     <div>
       <ToastsContainer />
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route
-            index
-            element={
-              <RequireAuth>
-                <Home />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/storages"
-            element={
-              <RequireAuth>
-                <Storages />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/storages/:id"
-            element={
-              <RequireAuth>
-                <Storage />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/products"
-            element={
-              <RequireAuth>
-                <Products />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/labels"
-            element={
-              <RequireAuth>
-                <Labels />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/labels/:labelName"
-            element={
-              <RequireAuth>
-                <Label />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/lists"
-            element={
-              <RequireAuth>
-                <ShoppingLists />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/settings"
-            element={
-              <RequireAuth>
-                <Settings />
-              </RequireAuth>
-            }
-          />
+        <Route
+          path="/"
+          element={
+            <RequireAuth>
+              <Layout />
+            </RequireAuth>
+          }
+        >
+          <Route index element={<Home />} />
+          <Route path="/storages" element={<Storages />} />
+          <Route path="/storages/:id" element={<Storage />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/labels" element={<Labels />} />
+          <Route path="/labels/:labelName" element={<Label />} />
+          <Route path="/lists" element={<ShoppingLists />} />
+          <Route path="/settings" element={<Settings />} />
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
