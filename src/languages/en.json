@@ -346,5 +346,21 @@
 
   "NoItemsToDisplay": {
     "noItemsInfo": "No items to display."
+  },
+
+  "ShoppingListItemActions": {
+    "editActionHeader": "Edit Shopping List Item",
+    "editButtonText": "Edit",
+    "createProductActionHeader": "Add To Storage",
+    "createProductButtonText": "Add To Storage"
+  },
+
+  "DeleteShoppingListItem": {
+    "deleteButtonText": "Delete"
+  },
+
+  "EditShoppingListItem": {
+    "submitButtonText": "Save Changes",
+    "changesSavedToast": "changes have been saved"
   }
 }

@@ -4,6 +4,7 @@ import {
   EditShoppingList,
   DeleteShoppingList,
   AddItem,
+  ShoppingListItemsList,
 } from "pages/ShoppingLists";
 import React, { useMemo } from "react";
 import { IoAdd, IoPencil, IoShareSocial, IoTrash } from "react-icons/io5";
@@ -19,7 +20,9 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
 
   const selectShoppingListItems = useMemo(makeSelectShoppingListItems, []);
   const listItems = useSelector((state) =>
-    selectShoppingListItems(state, shoppingListId)
+    selectShoppingListItems(state, {
+      shoppingListId,
+    })
   );
 
   return (
@@ -85,9 +88,8 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
               ),
             ]}
           />
-          {listItems.map((item) => (
-            <div key={item.shoppingListItemId}>{item.shoppingListItemName}</div>
-          ))}
+
+          <ShoppingListItemsList items={listItems} />
         </div>
       </Accordion>
     </div>

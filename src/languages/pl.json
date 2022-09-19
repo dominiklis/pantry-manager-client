@@ -323,7 +323,7 @@
 
   "EditShoppingList": {
     "listEditedToast": "zmiany zostały zapisane",
-    "submitButtonText": "Zapisz Zmiany"
+    "submitButtonText": "Zapisz zmiany"
   },
 
   "Share": {
@@ -346,5 +346,21 @@
 
   "NoItemsToDisplay": {
     "noItemsInfo": "Brak pozycji do kupienia na tej liście."
+  },
+
+  "ShoppingListItemActions": {
+    "editActionHeader": "Edycja pozycji do kupienia",
+    "editButtonText": "Edytuj",
+    "createProductActionHeader": "Dodaj jako produkt do spiżarni",
+    "createProductButtonText": "Dodaj jako produkt"
+  },
+
+  "DeleteShoppingListItem": {
+    "deleteButtonText": "Usuń"
+  },
+
+  "EditShoppingListItem": {
+    "submitButtonText": "Zapisz zmiany",
+    "changesSavedToast": "zmiany zostały zapisane"
   }
 }
