@@ -183,7 +183,7 @@ const validateInput = (inputName, value, noErrorOnEmpty = false) => {
 
       const d = parseInt(value);
 
-      if (!d || d <= 0)
+      if (!d || d <= 0 || value !== "" + d)
         return (
           <Translate
             section={sectionName}
