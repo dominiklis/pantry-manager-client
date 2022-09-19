@@ -8,7 +8,7 @@ import Translate from "components/Translate/Translate";
 import AppLink from "components/AppLink/AppLink";
 import AuthPageContainer from "components/AuthPageContainer/AuthPageContainer";
 import ToastsContainer from "components/ToastsContainer/ToastsContainer";
-import AppLanguage from "components/AppLanguage/AppLanguage";
+import { AppLanguage } from "components/AppLanguage/";
 import { PageContainer } from "components/PageContainer";
 import StorageIndicator from "components/StorageIndicator/StorageIndicator";
 import { StoragesList } from "components/StoragesList";
