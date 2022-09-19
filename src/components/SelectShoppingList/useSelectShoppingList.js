@@ -16,7 +16,7 @@ const useSelectShoppingList = ({ componentName }) => {
     return [
       new SelectOption(
         various.noShoppingList,
-        <Translate section={componentName} text="noShoppingOption" />,
+        <Translate section={componentName} text="noShoppingListOption" />,
         <IoClose />
       ),
       ...shoppingLists.map(

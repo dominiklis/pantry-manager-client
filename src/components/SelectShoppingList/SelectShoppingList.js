@@ -24,7 +24,9 @@ const SelectShoppingList = ({
       <Select
         hideOnClick
         options={selectStorageOptions}
-        selectedValue={selectedShoppingList ?? various.noShoppingList}
+        selectedValue={
+          selectedShoppingList ? selectedShoppingList : various.noShoppingList
+        }
         onChange={onChange}
         listStyles={styles.selectShoppingListList}
         buttonStyles={styles.buttonStyles}
