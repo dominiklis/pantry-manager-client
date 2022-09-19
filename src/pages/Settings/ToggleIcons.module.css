@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.left,
+.right {
+  transition: 0.2s ease-in;
+  transition-property: left, right;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  font-size: 16px;
+}
+
+.left.toTheLeft {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.left.toTheRight {
+  left: 64px;
+}
+
+.right.toTheLeft {
+  right: 64px;
+}
+
+.right.toTheRight {
+  right: 50%;
+  transform: translate(50%, 0);
+}

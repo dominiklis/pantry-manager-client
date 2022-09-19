@@ -1,0 +1,24 @@
+.container {
+  width: 56px;
+  height: 32px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--clr-gray6);
+}
+
+.marker {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--clr-gray1);
+  transition: 0.2s ease-in;
+  transition-property: background-color, left, right;
+  position: absolute;
+  left: 3px;
+}
+
+.marker.toTheRight {
+  left: calc(100% - 3px);
+  transform: translateX(-100%);
+}
