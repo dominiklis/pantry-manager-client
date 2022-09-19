@@ -17,6 +17,7 @@
 .content {
   border-top: 1px solid var(--clr-gray4);
   padding-top: 8px;
+  margin-top: 8px;
 }
 
 .actions {
