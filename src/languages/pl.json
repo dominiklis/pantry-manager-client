@@ -364,5 +364,32 @@
   "EditShoppingListItem": {
     "submitButtonText": "Zapisz zmiany",
     "changesSavedToast": "zmiany zostały zapisane"
+  },
+
+  "Settings": {
+    "languageSectionHeader": "język aplikacji",
+    "themeSectionHeader": "motyw",
+    "daysSectionHeader": "liczba dni, dla których aplikacja ma ifnormować o zbliżającym się terminie ważności",
+    "accountSettingsSectionHeader": "ustawienia konta (pozostaw pola puste, jeśli nie potrzebujesz ich zmieniać)"
+  },
+
+  "ChangeNumberOfDays": {
+    "submitButtonText": "Zapisz zmiany",
+    "changesSavedToast": "zmiany zostały zapisane"
+  },
+
+  "ToggleTheme": {
+    "lightTheme": "jasny",
+    "darkTheme": "ciemny"
+  },
+
+  "EditSettings": {
+    "userChangedToastText": "zmiany został zapisane",
+    "errorToastText": "nazwa użytkownika lub email jest już w użyciu",
+    "usernameInputLabel": "nazwa użytkownika",
+    "emailInputLabel": "email",
+    "newPasswordInputLabel": "nowe hasło",
+    "currentPasswordInputLabel": "obecne hasło*",
+    "submitButtonText": "Zapisz zmiany"
   }
 }

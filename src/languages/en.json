@@ -364,5 +364,32 @@
   "EditShoppingListItem": {
     "submitButtonText": "Save Changes",
     "changesSavedToast": "changes have been saved"
+  },
+
+  "Settings": {
+    "languageSectionHeader": "app language",
+    "themeSectionHeader": "theme",
+    "daysSectionHeader": "number of days for which app should inform about the upcoming expiration date",
+    "accountSettingsSectionHeader": "account settings (leave input empty if you don't need to change it)"
+  },
+
+  "ChangeNumberOfDays": {
+    "submitButtonText": "Save Changes",
+    "changesSavedToast": "changes have been saved"
+  },
+
+  "ToggleTheme": {
+    "lightTheme": "light",
+    "darkTheme": "dark"
+  },
+
+  "EditSettings": {
+    "userChangedToastText": "changes saved",
+    "errorToastText": "user name or email already taken",
+    "usernameInputLabel": "username",
+    "emailInputLabel": "email",
+    "newPasswordInputLabel": "new password",
+    "currentPasswordInputLabel": "current password*",
+    "submitButtonText": "Save changes"
   }
 }

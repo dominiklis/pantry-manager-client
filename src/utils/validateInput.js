@@ -44,7 +44,9 @@ const validateInput = (inputName, value, noErrorOnEmpty = false) => {
 
       return null;
 
-    case "password": {
+    case "password":
+    case "currentPassword":
+    case "newPassword": {
       if (!value && noErrorOnEmpty) return "";
 
       let errors = null;
@@ -114,6 +116,7 @@ const validateInput = (inputName, value, noErrorOnEmpty = false) => {
     }
 
     case "userName":
+    case "newUserName":
       if (!value && noErrorOnEmpty) return "";
 
       if (value.length < maxAndMinValues.minNameLength)
@@ -135,6 +138,7 @@ const validateInput = (inputName, value, noErrorOnEmpty = false) => {
       return "";
 
     case "email":
+    case "newEmail":
       if (!value && noErrorOnEmpty) return "";
 
       if (validator.isEmail(value)) return "";

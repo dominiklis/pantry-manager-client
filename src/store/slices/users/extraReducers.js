@@ -31,15 +31,17 @@ export const editUser = createAsyncThunk(
     { newUserName, newEmail, newPassword, currentPassword },
     { rejectWithValue }
   ) => {
-    const response = await api.users.edit(
-      newUserName,
-      newEmail,
-      newPassword,
-      currentPassword
-    );
-    if (response.data) return response.data;
-
-    return rejectWithValue(response.message);
+    try {
+      const response = await api.users.edit(
+        newUserName,
+        newEmail,
+        newPassword,
+        currentPassword
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data?.message);
+    }
   }
 );
 
