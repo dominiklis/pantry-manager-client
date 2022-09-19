@@ -142,7 +142,7 @@
   },
 
   "SelectShoppingList": {
-    "noShoppingOption": "no shopping list"
+    "noShoppingListOption": "no shopping list"
   },
 
   "CreateOverlay": {
@@ -318,7 +318,8 @@
     "shareActionHeader": "Share Shopping List",
     "shareButtonText": "Share",
     "deleteActionHeader": "Delete Shopping List",
-    "deleteButtonText": "Delete"
+    "deleteButtonText": "Delete",
+    "withoutShoppingList": "Items that are not assigned to any list"
   },
 
   "EditShoppingList": {

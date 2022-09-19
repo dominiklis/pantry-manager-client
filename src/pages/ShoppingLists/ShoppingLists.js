@@ -1,5 +1,5 @@
 import { ListHeader, PageContainer, SortByNameButton } from "components";
-import { sortByValues } from "constantStrings";
+import { sortByValues, various } from "constantStrings";
 import { useScrollToElement } from "hooks";
 import { ShoppingList } from "pages/ShoppingLists";
 import React, { useMemo, useState } from "react";
@@ -34,7 +34,12 @@ const ShoppingLists = () => {
       </ListHeader>
 
       <div className={styles.list}>
-        {shoppingLists.map((shoppingList) => (
+        {[
+          {
+            shoppingListId: various.noShoppingList,
+          },
+          ...shoppingLists,
+        ].map((shoppingList) => (
           <ShoppingList key={shoppingList.shoppingListId} {...shoppingList} />
         ))}
       </div>

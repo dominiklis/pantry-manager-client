@@ -142,7 +142,7 @@
   },
 
   "SelectShoppingList": {
-    "noShoppingOption": "brak listy"
+    "noShoppingListOption": "brak listy"
   },
 
   "CreateOverlay": {
@@ -318,7 +318,8 @@
     "shareActionHeader": "Udostępnianie listy",
     "shareButtonText": "Udostępnij",
     "deleteActionHeader": "Usuń listę",
-    "deleteButtonText": "Usuń"
+    "deleteButtonText": "Usuń",
+    "withoutShoppingList": "Pozycje do kupienia nieprzypisane do żadnej listy"
   },
 
   "EditShoppingList": {

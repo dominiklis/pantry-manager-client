@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { addToast, createShoppingListItem } from "store/actions";
 
 const useCreateShoppingListItem = ({ componentName, chosenList }) => {
@@ -19,11 +20,21 @@ const useCreateShoppingListItem = ({ componentName, chosenList }) => {
   });
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await dispatch(createShoppingListItem(input));
+    const result = await dispatch(
+      createShoppingListItem({
+        ...input,
+        shoppingListId: input.shoppingListId ? input.shoppingListId : null,
+      })
+    ).unwrap();
+
+    if (result?.shoppingListItemId) {
+      navigate(`/lists#${result.shoppingListItemId}`);
+    }
 
     dispatch(
       addToast({

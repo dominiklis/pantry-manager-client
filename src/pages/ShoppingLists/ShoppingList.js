@@ -1,4 +1,5 @@
 import { Accordion, Actions, Share, Translate } from "components";
+import { various } from "constantStrings";
 import { useIsDarkTheme } from "hooks";
 import {
   EditShoppingList,
@@ -31,63 +32,82 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
         key={shoppingListId}
         header={
           <div className={styles.header} data-dark-theme={darkTheme}>
-            {shoppingListName}
+            {shoppingListName ?? (
+              <Translate section={componentName} text="withoutShoppingList" />
+            )}
           </div>
         }
         initiallyOpen
       >
         <div className={styles.content}>
-          <Actions
-            className={styles.actions}
-            actions={[
-              new Action(
-                (
-                  <Translate
-                    section={componentName}
-                    text="addItemActionHeader"
-                  />
+          {shoppingListId === various.noShoppingList ? null : (
+            <Actions
+              className={styles.actions}
+              actions={[
+                new Action(
+                  (
+                    <Translate
+                      section={componentName}
+                      text="addItemActionHeader"
+                    />
+                  ),
+                  <AddItem shoppingListId={shoppingListId} />,
+                  (
+                    <Translate
+                      section={componentName}
+                      text="addItemButtonText"
+                    />
+                  ),
+                  <IoAdd />
                 ),
-                <AddItem shoppingListId={shoppingListId} />,
-                <Translate section={componentName} text="addItemButtonText" />,
-                <IoAdd />
-              ),
-              new Action(
-                <Translate section={componentName} text="editActionHeader" />,
-                (
-                  <EditShoppingList
-                    shoppingListId={shoppingListId}
-                    shoppingListName={shoppingListName}
-                  />
+                new Action(
+                  <Translate section={componentName} text="editActionHeader" />,
+                  (
+                    <EditShoppingList
+                      shoppingListId={shoppingListId}
+                      shoppingListName={shoppingListName}
+                    />
+                  ),
+                  <Translate section={componentName} text="editButtonText" />,
+                  <IoPencil />
                 ),
-                <Translate section={componentName} text="editButtonText" />,
-                <IoPencil />
-              ),
-              new Action(
-                <Translate section={componentName} text="shareActionHeader" />,
-                (
-                  <Share
-                    isShoppingList
-                    id={shoppingListId}
-                    ownerId={ownerId}
-                    users={sortByName([...users], "userName")}
-                  />
+                new Action(
+                  (
+                    <Translate
+                      section={componentName}
+                      text="shareActionHeader"
+                    />
+                  ),
+                  (
+                    <Share
+                      isShoppingList
+                      id={shoppingListId}
+                      ownerId={ownerId}
+                      users={users ? sortByName([...users], "userName") : null}
+                    />
+                  ),
+                  <Translate section={componentName} text="shareButtonText" />,
+                  <IoShareSocial />
                 ),
-                <Translate section={componentName} text="shareButtonText" />,
-                <IoShareSocial />
-              ),
-              new Action(
-                <Translate section={componentName} text="deleteActionHeader" />,
-                (
-                  <DeleteShoppingList
-                    shoppingListId={shoppingListId}
-                    noItems={!listItems || !listItems.length}
-                  />
+                new Action(
+                  (
+                    <Translate
+                      section={componentName}
+                      text="deleteActionHeader"
+                    />
+                  ),
+                  (
+                    <DeleteShoppingList
+                      shoppingListId={shoppingListId}
+                      noItems={!listItems || !listItems.length}
+                    />
+                  ),
+                  <Translate section={componentName} text="deleteButtonText" />,
+                  <IoTrash />
                 ),
-                <Translate section={componentName} text="deleteButtonText" />,
-                <IoTrash />
-              ),
-            ]}
-          />
+              ]}
+            />
+          )}
 
           <ShoppingListItemsList items={listItems} />
         </div>

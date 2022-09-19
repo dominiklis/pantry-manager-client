@@ -1,14 +1,15 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { sortByValues } from "constantStrings";
+import { sortByValues, various } from "constantStrings";
 import { selectShoppingListItems } from "store/selectors";
 import { sortIdsByName } from "utils";
 
 export const makeSelectShoppingListItems = () =>
   createSelector(
     selectShoppingListItems,
-    (_, shoppingListId) => shoppingListId,
-    (items, { shoppingListId, sortBy } = {}) => {
-      if (!shoppingListId) shoppingListId = null;
+    (_, options = {}) => options,
+    (items, { shoppingListId, sortBy }) => {
+      if (!shoppingListId || shoppingListId === various.noShoppingList)
+        shoppingListId = null;
 
       let results = [];
 

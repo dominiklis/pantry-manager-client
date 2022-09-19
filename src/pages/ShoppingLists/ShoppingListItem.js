@@ -12,7 +12,10 @@ const ShoppingListItem = ({ shoppingListItemId }) => {
   );
 
   return (
-    <Accordion header={<ShoppingListItemHeader {...shoppingListItem} />}>
+    <Accordion
+      id={shoppingListItemId}
+      header={<ShoppingListItemHeader {...shoppingListItem} />}
+    >
       <ShoppingListItemActions {...shoppingListItem} />
     </Accordion>
   );
