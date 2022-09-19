@@ -11,6 +11,7 @@ import {
   Storages,
   Label,
   ShoppingLists,
+  Settings,
 } from "pages";
 import { Routes, Route } from "react-router-dom";
 
@@ -79,6 +80,14 @@ const App = () => {
             element={
               <RequireAuth>
                 <ShoppingLists />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <RequireAuth>
+                <Settings />
               </RequireAuth>
             }
           />

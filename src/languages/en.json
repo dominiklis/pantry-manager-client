@@ -223,7 +223,8 @@
     "storages": "Storages",
     "products": "Products",
     "labels": "Labels",
-    "lists": "Shopping Lists"
+    "lists": "Shopping Lists",
+    "settings": "Settings"
   },
 
   "ExportAsCSV": {

@@ -17,7 +17,6 @@ const Navigation = () => {
 
   const createNavigation = () => {
     const link = location.pathname.split("/");
-    // console.log(link);
 
     let navbar = [
       <AppLink to="/" key="home">
@@ -76,6 +75,13 @@ const Navigation = () => {
         <IoChevronForward key="chevron-1" />,
         <AppLink to="/lists" key="lists">
           <Translate section={componentName} text="lists" />
+        </AppLink>
+      );
+    } else if (link[1] === "settings") {
+      navbar.push(
+        <IoChevronForward key="chevron-1" />,
+        <AppLink to="/settings" key="settings">
+          <Translate section={componentName} text="settings" />
         </AppLink>
       );
     }

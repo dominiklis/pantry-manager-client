@@ -223,7 +223,8 @@
     "storages": "Magazyny",
     "products": "Produkty",
     "labels": "Etykiety",
-    "lists": "Listy zakupów"
+    "lists": "Listy zakupów",
+    "settings": "Ustawienia"
   },
 
   "ExportAsCSV": {

@@ -7,3 +7,4 @@ export { Products } from "./Products";
 export { Labels } from "./Labels";
 export { Label } from "./Label";
 export { ShoppingLists } from "./ShoppingLists";
+export { Settings } from "./Settings";
