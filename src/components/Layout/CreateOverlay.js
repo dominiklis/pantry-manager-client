@@ -1,7 +1,12 @@
-import { Actions, Button, CreateShoppingListItem, Translate } from "components";
+import {
+  Actions,
+  Button,
+  CreateProduct,
+  CreateShoppingListItem,
+  Translate,
+} from "components";
 import {
   CreateLabel,
-  CreateProduct,
   CreateShoppingList,
   CreateStorage,
 } from "components/Layout";

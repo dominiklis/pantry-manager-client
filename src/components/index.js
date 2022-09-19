@@ -38,6 +38,7 @@ import { SortByNameButton } from "components/SortByNameButton";
 import { Share } from "components/Share";
 import { CreateShoppingListItem } from "components/CreateShoppingListItem";
 import { DeleteWithItems } from "components/DeleteWithItems";
+import { CreateProduct } from "components/CreateProduct";
 
 export {
   App,
@@ -80,4 +81,5 @@ export {
   Share,
   CreateShoppingListItem,
   DeleteWithItems,
+  CreateProduct,
 };

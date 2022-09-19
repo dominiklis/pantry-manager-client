@@ -3,12 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addToast, createProduct } from "store/actions";
 
-const useCreateProduct = ({ componentName }) => {
+const useCreateProduct = ({
+  componentName,
+  productName,
+  dontNavigateToProduct,
+}) => {
   const { create: loading } = useSelector((state) => state.products.loading);
 
   const [input, setInput] = useState({
-    productId: "",
-    productName: "",
+    productName: productName ?? "",
     expirationDate: "",
     amount: "",
     storageId: null,
@@ -36,7 +39,7 @@ const useCreateProduct = ({ componentName }) => {
       })
     ).unwrap();
 
-    if (result?.productId) {
+    if (!dontNavigateToProduct && result?.productId) {
       if (result?.storageId)
         navigate(`/storages/${result.storageId}#${result.productId}`);
       else navigate(`/products#${result.productId}`);

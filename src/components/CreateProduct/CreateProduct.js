@@ -1,13 +1,15 @@
 import { ProductForm, Translate } from "components";
-import { useCreateProduct } from "components/Layout";
+import { useCreateProduct } from "components/CreateProduct";
 import React from "react";
 
 const componentName = "CreateProduct";
 
-const CreateProduct = () => {
+const CreateProduct = ({ productName, dontNavigateToProduct }) => {
   const { loading, input, setInput, setErrors, errors, handleSubmit } =
     useCreateProduct({
       componentName,
+      productName,
+      dontNavigateToProduct,
     });
 
   return (
