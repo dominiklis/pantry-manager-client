@@ -4,7 +4,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setLanguage, updateSettings } from "store/actions";
 
-const AppLanguage = () => {
+const AppLanguage = ({ buttonSize }) => {
   const dispatch = useDispatch();
 
   const { user } = useSelector((state) => state.users);
@@ -30,6 +30,7 @@ const AppLanguage = () => {
           language === languages.english ? componentColors.primary : ""
         }
         onClick={handleSetEnglish}
+        size={buttonSize}
       >
         english
       </Button>
@@ -39,6 +40,7 @@ const AppLanguage = () => {
           language === languages.polish ? componentColors.primary : ""
         }
         onClick={handleSetPolish}
+        size={buttonSize}
       >
         polski
       </Button>
