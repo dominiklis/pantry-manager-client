@@ -3,7 +3,7 @@ import { filterProductsBy, sortByValues } from "constantStrings";
 import { selectProducts, selectStorages } from "store/selectors";
 import { sortIdsByName, sortByExpDate } from "utils/sort";
 import { store } from "store/store";
-import { filterByName, getForDaysAhead, getToday } from "utils";
+import { filterIdsByName, getForDaysAhead, getToday } from "utils";
 
 export const makeSelectProducts = () =>
   createSelector(
@@ -12,7 +12,7 @@ export const makeSelectProducts = () =>
     (_, filters) => filters,
     (products, storages, filters) => {
       const {
-        searchInput,
+        search,
         sortBy,
         filterBy,
         storageId,
@@ -128,12 +128,12 @@ export const makeSelectProducts = () =>
       }
 
       // filter products by name
-      if (searchInput) {
-        results = filterByName(
+      if (search) {
+        results = filterIdsByName(
           results,
           products.byId,
           "productName",
-          searchInput
+          search
         );
       }
 

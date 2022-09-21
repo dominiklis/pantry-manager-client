@@ -2,7 +2,7 @@ import normalizeArrayState from "./normalizeArrayState";
 import validateInput from "./validateInput";
 import getTranslatedText from "./getTranslatedText";
 import { sortIdsByName, sortByExpDate, sortByName } from "./sort";
-import { filterByName } from "utils/filter";
+import { filterIdsByName, filterByName } from "utils/filter";
 import {
   getToday,
   getForDaysAhead,
@@ -20,6 +20,7 @@ export {
   getTranslatedText,
   sortIdsByName,
   sortByExpDate,
+  filterIdsByName,
   filterByName,
   getToday,
   getForDaysAhead,

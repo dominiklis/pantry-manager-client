@@ -1,7 +1,7 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { sortByValues } from "constantStrings";
 import { selectStorages } from "store/selectors";
-import { sortByName } from "utils";
+import { filterByName, sortByName } from "utils";
 
 export const makeSelectStorages = () =>
   createSelector(
@@ -26,12 +26,7 @@ export const makeSelectStorages = () =>
       }
 
       if (search) {
-        results = results.filter((storage) => {
-          if (storage.storageName.toUpperCase().includes(search.toUpperCase()))
-            return storage;
-
-          return null;
-        });
+        results = filterByName(results, "storageName", search);
       } else if (search === "") return [];
 
       return results;
