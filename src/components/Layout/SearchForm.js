@@ -18,8 +18,8 @@ const SearchForm = ({ alternativeStyles }) => {
 
   useEffect(() => {
     if (searchQuery !== search) {
-      dispatch(setSearch(searchQuery));
-      setSearchInput(searchQuery);
+      dispatch(setSearch(searchQuery ?? ""));
+      setSearchInput(searchQuery ?? "");
     }
   }, []);
 
