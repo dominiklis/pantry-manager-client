@@ -9,9 +9,9 @@ export const filterIdsByName = (ids, entities, propertyName, name) => {
 export const filterByName = (items, propertyName, name) => {
   if (!propertyName || !name) return items;
 
-  return items.filter((storage) => {
-    if (storage.storageName.toUpperCase().includes(name.toUpperCase()))
-      return storage;
+  return items.filter((item) => {
+    if (item[propertyName].toUpperCase().includes(name.toUpperCase()))
+      return item;
 
     return null;
   });
