@@ -14,8 +14,6 @@ const SearchItems = () => {
     selectShoppingListItems(state, { search })
   );
 
-  console.log(items);
-
   return (
     <ItemsList
       header={<Translate section={componentName} text="header" />}
