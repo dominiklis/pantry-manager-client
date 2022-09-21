@@ -11,3 +11,14 @@
 .list li {
   margin: 8px 0;
 }
+
+.list.horizontalList {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.list.horizontalList li {
+  margin: 0;
+}
