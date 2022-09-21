@@ -39,6 +39,8 @@ import { Share } from "components/Share";
 import { CreateShoppingListItem } from "components/CreateShoppingListItem";
 import { DeleteWithItems } from "components/DeleteWithItems";
 import { CreateProduct } from "components/CreateProduct";
+import { ProductHeader } from "components/ProductHeader";
+import { ProductLink } from "components/ProductLink";
 
 export {
   App,
@@ -82,4 +84,6 @@ export {
   CreateShoppingListItem,
   DeleteWithItems,
   CreateProduct,
+  ProductHeader,
+  ProductLink,
 };

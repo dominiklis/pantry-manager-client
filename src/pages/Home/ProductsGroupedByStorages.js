@@ -1,6 +1,5 @@
-import { StorageHeader, Translate } from "components";
+import { ProductLink, StorageHeader, Translate } from "components";
 import { various } from "constantStrings";
-import { ProductsListItem } from "pages/Home";
 import React, { useMemo } from "react";
 import { useSelector } from "react-redux";
 import styles from "./ProductsGroupedByStorages.module.css";
@@ -45,7 +44,7 @@ const ProductsGroupedByStorages = ({
               storage.storageId ?? various.noStorage
             ].map((product) => (
               <li key={product.productId} className={styles.listItem}>
-                <ProductsListItem product={product} daysColor={daysColor} />
+                <ProductLink product={product} daysColor={daysColor} />
               </li>
             ))}
           </ul>

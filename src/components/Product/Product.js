@@ -1,5 +1,5 @@
-import { Accordion } from "components";
-import { ProductActions, ProductHeader, useProduct } from "components/Product";
+import { Accordion, ProductHeader } from "components";
+import { ProductActions, useProduct } from "components/Product";
 import ProductDetails from "components/Product/ProductDetails";
 import React from "react";
 import styles from "./Product.module.css";

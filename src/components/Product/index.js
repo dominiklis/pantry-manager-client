@@ -1,4 +1,3 @@
-import ProductHeader from "components/Product/ProductHeader";
 import LabelsList from "components/Product/LabelsList";
 import ProductActions from "components/Product/ProductActions";
 import EditProduct from "components/Product/EditProduct";
@@ -10,7 +9,6 @@ import useProductActions from "components/Product/useProductActions";
 import useSelectStorage from "components/Product/useSelectStorage";
 
 export {
-  ProductHeader,
   LabelsList,
   ProductActions,
   EditProduct,
