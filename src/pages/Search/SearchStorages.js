@@ -12,7 +12,7 @@ const SearchStorages = () => {
   let [search] = React.useState(searchParams.get("q"));
 
   const selectStorages = useMemo(makeSelectStorages, []);
-  const storages = useSelector((prev) => selectStorages(prev, { search }));
+  const storages = useSelector((state) => selectStorages(state, { search }));
 
   return (
     <ItemsList
