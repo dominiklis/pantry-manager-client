@@ -14,6 +14,7 @@ const initialState = {
     getSettings: true,
     updateSettings: false,
   },
+  search: "",
 };
 
 const appSlice = createSlice({
@@ -56,6 +57,10 @@ const appSlice = createSlice({
     setGetSettingsLoading: (state, action) => {
       state.loading.getSettings = action.payload;
     },
+
+    setSearch: (state, action) => {
+      state.search = action.payload;
+    },
   },
   extraReducers: (builder) =>
     builder
@@ -96,4 +101,5 @@ export const {
   setTheme,
   toggleTheme,
   setGetSettingsLoading,
+  setSearch,
 } = appSlice.actions;

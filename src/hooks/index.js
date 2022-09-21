@@ -3,3 +3,4 @@ export { default as useAccordion } from "./useAccordion";
 export { default as useGroupProductsByStorages } from "./useGroupProductsByStorages";
 export { default as useScrollToElement } from "./useScrollToElement";
 export { default as useHandleProductsList } from "./useHandleProductsList";
+export { default as useGetSearch } from "./useGetSearch";

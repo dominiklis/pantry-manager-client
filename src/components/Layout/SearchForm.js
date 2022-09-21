@@ -1,18 +1,34 @@
-import { useIsDarkTheme } from "hooks";
-import React, { useState } from "react";
+import { useGetSearch, useIsDarkTheme } from "hooks";
+import React, { useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { setSearch } from "store/actions";
 import styles from "./SearchForm.module.css";
 
 const SearchForm = ({ alternativeStyles }) => {
   const darkTheme = useIsDarkTheme();
 
+  const searchQuery = useGetSearch();
+  const { search } = useSelector((state) => state.app);
+
+  const dispatch = useDispatch();
+
   const [searchInput, setSearchInput] = useState("");
+
+  useEffect(() => {
+    if (searchQuery !== search) {
+      dispatch(setSearch(searchQuery));
+      setSearchInput(searchQuery);
+    }
+  }, []);
 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    dispatch(setSearch(searchInput));
 
     if (searchInput) navigate(`/search?q=${searchInput}`);
   };

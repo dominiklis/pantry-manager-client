@@ -6,6 +6,7 @@ import {
   setTheme,
   toggleTheme,
   setGetSettingsLoading,
+  setSearch,
 } from "./slices/app/slice";
 import { setSettings, updateSettings } from "./slices/app/extraReducers";
 import { clearErrors, logoutUser } from "./slices/users/slice";
@@ -89,6 +90,7 @@ export {
   setGetSettingsLoading,
   setSettings,
   updateSettings,
+  setSearch,
 
   // users actions
   loginUser,
