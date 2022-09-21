@@ -8,7 +8,7 @@ export const makeSelectStorages = () =>
     selectStorages,
     (_, options) => options,
     (storages, options) => {
-      const { storageIds, sortBy } = options;
+      const { storageIds, sortBy, search } = options;
 
       let results = [];
 
@@ -24,6 +24,15 @@ export const makeSelectStorages = () =>
       } else if (sortBy === sortByValues.nameAsc) {
         sortByName(results, "storageName");
       }
+
+      if (search) {
+        results = results.filter((storage) => {
+          if (storage.storageName.toUpperCase().includes(search.toUpperCase()))
+            return storage;
+
+          return null;
+        });
+      } else if (search === "") return [];
 
       return results;
     }
