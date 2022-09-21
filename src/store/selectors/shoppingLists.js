@@ -1,25 +1,25 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { sortByValues } from "constantStrings";
 import { selectShoppingLists } from "store/selectors";
-import { sortIdsByName } from "utils";
+import { filterByName, sortIdsByName } from "utils";
 
 export const makeSelectShoppingLists = () =>
   createSelector(
     selectShoppingLists,
     (_, options = {}) => options,
     (shoppingLists, options) => {
-      const { sortBy } = options;
+      const { sortBy, search } = options;
 
-      let result = [];
+      let results = [];
 
       if (!sortBy || sortBy === sortByValues.nameAsc) {
-        result = sortIdsByName(
+        results = sortIdsByName(
           [...shoppingLists.allIds],
           shoppingLists.byId,
           "shoppingListName"
         );
       } else if (sortBy === sortByValues.nameDesc) {
-        result = sortIdsByName(
+        results = sortIdsByName(
           [...shoppingLists.allIds],
           shoppingLists.byId,
           "shoppingListName",
@@ -27,8 +27,12 @@ export const makeSelectShoppingLists = () =>
         );
       }
 
-      result = result.map((listId) => shoppingLists.byId[listId]);
+      results = results.map((listId) => shoppingLists.byId[listId]);
 
-      return result;
+      if (search) {
+        results = filterByName(results, "shoppingListName", search);
+      } else if (search === "") return [];
+
+      return results;
     }
   );
