@@ -2,6 +2,7 @@ import { Button, Input, Translate } from "components";
 import { componentColors } from "constantStrings";
 import { useEditSettings } from "pages/Settings";
 import React from "react";
+import styles from "./EditSettings.module.css";
 
 const componentName = "EditSettings";
 
@@ -10,7 +11,11 @@ const EditSettings = () => {
     useEditSettings({ componentName });
 
   return (
-    <form onSubmit={handleSubmit} data-dark-theme={darkTheme}>
+    <form
+      className={styles.form}
+      onSubmit={handleSubmit}
+      data-dark-theme={darkTheme}
+    >
       <Input
         label={<Translate section={componentName} text="usernameInputLabel" />}
         type="text"
