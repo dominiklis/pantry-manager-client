@@ -1,0 +1,13 @@
+.container {
+  padding: 4px 0;
+}
+
+.header {
+  letter-spacing: 0.25px;
+  color: var(--clr-gray2);
+  border-bottom: 1px solid var(--clr-gray3);
+}
+
+.list li {
+  margin: 8px 0;
+}
