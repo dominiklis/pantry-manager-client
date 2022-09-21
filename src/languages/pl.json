@@ -224,7 +224,8 @@
     "products": "Produkty",
     "labels": "Etykiety",
     "lists": "Listy zakupów",
-    "settings": "Ustawienia"
+    "settings": "Ustawienia",
+    "search": "Wyszukiwanie"
   },
 
   "ExportAsCSV": {
@@ -391,5 +392,25 @@
     "newPasswordInputLabel": "nowe hasło",
     "currentPasswordInputLabel": "obecne hasło*",
     "submitButtonText": "Zapisz zmiany"
+  },
+
+  "SearchStorages": {
+    "header": "znalezione magazyny"
+  },
+
+  "SearchProducts": {
+    "header": "znalezione produkty"
+  },
+
+  "SearchLabels": {
+    "header": "znalezione etykiety"
+  },
+
+  "SearchLists": {
+    "header": "znalezione listy zakupów"
+  },
+
+  "SearchItems": {
+    "header": "znalezione pozycje do kupienia"
   }
 }

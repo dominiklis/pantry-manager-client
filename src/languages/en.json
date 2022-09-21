@@ -224,7 +224,8 @@
     "products": "Products",
     "labels": "Labels",
     "lists": "Shopping Lists",
-    "settings": "Settings"
+    "settings": "Settings",
+    "search": "Search"
   },
 
   "ExportAsCSV": {
@@ -391,5 +392,25 @@
     "newPasswordInputLabel": "new password",
     "currentPasswordInputLabel": "current password*",
     "submitButtonText": "Save changes"
+  },
+
+  "SearchStorages": {
+    "header": "found storages"
+  },
+
+  "SearchProducts": {
+    "header": "found products"
+  },
+
+  "SearchLabels": {
+    "header": "found labels"
+  },
+
+  "SearchLists": {
+    "header": "found shopping lists"
+  },
+
+  "SearchItems": {
+    "header": "found items"
   }
 }
