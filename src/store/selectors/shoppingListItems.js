@@ -1,13 +1,13 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { sortByValues, various } from "constantStrings";
 import { selectShoppingListItems } from "store/selectors";
-import { sortIdsByName } from "utils";
+import { filterByName, sortIdsByName } from "utils";
 
 export const makeSelectShoppingListItems = () =>
   createSelector(
     selectShoppingListItems,
-    (_, options = {}) => options,
-    (items, { shoppingListId, sortBy }) => {
+    (_, options) => options,
+    (items, { shoppingListId, sortBy, search } = {}) => {
       if (!shoppingListId || shoppingListId === various.noShoppingList)
         shoppingListId = null;
 
@@ -24,6 +24,12 @@ export const makeSelectShoppingListItems = () =>
         sortBy === sortByValues.nameDesc
       );
 
-      return results.map((item) => items.byId[item]);
+      results = results.map((item) => items.byId[item]);
+
+      if (search) {
+        results = filterByName(results, "shoppingListItemName", search);
+      } else if (search === "") return [];
+
+      return results;
     }
   );
