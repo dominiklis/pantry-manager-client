@@ -135,7 +135,7 @@ export const makeSelectProducts = () =>
           "productName",
           search
         );
-      }
+      } else if (search === "") return [];
 
       if (getProductBody) {
         return results.map((id) => products.byId[id]);
