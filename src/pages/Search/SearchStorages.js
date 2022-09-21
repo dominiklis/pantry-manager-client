@@ -1,15 +1,14 @@
 import { StorageHeader, Translate } from "components";
+import { useGetSearch } from "hooks";
 import { ItemsList } from "pages/Search";
 import React, { useMemo } from "react";
 import { useSelector } from "react-redux";
-import { useSearchParams } from "react-router-dom";
 import { makeSelectStorages } from "store/selectors";
 
 const componentName = "SearchStorages";
 
 const SearchStorages = () => {
-  let [searchParams] = useSearchParams();
-  let [search] = React.useState(searchParams.get("q"));
+  const search = useGetSearch();
 
   const selectStorages = useMemo(makeSelectStorages, []);
   const storages = useSelector((state) => selectStorages(state, { search }));
