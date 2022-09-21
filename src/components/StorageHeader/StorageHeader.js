@@ -7,7 +7,7 @@ const componentName = "StorageHeader";
 const StorageHeader = ({
   storageId,
   storageName,
-  storageColor,
+  color,
   numberOfDaysForWarning,
   showDaysInStorageHeader,
 }) => {
@@ -16,7 +16,7 @@ const StorageHeader = ({
 
   return (
     <AppLink to={`/storages/${storageId}`} className={styles.container}>
-      <StorageIndicator icon color={storageColor} />
+      <StorageIndicator icon color={color} />
       {storageName}
       {showDaysInStorageHeader ? (
         <span className={styles.daysInformation}>

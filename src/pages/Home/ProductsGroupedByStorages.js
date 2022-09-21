@@ -33,7 +33,7 @@ const ProductsGroupedByStorages = ({
                 <Translate section={componentName} text="withoutStorage" />
               )
             }
-            storageColor={storage.color}
+            color={storage.color}
             numberOfDaysForWarning={
               storage.numberOfDaysForWarning ?? defaultNumberOfDaysForWarning
             }
