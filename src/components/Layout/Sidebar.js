@@ -4,7 +4,7 @@ import styles from "./Sidebar.module.css";
 import { IoClose, IoLogOut } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
 import { Translate } from "components";
-import { useSidebar } from "components/Layout";
+import { SearchForm, useSidebar } from "components/Layout";
 
 const componentName = "Sidebar";
 
@@ -35,8 +35,12 @@ const Sidebar = ({ hidden, onHideMenu }) => {
           <IoClose />
         </button>
         <ul>
+          <li className={styles.searchItem}>
+            <SearchForm alternativeStyles />
+          </li>
           {items.map((item, index) => {
             const styles = getItemStyles(item.path);
+
             return (
               <li className={styles} data-dark-theme={darkTheme} key={index}>
                 <Link to={item.path} key={index}>

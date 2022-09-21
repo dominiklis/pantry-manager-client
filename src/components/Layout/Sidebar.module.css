@@ -52,6 +52,11 @@
   border-left: 4px solid transparent;
 }
 
+.searchItem {
+  padding: 0 8px;
+  display: block;
+}
+
 .sidebarItem > button,
 .sidebarItem > a {
   color: var(--clr-gray1);
@@ -167,6 +172,10 @@
 
   .content[data-dark-theme="true"] {
     background-color: var(--clr-gray6);
+  }
+
+  .searchItem {
+    display: none;
   }
 
   .hideButton {
