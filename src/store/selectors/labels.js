@@ -1,14 +1,14 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { sortByValues } from "constantStrings";
 import { selectLabels } from "store/selectors";
-import { sortByName } from "utils";
+import { filterByName, sortByName } from "utils";
 
 export const makeSelectLabelsDetails = () =>
   createSelector(
     selectLabels,
     (_, options = {}) => options,
     (labels, options) => {
-      const { labelsIds, sortBy, labelName } = options;
+      const { labelsIds, sortBy, labelName, search } = options;
 
       if (labelName) {
         const labelId = labels.allIds.find(
@@ -29,6 +29,10 @@ export const makeSelectLabelsDetails = () =>
           results.push(labels.byId[labelId]);
         });
       }
+
+      if (search) {
+        results = filterByName(results, "labelName", search);
+      } else if (search === "") return [];
 
       return sortByName(results, "labelName", sortBy === sortByValues.nameDesc);
     }
