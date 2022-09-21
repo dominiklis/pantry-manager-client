@@ -6,10 +6,8 @@ import { filterByName, sortByName } from "utils";
 export const makeSelectLabelsDetails = () =>
   createSelector(
     selectLabels,
-    (_, options = {}) => options,
-    (labels, options) => {
-      const { labelsIds, sortBy, labelName, search } = options;
-
+    (_, options) => options,
+    (labels, { labelsIds, sortBy, labelName, search } = {}) => {
       if (labelName) {
         const labelId = labels.allIds.find(
           (id) => labels.byId[id].labelName === labelName

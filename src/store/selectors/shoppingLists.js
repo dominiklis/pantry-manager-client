@@ -6,10 +6,8 @@ import { filterByName, sortIdsByName } from "utils";
 export const makeSelectShoppingLists = () =>
   createSelector(
     selectShoppingLists,
-    (_, options = {}) => options,
-    (shoppingLists, options) => {
-      const { sortBy, search } = options;
-
+    (_, options) => options,
+    (shoppingLists, { sortBy, search } = {}) => {
       let results = [];
 
       if (!sortBy || sortBy === sortByValues.nameAsc) {

@@ -9,9 +9,11 @@ export const makeSelectProducts = () =>
   createSelector(
     selectProducts,
     selectStorages,
-    (_, filters) => filters,
-    (products, storages, filters) => {
-      const {
+    (_, options) => options,
+    (
+      products,
+      storages,
+      {
         search,
         sortBy,
         filterBy,
@@ -19,8 +21,8 @@ export const makeSelectProducts = () =>
         withoutStorage,
         labelId,
         getProductBody,
-      } = filters;
-
+      } = {}
+    ) => {
       let results = [];
 
       // sort products

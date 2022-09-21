@@ -7,9 +7,7 @@ export const makeSelectStorages = () =>
   createSelector(
     selectStorages,
     (_, options) => options,
-    (storages, options) => {
-      const { storageIds, sortBy, search } = options;
-
+    (storages, { storageIds, sortBy, search } = {}) => {
       let results = [];
 
       if (storageIds && storageIds.length) {
