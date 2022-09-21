@@ -12,6 +12,7 @@ import {
   Label,
   ShoppingLists,
   Settings,
+  Search,
 } from "pages";
 import { Routes, Route } from "react-router-dom";
 
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/labels/:labelName" element={<Label />} />
           <Route path="/lists" element={<ShoppingLists />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/search" element={<Search />} />
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />

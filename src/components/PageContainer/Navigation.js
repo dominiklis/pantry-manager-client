@@ -42,7 +42,7 @@ const Navigation = () => {
               key={link[2]}
               storageId={storageId}
               storageName={storageName}
-              storageColor={color}
+              color={color}
             />
           );
         }
@@ -82,6 +82,13 @@ const Navigation = () => {
         <IoChevronForward key="chevron-1" />,
         <AppLink to="/settings" key="settings">
           <Translate section={componentName} text="settings" />
+        </AppLink>
+      );
+    } else if (link[1] === "search") {
+      navbar.push(
+        <IoChevronForward key="chevron-1" />,
+        <AppLink to="/search" key="search">
+          <Translate section={componentName} text="search" />
         </AppLink>
       );
     }
