@@ -4,10 +4,12 @@ import api from "api";
 export const getShoppingListItems = createAsyncThunk(
   "shoppingListItems/getShoppingListItems",
   async (_, { rejectWithValue }) => {
-    const response = await api.shoppingListItems.get();
-    if (response.data) return response.data;
-
-    return rejectWithValue(response.message);
+    try {
+      const response = await api.shoppingListItems.get();
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data?.message);
+    }
   }
 );
 
@@ -17,14 +19,16 @@ export const createShoppingListItem = createAsyncThunk(
     { shoppingListItemName, quantity, shoppingListId },
     { rejectWithValue }
   ) => {
-    const response = await api.shoppingListItems.create(
-      shoppingListItemName,
-      quantity,
-      shoppingListId
-    );
-    if (response.data) return response.data;
-
-    return rejectWithValue(response.message);
+    try {
+      const response = await api.shoppingListItems.create(
+        shoppingListItemName,
+        quantity,
+        shoppingListId
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data?.message);
+    }
   }
 );
 
@@ -40,25 +44,31 @@ export const editShoppingListItem = createAsyncThunk(
     },
     { rejectWithValue }
   ) => {
-    const response = await api.shoppingListItems.edit(
-      shoppingListItemId,
-      shoppingListItemName,
-      quantity,
-      shoppingListId,
-      selected
-    );
-    if (response.data) return response.data;
+    if (shoppingListId === "") shoppingListId = null;
 
-    return rejectWithValue(response.message);
+    try {
+      const response = await api.shoppingListItems.edit(
+        shoppingListItemId,
+        shoppingListItemName,
+        quantity,
+        shoppingListId,
+        selected
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data?.message);
+    }
   }
 );
 
 export const deleteShopppingListItem = createAsyncThunk(
   "shoppingListItems/deleteShopppingListItem",
   async (shoppingListItemId, { rejectWithValue }) => {
-    const response = await api.shoppingListItems.delete(shoppingListItemId);
-    if (response.data) return response.data;
-
-    return rejectWithValue(response.message);
+    try {
+      const response = await api.shoppingListItems.delete(shoppingListItemId);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data?.message);
+    }
   }
 );

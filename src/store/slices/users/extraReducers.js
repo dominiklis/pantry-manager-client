@@ -48,9 +48,11 @@ export const editUser = createAsyncThunk(
 export const renewToken = createAsyncThunk(
   "users/renewToken",
   async (_, { rejectWithValue }) => {
-    const response = await api.users.renew();
-    if (response.data) return response.data;
-
-    return rejectWithValue(response.message);
+    try {
+      const response = await api.users.renew();
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data?.message);
+    }
   }
 );

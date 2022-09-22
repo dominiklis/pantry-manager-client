@@ -4,10 +4,12 @@ import api from "api";
 export const getStorages = createAsyncThunk(
   "storages/getStorages",
   async (_, { rejectWithValue }) => {
-    const response = await api.storages.get();
-    if (response.data) return response.data;
-
-    return rejectWithValue(response.message);
+    try {
+      const response = await api.storages.get();
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data?.message);
+    }
   }
 );
 
@@ -17,14 +19,16 @@ export const createStorage = createAsyncThunk(
     { storageName, color, numberOfDaysForWarning },
     { rejectWithValue }
   ) => {
-    const response = await api.storages.create(
-      storageName,
-      color,
-      numberOfDaysForWarning
-    );
-    if (response.data) return response.data;
-
-    return rejectWithValue(response.message);
+    try {
+      const response = await api.storages.create(
+        storageName,
+        color,
+        numberOfDaysForWarning
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data?.message);
+    }
   }
 );
 
@@ -34,25 +38,29 @@ export const editStorage = createAsyncThunk(
     { storageId, storageName, color, numberOfDaysForWarning },
     { rejectWithValue }
   ) => {
-    const response = await api.storages.edit(
-      storageId,
-      storageName,
-      color,
-      numberOfDaysForWarning
-    );
-    if (response.data) return response.data;
-
-    return rejectWithValue(response.message);
+    try {
+      const response = await api.storages.edit(
+        storageId,
+        storageName,
+        color,
+        numberOfDaysForWarning
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data?.message);
+    }
   }
 );
 
 export const deleteStorage = createAsyncThunk(
   "storages/deleteStorage",
   async ({ storageId, deleteProducts }, { rejectWithValue }) => {
-    const response = await api.storages.delete(storageId, deleteProducts);
-    if (response.data) return response.data;
-
-    return rejectWithValue(response.message);
+    try {
+      const response = await api.storages.delete(storageId, deleteProducts);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data?.message);
+    }
   }
 );
 
@@ -82,20 +90,27 @@ export const shareStorage = createAsyncThunk(
 export const editStorageAccess = createAsyncThunk(
   "storages/editStorageAccess",
   async ({ storageId, userId, canShare }, { rejectWithValue }) => {
-    const response = await api.storages.editAccess(storageId, userId, canShare);
-    if (response.data) return response.data;
-
-    return rejectWithValue(response.message);
+    try {
+      const response = await api.storages.editAccess(
+        storageId,
+        userId,
+        canShare
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data?.message);
+    }
   }
 );
 
 export const removeStorageAccess = createAsyncThunk(
   "storages/removeStorageAccess",
   async ({ storageId, userId }, { rejectWithValue }) => {
-    const response = await api.storages.deleteAccess(storageId, userId);
-
-    if (response.data) return response.data;
-
-    return rejectWithValue(response.message);
+    try {
+      const response = await api.storages.deleteAccess(storageId, userId);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data?.message);
+    }
   }
 );
