@@ -1,3 +1,4 @@
+import { Accordion } from "components";
 import React from "react";
 import styles from "./ItemsList.module.css";
 
@@ -11,12 +12,16 @@ const ItemsList = ({ header, items, horizontalList }) => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        {header} ({items?.length ? items.length : 0})
-      </div>
+    <Accordion
+      initiallyOpen
+      header={
+        <div className={styles.header}>
+          {header} ({items?.length ? items.length : 0})
+        </div>
+      }
+    >
       <ul className={getListStyles()}>{items}</ul>
-    </div>
+    </Accordion>
   );
 };
 
