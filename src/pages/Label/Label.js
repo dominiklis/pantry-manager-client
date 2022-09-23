@@ -10,7 +10,7 @@ import { useHandleProductsList } from "hooks";
 import { EditLabel, LabelNotFound, useLabel } from "pages/Label";
 import React from "react";
 import { IoPencil, IoTrash } from "react-icons/io5";
-import { Action } from "utils";
+import { ActionWtihButton } from "utils";
 import styles from "./Label.module.css";
 
 const componentName = "Label";
@@ -56,7 +56,7 @@ const Label = () => {
           </form>
         }
         actions={[
-          new Action(
+          new ActionWtihButton(
             <Translate section={componentName} text="editActionHeader" />,
             <EditLabel label={label} />,
             <Translate section={componentName} text="editButtonText" />,

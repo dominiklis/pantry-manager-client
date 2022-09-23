@@ -11,7 +11,7 @@ import { componentColors, componentSizes } from "constantStrings";
 import { DeleteStorage, EditStorage } from "pages/Storage";
 import React from "react";
 import { IoDownload, IoPencil, IoShareSocial, IoTrash } from "react-icons/io5";
-import { Action, sortByName } from "utils";
+import { ActionWtihButton, sortByName } from "utils";
 
 const componentName = "StorageActions";
 
@@ -52,7 +52,7 @@ const StorageActions = ({
         />
       }
       actions={[
-        new Action(
+        new ActionWtihButton(
           <Translate section={componentName} text="shareActionHeader" />,
           (
             <Share
@@ -65,7 +65,7 @@ const StorageActions = ({
           <IoShareSocial />
         ),
 
-        new Action(
+        new ActionWtihButton(
           <Translate section={componentName} text="editActionHeader" />,
           (
             <EditStorage
@@ -79,7 +79,7 @@ const StorageActions = ({
           <IoPencil />
         ),
 
-        new Action(
+        new ActionWtihButton(
           <Translate section={componentName} text="deleteActionHeader" />,
           (
             <DeleteStorage

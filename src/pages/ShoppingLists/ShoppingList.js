@@ -11,7 +11,7 @@ import React, { useMemo } from "react";
 import { IoAdd, IoPencil, IoShareSocial, IoTrash } from "react-icons/io5";
 import { useSelector } from "react-redux";
 import { makeSelectShoppingListItems } from "store/selectors";
-import { Action, sortByName } from "utils";
+import { ActionWtihButton, sortByName } from "utils";
 import styles from "./ShoppingList.module.css";
 
 const componentName = "ShoppingList";
@@ -44,7 +44,7 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
             <Actions
               className={styles.actions}
               actions={[
-                new Action(
+                new ActionWtihButton(
                   (
                     <Translate
                       section={componentName}
@@ -60,7 +60,7 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
                   ),
                   <IoAdd />
                 ),
-                new Action(
+                new ActionWtihButton(
                   <Translate section={componentName} text="editActionHeader" />,
                   (
                     <EditShoppingList
@@ -71,7 +71,7 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
                   <Translate section={componentName} text="editButtonText" />,
                   <IoPencil />
                 ),
-                new Action(
+                new ActionWtihButton(
                   (
                     <Translate
                       section={componentName}
@@ -89,7 +89,7 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
                   <Translate section={componentName} text="shareButtonText" />,
                   <IoShareSocial />
                 ),
-                new Action(
+                new ActionWtihButton(
                   (
                     <Translate
                       section={componentName}

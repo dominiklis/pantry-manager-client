@@ -6,7 +6,7 @@ import {
 } from "pages/ShoppingLists";
 import React from "react";
 import { IoBagAdd, IoPencil } from "react-icons/io5";
-import { Action } from "utils";
+import { ActionWtihButton } from "utils";
 
 const componentName = "ShoppingListItemActions";
 
@@ -20,7 +20,7 @@ const ShoppingListItemActions = ({
   return (
     <Actions
       actions={[
-        new Action(
+        new ActionWtihButton(
           <Translate section={componentName} text="editActionHeader" />,
           (
             <EditShoppingListItem
@@ -34,7 +34,7 @@ const ShoppingListItemActions = ({
           <Translate section={componentName} text="editButtonText" />,
           <IoPencil />
         ),
-        new Action(
+        new ActionWtihButton(
           (
             <Translate
               section={componentName}

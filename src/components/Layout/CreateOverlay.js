@@ -14,7 +14,7 @@ import { componentColors, componentSizes } from "constantStrings";
 import { useIsDarkTheme } from "hooks";
 import React from "react";
 import { IoAdd, IoChevronDown } from "react-icons/io5";
-import { Action } from "utils";
+import { ActionWtihButton } from "utils";
 import styles from "./CreateOverlay.module.css";
 
 const componentName = "CreateOverlay";
@@ -41,7 +41,7 @@ const CreateOverlay = React.forwardRef(({ onHideButtonClick }, ref) => {
         <Actions
           initialValue={0}
           actions={[
-            new Action(
+            new ActionWtihButton(
               <Translate section={componentName} text="createProductHeader" />,
               <CreateProduct />,
               (
@@ -52,7 +52,7 @@ const CreateOverlay = React.forwardRef(({ onHideButtonClick }, ref) => {
               ),
               <IoAdd />
             ),
-            new Action(
+            new ActionWtihButton(
               <Translate section={componentName} text="createStorageHeader" />,
               <CreateStorage />,
               (
@@ -63,7 +63,7 @@ const CreateOverlay = React.forwardRef(({ onHideButtonClick }, ref) => {
               ),
               <IoAdd />
             ),
-            new Action(
+            new ActionWtihButton(
               <Translate section={componentName} text="createLabelHeader" />,
               <CreateLabel />,
               (
@@ -74,7 +74,7 @@ const CreateOverlay = React.forwardRef(({ onHideButtonClick }, ref) => {
               ),
               <IoAdd />
             ),
-            new Action(
+            new ActionWtihButton(
               (
                 <Translate
                   section={componentName}
@@ -90,7 +90,7 @@ const CreateOverlay = React.forwardRef(({ onHideButtonClick }, ref) => {
               ),
               <IoAdd />
             ),
-            new Action(
+            new ActionWtihButton(
               (
                 <Translate
                   section={componentName}
