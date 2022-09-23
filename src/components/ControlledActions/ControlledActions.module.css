@@ -5,10 +5,16 @@
   gap: 4px;
   flex-wrap: wrap;
   position: relative;
+  width: 100%;
 }
 
 @media screen and (min-width: 920px) {
   .container {
     gap: 8px;
   }
+}
+
+.actionsContainer {
+  width: 100%;
+  top: 30px;
 }

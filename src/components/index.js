@@ -30,6 +30,7 @@ import { ExportAsJSON } from "components/ExportAsJSON";
 import { DropdownMenu } from "components/DropdownMenu";
 import { Dropdown } from "components/Dropdown";
 import { Actions } from "components/Actions";
+import { ControlledActions } from "components/ControlledActions";
 import { ListAndGrid } from "components/ListAndGrid";
 import { ListAndGridItem } from "components/ListAndGridItem";
 import { Accordion } from "components/Accordion";
@@ -75,6 +76,7 @@ export {
   DropdownMenu,
   Dropdown,
   Actions,
+  ControlledActions,
   ListAndGrid,
   ListAndGridItem,
   Accordion,
