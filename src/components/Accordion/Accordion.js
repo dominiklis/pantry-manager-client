@@ -4,7 +4,15 @@ import accordionStyles from "./accordionStyles.module.css";
 import styles from "./Accordion.module.css";
 import { useIsDarkTheme } from "hooks";
 
-const Accordion = ({ children, id, header, initiallyOpen, open }) => {
+const Accordion = ({
+  children,
+  id,
+  header,
+  hideHeaderActionsOnClosed,
+  headerActions,
+  initiallyOpen,
+  open,
+}) => {
   const darkTheme = useIsDarkTheme();
 
   const [showContent, setShowContent] = useState(initiallyOpen ?? false);
@@ -30,6 +38,15 @@ const Accordion = ({ children, id, header, initiallyOpen, open }) => {
     <div className={getContainerStyles()} data-dark-theme={darkTheme} id={id}>
       <div onClick={toggleShowContent} className={styles.header}>
         {header}
+        {hideHeaderActionsOnClosed && showContent ? (
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
+            {headerActions}
+          </div>
+        ) : null}
       </div>
 
       <CSSTransition
