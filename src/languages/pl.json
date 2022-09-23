@@ -108,13 +108,16 @@
     "expires": "wygasa"
   },
 
-  "ProductActions": {
+  "ProductActionsButtons": {
     "addToListButtonText": "Dodaj do listy zakupów",
     "editButtonText": "Edytuj",
     "deleteButtonText": "Usuń",
-    "editActionHeader": "Edycja produktu",
-    "addToListActionHeader": "Dodaj listę zakupów",
     "deleteToast": "produkt został usunięty"
+  },
+
+  "ProductActions": {
+    "editActionHeader": "Edycja produktu",
+    "addToListActionHeader": "Dodaj listę zakupów"
   },
 
   "EditProduct": {

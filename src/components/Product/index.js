@@ -5,8 +5,8 @@ import AddProductToShoppingList from "components/Product/AddProductToShoppingLis
 import useAddProductToShoppingList from "components/Product/useAddProductToShoppingList";
 import useEditProduct from "components/Product/useEditProduct";
 import useProduct from "components/Product/useProduct";
-import useProductActions from "components/Product/useProductActions";
 import useSelectStorage from "components/Product/useSelectStorage";
+import ProductActionsButtons from "components/Product/ProductActionsButtons";
 
 export {
   LabelsList,
@@ -16,6 +16,6 @@ export {
   useAddProductToShoppingList,
   useEditProduct,
   useProduct,
-  useProductActions,
   useSelectStorage,
+  ProductActionsButtons,
 };
