@@ -4,3 +4,5 @@ export { default as useGroupProductsByStorages } from "./useGroupProductsByStora
 export { default as useScrollToElement } from "./useScrollToElement";
 export { default as useHandleProductsList } from "./useHandleProductsList";
 export { default as useGetSearch } from "./useGetSearch";
+export { default as useWindowSize } from "./useWindowSize";
+export { default as useIsSmallScreen } from "./useIsSmallScreen";
