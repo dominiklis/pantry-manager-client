@@ -1,5 +1,4 @@
-import { Translate } from "components";
-import { ControlledActions } from "components/ControlledActions";
+import { Translate, ControlledActions } from "components";
 import { AddProductToShoppingList, EditProduct } from "components/Product";
 import { useIsSmallScreen } from "hooks";
 import React from "react";
