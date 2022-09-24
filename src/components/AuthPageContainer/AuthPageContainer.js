@@ -2,7 +2,6 @@ import { AppLanguage, AppLink, Button, Translate } from "components";
 import { authPagesImages, componentColors } from "constantStrings";
 import { useIsDarkTheme } from "hooks";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 import styles from "./AuthPageContainer.module.css";
 
 const componentName = "AuthPageContainer";

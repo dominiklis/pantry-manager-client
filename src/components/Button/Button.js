@@ -1,4 +1,4 @@
-import LoadingButton from "./LoadingButton";
+import { LoadingButton } from "components/Button";
 import { componentColors, componentSizes } from "constantStrings";
 import { useIsDarkTheme } from "hooks";
 import React from "react";

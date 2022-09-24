@@ -1,8 +1,8 @@
-import Errors from "./Errors";
 import { useIsDarkTheme } from "hooks";
 import React from "react";
 import styles from "./Input.module.css";
 import { Label } from "components";
+import { Errors } from "components/Input";
 
 const Input = ({
   className,

@@ -1,6 +1,5 @@
-import { LoadingPage, RequireAuth, ToastsContainer } from "components";
+import { Layout, LoadingPage, RequireAuth, ToastsContainer } from "components";
 import { useApp } from "components/App";
-import Layout from "components/Layout/Layout";
 import {
   Home,
   Labels,
