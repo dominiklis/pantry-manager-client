@@ -6,8 +6,7 @@ import {
 } from "components/Product";
 import ProductDetails from "components/Product/ProductDetails";
 import { componentColors, componentSizes } from "constantStrings";
-import { useIsSmallScreen } from "hooks";
-import React, { useState } from "react";
+import React from "react";
 import { IoEllipsisVertical } from "react-icons/io5";
 import styles from "./Product.module.css";
 
@@ -19,12 +18,11 @@ const Product = ({ productId, highlight, initiallyOpen, open }) => {
     closeToExpiry,
     expired,
     numberOfDaysForWarning,
+    smallScreen,
+    selectedAction,
+    setSelectedAction,
+    handleCloseAction,
   } = useProduct({ productId });
-
-  const [selectedAction, setSelectedAction] = useState(-11);
-  const handleCloseAction = () => setSelectedAction(-1);
-
-  const smallScreen = useIsSmallScreen();
 
   return (
     <div
