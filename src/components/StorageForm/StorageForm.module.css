@@ -1,3 +1,7 @@
+.form {
+  min-height: 375px;
+}
+
 .submitButtonWrapper {
   margin-top: 16px;
   text-align: center;

@@ -36,7 +36,7 @@ const StorageForm = ({
     setInput((prev) => ({ ...prev, color }));
 
   return (
-    <form onSubmit={onSubmit}>
+    <form className={styles.form} onSubmit={onSubmit}>
       <Input
         type="text"
         name="storageName"
