@@ -2,7 +2,7 @@ import { useIsDarkTheme } from "hooks";
 import { useRef, useState } from "react";
 import styles from "./Dropdown.module.css";
 
-const useDropdown = ({ className }) => {
+const useDropdown = ({ className, visibleBackdrop }) => {
   const darkTheme = useIsDarkTheme();
 
   const buttonRef = useRef(null);
@@ -36,6 +36,7 @@ const useDropdown = ({ className }) => {
     let res = styles.backdrop;
 
     if (showContent) res += ` ${styles.showBackdrop}`;
+    if (visibleBackdrop) res += ` ${styles.visibleBackdrop}`;
 
     return res;
   };

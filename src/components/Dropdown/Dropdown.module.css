@@ -16,6 +16,10 @@
   display: block;
 }
 
+.visibleBackdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .content {
   border-radius: 8px;
   border: 1px solid transparent;

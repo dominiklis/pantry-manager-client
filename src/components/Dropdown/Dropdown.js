@@ -4,6 +4,8 @@ import { CSSTransition } from "react-transition-group";
 import contentStyles from "./content.module.css";
 
 const Dropdown = ({
+  stopPropagation,
+  visibleBackdrop,
   className,
   dropdownButton,
   dropdownContent,
@@ -19,10 +21,13 @@ const Dropdown = ({
     getContainerStyles,
     getBackdropStyles,
     getContentStyles,
-  } = useDropdown({ className });
+  } = useDropdown({ className, visibleBackdrop });
 
   return (
-    <div className={getContainerStyles()}>
+    <div
+      className={getContainerStyles()}
+      onClick={stopPropagation ? (e) => e.stopPropagation() : null}
+    >
       <span onClick={handleButton} ref={buttonRef}>
         {dropdownButton}
       </span>

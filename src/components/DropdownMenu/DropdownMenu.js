@@ -1,9 +1,16 @@
 import { Dropdown } from "components";
 import React from "react";
 
-const DropdownMenu = ({ menuButton, menuItems }) => {
+const DropdownMenu = ({
+  menuButton,
+  menuItems,
+  stopPropagation,
+  visibleBackdrop,
+}) => {
   return (
     <Dropdown
+      stopPropagation={stopPropagation}
+      visibleBackdrop={visibleBackdrop}
       dropdownButton={menuButton}
       dropdownContent={
         <ul>
