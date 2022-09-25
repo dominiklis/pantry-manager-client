@@ -1,5 +1,5 @@
 import { Button, Translate } from "components";
-import { componentSizes } from "constantStrings";
+import { componentColors, componentSizes } from "constantStrings";
 import React, { useState } from "react";
 import { IoTrash } from "react-icons/io5";
 import { useDispatch } from "react-redux";
@@ -24,7 +24,12 @@ const DeleteShoppingListItem = ({ shoppingListItemId }) => {
 
   return (
     <form onSubmit={handleDeleteSubmit}>
-      <Button size={componentSizes.small} icon={<IoTrash />} loading={deleting}>
+      <Button
+        size={componentSizes.small}
+        icon={<IoTrash />}
+        loading={deleting}
+        backgroundColor={componentColors.transparent}
+      >
         <Translate section={componentName} text="deleteButtonText" />
       </Button>
     </form>

@@ -9,6 +9,7 @@ const Actions = ({
   additionalButtonsBefore,
   additionalButtonsAfter,
   actions = [],
+  transparentButtonsBackground,
 }) => {
   const {
     selectedAction,
@@ -31,7 +32,11 @@ const Actions = ({
           size={componentSizes.small}
           onClick={() => handleActionButton(index)}
           backgroundColor={
-            selectedAction === index ? componentColors.primary : null
+            selectedAction === index
+              ? componentColors.primary
+              : transparentButtonsBackground
+              ? componentColors.transparent
+              : null
           }
         >
           {text}

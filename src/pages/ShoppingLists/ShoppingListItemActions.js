@@ -19,6 +19,7 @@ const ShoppingListItemActions = ({
 }) => {
   return (
     <Actions
+      transparentButtonsBackground
       actions={[
         new ActionWtihButton(
           <Translate section={componentName} text="editActionHeader" />,
