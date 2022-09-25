@@ -39,7 +39,8 @@ const Accordion = ({
     <div className={getContainerStyles()} data-dark-theme={darkTheme} id={id}>
       <div onClick={toggleShowContent} className={styles.header}>
         {header}
-        {hideHeaderActionsOnClosed && showContent && smallScreen ? (
+        {(hideHeaderActionsOnClosed && showContent && smallScreen) ||
+        (!hideHeaderActionsOnClosed && smallScreen) ? (
           <div
             onClick={(e) => {
               e.stopPropagation();
