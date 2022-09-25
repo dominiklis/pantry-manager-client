@@ -424,5 +424,13 @@
 
   "SearchItems": {
     "header": "znalezione pozycje do kupienia"
+  },
+
+  "ListAndGrid": {
+    "noElementsInfo": "Nie ma nic do wyświetlenia."
+  },
+
+  "Home": {
+    "noProductsInfo": "W tej chwili w twojej spiżarni nie ma produktów do wyświetlenia. Dodaj pierwszy produkt klikając przycisk na dole."
   }
 }

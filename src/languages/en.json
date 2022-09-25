@@ -424,5 +424,13 @@
 
   "SearchItems": {
     "header": "found items"
+  },
+
+  "ListAndGrid": {
+    "noElementsInfo": "Nothing to display."
+  },
+
+  "Home": {
+    "noProductsInfo": "There are no products in your pantry. Add your first product by clicking on the button at the bottom."
   }
 }
