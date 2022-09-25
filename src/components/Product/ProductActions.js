@@ -18,6 +18,7 @@ const ProductActions = ({
   return (
     <div className={styles.container}>
       {!smallScreen ? actionButtons : null}
+
       <ControlledActions
         actions={[
           new Action(

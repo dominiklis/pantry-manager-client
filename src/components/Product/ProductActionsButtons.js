@@ -1,24 +1,15 @@
-import { Button, Translate } from "components";
+import { ActionsButtonsList, Button, Translate } from "components";
 import { componentColors, componentSizes } from "constantStrings";
-import { useIsDarkTheme, useIsSmallScreen } from "hooks";
+import { useIsSmallScreen } from "hooks";
 import React from "react";
 import { IoBagAddOutline, IoPencil, IoTrash } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import { addToast, deleteProduct } from "store/actions";
-import styles from "./ProductActionsButtons.module.css";
 
 const componentName = "ProductActionsButtons";
 
 const ProductActionsButtons = ({ productId, setSelectedAction }) => {
-  const darkTheme = useIsDarkTheme();
-
   const isSmallScreen = useIsSmallScreen();
-
-  const getListStyles = () => {
-    if (isSmallScreen) return styles.list;
-
-    return styles.actionButtons;
-  };
 
   const dispatch = useDispatch();
 
@@ -38,8 +29,8 @@ const ProductActionsButtons = ({ productId, setSelectedAction }) => {
   };
 
   return (
-    <ul className={getListStyles()}>
-      <li className={styles.listItem} data-dark-theme={darkTheme}>
+    <ActionsButtonsList
+      buttons={[
         <form onSubmit={handleDeleteButton}>
           <Button
             type="submit"
@@ -49,9 +40,7 @@ const ProductActionsButtons = ({ productId, setSelectedAction }) => {
           >
             <Translate section={componentName} text="deleteButtonText" />
           </Button>
-        </form>
-      </li>
-      <li className={styles.listItem} data-dark-theme={darkTheme}>
+        </form>,
         <Button
           type="button"
           icon={<IoPencil />}
@@ -60,9 +49,7 @@ const ProductActionsButtons = ({ productId, setSelectedAction }) => {
           onClick={() => setSelectedAction(0)}
         >
           <Translate section={componentName} text="editButtonText" />
-        </Button>
-      </li>
-      <li className={styles.listItem} data-dark-theme={darkTheme}>
+        </Button>,
         <Button
           type="button"
           icon={<IoBagAddOutline />}
@@ -71,9 +58,9 @@ const ProductActionsButtons = ({ productId, setSelectedAction }) => {
           onClick={() => setSelectedAction(1)}
         >
           <Translate section={componentName} text="addToListButtonText" />
-        </Button>
-      </li>
-    </ul>
+        </Button>,
+      ]}
+    />
   );
 };
 

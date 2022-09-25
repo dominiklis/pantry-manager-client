@@ -27,6 +27,7 @@ const ShoppingListActions = ({
   return (
     <div className={styles.container}>
       {!smallScreen ? actionButtons : null}
+
       {shoppingListId === various.noShoppingList ? null : (
         <ControlledActions
           selectedAction={selectedAction}
