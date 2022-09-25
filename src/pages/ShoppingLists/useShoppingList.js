@@ -1,4 +1,4 @@
-import { useIsDarkTheme, useIsSmallScreen } from "hooks";
+import { useIsDarkTheme } from "hooks";
 import { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { makeSelectShoppingListItems } from "store/selectors";
@@ -13,14 +13,11 @@ const useShoppingList = ({ shoppingListId }) => {
     })
   );
 
-  const smallScreen = useIsSmallScreen();
-
   const [selectedAction, setSelectedAction] = useState(-1);
   const handleCloseAction = () => setSelectedAction(-1);
 
   return {
     darkTheme,
-    smallScreen,
     listItems,
     selectedAction,
     setSelectedAction,

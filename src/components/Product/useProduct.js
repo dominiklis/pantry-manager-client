@@ -1,4 +1,4 @@
-import { useIsDarkTheme, useIsSmallScreen } from "hooks";
+import { useIsDarkTheme } from "hooks";
 import { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { makeSelectProductById, makeSelectStorageById } from "store/selectors";
@@ -40,8 +40,6 @@ const useProduct = ({ productId }) => {
   const [selectedAction, setSelectedAction] = useState(-11);
   const handleCloseAction = () => setSelectedAction(-1);
 
-  const smallScreen = useIsSmallScreen();
-
   return {
     darkTheme,
     product,
@@ -49,7 +47,6 @@ const useProduct = ({ productId }) => {
     closeToExpiry,
     expired,
     numberOfDaysForWarning,
-    smallScreen,
     selectedAction,
     setSelectedAction,
     handleCloseAction,

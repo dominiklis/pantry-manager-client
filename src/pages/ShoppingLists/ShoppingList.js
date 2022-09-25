@@ -14,7 +14,6 @@ const componentName = "ShoppingList";
 const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
   const {
     darkTheme,
-    smallScreen,
     listItems,
     selectedAction,
     setSelectedAction,
@@ -35,7 +34,7 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
         initiallyOpen
         hideHeaderActionsOnClosed
         headerActions={
-          shoppingListId !== various.noShoppingList && smallScreen ? (
+          shoppingListId !== various.noShoppingList ? (
             <Dropdown
               hideOnClick
               dropdownButton={<DropdownMenuButton />}

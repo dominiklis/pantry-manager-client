@@ -2,18 +2,19 @@ import React, { useEffect, useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import accordionStyles from "./accordionStyles.module.css";
 import styles from "./Accordion.module.css";
-import { useIsDarkTheme } from "hooks";
+import { useIsDarkTheme, useIsSmallScreen } from "hooks";
 
 const Accordion = ({
   children,
   id,
   header,
   hideHeaderActionsOnClosed,
-  headerActions,
+  smallScreenHeaderActions,
   initiallyOpen,
   open,
 }) => {
   const darkTheme = useIsDarkTheme();
+  const smallScreen = useIsSmallScreen();
 
   const [showContent, setShowContent] = useState(initiallyOpen ?? false);
 
@@ -38,13 +39,13 @@ const Accordion = ({
     <div className={getContainerStyles()} data-dark-theme={darkTheme} id={id}>
       <div onClick={toggleShowContent} className={styles.header}>
         {header}
-        {hideHeaderActionsOnClosed && showContent ? (
+        {hideHeaderActionsOnClosed && showContent && smallScreen ? (
           <div
             onClick={(e) => {
               e.stopPropagation();
             }}
           >
-            {headerActions}
+            {smallScreenHeaderActions}
           </div>
         ) : null}
       </div>

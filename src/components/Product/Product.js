@@ -21,7 +21,6 @@ const Product = ({ productId, highlight, initiallyOpen, open }) => {
     closeToExpiry,
     expired,
     numberOfDaysForWarning,
-    smallScreen,
     selectedAction,
     setSelectedAction,
     handleCloseAction,
@@ -48,19 +47,17 @@ const Product = ({ productId, highlight, initiallyOpen, open }) => {
           />
         }
         hideHeaderActionsOnClosed
-        headerActions={
-          smallScreen ? (
-            <Dropdown
-              hideOnClick
-              dropdownButton={<DropdownMenuButton />}
-              dropdownContent={
-                <ProductActionsButtons
-                  productId={productId}
-                  setSelectedAction={setSelectedAction}
-                />
-              }
-            />
-          ) : null
+        smallScreenHeaderActions={
+          <Dropdown
+            hideOnClick
+            dropdownButton={<DropdownMenuButton />}
+            dropdownContent={
+              <ProductActionsButtons
+                productId={productId}
+                setSelectedAction={setSelectedAction}
+              />
+            }
+          />
         }
       >
         <ProductDetails
