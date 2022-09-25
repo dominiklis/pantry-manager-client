@@ -8,7 +8,6 @@ import {
 } from "pages/ShoppingLists";
 import React from "react";
 import { Action, sortByName } from "utils";
-import styles from "./ShoppingListActions.module.css";
 
 const componentName = "ShoppingListActions";
 
@@ -25,7 +24,7 @@ const ShoppingListActions = ({
   const smallScreen = useIsSmallScreen();
 
   return (
-    <div className={styles.container}>
+    <>
       {!smallScreen ? actionButtons : null}
 
       {shoppingListId === various.noShoppingList ? null : (
@@ -69,7 +68,7 @@ const ShoppingListActions = ({
           ]}
         />
       )}
-    </div>
+    </>
   );
 };
 

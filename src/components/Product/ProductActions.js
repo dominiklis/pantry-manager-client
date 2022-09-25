@@ -3,7 +3,6 @@ import { AddProductToShoppingList, EditProduct } from "components/Product";
 import { useIsSmallScreen } from "hooks";
 import React from "react";
 import { Action } from "utils";
-import styles from "./ProductActions.module.css";
 
 const componentName = "ProductActions";
 
@@ -16,7 +15,7 @@ const ProductActions = ({
   const smallScreen = useIsSmallScreen();
 
   return (
-    <div className={styles.container}>
+    <>
       {!smallScreen ? actionButtons : null}
 
       <ControlledActions
@@ -33,7 +32,7 @@ const ProductActions = ({
         selectedAction={selectedAction}
         onCloseAction={onCloseAction}
       />
-    </div>
+    </>
   );
 };
 
