@@ -19,9 +19,11 @@ const Home = () => {
 
   if (!products || !products.length)
     return (
-      <p className={styles.noElements}>
-        <Translate section={componentName} text="noProductsInfo" />
-      </p>
+      <PageContainer>
+        <p className={styles.noElements}>
+          <Translate section={componentName} text="noProductsInfo" />
+        </p>
+      </PageContainer>
     );
 
   return (
