@@ -316,15 +316,21 @@
   },
 
   "ShoppingList": {
-    "addItemActionHeader": "Add Item To List",
-    "addItemButtonText": "Add",
-    "editActionHeader": "Edit Shopping List",
-    "editButtonText": "Edit",
-    "shareActionHeader": "Share Shopping List",
-    "shareButtonText": "Share",
-    "deleteActionHeader": "Delete Shopping List",
-    "deleteButtonText": "Delete",
     "withoutShoppingList": "Items that are not assigned to any list"
+  },
+
+  "ShoppingListActionButtons": {
+    "addItemButtonText": "Add",
+    "editButtonText": "Edit",
+    "shareButtonText": "Share",
+    "deleteButtonText": "Delete"
+  },
+
+  "ShoppingListActions": {
+    "addItemActionHeader": "Add Item To List",
+    "editActionHeader": "Edit Shopping List",
+    "shareActionHeader": "Share Shopping List",
+    "deleteActionHeader": "Delete Shopping List"
   },
 
   "EditShoppingList": {
@@ -333,7 +339,7 @@
   },
 
   "Share": {
-    "listTitleText": "users with access to this storage"
+    "listTitleText": "users with access"
   },
 
   "DeleteShoppingList": {

@@ -1,13 +1,16 @@
-import { Accordion, Button, Dropdown, ProductHeader } from "components";
+import {
+  Accordion,
+  Dropdown,
+  DropdownMenuButton,
+  ProductHeader,
+} from "components";
 import {
   ProductActions,
   ProductActionsButtons,
   useProduct,
 } from "components/Product";
 import ProductDetails from "components/Product/ProductDetails";
-import { componentColors, componentSizes } from "constantStrings";
 import React from "react";
-import { IoEllipsisVertical } from "react-icons/io5";
 import styles from "./Product.module.css";
 
 const Product = ({ productId, highlight, initiallyOpen, open }) => {
@@ -49,14 +52,7 @@ const Product = ({ productId, highlight, initiallyOpen, open }) => {
           smallScreen ? (
             <Dropdown
               hideOnClick
-              dropdownButton={
-                <Button
-                  iconButton
-                  icon={<IoEllipsisVertical />}
-                  backgroundColor={componentColors.transparent}
-                  size={componentSizes.small}
-                />
-              }
+              dropdownButton={<DropdownMenuButton />}
               dropdownContent={
                 <ProductActionsButtons
                   productId={productId}

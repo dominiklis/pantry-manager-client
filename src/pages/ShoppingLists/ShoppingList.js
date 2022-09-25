@@ -1,30 +1,25 @@
-import { Accordion, Actions, Share, Translate } from "components";
+import { Accordion, Dropdown, DropdownMenuButton, Translate } from "components";
 import { various } from "constantStrings";
-import { useIsDarkTheme } from "hooks";
 import {
-  EditShoppingList,
-  DeleteShoppingList,
-  AddItem,
   ShoppingListItemsList,
+  ShoppingListActionButtons,
+  ShoppingListActions,
+  useShoppingList,
 } from "pages/ShoppingLists";
-import React, { useMemo } from "react";
-import { IoAdd, IoPencil, IoShareSocial, IoTrash } from "react-icons/io5";
-import { useSelector } from "react-redux";
-import { makeSelectShoppingListItems } from "store/selectors";
-import { ActionWtihButton, sortByName } from "utils";
+import React from "react";
 import styles from "./ShoppingList.module.css";
 
 const componentName = "ShoppingList";
 
 const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
-  const darkTheme = useIsDarkTheme();
-
-  const selectShoppingListItems = useMemo(makeSelectShoppingListItems, []);
-  const listItems = useSelector((state) =>
-    selectShoppingListItems(state, {
-      shoppingListId,
-    })
-  );
+  const {
+    darkTheme,
+    smallScreen,
+    setSelectedAction,
+    listItems,
+    selectedAction,
+    handleCloseAction,
+  } = useShoppingList({ shoppingListId });
 
   return (
     <div className={styles.container} id={shoppingListId}>
@@ -38,76 +33,36 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
           </div>
         }
         initiallyOpen
+        hideHeaderActionsOnClosed
+        headerActions={
+          shoppingListId !== various.noShoppingList && smallScreen ? (
+            <Dropdown
+              hideOnClick
+              dropdownButton={<DropdownMenuButton />}
+              dropdownContent={
+                <ShoppingListActionButtons
+                  setSelectedAction={setSelectedAction}
+                />
+              }
+            />
+          ) : null
+        }
       >
         <div className={styles.content}>
-          {shoppingListId === various.noShoppingList ? null : (
-            <Actions
-              className={styles.actions}
-              actions={[
-                new ActionWtihButton(
-                  (
-                    <Translate
-                      section={componentName}
-                      text="addItemActionHeader"
-                    />
-                  ),
-                  <AddItem shoppingListId={shoppingListId} />,
-                  (
-                    <Translate
-                      section={componentName}
-                      text="addItemButtonText"
-                    />
-                  ),
-                  <IoAdd />
-                ),
-                new ActionWtihButton(
-                  <Translate section={componentName} text="editActionHeader" />,
-                  (
-                    <EditShoppingList
-                      shoppingListId={shoppingListId}
-                      shoppingListName={shoppingListName}
-                    />
-                  ),
-                  <Translate section={componentName} text="editButtonText" />,
-                  <IoPencil />
-                ),
-                new ActionWtihButton(
-                  (
-                    <Translate
-                      section={componentName}
-                      text="shareActionHeader"
-                    />
-                  ),
-                  (
-                    <Share
-                      isShoppingList
-                      id={shoppingListId}
-                      ownerId={ownerId}
-                      users={users ? sortByName([...users], "userName") : null}
-                    />
-                  ),
-                  <Translate section={componentName} text="shareButtonText" />,
-                  <IoShareSocial />
-                ),
-                new ActionWtihButton(
-                  (
-                    <Translate
-                      section={componentName}
-                      text="deleteActionHeader"
-                    />
-                  ),
-                  (
-                    <DeleteShoppingList
-                      shoppingListId={shoppingListId}
-                      noItems={!listItems || !listItems.length}
-                    />
-                  ),
-                  <Translate section={componentName} text="deleteButtonText" />,
-                  <IoTrash />
-                ),
-              ]}
-            />
-          )}
+          <ShoppingListActions
+            actionButtons={
+              <ShoppingListActionButtons
+                setSelectedAction={setSelectedAction}
+              />
+            }
+            shoppingListId={shoppingListId}
+            shoppingListName={shoppingListName}
+            ownerId={ownerId}
+            users={users}
+            listItems={listItems}
+            selectedAction={selectedAction}
+            onCloseAction={handleCloseAction}
+          />
 
           <ShoppingListItemsList items={listItems} />
         </div>

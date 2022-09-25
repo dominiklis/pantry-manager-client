@@ -316,15 +316,21 @@
   },
 
   "ShoppingList": {
-    "addItemActionHeader": "Dodaj pozycję na listę",
-    "addItemButtonText": "Dodaj",
-    "editActionHeader": "Edycja listy",
-    "editButtonText": "Edytuj",
-    "shareActionHeader": "Udostępnianie listy",
-    "shareButtonText": "Udostępnij",
-    "deleteActionHeader": "Usuń listę",
-    "deleteButtonText": "Usuń",
     "withoutShoppingList": "Pozycje do kupienia nieprzypisane do żadnej listy"
+  },
+
+  "ShoppingListActionButtons": {
+    "addItemButtonText": "Dodaj",
+    "editButtonText": "Edytuj",
+    "deleteButtonText": "Usuń",
+    "shareButtonText": "Udostępnij"
+  },
+
+  "ShoppingListActions": {
+    "addItemActionHeader": "Dodaj pozycję na listę",
+    "editActionHeader": "Edycja listy",
+    "shareActionHeader": "Udostępnianie listy",
+    "deleteActionHeader": "Usuń listę"
   },
 
   "EditShoppingList": {
@@ -333,14 +339,14 @@
   },
 
   "Share": {
-    "listTitleText": "użykownicy posiadający dostęp do tego magazynu"
+    "listTitleText": "użykownicy posiadający dostęp"
   },
 
   "DeleteShoppingList": {
     "questionAboutDeletingEmpty": "Na pewno chcesz usunąć tę listę?",
     "deleteButtonText": "Tak, usuń listę",
     "listDeletedToast": "lista została usunięta",
-    "questionAboutProducts": "Co zrobić z pozycjami na tej liście?",
+    "questionAboutItems": "Co zrobić z pozycjami na tej liście?",
     "deleteAll": "Usuń wszystkie",
     "keep": "Zachowaj bez magazynu",
     "itemsDeletedToast": "lista została usunięta wraz z pozycjami"

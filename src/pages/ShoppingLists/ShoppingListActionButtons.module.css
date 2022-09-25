@@ -1,0 +1,14 @@
+.actionButtons {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.listItem button {
+  width: 100%;
+}
