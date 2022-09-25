@@ -16,6 +16,7 @@ const componentName = "StorageActionsButtons";
 const StorageActionsButtons = ({
   storageName,
   products,
+  selectedAction,
   setSelectedAction,
 }) => {
   const isSmallScreen = useIsSmallScreen();
@@ -51,7 +52,13 @@ const StorageActionsButtons = ({
         <Button
           type="button"
           icon={<IoShareSocial />}
-          backgroundColor={isSmallScreen ? componentColors.transparent : null}
+          backgroundColor={
+            selectedAction === 0
+              ? componentColors.primary
+              : isSmallScreen
+              ? componentColors.transparent
+              : null
+          }
           size={componentSizes.small}
           onClick={() => setSelectedAction(0)}
         >
@@ -60,7 +67,13 @@ const StorageActionsButtons = ({
         <Button
           type="button"
           icon={<IoPencil />}
-          backgroundColor={isSmallScreen ? componentColors.transparent : null}
+          backgroundColor={
+            selectedAction === 1
+              ? componentColors.primary
+              : isSmallScreen
+              ? componentColors.transparent
+              : null
+          }
           size={componentSizes.small}
           onClick={() => setSelectedAction(1)}
         >
@@ -69,7 +82,13 @@ const StorageActionsButtons = ({
         <Button
           type="button"
           icon={<IoTrash />}
-          backgroundColor={isSmallScreen ? componentColors.transparent : null}
+          backgroundColor={
+            selectedAction === 2
+              ? componentColors.primary
+              : isSmallScreen
+              ? componentColors.transparent
+              : null
+          }
           size={componentSizes.small}
           onClick={() => setSelectedAction(2)}
         >

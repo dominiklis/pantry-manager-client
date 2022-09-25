@@ -6,7 +6,7 @@ import { IoAdd, IoPencil, IoShareSocial, IoTrash } from "react-icons/io5";
 
 const componentName = "ShoppingListActionButtons";
 
-const ShoppingListActionButtons = ({ setSelectedAction }) => {
+const ShoppingListActionButtons = ({ selectedAction, setSelectedAction }) => {
   const isSmallScreen = useIsSmallScreen();
 
   return (
@@ -15,7 +15,13 @@ const ShoppingListActionButtons = ({ setSelectedAction }) => {
         <Button
           type="button"
           icon={<IoAdd />}
-          backgroundColor={isSmallScreen ? componentColors.transparent : null}
+          backgroundColor={
+            selectedAction === 0
+              ? componentColors.primary
+              : isSmallScreen
+              ? componentColors.transparent
+              : null
+          }
           size={componentSizes.small}
           onClick={() => setSelectedAction(0)}
         >
@@ -24,7 +30,13 @@ const ShoppingListActionButtons = ({ setSelectedAction }) => {
         <Button
           type="button"
           icon={<IoPencil />}
-          backgroundColor={isSmallScreen ? componentColors.transparent : null}
+          backgroundColor={
+            selectedAction === 1
+              ? componentColors.primary
+              : isSmallScreen
+              ? componentColors.transparent
+              : null
+          }
           size={componentSizes.small}
           onClick={() => setSelectedAction(1)}
         >
@@ -33,7 +45,13 @@ const ShoppingListActionButtons = ({ setSelectedAction }) => {
         <Button
           type="button"
           icon={<IoTrash />}
-          backgroundColor={isSmallScreen ? componentColors.transparent : null}
+          backgroundColor={
+            selectedAction === 2
+              ? componentColors.primary
+              : isSmallScreen
+              ? componentColors.transparent
+              : null
+          }
           size={componentSizes.small}
           onClick={() => setSelectedAction(2)}
         >
@@ -42,7 +60,13 @@ const ShoppingListActionButtons = ({ setSelectedAction }) => {
         <Button
           type="button"
           icon={<IoShareSocial />}
-          backgroundColor={isSmallScreen ? componentColors.transparent : null}
+          backgroundColor={
+            selectedAction === 3
+              ? componentColors.primary
+              : isSmallScreen
+              ? componentColors.transparent
+              : null
+          }
           size={componentSizes.small}
           onClick={() => setSelectedAction(3)}
         >

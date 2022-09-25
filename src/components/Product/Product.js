@@ -54,6 +54,7 @@ const Product = ({ productId, highlight, initiallyOpen, open }) => {
             dropdownContent={
               <ProductActionsButtons
                 productId={productId}
+                selectedAction={selectedAction}
                 setSelectedAction={setSelectedAction}
               />
             }
@@ -75,6 +76,7 @@ const Product = ({ productId, highlight, initiallyOpen, open }) => {
           actionButtons={
             <ProductActionsButtons
               productId={productId}
+              selectedAction={selectedAction}
               setSelectedAction={setSelectedAction}
             />
           }

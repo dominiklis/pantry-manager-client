@@ -8,7 +8,11 @@ import { addToast, deleteProduct } from "store/actions";
 
 const componentName = "ProductActionsButtons";
 
-const ProductActionsButtons = ({ productId, setSelectedAction }) => {
+const ProductActionsButtons = ({
+  productId,
+  selectedAction,
+  setSelectedAction,
+}) => {
   const isSmallScreen = useIsSmallScreen();
 
   const dispatch = useDispatch();
@@ -44,7 +48,13 @@ const ProductActionsButtons = ({ productId, setSelectedAction }) => {
         <Button
           type="button"
           icon={<IoPencil />}
-          backgroundColor={isSmallScreen ? componentColors.transparent : null}
+          backgroundColor={
+            selectedAction === 0
+              ? componentColors.primary
+              : isSmallScreen
+              ? componentColors.transparent
+              : null
+          }
           size={componentSizes.small}
           onClick={() => setSelectedAction(0)}
         >
@@ -53,7 +63,13 @@ const ProductActionsButtons = ({ productId, setSelectedAction }) => {
         <Button
           type="button"
           icon={<IoBagAddOutline />}
-          backgroundColor={isSmallScreen ? componentColors.transparent : null}
+          backgroundColor={
+            selectedAction === 1
+              ? componentColors.primary
+              : isSmallScreen
+              ? componentColors.transparent
+              : null
+          }
           size={componentSizes.small}
           onClick={() => setSelectedAction(1)}
         >

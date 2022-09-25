@@ -68,6 +68,7 @@ const Storage = () => {
                 <StorageActionsButtons
                   storageName={storage.storageName}
                   products={products}
+                  selectedAction={selectedAction}
                   setSelectedAction={setSelectedAction}
                 />
               }
@@ -96,6 +97,7 @@ const Storage = () => {
             <StorageActionsButtons
               storageName={storage.storageName}
               products={products}
+              selectedAction={selectedAction}
               setSelectedAction={setSelectedAction}
             />
           }
