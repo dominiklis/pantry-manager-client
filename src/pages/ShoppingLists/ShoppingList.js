@@ -33,13 +33,14 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
         }
         initiallyOpen
         hideHeaderActionsOnClosed
-        headerActions={
+        smallScreenHeaderActions={
           shoppingListId !== various.noShoppingList ? (
             <Dropdown
               hideOnClick
               dropdownButton={<DropdownMenuButton />}
               dropdownContent={
                 <ShoppingListActionButtons
+                  selectedAction={selectedAction}
                   setSelectedAction={setSelectedAction}
                 />
               }
@@ -51,6 +52,7 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
           <ShoppingListActions
             actionButtons={
               <ShoppingListActionButtons
+                selectedAction={selectedAction}
                 setSelectedAction={setSelectedAction}
               />
             }
