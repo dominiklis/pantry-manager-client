@@ -15,9 +15,9 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
   const {
     darkTheme,
     smallScreen,
-    setSelectedAction,
     listItems,
     selectedAction,
+    setSelectedAction,
     handleCloseAction,
   } = useShoppingList({ shoppingListId });
 

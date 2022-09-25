@@ -1,13 +1,13 @@
-import { useSelectStorage } from "components/Product";
 import { useIsDarkTheme, useIsSmallScreen } from "hooks";
 import { useMemo, useState } from "react";
+import { useSelector } from "react-redux";
 import { makeSelectShoppingListItems } from "store/selectors";
 
 const useShoppingList = ({ shoppingListId }) => {
   const darkTheme = useIsDarkTheme();
 
   const selectShoppingListItems = useMemo(makeSelectShoppingListItems, []);
-  const listItems = useSelectStorage((state) =>
+  const listItems = useSelector((state) =>
     selectShoppingListItems(state, {
       shoppingListId,
     })
@@ -21,9 +21,9 @@ const useShoppingList = ({ shoppingListId }) => {
   return {
     darkTheme,
     smallScreen,
-    setSelectedAction,
     listItems,
     selectedAction,
+    setSelectedAction,
     handleCloseAction,
   };
 };
