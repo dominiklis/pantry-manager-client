@@ -2,7 +2,7 @@ import { useIsDarkTheme, useIsSmallScreen } from "hooks";
 import React from "react";
 import styles from "./ActionsButtonsList.module.css";
 
-const ActionsButtonsList = ({ buttons }) => {
+const ActionsButtonsList = ({ buttons = [] }) => {
   const darkTheme = useIsDarkTheme();
 
   const isSmallScreen = useIsSmallScreen();
