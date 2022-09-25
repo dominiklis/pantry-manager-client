@@ -6,3 +6,4 @@ export { default as StorageActions } from "./StorageActions";
 export { default as useShareStorage } from "./useShareStorage";
 export { default as DeleteStorage } from "./DeleteStorage";
 export { default as useDeleteStorage } from "./useDeleteStorage";
+export { default as StorageActionsButtons } from "./StorageActionsButtons";

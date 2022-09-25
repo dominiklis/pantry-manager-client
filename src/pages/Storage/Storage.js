@@ -1,11 +1,17 @@
 import {
+  Dropdown,
+  DropdownMenuButton,
   PageContainer,
   ProductsList,
   StorageIndicator,
   Translate,
 } from "components";
 import { componentSizes } from "constantStrings";
-import { StorageActions, useStorage } from "pages/Storage";
+import {
+  StorageActions,
+  StorageActionsButtons,
+  useStorage,
+} from "pages/Storage";
 import React from "react";
 import styles from "./Storage.module.css";
 
@@ -23,6 +29,10 @@ const Storage = () => {
     handleHighlightChange,
     filterBy,
     handleFilterByChange,
+    isSmallScreen,
+    selectedAction,
+    setSelectedAction,
+    handleCloseAction,
   } = useStorage();
 
   if (!storage) {
@@ -50,6 +60,19 @@ const Storage = () => {
             size={componentSizes.veryLarge}
           />
           <h1 className={styles.header}>{storage.storageName}</h1>
+          {isSmallScreen ? (
+            <Dropdown
+              hideOnClick
+              dropdownButton={<DropdownMenuButton />}
+              dropdownContent={
+                <StorageActionsButtons
+                  storageName={storage.storageName}
+                  products={products}
+                  setSelectedAction={setSelectedAction}
+                />
+              }
+            />
+          ) : null}
         </div>
 
         <div className={styles.warningInfo}>
@@ -69,6 +92,15 @@ const Storage = () => {
           numberOfDaysForWarning={storage.numberOfDaysForWarning}
           users={storage.users}
           products={products}
+          actionButtons={
+            <StorageActionsButtons
+              storageName={storage.storageName}
+              products={products}
+              setSelectedAction={setSelectedAction}
+            />
+          }
+          selectedAction={selectedAction}
+          onCloseAction={handleCloseAction}
         />
       </div>
 

@@ -1,6 +1,8 @@
 import {
+  useControlledActions,
   useHandleProductsList,
   useIsDarkTheme,
+  useIsSmallScreen,
   useScrollToElement,
 } from "hooks";
 import { useMemo } from "react";
@@ -30,6 +32,11 @@ const useStorage = () => {
     handleFilterByChange,
   } = useHandleProductsList({ storageId, getProductBody: true });
 
+  const isSmallScreen = useIsSmallScreen();
+
+  const { selectedAction, setSelectedAction, handleCloseAction } =
+    useControlledActions();
+
   return {
     storage,
     darkTheme,
@@ -41,6 +48,10 @@ const useStorage = () => {
     handleHighlightChange,
     filterBy,
     handleFilterByChange,
+    isSmallScreen,
+    selectedAction,
+    setSelectedAction,
+    handleCloseAction,
   };
 };
 

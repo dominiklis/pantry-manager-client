@@ -245,13 +245,16 @@
   },
 
   "StorageActions": {
-    "shareButtonText": "Udostępnij",
-    "editButtonText": "Edytuj",
-    "deleteButtonText": "Usuń",
-    "menuButtonText": "Eksportuj",
     "shareActionHeader": "Udostępnianie magazynu",
     "editActionHeader": "Edycja magazynu",
     "deleteActionHeader": "Usuwanie magazynu"
+  },
+
+  "StorageActionsButtons": {
+    "menuButtonText": "Eksportuj",
+    "editButtonText": "Edytuj",
+    "shareButtonText": "Udostępnij",
+    "deleteButtonText": "Usuń"
   },
 
   "DeleteStorage": {

@@ -245,13 +245,16 @@
   },
 
   "StorageActions": {
-    "shareButtonText": "Share",
-    "editButtonText": "Edit",
-    "deleteButtonText": "Delete",
-    "menuButtonText": "Export",
     "shareActionHeader": "Share Storage",
     "editActionHeader": "Edit Storage",
     "deleteActionHeader": "Delete Storage"
+  },
+
+  "StorageActionsButtons": {
+    "menuButtonText": "Export",
+    "editButtonText": "Edit",
+    "shareButtonText": "Share",
+    "deleteButtonText": "Delete"
   },
 
   "DeleteStorage": {

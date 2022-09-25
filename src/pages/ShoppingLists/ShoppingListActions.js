@@ -25,7 +25,9 @@ const ShoppingListActions = ({
 
   return (
     <>
-      {!smallScreen ? actionButtons : null}
+      {!smallScreen && shoppingListId !== various.noShoppingList
+        ? actionButtons
+        : null}
 
       {shoppingListId === various.noShoppingList ? null : (
         <ControlledActions

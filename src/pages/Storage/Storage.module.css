@@ -12,6 +12,7 @@
 .header {
   font-size: 20px;
   font-weight: normal;
+  flex: 1;
 }
 
 .header.error {
