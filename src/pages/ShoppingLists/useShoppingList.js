@@ -1,5 +1,5 @@
-import { useIsDarkTheme } from "hooks";
-import { useMemo, useState } from "react";
+import { useControlledActions, useIsDarkTheme } from "hooks";
+import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { makeSelectShoppingListItems } from "store/selectors";
 
@@ -13,8 +13,8 @@ const useShoppingList = ({ shoppingListId }) => {
     })
   );
 
-  const [selectedAction, setSelectedAction] = useState(-1);
-  const handleCloseAction = () => setSelectedAction(-1);
+  const { selectedAction, setSelectedAction, handleCloseAction } =
+    useControlledActions();
 
   return {
     darkTheme,
