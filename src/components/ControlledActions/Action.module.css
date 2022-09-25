@@ -2,7 +2,6 @@
   border: 1px solid var(--clr-gray3);
   border-radius: 8px;
   padding: 8px;
-  overflow: auto;
 }
 
 .header {
