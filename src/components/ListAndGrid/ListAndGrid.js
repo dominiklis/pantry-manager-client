@@ -1,9 +1,11 @@
 import { ListHeader, SortByNameButton } from "components";
-import { DisplayAsButton, NoElements } from "components/ListAndGrid";
+import {
+  DisplayAsButton,
+  NoElements,
+  useListAndGrid,
+} from "components/ListAndGrid";
 import { sortByValues, displayAs as displayAsValues } from "constantStrings";
-import { useIsDarkTheme } from "hooks";
 import React from "react";
-import styles from "./ListAndGrid.module.css";
 
 const ListAndGrid = ({
   elements,
@@ -13,29 +15,12 @@ const ListAndGrid = ({
   setDisplayAs,
   emptyListInfo,
 }) => {
-  const darkTheme = useIsDarkTheme();
-
-  const handleSortByButton = () =>
-    setSortBy((prev) => {
-      if (prev === sortByValues.nameAsc) return sortByValues.nameDesc;
-
-      return sortByValues.nameAsc;
-    });
-
-  const handleDisplayAsButton = () =>
-    setDisplayAs((prev) => {
-      if (prev === displayAsValues.list) return displayAsValues.grid;
-
-      return displayAsValues.list;
-    });
-
-  const getListStyles = () => {
-    let res = styles.list;
-
-    if (displayAs === displayAsValues.grid) res += ` ${styles.grid}`;
-
-    return res;
-  };
+  const {
+    handleSortByButton,
+    handleDisplayAsButton,
+    getListStyles,
+    darkTheme,
+  } = useListAndGrid({ setSortBy, displayAs, setDisplayAs });
 
   if (!elements || !elements.length)
     return <NoElements emptyListInfo={emptyListInfo} />;
