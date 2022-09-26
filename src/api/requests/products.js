@@ -2,29 +2,19 @@ import requests from "../axios";
 
 const products = {
   get: () => requests.get("/products"),
-  create: (productName, expirationDate, amount, unit, storageId, labels) =>
+  create: (productName, expirationDate, amount, storageId, labels) =>
     requests.post("/products", {
       productName,
       expirationDate,
       amount,
-      unit,
       storageId,
       labels,
     }),
-  edit: (
-    productId,
-    productName,
-    expirationDate,
-    amount,
-    unit,
-    storageId,
-    labels
-  ) =>
+  edit: (productId, productName, expirationDate, amount, storageId, labels) =>
     requests.put(`/products/${productId}`, {
       productName,
       expirationDate,
       amount,
-      unit,
       storageId,
       labels,
     }),

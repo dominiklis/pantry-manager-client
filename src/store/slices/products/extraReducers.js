@@ -16,7 +16,7 @@ export const getProducts = createAsyncThunk(
 export const createProduct = createAsyncThunk(
   "products/createProduct",
   async (
-    { productName, expirationDate, amount, unit, storageId, labels },
+    { productName, expirationDate, amount, storageId, labels },
     { rejectWithValue }
   ) => {
     try {
@@ -24,7 +24,6 @@ export const createProduct = createAsyncThunk(
         productName,
         expirationDate,
         amount,
-        unit,
         storageId,
         labels
       );
@@ -38,7 +37,7 @@ export const createProduct = createAsyncThunk(
 export const editProduct = createAsyncThunk(
   "products/editProduct",
   async (
-    { productId, productName, expirationDate, amount, unit, storageId, labels },
+    { productId, productName, expirationDate, amount, storageId, labels },
     { rejectWithValue }
   ) => {
     try {
@@ -47,7 +46,6 @@ export const editProduct = createAsyncThunk(
         productName,
         expirationDate,
         amount,
-        unit,
         storageId,
         labels
       );
