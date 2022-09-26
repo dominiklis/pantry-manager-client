@@ -74,7 +74,7 @@
 
   "StoragesList": {
     "header": "Storages",
-    "sortByButtonText": "Name"
+    "noStoragesInfo": "There are no storages to display."
   },
 
   "ProductsWithoutStoragesList": {
@@ -426,11 +426,19 @@
     "header": "found items"
   },
 
-  "ListAndGrid": {
+  "NoElements": {
     "noElementsInfo": "Nothing to display."
   },
 
   "Home": {
     "noProductsInfo": "There are no products in your pantry. Add your first product by clicking on the button at the bottom."
+  },
+
+  "Labels": {
+    "noLabelsInfo": "There are no labels to display."
+  },
+
+  "ShoppingLists": {
+    "noItemsInfo": "No items to display."
   }
 }

@@ -7,3 +7,7 @@
   gap: 16px;
   flex-direction: column;
 }
+
+.noItems {
+  color: var(--clr-gray3);
+}

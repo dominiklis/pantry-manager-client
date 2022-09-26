@@ -6,7 +6,7 @@ const ItemsList = ({ header, items, horizontalList }) => {
   const getListStyles = () => {
     let res = styles.list;
 
-    if (horizontalList) res += ` ${styles.horizontalList}`;
+    if (horizontalList && items?.length) res += ` ${styles.horizontalList}`;
 
     return res;
   };

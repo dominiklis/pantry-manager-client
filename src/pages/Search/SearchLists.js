@@ -14,7 +14,6 @@ const SearchLists = () => {
 
   return (
     <ItemsList
-      horizontalList
       header={<Translate section={componentName} text="header" />}
       items={lists.map((list) => (
         <li key={list.shoppingListId}>

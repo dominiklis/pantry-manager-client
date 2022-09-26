@@ -74,7 +74,7 @@
 
   "StoragesList": {
     "header": "Magazyny",
-    "sortByButtonText": "Nazwa"
+    "noStoragesInfo": "Brak magazynów do wyświetlenia."
   },
 
   "ProductsWithoutStoragesList": {
@@ -310,7 +310,7 @@
   },
 
   "NoProductsToDisplay": {
-    "noProductsInfo": "Brak produktów do pokazania."
+    "noProductsInfo": "Brak produktów do wyświetlenia."
   },
 
   "EditLabel": {
@@ -426,11 +426,19 @@
     "header": "znalezione pozycje do kupienia"
   },
 
-  "ListAndGrid": {
+  "NoElements": {
     "noElementsInfo": "Nie ma nic do wyświetlenia."
   },
 
   "Home": {
     "noProductsInfo": "W tej chwili w twojej spiżarni nie ma produktów do wyświetlenia. Dodaj pierwszy produkt klikając przycisk na dole."
+  },
+
+  "Labels": {
+    "noLabelsInfo": "Brak etykiet do wyświetlenia."
+  },
+
+  "ShoppingLists": {
+    "noItemsInfo": "Brak pozycji do kupienia do wyświetlenia."
   }
 }

@@ -29,6 +29,9 @@ const StoragesList = ({ className, noHeader }) => {
         setSortBy={setSortBy}
         displayAs={displayAs}
         setDisplayAs={setDisplayAs}
+        emptyListInfo={
+          <Translate section={componentName} text="noStoragesInfo" />
+        }
       />
     </div>
   );
