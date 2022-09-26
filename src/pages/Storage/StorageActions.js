@@ -28,16 +28,6 @@ const StorageActions = ({
         onCloseAction={onCloseAction}
         actions={[
           new Action(
-            <Translate section={componentName} text="shareActionHeader" />,
-            (
-              <Share
-                id={storageId}
-                ownerId={ownerId}
-                users={sortByName([...users], "userName")}
-              />
-            )
-          ),
-          new Action(
             <Translate section={componentName} text="editActionHeader" />,
             (
               <EditStorage
@@ -54,6 +44,16 @@ const StorageActions = ({
               <DeleteStorage
                 storageId={storageId}
                 noProducts={!products || !products.length}
+              />
+            )
+          ),
+          new Action(
+            <Translate section={componentName} text="shareActionHeader" />,
+            (
+              <Share
+                id={storageId}
+                ownerId={ownerId}
+                users={sortByName([...users], "userName")}
               />
             )
           ),

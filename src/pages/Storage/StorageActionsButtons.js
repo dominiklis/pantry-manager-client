@@ -51,7 +51,7 @@ const StorageActionsButtons = ({
         />,
         <Button
           type="button"
-          icon={<IoShareSocial />}
+          icon={<IoPencil />}
           backgroundColor={
             selectedAction === 0
               ? componentColors.primary
@@ -62,11 +62,11 @@ const StorageActionsButtons = ({
           size={componentSizes.small}
           onClick={() => setSelectedAction(0)}
         >
-          <Translate section={componentName} text="shareButtonText" />
+          <Translate section={componentName} text="editButtonText" />
         </Button>,
         <Button
           type="button"
-          icon={<IoPencil />}
+          icon={<IoTrash />}
           backgroundColor={
             selectedAction === 1
               ? componentColors.primary
@@ -77,11 +77,11 @@ const StorageActionsButtons = ({
           size={componentSizes.small}
           onClick={() => setSelectedAction(1)}
         >
-          <Translate section={componentName} text="editButtonText" />
+          <Translate section={componentName} text="deleteButtonText" />
         </Button>,
         <Button
           type="button"
-          icon={<IoTrash />}
+          icon={<IoShareSocial />}
           backgroundColor={
             selectedAction === 2
               ? componentColors.primary
@@ -92,7 +92,7 @@ const StorageActionsButtons = ({
           size={componentSizes.small}
           onClick={() => setSelectedAction(2)}
         >
-          <Translate section={componentName} text="deleteButtonText" />
+          <Translate section={componentName} text="shareButtonText" />
         </Button>,
       ]}
     />
