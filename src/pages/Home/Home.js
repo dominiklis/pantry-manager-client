@@ -13,7 +13,7 @@ import { useSelector } from "react-redux";
 const componentName = "Home";
 
 const Home = () => {
-  const { products } = useSelector((state) => state.products.allIds);
+  const products = useSelector((state) => state.products.allIds);
 
   useScrollToElement();
 
