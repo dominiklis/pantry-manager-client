@@ -1,4 +1,3 @@
-import { createOverlay } from "constantStrings";
 import {
   useControlledActions,
   useHandleProductsList,
@@ -44,9 +43,7 @@ const useStorage = () => {
   useEffect(() => {
     dispatch(
       setCreateOverlay({
-        selectedTab: createOverlay.tabs.createProduct,
         storageId: storage.storageId,
-        labelName: "",
       })
     );
   }, [dispatch, storage.storageId]);

@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 const useCreateOverlay = () => {
   const darkTheme = useIsDarkTheme();
 
-  const { selectedTab, storageId, labelId } = useSelector(
+  const { selectedTab, storageId, labelId, shoppingListId } = useSelector(
     (state) => state.app.createOverlay
   );
 
@@ -38,6 +38,7 @@ const useCreateOverlay = () => {
     initialAction,
     storageId,
     labelId,
+    shoppingListId,
   };
 };
 

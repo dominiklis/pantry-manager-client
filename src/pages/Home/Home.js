@@ -10,7 +10,6 @@ import styles from "./Home.module.css";
 import { useScrollToElement } from "hooks";
 import { useDispatch, useSelector } from "react-redux";
 import { setCreateOverlay } from "store/actions";
-import { createOverlay, various } from "constantStrings";
 
 const componentName = "Home";
 
@@ -22,13 +21,7 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(
-      setCreateOverlay({
-        selectedTab: createOverlay.tabs.createProduct,
-        storageId: various.noStorage,
-        labelName: "",
-      })
-    );
+    dispatch(setCreateOverlay());
   }, [dispatch]);
 
   if (!products || !products.length)

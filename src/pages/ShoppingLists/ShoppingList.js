@@ -40,6 +40,7 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
               dropdownButton={<DropdownMenuButton />}
               dropdownContent={
                 <ShoppingListActionButtons
+                  shoppingListId={shoppingListId}
                   selectedAction={selectedAction}
                   setSelectedAction={setSelectedAction}
                 />
@@ -52,6 +53,7 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
           <ShoppingListActions
             actionButtons={
               <ShoppingListActionButtons
+                shoppingListId={shoppingListId}
                 selectedAction={selectedAction}
                 setSelectedAction={setSelectedAction}
               />

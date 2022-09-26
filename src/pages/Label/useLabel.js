@@ -1,4 +1,3 @@
-import { createOverlay, various } from "constantStrings";
 import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -43,8 +42,6 @@ const useLabel = ({ componentName }) => {
   useEffect(() => {
     dispatch(
       setCreateOverlay({
-        selectedTab: createOverlay.tabs.createProduct,
-        storageId: various.noStorage,
         labelId: label.labelId,
       })
     );

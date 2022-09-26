@@ -1,6 +1,8 @@
 import { PageContainer, ProductsList } from "components";
 import { useHandleProductsList, useScrollToElement } from "hooks";
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setCreateOverlay } from "store/actions";
 
 const Products = () => {
   useScrollToElement();
@@ -14,6 +16,12 @@ const Products = () => {
     handleHighlightChange,
     handleFilterByChange,
   } = useHandleProductsList({});
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setCreateOverlay());
+  }, [dispatch]);
 
   return (
     <PageContainer>

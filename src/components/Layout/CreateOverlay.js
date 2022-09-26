@@ -20,7 +20,8 @@ import styles from "./CreateOverlay.module.css";
 const componentName = "CreateOverlay";
 
 const CreateOverlay = React.forwardRef(({ onHideButtonClick }, ref) => {
-  const { darkTheme, initialAction, storageId, labelId } = useCreateOverlay();
+  const { darkTheme, initialAction, storageId, labelId, shoppingListId } =
+    useCreateOverlay();
 
   return (
     <div className={styles.container} ref={ref}>
@@ -102,7 +103,7 @@ const CreateOverlay = React.forwardRef(({ onHideButtonClick }, ref) => {
                   text="createShoppingListItemHeader"
                 />
               ),
-              <CreateShoppingListItem />,
+              <CreateShoppingListItem selectedList={shoppingListId} />,
               (
                 <Translate
                   section={componentName}

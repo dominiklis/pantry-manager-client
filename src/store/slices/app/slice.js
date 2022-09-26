@@ -83,11 +83,19 @@ const appSlice = createSlice({
     },
 
     setCreateOverlay: (state, action) => {
-      const { selectedTab, storageId, labelId } = action.payload;
+      if (!action.payload) action.payload = {};
 
-      state.createOverlay.selectedTab = selectedTab;
-      state.createOverlay.storageId = storageId;
-      state.createOverlay.labelId = labelId;
+      const { isVisible, selectedTab, storageId, labelId, shoppingListId } =
+        action.payload;
+      if (isVisible === true || isVisible === false)
+        state.createOverlay.isVisible = isVisible;
+
+      state.createOverlay.selectedTab =
+        selectedTab ?? createOverlay.tabs.createProduct;
+      state.createOverlay.storageId = storageId ?? various.noStorage;
+      state.createOverlay.labelId = labelId ?? null;
+      state.createOverlay.shoppingListId =
+        shoppingListId ?? various.noShoppingList;
     },
   },
   extraReducers: (builder) =>

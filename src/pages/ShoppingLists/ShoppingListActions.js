@@ -1,11 +1,7 @@
 import { ControlledActions, Share, Translate } from "components";
 import { various } from "constantStrings";
 import { useIsSmallScreen } from "hooks";
-import {
-  AddItem,
-  DeleteShoppingList,
-  EditShoppingList,
-} from "pages/ShoppingLists";
+import { DeleteShoppingList, EditShoppingList } from "pages/ShoppingLists";
 import React from "react";
 import { Action, sortByName } from "utils";
 
@@ -34,10 +30,6 @@ const ShoppingListActions = ({
           selectedAction={selectedAction}
           onCloseAction={onCloseAction}
           actions={[
-            new Action(
-              <Translate section={componentName} text="addItemActionHeader" />,
-              <AddItem shoppingListId={shoppingListId} />
-            ),
             new Action(
               <Translate section={componentName} text="editActionHeader" />,
               (
