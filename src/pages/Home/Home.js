@@ -5,10 +5,12 @@ import {
   Translate,
 } from "components";
 import { CloseToExpiryProducts, ExpiredProducts } from ".";
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Home.module.css";
 import { useScrollToElement } from "hooks";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setCreateOverlay } from "store/actions";
+import { createOverlay, various } from "constantStrings";
 
 const componentName = "Home";
 
@@ -16,6 +18,18 @@ const Home = () => {
   const products = useSelector((state) => state.products.allIds);
 
   useScrollToElement();
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(
+      setCreateOverlay({
+        selectedTab: createOverlay.tabs.createProduct,
+        storageId: various.noStorage,
+        labelName: "",
+      })
+    );
+  }, [dispatch]);
 
   if (!products || !products.length)
     return (

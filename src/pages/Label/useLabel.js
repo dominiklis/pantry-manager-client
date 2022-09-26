@@ -1,7 +1,13 @@
-import { useMemo } from "react";
+import { createOverlay, various } from "constantStrings";
+import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { addToast, deleteLabel, deleteLabelInProducts } from "store/actions";
+import {
+  addToast,
+  deleteLabel,
+  deleteLabelInProducts,
+  setCreateOverlay,
+} from "store/actions";
 import { makeSelectLabelsDetails } from "store/selectors";
 
 const useLabel = ({ componentName }) => {
@@ -33,6 +39,16 @@ const useLabel = ({ componentName }) => {
       })
     );
   };
+
+  useEffect(() => {
+    dispatch(
+      setCreateOverlay({
+        selectedTab: createOverlay.tabs.createProduct,
+        storageId: various.noStorage,
+        labelId: label.labelId,
+      })
+    );
+  }, [dispatch, label.labelId]);
 
   return { label, handleDeleteLabel, loading };
 };

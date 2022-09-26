@@ -1,9 +1,14 @@
 import { LabelChip, ListAndGridItem } from "components";
-import { sortByValues, displayAs as displayAsValues } from "constantStrings";
+import {
+  sortByValues,
+  displayAs as displayAsValues,
+  createOverlay,
+} from "constantStrings";
 import { useScrollToElement } from "hooks";
-import { useMemo, useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useMemo, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
+import { setCreateOverlay } from "store/actions";
 import { makeSelectLabelsDetails } from "store/selectors";
 
 const useLabels = () => {
@@ -34,6 +39,16 @@ const useLabels = () => {
       )),
     [displayAs, hash, labels]
   );
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(
+      setCreateOverlay({
+        selectedTab: createOverlay.tabs.createLabel,
+      })
+    );
+  }, [dispatch]);
 
   return {
     sortBy,

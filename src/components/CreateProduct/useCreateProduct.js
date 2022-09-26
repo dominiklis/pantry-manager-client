@@ -7,6 +7,8 @@ const useCreateProduct = ({
   componentName,
   productName,
   dontNavigateToProduct,
+  selectedStorage,
+  selectedLabel,
 }) => {
   const { create: loading } = useSelector((state) => state.products.loading);
 
@@ -14,8 +16,8 @@ const useCreateProduct = ({
     productName: productName ?? "",
     expirationDate: "",
     amount: "",
-    storageId: null,
-    labels: [],
+    storageId: selectedStorage ?? null,
+    labels: selectedLabel ? [selectedLabel] : [],
   });
 
   const [errors, setErrors] = useState({

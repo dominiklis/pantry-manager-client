@@ -9,9 +9,9 @@ import {
   CreateLabel,
   CreateShoppingList,
   CreateStorage,
+  useCreateOverlay,
 } from "components/Layout";
 import { componentColors, componentSizes } from "constantStrings";
-import { useIsDarkTheme } from "hooks";
 import React from "react";
 import { IoAdd, IoChevronDown } from "react-icons/io5";
 import { ActionWtihButton } from "utils";
@@ -20,7 +20,7 @@ import styles from "./CreateOverlay.module.css";
 const componentName = "CreateOverlay";
 
 const CreateOverlay = React.forwardRef(({ onHideButtonClick }, ref) => {
-  const darkTheme = useIsDarkTheme();
+  const { darkTheme, initialAction, storageId, labelId } = useCreateOverlay();
 
   return (
     <div className={styles.container} ref={ref}>
@@ -39,11 +39,16 @@ const CreateOverlay = React.forwardRef(({ onHideButtonClick }, ref) => {
         <Translate section={componentName} text="header" />
 
         <Actions
-          initialValue={0}
+          initialValue={initialAction}
           actions={[
             new ActionWtihButton(
               <Translate section={componentName} text="createProductHeader" />,
-              <CreateProduct />,
+              (
+                <CreateProduct
+                  selectedStorage={storageId}
+                  selectedLabel={labelId}
+                />
+              ),
               (
                 <Translate
                   section={componentName}

@@ -1,3 +1,4 @@
+import { createOverlay } from "constantStrings";
 import {
   useControlledActions,
   useHandleProductsList,
@@ -5,9 +6,10 @@ import {
   useIsSmallScreen,
   useScrollToElement,
 } from "hooks";
-import { useMemo } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { setCreateOverlay } from "store/actions";
 import { makeSelectStorageById } from "store/selectors";
 
 const useStorage = () => {
@@ -36,6 +38,18 @@ const useStorage = () => {
 
   const { selectedAction, setSelectedAction, handleCloseAction } =
     useControlledActions();
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(
+      setCreateOverlay({
+        selectedTab: createOverlay.tabs.createProduct,
+        storageId: storage.storageId,
+        labelName: "",
+      })
+    );
+  }, [dispatch, storage.storageId]);
 
   return {
     storage,

@@ -4,12 +4,19 @@ import React from "react";
 
 const componentName = "CreateProduct";
 
-const CreateProduct = ({ productName, dontNavigateToProduct }) => {
+const CreateProduct = ({
+  productName,
+  dontNavigateToProduct,
+  selectedStorage,
+  selectedLabel,
+}) => {
   const { loading, input, setInput, setErrors, errors, handleSubmit } =
     useCreateProduct({
       componentName,
       productName,
       dontNavigateToProduct,
+      selectedStorage,
+      selectedLabel,
     });
 
   return (

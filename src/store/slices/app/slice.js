@@ -1,5 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { languages, localStorageKeys, themes } from "constantStrings";
+import {
+  createOverlay,
+  languages,
+  localStorageKeys,
+  themes,
+  various,
+} from "constantStrings";
 import { v4 as uuid } from "uuid";
 import { setSettings, updateSettings } from "./extraReducers";
 
@@ -15,6 +21,12 @@ const initialState = {
     updateSettings: false,
   },
   search: "",
+  createOverlay: {
+    isVisible: false,
+    selectedTab: createOverlay.tabs.createProduct,
+    storageId: various.noStorage,
+    labelId: null,
+  },
 };
 
 const appSlice = createSlice({
@@ -61,6 +73,22 @@ const appSlice = createSlice({
     setSearch: (state, action) => {
       state.search = action.payload;
     },
+
+    showCreateOverlay: (state) => {
+      state.createOverlay.isVisible = true;
+    },
+
+    hideCreateOverlay: (state) => {
+      state.createOverlay.isVisible = false;
+    },
+
+    setCreateOverlay: (state, action) => {
+      const { selectedTab, storageId, labelId } = action.payload;
+
+      state.createOverlay.selectedTab = selectedTab;
+      state.createOverlay.storageId = storageId;
+      state.createOverlay.labelId = labelId;
+    },
   },
   extraReducers: (builder) =>
     builder
@@ -102,4 +130,7 @@ export const {
   toggleTheme,
   setGetSettingsLoading,
   setSearch,
+  showCreateOverlay,
+  hideCreateOverlay,
+  setCreateOverlay,
 } = appSlice.actions;

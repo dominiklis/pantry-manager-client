@@ -1,8 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import styles from "./Layout.module.css";
 import { Outlet } from "react-router-dom";
-import { useIsDarkTheme } from "hooks";
-import { useSelector } from "react-redux";
 import { IoMenu } from "react-icons/io5";
 import {
   AppName,
@@ -10,31 +8,23 @@ import {
   FloatingButton,
   Sidebar,
   Topbar,
+  useLayout,
 } from "components/Layout";
-import { various } from "constantStrings";
 import { CSSTransition } from "react-transition-group";
 import overlayStyles from "./Overlay.module.css";
 
 const Layout = () => {
-  const darkTheme = useIsDarkTheme();
-  const { user } = useSelector((state) => state.users);
-
-  const [hidden, setHidden] = useState(false);
-  const [showCreateOverlay, setShowCreateOverlay] = useState(false);
-
-  const handleHideMenu = () => setHidden(true);
-
-  const handleOpenMenu = () => setHidden(false);
-
-  const handleShowCreate = () => setShowCreateOverlay(true);
-
-  const handleHideCreate = () => setShowCreateOverlay(false);
-
-  const overlayRef = useRef(null);
-
-  useEffect(() => {
-    if (window.innerWidth <= various.smallScreen) setHidden(true);
-  }, []);
+  const {
+    user,
+    darkTheme,
+    hidden,
+    handleHideMenu,
+    handleOpenMenu,
+    overlayRef,
+    isCreateOverlayVisible,
+    handleShowCreateOverlay,
+    handleHideCreateOverlay,
+  } = useLayout();
 
   if (!user || !user.userId) return <Outlet />;
 
@@ -58,16 +48,19 @@ const Layout = () => {
         </button>
       </div>
 
-      <FloatingButton onClick={handleShowCreate} />
+      <FloatingButton onClick={handleShowCreateOverlay} />
 
       <CSSTransition
         nodeRef={overlayRef}
-        in={showCreateOverlay}
+        in={isCreateOverlayVisible}
         timeout={200}
         classNames={overlayStyles}
         unmountOnExit
       >
-        <CreateOverlay ref={overlayRef} onHideButtonClick={handleHideCreate} />
+        <CreateOverlay
+          ref={overlayRef}
+          onHideButtonClick={handleHideCreateOverlay}
+        />
       </CSSTransition>
     </div>
   );
