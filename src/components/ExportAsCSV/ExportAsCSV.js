@@ -11,7 +11,6 @@ const headers = [
   { label: "product id", key: "productId" },
   { label: "product name", key: "productName" },
   { label: "amount", key: "amount" },
-  { label: "unit", key: "unit" },
   { label: "expiration date", key: "expirationDate" },
 ];
 
