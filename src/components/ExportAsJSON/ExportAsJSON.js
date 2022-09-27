@@ -13,8 +13,8 @@ const ExportAsJSON = ({ disabled, products, filename }) => {
   const exportAsJSON = () => {
     if (products && products.length) {
       products = products.map(
-        ({ productId, productName, amount, unit, expirationDate }) =>
-          new ProductJSON(productId, productName, amount, unit, expirationDate)
+        ({ productId, productName, amount, expirationDate }) =>
+          new ProductJSON(productId, productName, amount, expirationDate)
       );
 
       const blob = new Blob([JSON.stringify(products)], { type: "text/json" });
