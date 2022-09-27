@@ -1,9 +1,8 @@
 class ProductJSON {
-  constructor(productId, productName, amount, unit, expirationDate) {
+  constructor(productId, productName, amount, expirationDate) {
     this["product id"] = productId;
     this["product name"] = productName;
     this.amount = amount;
-    this.unit = unit;
     this["expiration date"] = expirationDate;
   }
 }
