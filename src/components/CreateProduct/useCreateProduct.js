@@ -1,3 +1,4 @@
+import { various } from "constantStrings";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -36,7 +37,8 @@ const useCreateProduct = ({
         productName: input.productName,
         expirationDate: input.expirationDate ? input.expirationDate : null,
         amount: input.amount ? input.amount : null,
-        storageId: input.storageId,
+        storageId:
+          input.storageId === various.noStorage ? null : input.storageId,
         labels: input.labels,
       })
     ).unwrap();
