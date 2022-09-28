@@ -34,6 +34,18 @@ export const createProduct = createAsyncThunk(
   }
 );
 
+export const createCollectionOfProducts = createAsyncThunk(
+  "products/createCollectionOfProducts",
+  async (products, { rejectWithValue }) => {
+    try {
+      const response = await api.collectionOfProducts.create(products);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data?.message);
+    }
+  }
+);
+
 export const editProduct = createAsyncThunk(
   "products/editProduct",
   async (

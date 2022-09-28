@@ -34,6 +34,8 @@ export const getNumberOfDaysFromToday = (date) => {
 };
 
 export const formatDate = (date, forFormInput = false) => {
+  if (!date) return "";
+
   let newDate = new Date(date).toLocaleDateString();
   let [day, month, year] = newDate.split(".");
   if (day.length === 1) day = "0" + day;

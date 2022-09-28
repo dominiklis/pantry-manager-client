@@ -252,6 +252,7 @@
 
   "StorageActionsButtons": {
     "menuButtonText": "Eksportuj",
+    "uploadButtonText": "Importuj",
     "editButtonText": "Edytuj",
     "shareButtonText": "Udostępnij",
     "deleteButtonText": "Usuń"
@@ -440,5 +441,18 @@
 
   "ShoppingLists": {
     "noItemsInfo": "Brak pozycji do kupienia do wyświetlenia."
+  },
+
+  "UploadOverlay": {
+    "header": "Importowanie",
+    "fileTypeError": "nieprawidłowy typ pliku, dopuszczalne są jedynie pliki .csv i .json",
+    "fileSizeError": "maksymalny dopuszczalny rozmiar pliku to 2MB",
+    "uploadedFilesHeader": "Wybierz produkty, które chciałbym dodać do tego magazynu",
+    "uploadButton": "Prześlij"
+  },
+
+  "UploadProductCard": {
+    "amount": "ilość",
+    "expirationDate": "termin ważności"
   }
 }

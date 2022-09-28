@@ -2,7 +2,11 @@ import { various } from "constantStrings";
 import { useIsDarkTheme } from "hooks";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { hideCreateOverlay, showCreateOverlay } from "store/actions";
+import {
+  hideCreateOverlay,
+  setUploadOverlay,
+  showCreateOverlay,
+} from "store/actions";
 
 const useLayout = () => {
   const darkTheme = useIsDarkTheme();
@@ -17,10 +21,19 @@ const useLayout = () => {
   const { isVisible: isCreateOverlayVisible } = useSelector(
     (state) => state.app.createOverlay
   );
+
+  const { isVisible: isUploadOverlayVisible } = useSelector(
+    (state) => state.app.uploadOverlay
+  );
+
   const handleShowCreateOverlay = () => dispatch(showCreateOverlay());
   const handleHideCreateOverlay = () => dispatch(hideCreateOverlay());
 
-  const overlayRef = useRef(null);
+  const handleHideUploadOverlay = () =>
+    dispatch(setUploadOverlay({ isVisible: false }));
+
+  const createOverlayRef = useRef(null);
+  const uploadOverlayRef = useRef(null);
 
   useEffect(() => {
     if (window.innerWidth <= various.smallScreen) setHidden(true);
@@ -32,10 +45,13 @@ const useLayout = () => {
     hidden,
     handleHideMenu,
     handleOpenMenu,
-    overlayRef,
+    createOverlayRef,
+    uploadOverlayRef,
     isCreateOverlayVisible,
+    isUploadOverlayVisible,
     handleShowCreateOverlay,
     handleHideCreateOverlay,
+    handleHideUploadOverlay,
   };
 };
 

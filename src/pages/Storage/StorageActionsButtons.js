@@ -9,7 +9,15 @@ import {
 import { componentColors, componentSizes } from "constantStrings";
 import { useIsSmallScreen } from "hooks";
 import React from "react";
-import { IoDownload, IoPencil, IoShareSocial, IoTrash } from "react-icons/io5";
+import {
+  IoDownload,
+  IoPencil,
+  IoPush,
+  IoShareSocial,
+  IoTrash,
+} from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { setUploadOverlay } from "store/actions";
 
 const componentName = "StorageActionsButtons";
 
@@ -21,9 +29,24 @@ const StorageActionsButtons = ({
 }) => {
   const isSmallScreen = useIsSmallScreen();
 
+  const dispatch = useDispatch();
+
+  const handleUploadButton = () => {
+    dispatch(setUploadOverlay({ isVisible: true }));
+  };
+
   return (
     <ActionsButtonsList
       buttons={[
+        <Button
+          type="button"
+          icon={<IoPush />}
+          size={componentSizes.small}
+          backgroundColor={componentColors.transparent}
+          onClick={handleUploadButton}
+        >
+          <Translate section={componentName} text="uploadButtonText" />
+        </Button>,
         <DropdownMenu
           stopPropagation
           visibleBackdrop

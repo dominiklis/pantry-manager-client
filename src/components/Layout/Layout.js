@@ -8,10 +8,11 @@ import {
   FloatingButton,
   Sidebar,
   Topbar,
+  UploadOverlay,
   useLayout,
 } from "components/Layout";
 import { CSSTransition } from "react-transition-group";
-import overlayStyles from "./Overlay.module.css";
+import overlayStyles from "./overlayStyles.module.css";
 
 const Layout = () => {
   const {
@@ -20,10 +21,13 @@ const Layout = () => {
     hidden,
     handleHideMenu,
     handleOpenMenu,
-    overlayRef,
+    createOverlayRef,
+    uploadOverlayRef,
     isCreateOverlayVisible,
+    isUploadOverlayVisible,
     handleShowCreateOverlay,
     handleHideCreateOverlay,
+    handleHideUploadOverlay,
   } = useLayout();
 
   if (!user || !user.userId) return <Outlet />;
@@ -51,15 +55,28 @@ const Layout = () => {
       <FloatingButton onClick={handleShowCreateOverlay} />
 
       <CSSTransition
-        nodeRef={overlayRef}
+        nodeRef={createOverlayRef}
         in={isCreateOverlayVisible}
         timeout={200}
         classNames={overlayStyles}
         unmountOnExit
       >
         <CreateOverlay
-          ref={overlayRef}
+          ref={createOverlayRef}
           onHideButtonClick={handleHideCreateOverlay}
+        />
+      </CSSTransition>
+
+      <CSSTransition
+        nodeRef={uploadOverlayRef}
+        in={isUploadOverlayVisible}
+        timeout={200}
+        classNames={overlayStyles}
+        unmountOnExit
+      >
+        <UploadOverlay
+          ref={uploadOverlayRef}
+          onHideButtonClick={handleHideUploadOverlay}
         />
       </CSSTransition>
     </div>

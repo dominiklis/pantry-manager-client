@@ -10,6 +10,7 @@ import {
   showCreateOverlay,
   hideCreateOverlay,
   setCreateOverlay,
+  setUploadOverlay,
 } from "./slices/app/slice";
 import { setSettings, updateSettings } from "./slices/app/extraReducers";
 import { clearErrors, logoutUser } from "./slices/users/slice";
@@ -46,6 +47,7 @@ import {
   deleteProduct,
   editProduct,
   getProducts,
+  createCollectionOfProducts,
 } from "./slices/products/extraReducers";
 import { setLabels, setGetLabelsLoading } from "./slices/labels/slice";
 import {
@@ -97,6 +99,7 @@ export {
   showCreateOverlay,
   hideCreateOverlay,
   setCreateOverlay,
+  setUploadOverlay,
 
   // users actions
   loginUser,
@@ -118,6 +121,7 @@ export {
   getStorageUsers,
   removeStorageAccess,
   shareStorage,
+  createCollectionOfProducts,
 
   // products actions
   getProducts,

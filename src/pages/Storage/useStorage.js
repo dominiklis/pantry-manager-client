@@ -8,7 +8,7 @@ import {
 import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { setCreateOverlay } from "store/actions";
+import { setCreateOverlay, setUploadOverlay } from "store/actions";
 import { makeSelectStorageById } from "store/selectors";
 
 const useStorage = () => {
@@ -43,6 +43,11 @@ const useStorage = () => {
   useEffect(() => {
     dispatch(
       setCreateOverlay({
+        storageId: storage.storageId,
+      })
+    );
+    dispatch(
+      setUploadOverlay({
         storageId: storage.storageId,
       })
     );

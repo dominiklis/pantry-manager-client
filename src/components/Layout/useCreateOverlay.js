@@ -1,10 +1,7 @@
 import { createOverlay } from "constantStrings";
-import { useIsDarkTheme } from "hooks";
 import { useSelector } from "react-redux";
 
 const useCreateOverlay = () => {
-  const darkTheme = useIsDarkTheme();
-
   const { selectedTab, storageId, labelId, shoppingListId } = useSelector(
     (state) => state.app.createOverlay
   );
@@ -34,7 +31,6 @@ const useCreateOverlay = () => {
   }
 
   return {
-    darkTheme,
     initialAction,
     storageId,
     labelId,

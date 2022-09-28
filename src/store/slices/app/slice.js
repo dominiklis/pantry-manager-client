@@ -27,6 +27,10 @@ const initialState = {
     storageId: various.noStorage,
     labelId: null,
   },
+  uploadOverlay: {
+    isVisible: false,
+    storageId: various.noStorage,
+  },
 };
 
 const appSlice = createSlice({
@@ -97,6 +101,16 @@ const appSlice = createSlice({
       state.createOverlay.shoppingListId =
         shoppingListId ?? various.noShoppingList;
     },
+
+    setUploadOverlay: (state, action) => {
+      const { isVisible, storageId } = action.payload;
+
+      if (isVisible === true || isVisible === false)
+        state.uploadOverlay.isVisible = isVisible;
+
+      if (storageId && storageId !== various.noStorage)
+        state.uploadOverlay.storageId = storageId;
+    },
   },
   extraReducers: (builder) =>
     builder
@@ -141,4 +155,5 @@ export const {
   showCreateOverlay,
   hideCreateOverlay,
   setCreateOverlay,
+  setUploadOverlay,
 } = appSlice.actions;

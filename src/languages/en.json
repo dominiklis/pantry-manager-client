@@ -252,6 +252,7 @@
 
   "StorageActionsButtons": {
     "menuButtonText": "Export",
+    "uploadButtonText": "Upload",
     "editButtonText": "Edit",
     "shareButtonText": "Share",
     "deleteButtonText": "Delete"
@@ -440,5 +441,18 @@
 
   "ShoppingLists": {
     "noItemsInfo": "No items to display."
+  },
+
+  "UploadOverlay": {
+    "header": "Upload",
+    "fileTypeError": "invalid file type, only .csv and .json files are allowed",
+    "fileSizeError": "the maximum acceptable file size is 2MB",
+    "uploadedFilesHeader": "Select products that you want to upload to this storage",
+    "uploadButton": "Upload"
+  },
+
+  "UploadProductCard": {
+    "amount": "amount",
+    "expirationDate": "expiration date"
   }
 }

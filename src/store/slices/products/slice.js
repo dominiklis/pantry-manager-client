@@ -4,6 +4,7 @@ import {
   deleteProduct,
   editProduct,
   getProducts,
+  createCollectionOfProducts,
 } from "./extraReducers";
 import { normalizeArrayState } from "utils";
 
@@ -100,6 +101,25 @@ const productsSlice = createSlice({
       })
       .addCase(createProduct.rejected, (state, action) => {
         state.errors.create = action.payload;
+        state.loading.create = false;
+      })
+
+      // create collection of products
+      .addCase(createCollectionOfProducts.pending, (state) => {
+        state.loading.create = true;
+      })
+      .addCase(createCollectionOfProducts.fulfilled, (state, action) => {
+        const [byId, allIds] = normalizeArrayState(action.payload, "productId");
+
+        for (const productId in byId) {
+          state.byId[productId] = byId[productId];
+        }
+        state.allIds = [...state.allIds, ...allIds];
+
+        state.loading.create = false;
+      })
+      .addCase(createCollectionOfProducts.rejected, (state, action) => {
+        state.errors.edit = action.payload;
         state.loading.create = false;
       })
 
