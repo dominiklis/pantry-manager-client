@@ -43,6 +43,7 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
                   shoppingListId={shoppingListId}
                   selectedAction={selectedAction}
                   setSelectedAction={setSelectedAction}
+                  ownerId={ownerId}
                 />
               }
             />
@@ -56,6 +57,7 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
                 shoppingListId={shoppingListId}
                 selectedAction={selectedAction}
                 setSelectedAction={setSelectedAction}
+                ownerId={ownerId}
               />
             }
             shoppingListId={shoppingListId}

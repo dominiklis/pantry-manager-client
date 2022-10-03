@@ -7,7 +7,7 @@ import {
 import { useIsSmallScreen } from "hooks";
 import React from "react";
 import { IoAdd, IoPencil, IoShareSocial, IoTrash } from "react-icons/io5";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setCreateOverlay } from "store/actions";
 
 const componentName = "ShoppingListActionButtons";
@@ -16,6 +16,7 @@ const ShoppingListActionButtons = ({
   shoppingListId,
   selectedAction,
   setSelectedAction,
+  ownerId,
 }) => {
   const isSmallScreen = useIsSmallScreen();
 
@@ -30,6 +31,8 @@ const ShoppingListActionButtons = ({
       })
     );
   };
+
+  const { userId } = useSelector((state) => state.users.user);
 
   return (
     <ActionsButtonsList
@@ -69,6 +72,7 @@ const ShoppingListActionButtons = ({
           }
           size={componentSizes.small}
           onClick={() => setSelectedAction(1)}
+          disabled={ownerId !== userId}
         >
           <Translate section={componentName} text="deleteButtonText" />
         </Button>,
