@@ -16,7 +16,7 @@ import {
   IoShareSocial,
   IoTrash,
 } from "react-icons/io5";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setUploadOverlay } from "store/actions";
 
 const componentName = "StorageActionsButtons";
@@ -26,6 +26,7 @@ const StorageActionsButtons = ({
   products,
   selectedAction,
   setSelectedAction,
+  ownerId,
 }) => {
   const isSmallScreen = useIsSmallScreen();
 
@@ -34,6 +35,8 @@ const StorageActionsButtons = ({
   const handleUploadButton = () => {
     dispatch(setUploadOverlay({ isVisible: true }));
   };
+
+  const { userId } = useSelector((state) => state.users.user);
 
   return (
     <ActionsButtonsList
@@ -99,6 +102,7 @@ const StorageActionsButtons = ({
           }
           size={componentSizes.small}
           onClick={() => setSelectedAction(1)}
+          disabled={ownerId !== userId}
         >
           <Translate section={componentName} text="deleteButtonText" />
         </Button>,

@@ -71,6 +71,7 @@ const Storage = () => {
                   products={products}
                   selectedAction={selectedAction}
                   setSelectedAction={setSelectedAction}
+                  ownerId={storage.ownerId}
                 />
               }
             />
@@ -97,6 +98,7 @@ const Storage = () => {
               products={products}
               selectedAction={selectedAction}
               setSelectedAction={setSelectedAction}
+              ownerId={storage.ownerId}
             />
           }
           selectedAction={selectedAction}
