@@ -45,11 +45,11 @@ const useCreateShoppingListItem = ({ componentName, selectedList }) => {
       })
     );
 
-    setInput({
+    setInput((prev) => ({
       shoppingListItemName: "",
       quantity: "",
-      shoppingListId: null,
-    });
+      shoppingListId: prev.shoppingListId,
+    }));
   };
 
   return { input, setInput, errors, setErrors, loading, handleSubmit };
