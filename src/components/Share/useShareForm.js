@@ -86,13 +86,18 @@ const useShareForm = ({ componentName, users, isShoppingList, id }) => {
     }
   };
 
-  const { share: loading } = useSelector((state) => state.storages.loading);
+  const { share: storagesLoading } = useSelector(
+    (state) => state.storages.loading
+  );
+  const { share: listsLoading } = useSelector(
+    (state) => state.shoppingLists.loading
+  );
   const { userId } = useSelector((state) => state.users.user);
 
   return {
     handleSubmit,
     handleCheckboxChange,
-    loading,
+    loading: storagesLoading || listsLoading,
     input,
     handleChange,
     error,

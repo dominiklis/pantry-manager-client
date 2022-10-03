@@ -118,8 +118,15 @@ const useUsersWithAccessListItem = ({
     }
   };
 
-  const { editAccess: editAccessLoading, removeAccess: removeAccessLoading } =
-    useSelector((state) => state.storages.loading);
+  const {
+    editAccess: editAccessToStorageLoading,
+    removeAccess: removeAccessToStorageLoading,
+  } = useSelector((state) => state.storages.loading);
+
+  const {
+    editAccess: editAccessToListLoading,
+    removeAccess: removeAccesstoListLoading,
+  } = useSelector((state) => state.shoppingLists.loading);
 
   const darkTheme = useIsDarkTheme();
 
@@ -132,8 +139,9 @@ const useUsersWithAccessListItem = ({
     handleCheckboxChange,
     handleEditButton,
     handleCancelEditing,
-    editAccessLoading,
-    removeAccessLoading,
+    editAccessLoading: editAccessToStorageLoading || editAccessToListLoading,
+    removeAccessLoading:
+      removeAccessToStorageLoading || removeAccesstoListLoading,
     darkTheme,
   };
 };

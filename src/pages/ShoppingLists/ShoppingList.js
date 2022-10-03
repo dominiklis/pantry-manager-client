@@ -65,7 +65,6 @@ const ShoppingList = ({
                 selectedAction={selectedAction}
                 setSelectedAction={setSelectedAction}
                 ownerId={ownerId}
-                canShare={canShare}
               />
             }
             shoppingListId={shoppingListId}
@@ -75,6 +74,7 @@ const ShoppingList = ({
             listItems={listItems}
             selectedAction={selectedAction}
             onCloseAction={handleCloseAction}
+            canShare={canShare}
           />
 
           {ownerId !== userId && shoppingListId !== various.noShoppingList ? (
