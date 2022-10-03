@@ -18,6 +18,7 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
     selectedAction,
     setSelectedAction,
     handleCloseAction,
+    userId,
   } = useShoppingList({ shoppingListId });
 
   return (
@@ -68,6 +69,12 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
             selectedAction={selectedAction}
             onCloseAction={handleCloseAction}
           />
+
+          {ownerId !== userId && shoppingListId !== various.noShoppingList ? (
+            <p className={styles.sharedListInfo}>
+              <Translate section={componentName} text="listIsShared" />
+            </p>
+          ) : null}
 
           <ShoppingListItemsList items={listItems} />
         </div>

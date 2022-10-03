@@ -16,12 +16,15 @@ const useShoppingList = ({ shoppingListId }) => {
   const { selectedAction, setSelectedAction, handleCloseAction } =
     useControlledActions();
 
+  const { userId } = useSelector((state) => state.users.user);
+
   return {
     darkTheme,
     listItems,
     selectedAction,
     setSelectedAction,
     handleCloseAction,
+    userId,
   };
 };
 

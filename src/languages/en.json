@@ -324,7 +324,8 @@
   },
 
   "ShoppingList": {
-    "withoutShoppingList": "Items that are not assigned to any list"
+    "withoutShoppingList": "Items that are not assigned to any list",
+    "listIsShared": "this list is shared with you by another user"
   },
 
   "ShoppingListActionButtons": {

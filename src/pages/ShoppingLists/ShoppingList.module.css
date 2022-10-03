@@ -19,3 +19,8 @@
   padding-top: 8px;
   margin-top: 8px;
 }
+
+.sharedListInfo {
+  font-size: 14px;
+  color: var(--clr-gray2);
+}
