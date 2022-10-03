@@ -7,18 +7,20 @@ import styles from "./Share.module.css";
 
 const componentName = "Share";
 
-const Share = ({ isShoppingList, id, ownerId, users }) => {
+const Share = ({ isShoppingList, id, ownerId, users, canShare }) => {
   const { storagesUsersLoading, listsUsersLoading, handleRefreshUsers } =
     useShare({ isShoppingList, id });
 
   return (
     <>
-      <ShareForm
-        isShoppingList={isShoppingList}
-        id={id}
-        ownerId={ownerId}
-        users={users}
-      />
+      {canShare ? (
+        <ShareForm
+          isShoppingList={isShoppingList}
+          id={id}
+          ownerId={ownerId}
+          users={users}
+        />
+      ) : null}
 
       <div className={styles.users}>
         <p className={styles.usersTitle}>

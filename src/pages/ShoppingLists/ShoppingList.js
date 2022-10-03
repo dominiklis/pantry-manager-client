@@ -11,7 +11,13 @@ import styles from "./ShoppingList.module.css";
 
 const componentName = "ShoppingList";
 
-const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
+const ShoppingList = ({
+  shoppingListId,
+  shoppingListName,
+  ownerId,
+  users,
+  canShare,
+}) => {
   const {
     darkTheme,
     listItems,
@@ -59,6 +65,7 @@ const ShoppingList = ({ shoppingListId, shoppingListName, ownerId, users }) => {
                 selectedAction={selectedAction}
                 setSelectedAction={setSelectedAction}
                 ownerId={ownerId}
+                canShare={canShare}
               />
             }
             shoppingListId={shoppingListId}

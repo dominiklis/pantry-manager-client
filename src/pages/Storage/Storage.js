@@ -103,6 +103,7 @@ const Storage = () => {
           }
           selectedAction={selectedAction}
           onCloseAction={handleCloseAction}
+          canShare={storage.canShare}
         />
       </div>
 

@@ -16,6 +16,7 @@ const ShoppingListActions = ({
   listItems,
   selectedAction,
   onCloseAction,
+  canShare,
 }) => {
   const smallScreen = useIsSmallScreen();
 
@@ -56,6 +57,7 @@ const ShoppingListActions = ({
                   id={shoppingListId}
                   ownerId={ownerId}
                   users={users ? sortByName([...users], "userName") : null}
+                  canShare={canShare}
                 />
               )
             ),

@@ -55,7 +55,7 @@ const UsersWithAccessListItem = ({
             <Button
               type="submit"
               icon={<IoCheckmark />}
-              backgroundColor={componentColors.transparent}
+              backgroundColor={componentColors.primary}
               size={componentSizes.small}
               loading={editAccessLoading}
             >

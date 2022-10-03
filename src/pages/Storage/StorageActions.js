@@ -17,6 +17,7 @@ const StorageActions = ({
   actionButtons,
   selectedAction,
   onCloseAction,
+  canShare,
 }) => {
   const isSmallScreen = useIsSmallScreen();
 
@@ -54,6 +55,7 @@ const StorageActions = ({
                 id={storageId}
                 ownerId={ownerId}
                 users={sortByName([...users], "userName")}
+                canShare={canShare}
               />
             )
           ),
