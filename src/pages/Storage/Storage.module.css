@@ -22,13 +22,3 @@
 .header[data-dark-theme="true"].error {
   color: var(--clr-err1);
 }
-
-.warningInfo {
-  margin: 4px 0;
-  font-size: 14px;
-  color: var(--clr-gray3);
-}
-
-.days {
-  color: var(--clr-gray1);
-}

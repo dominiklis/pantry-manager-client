@@ -10,6 +10,7 @@ import { componentSizes } from "constantStrings";
 import {
   StorageActions,
   StorageActionsButtons,
+  StorageDetails,
   useStorage,
 } from "pages/Storage";
 import React from "react";
@@ -76,14 +77,11 @@ const Storage = () => {
           ) : null}
         </div>
 
-        <div className={styles.warningInfo}>
-          <Translate section={componentName} text="warningInfoText" />
-          <span className={styles.days}>
-            {storage.numberOfDaysForWarning
-              ? ` ${storage.numberOfDaysForWarning}`
-              : ` ${defaultNumberOfDaysForWarning} ${"(default value)"}`}
-          </span>
-        </div>
+        <StorageDetails
+          numberOfDaysForWarning={storage.numberOfDaysForWarning}
+          defaultNumberOfDaysForWarning={defaultNumberOfDaysForWarning}
+          ownerId={storage.ownerId}
+        />
 
         <StorageActions
           storageId={storage.storageId}

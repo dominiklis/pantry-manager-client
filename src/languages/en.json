@@ -217,8 +217,12 @@
   },
 
   "Storage": {
-    "warningInfoText": "number of days for warning:",
     "notFound": "Storage not found"
+  },
+
+  "StorageDetails": {
+    "warningInfoText": "number of days for warning:",
+    "storageIsShared": "this storage is shared with you by another user"
   },
 
   "Navigation": {

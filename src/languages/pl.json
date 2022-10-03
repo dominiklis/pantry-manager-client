@@ -217,8 +217,12 @@
   },
 
   "Storage": {
-    "warningInfoText": "liczba dni, dla których aplikacja będzie informować o zbliżającym się terminie ważności:",
     "notFound": "Nie znaleziono magazynu"
+  },
+
+  "StorageDetails": {
+    "warningInfoText": "liczba dni, dla których aplikacja będzie informować o zbliżającym się terminie ważności:",
+    "storageIsShared": "ten magazyn został Tobie udostępniony przez innego użytkownika"
   },
 
   "Navigation": {
