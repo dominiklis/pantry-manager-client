@@ -5,37 +5,17 @@ import {
   Translate,
 } from "components";
 import { sortByValues, various } from "constantStrings";
-import { useScrollToElement } from "hooks";
-import { ShoppingList } from "pages/ShoppingLists";
-import React, { useMemo, useState } from "react";
-import { useSelector } from "react-redux";
-import { makeSelectShoppingLists } from "store/selectors";
+import { ShoppingList, useShoppingLists } from "pages/ShoppingLists";
+import React from "react";
 import styles from "./ShoppingLists.module.css";
 
 const componentName = "ShoppingLists";
 
 const ShoppingLists = () => {
-  useScrollToElement();
+  const { shoppingListItems, shoppingLists, handleSortByButton, sortBy } =
+    useShoppingLists();
 
-  const [sortBy, setSortBy] = useState(sortByValues.nameAsc);
-
-  const handleSortByButton = () =>
-    setSortBy((prev) => {
-      if (prev === sortByValues.nameAsc) return sortByValues.nameDesc;
-
-      return sortByValues.nameAsc;
-    });
-
-  const selectShoppingLists = useMemo(makeSelectShoppingLists, []);
-  const shoppingLists = useSelector((state) =>
-    selectShoppingLists(state, { sortBy })
-  );
-
-  const shoppingListItems = useSelector(
-    (state) => state.shoppingListItems.allIds
-  );
-
-  if (!shoppingListItems?.length)
+  if (!shoppingListItems?.length && !shoppingLists?.length)
     return (
       <PageContainer>
         <p className={styles.noItems}>
