@@ -43,15 +43,15 @@ const useStorage = () => {
   useEffect(() => {
     dispatch(
       setCreateOverlay({
-        storageId: storage.storageId,
+        storageId: storage?.storageId,
       })
     );
     dispatch(
       setUploadOverlay({
-        storageId: storage.storageId,
+        storageId: storage?.storageId,
       })
     );
-  }, [dispatch, storage.storageId]);
+  }, [dispatch, storage?.storageId]);
 
   return {
     storage,
