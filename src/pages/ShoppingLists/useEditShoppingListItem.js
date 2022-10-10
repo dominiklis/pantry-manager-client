@@ -6,19 +6,19 @@ const useEditShoppingListItem = ({
   componentName,
   shoppingListItemId,
   shoppingListItemName,
-  quantity,
+  amount,
   selected,
   shoppingListId,
 }) => {
   const [input, setInput] = useState({
     shoppingListItemName: shoppingListItemName ?? "",
-    quantity: quantity ?? "",
+    amount: amount ?? "",
     shoppingListId: shoppingListId ?? "",
   });
 
   const [errors, setErrors] = useState({
     shoppingListItemName: "",
-    quantity: "",
+    amount: "",
   });
 
   const [loading, setLoading] = useState(false);
