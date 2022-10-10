@@ -24,3 +24,8 @@
   font-size: 14px;
   color: var(--clr-gray2);
 }
+
+.ownerName {
+  color: var(--clr-gray1);
+  font-weight: bold;
+}

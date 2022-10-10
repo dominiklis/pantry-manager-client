@@ -324,7 +324,7 @@
 
   "ShoppingList": {
     "withoutShoppingList": "Pozycje do kupienia nieprzypisane do żadnej listy",
-    "listIsShared": "ta lista została Tobie udostępniona przez innego użytkownika"
+    "listIsShared": "ta lista została Tobie udostępniona przez "
   },
 
   "ShoppingListActionButtons": {

@@ -15,6 +15,7 @@ const ShoppingList = ({
   shoppingListId,
   shoppingListName,
   ownerId,
+  ownerName,
   users,
   canShare,
 }) => {
@@ -80,6 +81,7 @@ const ShoppingList = ({
           {ownerId !== userId && shoppingListId !== various.noShoppingList ? (
             <p className={styles.sharedListInfo}>
               <Translate section={componentName} text="listIsShared" />
+              <span className={styles.ownerName}>{ownerName}</span>
             </p>
           ) : null}
 
