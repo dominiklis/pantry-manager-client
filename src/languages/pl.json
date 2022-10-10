@@ -221,7 +221,7 @@
 
   "StorageDetails": {
     "warningInfoText": "liczba dni, dla których aplikacja będzie informować o zbliżającym się terminie ważności:",
-    "storageIsShared": "ten magazyn został Tobie udostępniony przez innego użytkownika"
+    "storageIsShared": "ten magazyn został Tobie udostępniony przez "
   },
 
   "Navigation": {

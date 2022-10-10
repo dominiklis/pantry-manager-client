@@ -82,6 +82,7 @@ const Storage = () => {
           numberOfDaysForWarning={storage.numberOfDaysForWarning}
           defaultNumberOfDaysForWarning={defaultNumberOfDaysForWarning}
           ownerId={storage.ownerId}
+          ownerName={storage.ownerName}
         />
 
         <StorageActions

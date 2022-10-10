@@ -9,6 +9,7 @@ const StorageDetails = ({
   numberOfDaysForWarning,
   defaultNumberOfDaysForWarning,
   ownerId,
+  ownerName,
 }) => {
   const { userId } = useSelector((state) => state.users.user);
 
@@ -17,6 +18,7 @@ const StorageDetails = ({
       {ownerId !== userId ? (
         <p>
           <Translate section={componentName} text="storageIsShared" />
+          <span className={styles.ownerName}>{ownerName}</span>
         </p>
       ) : null}
       <p>

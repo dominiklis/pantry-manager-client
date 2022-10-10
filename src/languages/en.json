@@ -221,7 +221,7 @@
 
   "StorageDetails": {
     "warningInfoText": "number of days for warning:",
-    "storageIsShared": "this storage is shared with you by another user"
+    "storageIsShared": "this storage is shared with you by "
   },
 
   "Navigation": {

@@ -7,3 +7,8 @@
 .days {
   color: var(--clr-gray1);
 }
+
+.ownerName {
+  color: var(--clr-gray1);
+  font-weight: bold;
+}
