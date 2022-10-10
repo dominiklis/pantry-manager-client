@@ -8,7 +8,7 @@ import styles from "./ShoppingListItemHeader.module.css";
 const ShoppingListItemHeader = ({
   shoppingListItemId,
   shoppingListItemName,
-  quantity,
+  amount,
   selected,
   ownerId,
   shoppingListId,
@@ -17,7 +17,7 @@ const ShoppingListItemHeader = ({
     useShoppingListItemHeader({
       shoppingListItemId,
       shoppingListItemName,
-      quantity,
+      amount,
       selected,
       ownerId,
       shoppingListId,
@@ -36,7 +36,7 @@ const ShoppingListItemHeader = ({
         />
       </form>
       <span>{shoppingListItemName}</span>
-      <span className={styles.quantity}>{quantity}</span>
+      <span className={styles.amount}>{amount}</span>
     </div>
   );
 };

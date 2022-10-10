@@ -11,8 +11,7 @@
     "tooLongName": "nazwa może składać się maks. z 255 znaków",
     "tooLongAmount": "wartość w polu ilość nie może być dłuższa niż 255 znaków",
     "tooLongLabel": "etykieta może składać maks. ze 90 znaków",
-    "daysForWarning": "niepoprawna wartość",
-    "tooLongQuantity": "wartość może składać się maks. z 255 znaków"
+    "daysForWarning": "niepoprawna wartość"
   },
 
   "Login": {
@@ -208,7 +207,7 @@
     "nameInputLabel": "nazwa pozycji do kupienia",
     "shoppingListLabel": "lista zakupów",
     "itemCreatedToast": "pozycja do zakupienia została dodana",
-    "quantityLabel": "ilość"
+    "amountLabel": "ilość"
   },
 
   "CreateShoppingListItem": {

@@ -16,13 +16,13 @@ export const getShoppingListItems = createAsyncThunk(
 export const createShoppingListItem = createAsyncThunk(
   "shoppingListItems/createShoppingListItem",
   async (
-    { shoppingListItemName, quantity, shoppingListId },
+    { shoppingListItemName, amount, shoppingListId },
     { rejectWithValue }
   ) => {
     try {
       const response = await api.shoppingListItems.create(
         shoppingListItemName,
-        quantity,
+        amount,
         shoppingListId
       );
       return response.data;
@@ -38,7 +38,7 @@ export const editShoppingListItem = createAsyncThunk(
     {
       shoppingListItemId,
       shoppingListItemName,
-      quantity,
+      amount,
       shoppingListId,
       selected,
     },
@@ -50,7 +50,7 @@ export const editShoppingListItem = createAsyncThunk(
       const response = await api.shoppingListItems.edit(
         shoppingListItemId,
         shoppingListItemName,
-        quantity,
+        amount,
         shoppingListId,
         selected
       );

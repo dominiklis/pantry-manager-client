@@ -1,3 +1,4 @@
+import { various } from "constantStrings";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -10,13 +11,13 @@ const useCreateShoppingListItem = ({ componentName, selectedList }) => {
 
   const [input, setInput] = useState({
     shoppingListItemName: "",
-    quantity: "",
+    amount: "",
     shoppingListId: selectedList ?? "",
   });
 
   const [errors, setErrors] = useState({
     shoppingListItemName: "",
-    quantity: "",
+    amount: "",
   });
 
   const dispatch = useDispatch();
@@ -25,10 +26,15 @@ const useCreateShoppingListItem = ({ componentName, selectedList }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    let shoppingListId = input.shoppingListId;
+
+    if (!shoppingListId || shoppingListId === various.noShoppingList)
+      shoppingListId = null;
+
     const result = await dispatch(
       createShoppingListItem({
         ...input,
-        shoppingListId: input.shoppingListId ? input.shoppingListId : null,
+        shoppingListId,
       })
     ).unwrap();
 
@@ -47,7 +53,7 @@ const useCreateShoppingListItem = ({ componentName, selectedList }) => {
 
     setInput((prev) => ({
       shoppingListItemName: "",
-      quantity: "",
+      amount: "",
       shoppingListId: prev.shoppingListId,
     }));
   };

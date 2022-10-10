@@ -7,7 +7,7 @@ const componentName = "EditShoppingListItem";
 const EditShoppingListItem = ({
   shoppingListItemId,
   shoppingListItemName,
-  quantity,
+  amount,
   selected,
   shoppingListId,
 }) => {
@@ -16,7 +16,7 @@ const EditShoppingListItem = ({
       componentName,
       shoppingListItemId,
       shoppingListItemName,
-      quantity,
+      amount,
       selected,
       shoppingListId,
     });

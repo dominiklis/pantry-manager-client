@@ -45,9 +45,9 @@ const ShoppingListItemForm = ({
       />
       <Input
         type="text"
-        name="quantity"
-        label={<Translate section={componentName} text="quantityLabel" />}
-        value={input.quantity}
+        name="amount"
+        label={<Translate section={componentName} text="amountLabel" />}
+        value={input.amount}
         onChange={handleChange}
       />
 
@@ -63,7 +63,7 @@ const ShoppingListItemForm = ({
           disabled={
             !input.shoppingListItemName ||
             errors.shoppingListItemName ||
-            errors.quantity
+            errors.amount
           }
           loading={loading}
         >

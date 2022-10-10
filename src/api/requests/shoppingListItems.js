@@ -2,22 +2,22 @@ import requests from "../axios";
 
 const shoppingListItems = {
   get: () => requests.get("/shopping-lists-items"),
-  create: (shoppingListItemName, quantity, shoppingListId) =>
+  create: (shoppingListItemName, amount, shoppingListId) =>
     requests.post("/shopping-lists-items", {
       shoppingListItemName,
-      quantity,
+      amount,
       shoppingListId,
     }),
   edit: (
     shoppingListItemId,
     shoppingListItemName,
-    quantity,
+    amount,
     shoppingListId,
     selected
   ) =>
     requests.put(`/shopping-lists-items/${shoppingListItemId}`, {
       shoppingListItemName,
-      quantity,
+      amount,
       shoppingListId,
       selected,
     }),

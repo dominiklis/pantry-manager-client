@@ -11,8 +11,7 @@
     "tooLongName": "name length cannot be more than 255 characters",
     "tooLongAmount": "amount length cannot be more than 255 characters",
     "tooLongLabel": "label length cannot be more than 90 characters",
-    "daysForWarning": "invalid value",
-    "tooLongQuantity": "value length cannot be more than 255 characters"
+    "daysForWarning": "invalid value"
   },
 
   "Login": {
@@ -208,7 +207,7 @@
     "nameInputLabel": "shopping list item name",
     "shoppingListLabel": "shopping list",
     "itemCreatedToast": "shopping list item has been created",
-    "quantityLabel": "quantity"
+    "amountLabel": "amount"
   },
 
   "CreateShoppingListItem": {
