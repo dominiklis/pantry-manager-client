@@ -7,6 +7,7 @@ import { useIsDarkTheme, useIsSmallScreen } from "hooks";
 const Accordion = ({
   children,
   id,
+  actionsBeforeHeader,
   header,
   hideHeaderActionsOnClosed,
   smallScreenHeaderActions,
@@ -37,8 +38,13 @@ const Accordion = ({
 
   return (
     <div className={getContainerStyles()} data-dark-theme={darkTheme} id={id}>
-      <div onClick={toggleShowContent} className={styles.header}>
-        {header}
+      <div className={styles.headerWrapper}>
+        {actionsBeforeHeader}
+
+        <button onClick={toggleShowContent} className={styles.header}>
+          {header}
+        </button>
+
         {(hideHeaderActionsOnClosed && showContent && smallScreen) ||
         (!hideHeaderActionsOnClosed && smallScreen) ? (
           <div

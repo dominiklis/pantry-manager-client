@@ -28,10 +28,21 @@
   animation-name: initiallyOpenDarkTheme;
 }
 
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .header {
   cursor: pointer;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: transparent;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  border: none;
 }

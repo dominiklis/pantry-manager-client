@@ -9,7 +9,7 @@ export { default as ShoppingListItemsList } from "./ShoppingListItemsList";
 export { default as NoItemsToDisplay } from "./NoItemsToDisplay";
 export { default as ShoppingListItem } from "./ShoppingListItem";
 export { default as ShoppingListItemHeader } from "./ShoppingListItemHeader";
-export { default as useShoppingListItemHeader } from "./useShoppingListItemHeader";
+export { default as useShoppingListItem } from "./useShoppingListItem";
 export { default as ShoppingListItemActions } from "./ShoppingListItemActions";
 export { default as DeleteShoppingListItem } from "./DeleteShoppingListItem";
 export { default as EditShoppingListItem } from "./EditShoppingListItem";
