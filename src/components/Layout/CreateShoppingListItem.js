@@ -1,5 +1,5 @@
 import { ShoppingListItemForm, Translate } from "components";
-import { useCreateShoppingListItem } from "components/CreateShoppingListItem";
+import { useCreateShoppingListItem } from "components/Layout";
 import React from "react";
 
 const componentName = "CreateShoppingListItem";

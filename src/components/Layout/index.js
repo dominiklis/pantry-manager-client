@@ -18,3 +18,5 @@ export { default as Overlay } from "./Overlay";
 export { default as UploadOverlay } from "./UploadOverlay";
 export { default as useUploadOverlay } from "./useUploadOverlay";
 export { default as UploadProductCard } from "./UploadProductCard";
+export { default as CreateShoppingListItem } from "./CreateShoppingListItem";
+export { default as useCreateShoppingListItem } from "./useCreateShoppingListItem";

@@ -38,7 +38,6 @@ export { Accordion } from "components/Accordion";
 export { ListHeader } from "components/ListHeader";
 export { SortByNameButton } from "components/SortByNameButton";
 export { Share } from "components/Share";
-export { CreateShoppingListItem } from "components/CreateShoppingListItem";
 export { DeleteWithItems } from "components/DeleteWithItems";
 export { CreateProduct } from "components/CreateProduct";
 export { ProductHeader } from "components/ProductHeader";
