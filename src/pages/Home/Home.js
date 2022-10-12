@@ -4,7 +4,7 @@ import {
   StoragesList,
   Translate,
 } from "components";
-import { CloseToExpiryProducts, ExpiredProducts } from ".";
+import { CloseToExpiryProducts, ExpiredProducts } from "pages/Home";
 import React, { useEffect } from "react";
 import styles from "./Home.module.css";
 import { useScrollToElement } from "hooks";
