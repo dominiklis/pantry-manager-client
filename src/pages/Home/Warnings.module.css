@@ -12,12 +12,9 @@
 }
 
 .header {
-  cursor: pointer;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  transition: 0.2s ease-in;
-  transition-property: margin-bottom;
+  width: 100%;
 }
 
 .header.warningHeader {

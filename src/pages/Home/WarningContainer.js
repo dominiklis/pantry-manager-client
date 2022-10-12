@@ -1,32 +1,43 @@
-import { useAccordion, useIsDarkTheme } from "hooks";
+import { ControlledAccordion } from "components";
+import { useIsDarkTheme } from "hooks";
 import { useWarningContainer } from "pages/Home";
 import React from "react";
 import { IoChevronDown } from "react-icons/io5";
 import styles from "./Warnings.module.css";
 
-const WarningContainer = ({ children, header, headerType }) => {
+const WarningContainer = ({
+  children,
+  header,
+  headerType,
+  showContent,
+  dispatchAction,
+}) => {
   const darkTheme = useIsDarkTheme();
-  const { showContent, toggleShowContent, getContentStyles } = useAccordion();
 
-  const { iconStyles, headerStyles } = useWarningContainer({
+  const { iconStyles, headerStyles, handleHeaderClick } = useWarningContainer({
     styles,
     showContent,
     headerType,
+    dispatchAction,
   });
 
   return (
     <div className={styles.container} data-dark-theme={darkTheme}>
-      <div
-        className={headerStyles}
-        onClick={toggleShowContent}
-        data-dark-theme={darkTheme}
+      <ControlledAccordion
+        showContent={showContent}
+        onHeaderClick={handleHeaderClick}
+        initiallyOpen
+        header={
+          <div className={headerStyles} data-dark-theme={darkTheme}>
+            <span>{header}</span>
+            <span className={iconStyles}>
+              <IoChevronDown />
+            </span>
+          </div>
+        }
       >
-        <span>{header}</span>
-        <span className={iconStyles}>
-          <IoChevronDown />
-        </span>
-      </div>
-      <div className={getContentStyles()}>{children}</div>
+        {children}
+      </ControlledAccordion>
     </div>
   );
 };
