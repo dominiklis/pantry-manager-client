@@ -11,7 +11,7 @@ const SortByNameButton = ({ onClick, sortingAsc, buttonText }) => {
       backgroundColor={componentColors.transparent}
       size={componentSizes.small}
       onClick={onClick}
-      icon={sortingAsc ? <IoChevronDown /> : <IoChevronUp />}
+      icon={sortingAsc ? <IoChevronUp /> : <IoChevronDown />}
     >
       <Translate section={componentName} text="buttonText" />
     </Button>
