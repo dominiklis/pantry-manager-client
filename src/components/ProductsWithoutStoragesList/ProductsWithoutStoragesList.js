@@ -7,17 +7,29 @@ import styles from "./ProductsWithoutStoragesList.module.css";
 
 const componentName = "ProductsWithoutStoragesList";
 
-const ProductsWithoutStoragesList = ({ className }) => {
+const ProductsWithoutStoragesList = ({
+  className,
+  sortBy,
+  highlight,
+  filterBy,
+  setSortByDispatchAction,
+  setHighlightDispatchAction,
+  setFilterByDispatchAction,
+}) => {
   const {
-    sortBy,
-    highlight,
-    filterBy,
     products,
     handleSortByChange,
     handleHighlightChange,
     handleFilterByChange,
   } = useHandleProductsList({
-    withoutStorage: true,
+    selectProductsOptions: {
+      withoutStorage: true,
+    },
+    sortBy,
+    filterBy,
+    setSortByDispatchAction,
+    setHighlightDispatchAction,
+    setFilterByDispatchAction,
   });
 
   const getContainerStyles = () => {

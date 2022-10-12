@@ -4,32 +4,28 @@ import {
   StoragesList,
   Translate,
 } from "components";
-import { CloseToExpiryProducts, ExpiredProducts } from "pages/Home";
-import React, { useEffect } from "react";
+import { CloseToExpiryProducts, ExpiredProducts, useHome } from "pages/Home";
+import React from "react";
 import styles from "./Home.module.css";
-import { useScrollToElement } from "hooks";
-import { useDispatch, useSelector } from "react-redux";
 import {
-  setCreateOverlay,
-  setHomeDisplaySToragesAs,
+  setHomeDisplayStoragesAs,
+  setHomeFilterProducts,
+  setHomeHighlightProducts,
+  setHomeSortProductsBy,
   setHomeSortStoragesBy,
 } from "store/actions";
 
 const componentName = "Home";
 
 const Home = () => {
-  const products = useSelector((state) => state.products.allIds);
-
-  useScrollToElement();
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(setCreateOverlay());
-  }, [dispatch]);
-
-  const { sortStoragesBy } = useSelector((state) => state.pages.home);
-  const { displayStoragesAs } = useSelector((state) => state.pages.home);
+  const {
+    products,
+    sortStoragesBy,
+    displayStoragesAs,
+    sortProductsBy,
+    highlightProducts,
+    filterProducts,
+  } = useHome();
 
   if (!products || !products.length)
     return (
@@ -52,10 +48,18 @@ const Home = () => {
         sortBy={sortStoragesBy}
         displayAs={displayStoragesAs}
         setSortByDispatchAction={setHomeSortStoragesBy}
-        setDisplayAsDispatchAction={setHomeDisplaySToragesAs}
+        setDisplayAsDispatchAction={setHomeDisplayStoragesAs}
       />
 
-      <ProductsWithoutStoragesList className={styles.section} />
+      <ProductsWithoutStoragesList
+        className={styles.section}
+        sortBy={sortProductsBy}
+        highlight={highlightProducts}
+        filterBy={filterProducts}
+        setSortByDispatchAction={setHomeSortProductsBy}
+        setHighlightDispatchAction={setHomeHighlightProducts}
+        setFilterByDispatchAction={setHomeFilterProducts}
+      />
     </PageContainer>
   );
 };

@@ -88,7 +88,10 @@ import {
   setHomeShowExpired,
   setHomeShowCloseToExpiry,
   setHomeSortStoragesBy,
-  setHomeDisplaySToragesAs,
+  setHomeDisplayStoragesAs,
+  setHomeSortProductsBy,
+  setHomeHighlightProducts,
+  setHomeFilterProducts,
 } from "./slices/pages/slice";
 
 export {
@@ -176,5 +179,8 @@ export {
   setHomeShowExpired,
   setHomeShowCloseToExpiry,
   setHomeSortStoragesBy,
-  setHomeDisplaySToragesAs,
+  setHomeDisplayStoragesAs,
+  setHomeSortProductsBy,
+  setHomeHighlightProducts,
+  setHomeFilterProducts,
 };

@@ -6,3 +6,4 @@ export { default as ProductsGroupedByStorages } from "./ProductsGroupedByStorage
 export { default as useCloseToExpiryProducts } from "./useCloseToExpiryProducts";
 export { default as useExpiredProducts } from "./useExpiredProducts";
 export { default as useWarningContainer } from "./useWarningContainer";
+export { default as useHome } from "./useHome";

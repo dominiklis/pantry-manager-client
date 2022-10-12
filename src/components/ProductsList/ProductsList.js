@@ -5,10 +5,10 @@ import { useLocation } from "react-router-dom";
 
 const ProductsList = ({
   sortBy,
-  onSortByChange,
   highlight,
-  onHighlightChange,
   filterBy,
+  onSortByChange,
+  onHighlightChange,
   onFilterByChange,
   products,
 }) => {
