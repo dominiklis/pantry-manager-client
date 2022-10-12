@@ -1,21 +1,16 @@
 import { PageContainer, ProductsList } from "components";
 import { useHandleProductsList, useScrollToElement } from "hooks";
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { setCreateOverlay } from "store/actions";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setCreateOverlay,
+  setProductsFilterProducts,
+  setProductsHighlightProducts,
+  setProductsSortProductsBy,
+} from "store/actions";
 
 const Products = () => {
   useScrollToElement();
-
-  const {
-    sortBy,
-    highlight,
-    filterBy,
-    products,
-    handleSortByChange,
-    handleHighlightChange,
-    handleFilterByChange,
-  } = useHandleProductsList({});
 
   const dispatch = useDispatch();
 
@@ -23,14 +18,31 @@ const Products = () => {
     dispatch(setCreateOverlay());
   }, [dispatch]);
 
+  const { sortProductsBy, highlightProducts, filterProducts } = useSelector(
+    (state) => state.pages.products
+  );
+
+  const {
+    products,
+    handleSortByChange,
+    handleHighlightChange,
+    handleFilterByChange,
+  } = useHandleProductsList({
+    sortBy: sortProductsBy,
+    filterBy: filterProducts,
+    setSortByDispatchAction: setProductsSortProductsBy,
+    setHighlightDispatchAction: setProductsHighlightProducts,
+    setFilterByDispatchAction: setProductsFilterProducts,
+  });
+
   return (
     <PageContainer>
       <ProductsList
-        sortBy={sortBy}
+        sortBy={sortProductsBy}
+        highlight={highlightProducts}
+        filterBy={filterProducts}
         onSortByChange={handleSortByChange}
-        highlight={highlight}
         onHighlightChange={handleHighlightChange}
-        filterBy={filterBy}
         onFilterByChange={handleFilterByChange}
         products={products}
       />

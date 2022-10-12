@@ -6,6 +6,7 @@ import {
   highlightProducts,
 } from "constantStrings";
 import homeReducers from "./homeReducers";
+import productsReducers from "./productsReducers";
 
 const initialState = {
   home: {
@@ -29,6 +30,7 @@ const appSlice = createSlice({
   initialState,
   reducers: {
     ...homeReducers,
+    ...productsReducers,
   },
 });
 
@@ -42,4 +44,8 @@ export const {
   setHomeSortProductsBy,
   setHomeHighlightProducts,
   setHomeFilterProducts,
+
+  setProductsSortProductsBy,
+  setProductsHighlightProducts,
+  setProductsFilterProducts,
 } = appSlice.actions;
