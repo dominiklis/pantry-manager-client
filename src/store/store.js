@@ -7,6 +7,7 @@ import {
   labelsReducer,
   shoppingListsReducer,
   shoppingListItemsReducer,
+  pagesReducer,
 } from "./slices";
 
 export const store = configureStore({
@@ -18,5 +19,6 @@ export const store = configureStore({
     labels: labelsReducer,
     shoppingLists: shoppingListsReducer,
     shoppingListItems: shoppingListItemsReducer,
+    pages: pagesReducer,
   },
 });

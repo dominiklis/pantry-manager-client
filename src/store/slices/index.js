@@ -5,6 +5,7 @@ import productsReducer from "./products/slice";
 import labelsReducer from "./labels/slice";
 import shoppingListsReducer from "./shoppingLists/slice";
 import shoppingListItemsReducer from "./shoppingListItems/slice";
+import pagesReducer from "./pages/slice";
 
 export {
   appReducer,
@@ -14,4 +15,5 @@ export {
   labelsReducer,
   shoppingListsReducer,
   shoppingListItemsReducer,
+  pagesReducer,
 };

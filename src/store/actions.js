@@ -84,6 +84,11 @@ import {
   deleteShopppingListItem,
 } from "./slices/shoppingListItems/extraReducers";
 
+import {
+  setHomeShowExpired,
+  setHomeShowCloseToExpiry,
+} from "./slices/pages/slice";
+
 export {
   // app actions
   setInitialLoad,
@@ -164,4 +169,8 @@ export {
   createShoppingListItem,
   editShoppingListItem,
   deleteShopppingListItem,
+
+  // pages
+  setHomeShowExpired,
+  setHomeShowCloseToExpiry,
 };
