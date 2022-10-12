@@ -1,9 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { displayAs, sortByValues } from "constantStrings";
 
 const initialState = {
   home: {
     showExpired: true,
     showCloseToExpiry: true,
+    sortStoragesBy: sortByValues.nameAsc,
+    displayStoragesAs: displayAs.list,
   },
 };
 
@@ -22,10 +25,26 @@ const appSlice = createSlice({
         state.home.showCloseToExpiry = !state.home.showCloseToExpiry;
       else state.home.showCloseToExpiry = action.payload;
     },
+
+    setHomeSortStoragesBy: (state) => {
+      if (state.home.sortStoragesBy === sortByValues.nameAsc)
+        state.home.sortStoragesBy = sortByValues.nameDesc;
+      else state.home.sortStoragesBy = sortByValues.nameAsc;
+    },
+
+    setHomeDisplaySToragesAs: (state) => {
+      if (state.home.displayStoragesAs === displayAs.grid)
+        state.home.displayStoragesAs = displayAs.list;
+      else state.home.displayStoragesAs = displayAs.grid;
+    },
   },
 });
 
 export default appSlice.reducer;
 
-export const { setHomeShowExpired, setHomeShowCloseToExpiry } =
-  appSlice.actions;
+export const {
+  setHomeShowExpired,
+  setHomeShowCloseToExpiry,
+  setHomeSortStoragesBy,
+  setHomeDisplaySToragesAs,
+} = appSlice.actions;

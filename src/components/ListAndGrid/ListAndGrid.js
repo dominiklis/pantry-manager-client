@@ -10,9 +10,9 @@ import React from "react";
 const ListAndGrid = ({
   elements,
   sortBy,
-  setSortBy,
   displayAs,
-  setDisplayAs,
+  setSortByDispatchAction,
+  setDisplayAsDispatchAction,
   emptyListInfo,
 }) => {
   const {
@@ -20,14 +20,17 @@ const ListAndGrid = ({
     handleDisplayAsButton,
     getListStyles,
     darkTheme,
-  } = useListAndGrid({ setSortBy, displayAs, setDisplayAs });
+  } = useListAndGrid({
+    displayAs,
+    setSortByDispatchAction,
+    setDisplayAsDispatchAction,
+  });
 
   if (!elements || !elements.length)
     return <NoElements emptyListInfo={emptyListInfo} />;
 
   return (
     <>
-      {/* header */}
       <ListHeader>
         <SortByNameButton
           onClick={handleSortByButton}
@@ -40,7 +43,6 @@ const ListAndGrid = ({
         />
       </ListHeader>
 
-      {/* list */}
       <ul className={getListStyles()} data-dark-theme={darkTheme}>
         {elements}
       </ul>

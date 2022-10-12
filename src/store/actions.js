@@ -87,6 +87,8 @@ import {
 import {
   setHomeShowExpired,
   setHomeShowCloseToExpiry,
+  setHomeSortStoragesBy,
+  setHomeDisplaySToragesAs,
 } from "./slices/pages/slice";
 
 export {
@@ -173,4 +175,6 @@ export {
   // pages
   setHomeShowExpired,
   setHomeShowCloseToExpiry,
+  setHomeSortStoragesBy,
+  setHomeDisplaySToragesAs,
 };

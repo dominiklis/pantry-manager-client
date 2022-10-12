@@ -5,15 +5,19 @@ import styles from "./StoragesList.module.css";
 
 const componentName = "StoragesList";
 
-const StoragesList = ({ className, noHeader }) => {
-  const {
-    elements,
+const StoragesList = ({
+  className,
+  noHeader,
+  sortBy,
+  displayAs,
+  setSortByDispatchAction,
+  setDisplayAsDispatchAction,
+}) => {
+  const { elements, getContainerStyles } = useStoragesList({
+    className,
     sortBy,
-    setSortBy,
     displayAs,
-    setDisplayAs,
-    getContainerStyles,
-  } = useStoragesList({ className });
+  });
 
   return (
     <div className={getContainerStyles()}>
@@ -26,9 +30,9 @@ const StoragesList = ({ className, noHeader }) => {
       <ListAndGrid
         elements={elements}
         sortBy={sortBy}
-        setSortBy={setSortBy}
         displayAs={displayAs}
-        setDisplayAs={setDisplayAs}
+        setSortByDispatchAction={setSortByDispatchAction}
+        setDisplayAsDispatchAction={setDisplayAsDispatchAction}
         emptyListInfo={
           <Translate section={componentName} text="noStoragesInfo" />
         }

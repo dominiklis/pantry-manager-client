@@ -1,14 +1,11 @@
 import { AppLink, ListAndGridItem, StorageIndicator } from "components";
-import { displayAs as displayAsValues, sortByValues } from "constantStrings";
-import { useCallback, useMemo, useState } from "react";
+import { displayAs as displayAsValues } from "constantStrings";
+import { useCallback, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { makeSelectStorages } from "store/selectors";
 import styles from "./StoragesList.module.css";
 
-const useStoragesList = ({ className }) => {
-  const [sortBy, setSortBy] = useState(sortByValues.nameAsc);
-  const [displayAs, setDisplayAs] = useState(displayAsValues.list);
-
+const useStoragesList = ({ className, sortBy, displayAs }) => {
   const selectStorages = useMemo(makeSelectStorages, []);
   const storages = useSelector((state) =>
     selectStorages(state, {
@@ -48,14 +45,7 @@ const useStoragesList = ({ className }) => {
     return res;
   };
 
-  return {
-    sortBy,
-    setSortBy,
-    displayAs,
-    setDisplayAs,
-    elements,
-    getContainerStyles,
-  };
+  return { elements, getContainerStyles };
 };
 
 export default useStoragesList;

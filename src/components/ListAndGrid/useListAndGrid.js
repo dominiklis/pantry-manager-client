@@ -1,23 +1,24 @@
-import { sortByValues, displayAs as displayAsValues } from "constantStrings";
+import { displayAs as displayAsValues } from "constantStrings";
 import styles from "./ListAndGrid.module.css";
 import { useIsDarkTheme } from "hooks";
+import { useDispatch } from "react-redux";
 
-const useListAndGrid = ({ setSortBy, displayAs, setDisplayAs }) => {
+const useListAndGrid = ({
+  displayAs,
+  setSortByDispatchAction,
+  setDisplayAsDispatchAction,
+}) => {
   const darkTheme = useIsDarkTheme();
 
-  const handleSortByButton = () =>
-    setSortBy((prev) => {
-      if (prev === sortByValues.nameAsc) return sortByValues.nameDesc;
+  const dispatch = useDispatch();
 
-      return sortByValues.nameAsc;
-    });
+  const handleSortByButton = () => {
+    dispatch(setSortByDispatchAction());
+  };
 
-  const handleDisplayAsButton = () =>
-    setDisplayAs((prev) => {
-      if (prev === displayAsValues.list) return displayAsValues.grid;
-
-      return displayAsValues.list;
-    });
+  const handleDisplayAsButton = () => {
+    dispatch(setDisplayAsDispatchAction());
+  };
 
   const getListStyles = () => {
     let res = styles.list;
