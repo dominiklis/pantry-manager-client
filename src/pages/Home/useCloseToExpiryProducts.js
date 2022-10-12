@@ -27,7 +27,14 @@ const useCloseToExpiryProducts = () => {
     selectMultipleStorages(state, { storageIds })
   );
 
-  return { productsCloseToExpiry, storages, productsGroupedByStorages };
+  const { showCloseToExpiry } = useSelector((state) => state.pages.home);
+
+  return {
+    productsCloseToExpiry,
+    storages,
+    productsGroupedByStorages,
+    showCloseToExpiry,
+  };
 };
 
 export default useCloseToExpiryProducts;

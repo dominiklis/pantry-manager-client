@@ -25,7 +25,9 @@ const useExpiredProducts = () => {
     selectMultipleStorages(state, { storageIds })
   );
 
-  return { expiredProducts, storages, productsGroupedByStorages };
+  const { showExpired } = useSelector((state) => state.pages.home);
+
+  return { expiredProducts, storages, productsGroupedByStorages, showExpired };
 };
 
 export default useExpiredProducts;
