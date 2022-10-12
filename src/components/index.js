@@ -44,3 +44,4 @@ export { ProductHeader } from "components/ProductHeader";
 export { ProductLink } from "components/ProductLink";
 export { DropdownMenuButton } from "components/DropdownMenuButton";
 export { ActionsButtonsList } from "components/ActionsButtonsList";
+export { ControlledAccordion } from "components/ControlledAccordion";

@@ -1,8 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { CSSTransition } from "react-transition-group";
-import accordionStyles from "./accordionStyles.module.css";
-import styles from "./Accordion.module.css";
-import { useIsDarkTheme, useIsSmallScreen } from "hooks";
+import { ControlledAccordion } from "components";
+import React, { useState } from "react";
 
 const Accordion = ({
   children,
@@ -14,59 +11,25 @@ const Accordion = ({
   initiallyOpen,
   open,
 }) => {
-  const darkTheme = useIsDarkTheme();
-  const smallScreen = useIsSmallScreen();
-
   const [showContent, setShowContent] = useState(initiallyOpen ?? false);
 
-  const toggleShowContent = () => setShowContent((prev) => !prev);
-  const openAccordion = () => setShowContent(true);
-
-  useEffect(() => {
-    if (open) openAccordion();
-  }, [open]);
-
-  const getContainerStyles = () => {
-    let res = styles.container;
-
-    if (open) res += ` ${styles.openedAccordion}`;
-
-    return res;
+  const handleHeaderClick = (isOpen = null) => {
+    if (isOpen === null) setShowContent((prev) => !prev);
+    else setShowContent(isOpen);
   };
 
-  const contentRef = useRef(null);
-
   return (
-    <div className={getContainerStyles()} data-dark-theme={darkTheme} id={id}>
-      <div className={styles.headerWrapper}>
-        {actionsBeforeHeader}
-
-        <button onClick={toggleShowContent} className={styles.header}>
-          {header}
-        </button>
-
-        {(hideHeaderActionsOnClosed && showContent && smallScreen) ||
-        (!hideHeaderActionsOnClosed && smallScreen) ? (
-          <div
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-          >
-            {smallScreenHeaderActions}
-          </div>
-        ) : null}
-      </div>
-
-      <CSSTransition
-        nodeRef={contentRef}
-        in={showContent}
-        timeout={200}
-        classNames={accordionStyles}
-        unmountOnExit
-      >
-        <div ref={contentRef}>{children}</div>
-      </CSSTransition>
-    </div>
+    <ControlledAccordion
+      showContent={showContent}
+      onHeaderClick={handleHeaderClick}
+      children={children}
+      id={id}
+      actionsBeforeHeader={actionsBeforeHeader}
+      header={header}
+      hideHeaderActionsOnClosed={hideHeaderActionsOnClosed}
+      smallScreenHeaderActions={smallScreenHeaderActions}
+      open={open}
+    />
   );
 };
 

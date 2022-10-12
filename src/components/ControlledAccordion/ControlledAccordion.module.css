@@ -16,9 +16,6 @@
   }
 }
 
-.container {
-}
-
 .openedAccordion {
   animation-name: initiallyOpen;
   animation-duration: 1s;
