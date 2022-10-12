@@ -5,8 +5,11 @@ import {
   filterProductsBy,
   highlightProducts,
 } from "constantStrings";
-import homeReducers from "./homeReducers";
-import productsReducers from "./productsReducers";
+import {
+  homeReducers,
+  productsReducers,
+  storagesReducers,
+} from "store/slices/pages";
 
 const initialState = {
   home: {
@@ -23,6 +26,10 @@ const initialState = {
     highlightProducts: highlightProducts.none,
     filterProducts: filterProductsBy.all,
   },
+  storages: {
+    sortStoragesBy: sortByValues.nameAsc,
+    displayStoragesAs: displayAs.list,
+  },
 };
 
 const appSlice = createSlice({
@@ -31,6 +38,7 @@ const appSlice = createSlice({
   reducers: {
     ...homeReducers,
     ...productsReducers,
+    ...storagesReducers,
   },
 });
 
@@ -48,4 +56,7 @@ export const {
   setProductsSortProductsBy,
   setProductsHighlightProducts,
   setProductsFilterProducts,
+
+  setStoragesSortStoragesBy,
+  setStoragesDisplayStoragesAs,
 } = appSlice.actions;
