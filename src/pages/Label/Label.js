@@ -6,7 +6,6 @@ import {
   Translate,
 } from "components";
 import { componentSizes } from "constantStrings";
-import { useHandleProductsList } from "hooks";
 import { EditLabel, LabelNotFound, useLabel } from "pages/Label";
 import React from "react";
 import { IoPencil, IoTrash } from "react-icons/io5";
@@ -16,17 +15,18 @@ import styles from "./Label.module.css";
 const componentName = "Label";
 
 const Label = () => {
-  const { label, handleDeleteLabel, loading } = useLabel({ componentName });
-
   const {
+    products,
     sortBy,
     highlight,
     filterBy,
-    products,
     handleSortByChange,
     handleHighlightChange,
     handleFilterByChange,
-  } = useHandleProductsList({ labelId: label?.labelId, getProductBody: true });
+    label,
+    handleDeleteLabel,
+    loading,
+  } = useLabel({ componentName });
 
   if (!label) {
     return (

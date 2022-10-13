@@ -1,5 +1,6 @@
 import { Product } from "components";
 import { NoProductsToDisplay, Toolbar } from "components/ProductsList";
+import { filterProductsBy } from "constantStrings";
 import React from "react";
 import { useLocation } from "react-router-dom";
 
@@ -15,7 +16,7 @@ const ProductsList = ({
   const { hash } = useLocation();
   const selectedProduct = hash?.replace("#", "");
 
-  if (!products || !products.length) {
+  if (!products || (!products.length && filterBy === filterProductsBy.all)) {
     return <NoProductsToDisplay />;
   }
 

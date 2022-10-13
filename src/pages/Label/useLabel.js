@@ -1,4 +1,10 @@
-import { useEffect, useMemo } from "react";
+import {
+  filterProductsBy,
+  highlightProducts,
+  sortByValues,
+} from "constantStrings";
+import { useHandleProductsList } from "hooks";
+import { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import {
@@ -20,6 +26,25 @@ const useLabel = ({ componentName }) => {
       labelName,
     })
   );
+
+  const [sortBy, setSortBy] = useState(sortByValues.nameAsc);
+  const [highlight, setHighlight] = useState(highlightProducts.none);
+  const [filterBy, setFilterBy] = useState(filterProductsBy.all);
+
+  const {
+    products,
+    handleSortByChange,
+    handleHighlightChange,
+    handleFilterByChange,
+  } = useHandleProductsList({
+    selectProductsOptions: { labelId: label?.labelId, getProductBody: true },
+    sortBy,
+    highlight,
+    filterBy,
+    setSortByFunction: setSortBy,
+    setHighlightFunction: setHighlight,
+    setFilterByFunction: setFilterBy,
+  });
 
   const dispatch = useDispatch();
 
@@ -47,7 +72,18 @@ const useLabel = ({ componentName }) => {
     );
   }, [dispatch, label.labelId]);
 
-  return { label, handleDeleteLabel, loading };
+  return {
+    products,
+    sortBy,
+    highlight,
+    filterBy,
+    handleSortByChange,
+    handleHighlightChange,
+    handleFilterByChange,
+    label,
+    handleDeleteLabel,
+    loading,
+  };
 };
 
 export default useLabel;
