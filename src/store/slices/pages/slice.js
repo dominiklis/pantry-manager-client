@@ -9,6 +9,7 @@ import {
   homeReducers,
   productsReducers,
   storagesReducers,
+  labelsReducers,
 } from "store/slices/pages";
 
 const initialState = {
@@ -30,6 +31,10 @@ const initialState = {
     sortStoragesBy: sortByValues.nameAsc,
     displayStoragesAs: displayAs.list,
   },
+  labels: {
+    sortLabelsBy: sortByValues.nameAsc,
+    displayLabelsAs: displayAs.grid,
+  },
 };
 
 const appSlice = createSlice({
@@ -39,6 +44,7 @@ const appSlice = createSlice({
     ...homeReducers,
     ...productsReducers,
     ...storagesReducers,
+    ...labelsReducers,
   },
 });
 
@@ -59,4 +65,7 @@ export const {
 
   setStoragesSortStoragesBy,
   setStoragesDisplayStoragesAs,
+
+  setLabelsSortLabelsBy,
+  setLabelsDisplayLabelsAs,
 } = appSlice.actions;

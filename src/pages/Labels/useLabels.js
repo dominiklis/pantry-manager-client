@@ -1,27 +1,30 @@
 import { LabelChip, ListAndGridItem } from "components";
-import {
-  sortByValues,
-  displayAs as displayAsValues,
-  createOverlay,
-} from "constantStrings";
+import { displayAs as displayAsValues, createOverlay } from "constantStrings";
 import { useScrollToElement } from "hooks";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { setCreateOverlay } from "store/actions";
+import {
+  setCreateOverlay,
+  setLabelsDisplayLabelsAs,
+  setLabelsSortLabelsBy,
+} from "store/actions";
 import { makeSelectLabelsDetails } from "store/selectors";
 
 const useLabels = () => {
   const { hash } = useLocation();
   useScrollToElement();
 
-  const [sortBy, setSortBy] = useState(sortByValues.nameAsc);
-  const [displayAs, setDisplayAs] = useState(displayAsValues.grid);
+  const { sortLabelsBy, displayLabelsAs } = useSelector(
+    (state) => state.pages.labels
+  );
+
+  const dispatch = useDispatch();
 
   const selectLabels = useMemo(makeSelectLabelsDetails, []);
   const labels = useSelector((state) =>
     selectLabels(state, {
-      sortBy,
+      sortBy: sortLabelsBy,
     })
   );
 
@@ -32,15 +35,13 @@ const useLabels = () => {
           <LabelChip
             key={label.labelId}
             labelName={label.labelName}
-            transparent={displayAs === displayAsValues.list}
+            transparent={displayLabelsAs === displayAsValues.list}
             selected={label.labelId === hash.replace("#", "")}
           />
         </ListAndGridItem>
       )),
-    [displayAs, hash, labels]
+    [displayLabelsAs, hash, labels]
   );
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(
@@ -51,10 +52,10 @@ const useLabels = () => {
   }, [dispatch]);
 
   return {
-    sortBy,
-    setSortBy,
-    displayAs,
-    setDisplayAs,
+    sortLabelsBy,
+    displayLabelsAs,
+    setLabelsSortLabelsBy,
+    setLabelsDisplayLabelsAs,
     elements,
   };
 };

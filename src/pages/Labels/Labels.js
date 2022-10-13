@@ -5,16 +5,22 @@ import React from "react";
 const componentName = "Labels";
 
 const Labels = () => {
-  const { sortBy, setSortBy, displayAs, setDisplayAs, elements } = useLabels();
+  const {
+    sortLabelsBy,
+    displayLabelsAs,
+    setLabelsSortLabelsBy,
+    setLabelsDisplayLabelsAs,
+    elements,
+  } = useLabels();
 
   return (
     <PageContainer>
       <ListAndGrid
         elements={elements}
-        sortBy={sortBy}
-        setSortBy={setSortBy}
-        displayAs={displayAs}
-        setDisplayAs={setDisplayAs}
+        sortBy={sortLabelsBy}
+        displayAs={displayLabelsAs}
+        setSortByDispatchAction={setLabelsSortLabelsBy}
+        setDisplayAsDispatchAction={setLabelsDisplayLabelsAs}
         emptyListInfo={
           <Translate section={componentName} text="noLabelsInfo" />
         }
