@@ -1,4 +1,4 @@
-const { sortByValues, displayAs } = require("constantStrings");
+import { toggleDisplayAs, toggleSortByName } from "utils";
 
 const homeReducers = {
   setHomeShowExpired: (state, action) => {
@@ -13,14 +13,12 @@ const homeReducers = {
   },
 
   setHomeSortStoragesBy: (state) => {
-    if (state.home.sortStoragesBy === sortByValues.nameAsc)
-      state.home.sortStoragesBy = sortByValues.nameDesc;
-    else state.home.sortStoragesBy = sortByValues.nameAsc;
+    state.home.sortStoragesBy = toggleSortByName(state.home.sortStoragesBy);
   },
   setHomeDisplayStoragesAs: (state) => {
-    if (state.home.displayStoragesAs === displayAs.grid)
-      state.home.displayStoragesAs = displayAs.list;
-    else state.home.displayStoragesAs = displayAs.grid;
+    state.home.displayStoragesAs = toggleDisplayAs(
+      state.home.displayStoragesAs
+    );
   },
 
   setHomeSortProductsBy: (state, action) => {

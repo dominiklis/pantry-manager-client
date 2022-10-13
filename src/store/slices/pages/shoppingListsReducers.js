@@ -1,10 +1,10 @@
-import { sortByValues } from "constantStrings";
+import { toggleSortByName } from "utils";
 
 const shoppingListsReducers = {
   setShoppingListsSortListsBy: (state) => {
-    if (state.shoppingLists.sortListsByName === sortByValues.nameAsc)
-      state.shoppingLists.sortListsByName = sortByValues.nameDesc;
-    else state.shoppingLists.sortListsByName = sortByValues.nameAsc;
+    state.shoppingLists.sortListsByName = toggleSortByName(
+      state.shoppingLists.sortListsByName
+    );
   },
 };
 

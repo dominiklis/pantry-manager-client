@@ -1,15 +1,15 @@
-const { sortByValues, displayAs } = require("constantStrings");
+import { toggleDisplayAs, toggleSortByName } from "utils";
 
 const storagesReducers = {
   setStoragesSortStoragesBy: (state) => {
-    if (state.storages.sortStoragesBy === sortByValues.nameAsc)
-      state.storages.sortStoragesBy = sortByValues.nameDesc;
-    else state.storages.sortStoragesBy = sortByValues.nameAsc;
+    state.storages.sortStoragesBy = toggleSortByName(
+      state.storages.sortStoragesBy
+    );
   },
   setStoragesDisplayStoragesAs: (state) => {
-    if (state.storages.displayStoragesAs === displayAs.grid)
-      state.storages.displayStoragesAs = displayAs.list;
-    else state.storages.displayStoragesAs = displayAs.grid;
+    state.storages.displayStoragesAs = toggleDisplayAs(
+      state.storages.displayStoragesAs
+    );
   },
 };
 
