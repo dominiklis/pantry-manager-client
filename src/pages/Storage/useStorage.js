@@ -1,11 +1,16 @@
 import {
+  filterProductsBy,
+  highlightProducts,
+  sortByValues,
+} from "constantStrings";
+import {
   useControlledActions,
   useHandleProductsList,
   useIsDarkTheme,
   useIsSmallScreen,
   useScrollToElement,
 } from "hooks";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { setCreateOverlay, setUploadOverlay } from "store/actions";
@@ -23,15 +28,24 @@ const useStorage = () => {
 
   const { defaultNumberOfDaysForWarning } = useSelector((state) => state.app);
 
+  const [sortBy, setSortBy] = useState(sortByValues.nameAsc);
+  const [highlight, setHighlight] = useState(highlightProducts.none);
+  const [filterBy, setFilterBy] = useState(filterProductsBy.all);
+
   const {
-    sortBy,
-    highlight,
-    filterBy,
     products,
     handleSortByChange,
     handleHighlightChange,
     handleFilterByChange,
-  } = useHandleProductsList({ storageId, getProductBody: true });
+  } = useHandleProductsList({
+    selectProductsOptions: { storageId, getProductBody: true },
+    sortBy,
+    highlight,
+    filterBy,
+    setSortByFunction: setSortBy,
+    setHighlightFunction: setHighlight,
+    setFilterByFunction: setFilterBy,
+  });
 
   const isSmallScreen = useIsSmallScreen();
 
@@ -59,10 +73,10 @@ const useStorage = () => {
     defaultNumberOfDaysForWarning,
     products,
     sortBy,
-    handleSortByChange,
     highlight,
-    handleHighlightChange,
     filterBy,
+    handleSortByChange,
+    handleHighlightChange,
     handleFilterByChange,
     isSmallScreen,
     selectedAction,

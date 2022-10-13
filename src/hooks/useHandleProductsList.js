@@ -7,8 +7,11 @@ const useHandleProductsList = ({
   sortBy,
   filterBy,
   setSortByDispatchAction,
+  setSortByFunction,
   setHighlightDispatchAction,
+  setHighlightFunction,
   setFilterByDispatchAction,
+  setFilterByFunction,
 }) => {
   const dispatch = useDispatch();
 
@@ -18,13 +21,19 @@ const useHandleProductsList = ({
   );
 
   const handleSortByChange = (value) => {
-    dispatch(setSortByDispatchAction(value));
+    if (setSortByDispatchAction) dispatch(setSortByDispatchAction(value));
+
+    setSortByFunction?.(value);
   };
   const handleHighlightChange = (value) => {
-    dispatch(setHighlightDispatchAction(value));
+    if (setHighlightDispatchAction) dispatch(setHighlightDispatchAction(value));
+
+    setHighlightFunction?.(value);
   };
   const handleFilterByChange = (value) => {
-    dispatch(setFilterByDispatchAction(value));
+    if (setFilterByDispatchAction) dispatch(setFilterByDispatchAction(value));
+
+    setFilterByFunction?.(value);
   };
 
   return {
