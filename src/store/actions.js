@@ -97,6 +97,7 @@ import {
   setProductsFilterProducts,
   setLabelsSortLabelsBy,
   setLabelsDisplayLabelsAs,
+  setShoppingListsSortListsBy,
 } from "./slices/pages/slice";
 
 export {
@@ -193,4 +194,5 @@ export {
   setProductsFilterProducts,
   setLabelsSortLabelsBy,
   setLabelsDisplayLabelsAs,
+  setShoppingListsSortListsBy,
 };

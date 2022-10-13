@@ -12,8 +12,12 @@ import styles from "./ShoppingLists.module.css";
 const componentName = "ShoppingLists";
 
 const ShoppingLists = () => {
-  const { shoppingListItems, shoppingLists, handleSortByButton, sortBy } =
-    useShoppingLists();
+  const {
+    shoppingListItems,
+    shoppingLists,
+    handleSortByButton,
+    sortListsByName,
+  } = useShoppingLists();
 
   if (!shoppingListItems?.length && !shoppingLists?.length)
     return (
@@ -29,7 +33,7 @@ const ShoppingLists = () => {
       <ListHeader className={styles.listHeader}>
         <SortByNameButton
           onClick={handleSortByButton}
-          sortingAsc={sortBy === sortByValues.nameAsc}
+          sortingAsc={sortListsByName === sortByValues.nameAsc}
         />
       </ListHeader>
 

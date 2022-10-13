@@ -10,6 +10,7 @@ import {
   productsReducers,
   storagesReducers,
   labelsReducers,
+  shoppingListsReducers,
 } from "store/slices/pages";
 
 const initialState = {
@@ -35,6 +36,9 @@ const initialState = {
     sortLabelsBy: sortByValues.nameAsc,
     displayLabelsAs: displayAs.grid,
   },
+  shoppingLists: {
+    sortListsByName: sortByValues.nameAsc,
+  },
 };
 
 const appSlice = createSlice({
@@ -45,6 +49,7 @@ const appSlice = createSlice({
     ...productsReducers,
     ...storagesReducers,
     ...labelsReducers,
+    ...shoppingListsReducers,
   },
 });
 
@@ -68,4 +73,6 @@ export const {
 
   setLabelsSortLabelsBy,
   setLabelsDisplayLabelsAs,
+
+  setShoppingListsSortListsBy,
 } = appSlice.actions;

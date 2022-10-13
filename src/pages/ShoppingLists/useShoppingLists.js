@@ -1,34 +1,30 @@
 import { createOverlay } from "constantStrings";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { useDispatch } from "react-redux";
-import { setCreateOverlay } from "store/actions";
+import { setCreateOverlay, setShoppingListsSortListsBy } from "store/actions";
 import { useSelector } from "react-redux";
 import { makeSelectShoppingLists } from "store/selectors";
 import { useScrollToElement } from "hooks";
-import { sortByValues } from "constantStrings";
 
 const useShoppingLists = () => {
   useScrollToElement();
 
-  const [sortBy, setSortBy] = useState(sortByValues.nameAsc);
+  const { sortListsByName } = useSelector((state) => state.pages.shoppingLists);
 
-  const handleSortByButton = () =>
-    setSortBy((prev) => {
-      if (prev === sortByValues.nameAsc) return sortByValues.nameDesc;
+  const dispatch = useDispatch();
 
-      return sortByValues.nameAsc;
-    });
+  const handleSortByButton = () => {
+    dispatch(setShoppingListsSortListsBy());
+  };
 
   const selectShoppingLists = useMemo(makeSelectShoppingLists, []);
   const shoppingLists = useSelector((state) =>
-    selectShoppingLists(state, { sortBy })
+    selectShoppingLists(state, { sortBy: sortListsByName })
   );
 
   const shoppingListItems = useSelector(
     (state) => state.shoppingListItems.allIds
   );
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(
@@ -38,7 +34,12 @@ const useShoppingLists = () => {
     );
   }, [dispatch]);
 
-  return { shoppingListItems, shoppingLists, handleSortByButton, sortBy };
+  return {
+    shoppingListItems,
+    shoppingLists,
+    handleSortByButton,
+    sortListsByName,
+  };
 };
 
 export default useShoppingLists;
