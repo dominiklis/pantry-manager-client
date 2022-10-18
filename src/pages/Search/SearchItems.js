@@ -4,7 +4,7 @@ import React, { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { makeSelectShoppingListItems } from "store/selectors";
 
-const componentName = "SearchLists";
+const componentName = "SearchItems";
 
 const SearchItems = () => {
   const { search } = useSelector((state) => state.app);

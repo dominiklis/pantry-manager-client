@@ -8,14 +8,15 @@ export const makeSelectShoppingListItems = () =>
     selectShoppingListItems,
     (_, options) => options,
     (items, { shoppingListId, sortBy, search } = {}) => {
-      if (!shoppingListId || shoppingListId === various.noShoppingList)
-        shoppingListId = null;
+      if (shoppingListId === various.noShoppingList) shoppingListId = null;
 
       let results = [];
 
-      results = items.allIds.filter(
-        (id) => items.byId[id].shoppingListId === shoppingListId
-      );
+      if (shoppingListId || shoppingListId === null) {
+        results = items.allIds.filter(
+          (id) => items.byId[id].shoppingListId === shoppingListId
+        );
+      } else results = [...items.allIds];
 
       sortIdsByName(
         results,
