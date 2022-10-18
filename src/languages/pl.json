@@ -30,7 +30,7 @@
     "email": "email *",
     "password": "hasło *",
     "pageHeader": "Rejestracja",
-    "buttonText": "Zaloguj",
+    "buttonText": "Zerejestruj",
     "error": "użytkownik o podanej nazwie lub emailu już istnieje",
     "footer": "Posiadasz konto?",
     "link": "Zaloguj się",
