@@ -38,7 +38,7 @@ import {
 import {
   setProducts,
   deleteProductsInStorage,
-  setStorageToNull,
+  swapStorage,
   deleteLabelInProducts,
   setGetProductsLoading,
 } from "./slices/products/slice";
@@ -146,7 +146,7 @@ export {
   editProduct,
   deleteProduct,
   deleteProductsInStorage,
-  setStorageToNull,
+  swapStorage,
   deleteLabelInProducts,
   setGetProductsLoading,
 

@@ -6,5 +6,4 @@ export { default as AddProductToShoppingList } from "./AddProductToShoppingList"
 export { default as useAddProductToShoppingList } from "./useAddProductToShoppingList";
 export { default as useEditProduct } from "./useEditProduct";
 export { default as useProduct } from "./useProduct";
-export { default as useSelectStorage } from "./useSelectStorage";
 export { default as ProductActionsButtons } from "./ProductActionsButtons";

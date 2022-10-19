@@ -7,7 +7,7 @@ export const makeSelectStorages = () =>
   createSelector(
     selectStorages,
     (_, options) => options,
-    (storages, { storageIds, sortBy, search } = {}) => {
+    (storages, { storageIds, sortBy, search, skip } = {}) => {
       let results = [];
 
       if (storageIds && storageIds.length) {
@@ -15,7 +15,10 @@ export const makeSelectStorages = () =>
           const storage = storages.byId[storageId];
           if (storage) results.push(storage);
         });
-      } else results = storages.allIds.map((id) => storages.byId[id]);
+      } else
+        results = storages.allIds
+          .filter((storageId) => storageId !== skip)
+          .map((id) => storages.byId[id]);
 
       if (sortBy === sortByValues.nameDesc) {
         sortByName(results, "storageName", true);

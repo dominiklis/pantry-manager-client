@@ -3,10 +3,11 @@ import {
   addToast,
   deleteProductsInStorage,
   deleteStorage,
-  setStorageToNull,
+  swapStorage,
 } from "store/actions";
 
 const useDeleteStorage = ({ storageId, componentName }) => {
+  const { defaultStorageId } = useSelector((state) => state.users.user);
   const { delete: loading } = useSelector((state) => state.storages.loading);
 
   const dispatch = useDispatch();
@@ -40,7 +41,7 @@ const useDeleteStorage = ({ storageId, componentName }) => {
 
   const handleKeepButton = async () => {
     await dispatch(deleteStorage({ storageId, deleteProducts: false }));
-    dispatch(setStorageToNull(storageId));
+    dispatch(swapStorage({ from: storageId, to: defaultStorageId }));
 
     dispatch(
       addToast({

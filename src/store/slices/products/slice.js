@@ -35,10 +35,10 @@ const productsSlice = createSlice({
       state.allIds = allIds;
     },
 
-    setStorageToNull: (state, action) => {
+    swapStorage: (state, action) => {
       state.allIds.forEach((id) => {
-        if (state.byId[id].storageId === action.payload)
-          state.byId[id].storageId = null;
+        if (state.byId[id].storageId === action.payload.from)
+          state.byId[id].storageId = action.payload.to;
       });
     },
 
@@ -164,7 +164,7 @@ export default productsSlice.reducer;
 export const {
   setProducts,
   deleteProductsInStorage,
-  setStorageToNull,
+  swapStorage,
   deleteLabelInProducts,
   setGetProductsLoading,
 } = productsSlice.actions;

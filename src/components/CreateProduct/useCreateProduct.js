@@ -11,6 +11,7 @@ const useCreateProduct = ({
   selectedStorage,
   selectedLabel,
 }) => {
+  const { defaultStorageId } = useSelector((state) => state.users.user);
   const { create: loading } = useSelector((state) => state.products.loading);
 
   const [input, setInput] = useState({
@@ -38,7 +39,9 @@ const useCreateProduct = ({
         expirationDate: input.expirationDate ? input.expirationDate : null,
         amount: input.amount ? input.amount : null,
         storageId:
-          input.storageId === various.noStorage ? null : input.storageId,
+          input.storageId === various.noStorage
+            ? defaultStorageId
+            : input.storageId,
         labels: input.labels,
       })
     ).unwrap();

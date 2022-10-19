@@ -13,15 +13,7 @@ export const makeSelectProducts = () =>
     (
       products,
       storages,
-      {
-        search,
-        sortBy,
-        filterBy,
-        storageId,
-        withoutStorage,
-        labelId,
-        getProductBody,
-      } = {}
+      { search, sortBy, filterBy, storageId, labelId, getProductBody } = {}
     ) => {
       let results = [];
 
@@ -70,10 +62,6 @@ export const makeSelectProducts = () =>
         results = results.filter(
           (id) => products.byId[id].storageId === storageId
         );
-      }
-      // or choose those that don't have any storage
-      else if (withoutStorage) {
-        results = results.filter((id) => !products.byId[id].storageId);
       }
 
       // filter products by label

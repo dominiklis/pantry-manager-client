@@ -1,3 +1,4 @@
+import { various } from "constantStrings";
 import { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToast, editProduct } from "store/actions";
@@ -5,6 +6,8 @@ import { makeSelectProductById } from "store/selectors";
 import { formatDate } from "utils";
 
 const useEditProduct = ({ productId, componentName }) => {
+  const { defaultStorageId } = useSelector((state) => state.users.user);
+
   const selectProduct = useMemo(makeSelectProductById, []);
   const { productName, expirationDate, amount, storageId, labels } =
     useSelector((state) => selectProduct(state, productId));
@@ -16,7 +19,7 @@ const useEditProduct = ({ productId, componentName }) => {
     productName,
     expirationDate: expirationDate ? formatDate(expirationDate, true) : "",
     amount: amount ?? "",
-    storageId,
+    storageId: storageId === defaultStorageId ? various.noStorage : storageId,
     labels,
   });
 
@@ -36,7 +39,10 @@ const useEditProduct = ({ productId, componentName }) => {
         productName: input.productName,
         expirationDate: input.expirationDate ? input.expirationDate : null,
         amount: input.amount ? input.amount : null,
-        storageId: input.storageId,
+        storageId:
+          !input.storageId || input.storageId === various.noStorage
+            ? defaultStorageId
+            : input.storageId,
         labels: input.labels,
       })
     );

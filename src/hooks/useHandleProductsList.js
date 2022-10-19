@@ -17,7 +17,11 @@ const useHandleProductsList = ({
 
   const selectProducts = useMemo(makeSelectProducts, []);
   const products = useSelector((state) =>
-    selectProducts(state, { ...selectProductsOptions, sortBy, filterBy })
+    selectProducts(state, {
+      ...selectProductsOptions,
+      sortBy,
+      filterBy,
+    })
   );
 
   const handleSortByChange = (value) => {

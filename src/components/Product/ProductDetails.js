@@ -16,6 +16,7 @@ const ProductDetails = ({
   storageName,
   labels,
 }) => {
+  const { defaultStorageId } = useSelector((state) => state.users.user);
   const { language } = useSelector((state) => state.app);
 
   return (
@@ -46,7 +47,7 @@ const ProductDetails = ({
         <span className={styles.sectionLabel}>
           <Translate section={componentName} text="storage" />
         </span>
-        {storageId ? (
+        {storageId && storageId !== defaultStorageId ? (
           <>
             <AppLink
               to={`/storages/${storageId}`}

@@ -60,6 +60,7 @@ const usersSlice = createSlice({
           userId: action.payload.userId,
           userName: action.payload.userName,
           email: action.payload.email,
+          defaultStorageId: action.payload.defaultStorageId,
         };
 
         saveTokenInLocalStorage(action.payload.token);
@@ -82,6 +83,7 @@ const usersSlice = createSlice({
           userId: action.payload.userId,
           userName: action.payload.userName,
           email: action.payload.email,
+          defaultStorageId: action.payload.defaultStorageId,
         };
 
         saveTokenInLocalStorage(action.payload.token);
@@ -104,6 +106,7 @@ const usersSlice = createSlice({
           userId: action.payload.userId,
           userName: action.payload.userName,
           email: action.payload.email,
+          defaultStorageId: action.payload.defaultStorageId,
         };
 
         saveTokenInLocalStorage(action.payload.token);
@@ -123,11 +126,12 @@ const usersSlice = createSlice({
           userId: action.payload.userId,
           userName: action.payload.userName,
           email: action.payload.email,
+          defaultStorageId: action.payload.defaultStorageId,
         };
 
         saveTokenInLocalStorage(action.payload.token);
       })
-      .addCase(renewToken.rejected, (state, action) => {
+      .addCase(renewToken.rejected, (state) => {
         state.user = null;
         state.token = null;
 

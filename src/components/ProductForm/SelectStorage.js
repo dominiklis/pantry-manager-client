@@ -1,5 +1,5 @@
 import { Label, Select } from "components";
-import { useSelectStorage } from "components/Product";
+import { useSelectStorage } from "components/ProductForm";
 import { various } from "constantStrings";
 import React from "react";
 import styles from "./SelectStorage.module.css";

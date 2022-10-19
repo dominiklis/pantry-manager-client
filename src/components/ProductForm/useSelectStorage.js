@@ -6,9 +6,14 @@ import { useSelector } from "react-redux";
 import { makeSelectStorages } from "store/selectors";
 
 const useSelectStorage = ({ componentName }) => {
+  const { defaultStorageId } = useSelector((state) => state.users.user);
+
   const selectStorages = useMemo(makeSelectStorages, []);
   const storages = useSelector((state) =>
-    selectStorages(state, { sortBy: sortByValues.nameAsc })
+    selectStorages(state, {
+      sortBy: sortByValues.nameAsc,
+      skip: defaultStorageId,
+    })
   );
 
   const selectStorageOptions = useMemo(() => {

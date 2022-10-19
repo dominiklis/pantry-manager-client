@@ -2,6 +2,7 @@ import { ProductsList, Translate } from "components";
 import { filterProductsBy } from "constantStrings";
 import { useHandleProductsList } from "hooks";
 import React from "react";
+import { useSelector } from "react-redux";
 
 import styles from "./ProductsWithoutStoragesList.module.css";
 
@@ -16,6 +17,8 @@ const ProductsWithoutStoragesList = ({
   setHighlightDispatchAction,
   setFilterByDispatchAction,
 }) => {
+  const { defaultStorageId } = useSelector((state) => state.users.user);
+
   const {
     products,
     handleSortByChange,
@@ -23,7 +26,7 @@ const ProductsWithoutStoragesList = ({
     handleFilterByChange,
   } = useHandleProductsList({
     selectProductsOptions: {
-      withoutStorage: true,
+      storageId: defaultStorageId,
     },
     sortBy,
     filterBy,
