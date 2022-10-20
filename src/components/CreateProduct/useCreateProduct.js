@@ -65,7 +65,7 @@ const useCreateProduct = ({
       productName: "",
       expirationDate: "",
       amount: "",
-      storageId: null,
+      storageId: selectedStorage ?? null,
       labels: [],
     });
   };
