@@ -9,6 +9,7 @@ import styles from "./ProductLink.module.css";
 const ProductLink = ({ children, product, daysColor }) => {
   const darkTheme = useIsDarkTheme();
 
+  const { defaultStorageId } = useSelector((state) => state.users.user);
   const { language } = useSelector((state) => state.app);
 
   const getDaysStyles = () => {
@@ -30,7 +31,7 @@ const ProductLink = ({ children, product, daysColor }) => {
     return res;
   };
 
-  if (!product?.storageId)
+  if (product?.storageId === defaultStorageId)
     return (
       <a
         href={`/#${product.productId}`}
