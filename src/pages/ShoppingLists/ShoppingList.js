@@ -28,6 +28,12 @@ const ShoppingList = ({
     userId,
   } = useShoppingList({ shoppingListId });
 
+  if (
+    shoppingListId === various.noShoppingList &&
+    (!listItems || !listItems.length)
+  )
+    return null;
+
   return (
     <div className={styles.container} id={shoppingListId}>
       <Accordion
