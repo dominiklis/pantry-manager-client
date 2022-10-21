@@ -1,12 +1,7 @@
-import { Button, Translate } from "components";
-import { componentColors, componentSizes } from "constantStrings";
+import { RefreshForm } from "components";
 import React from "react";
-import { IoRefresh } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts, getStorages } from "store/actions";
-import styles from "./RefreshProductsAndStoragesForm.module.css";
-
-const componentName = "RefreshProductsAndStoragesForm";
 
 const RefreshProductsAndStoragesForm = () => {
   const dispatch = useDispatch();
@@ -20,18 +15,7 @@ const RefreshProductsAndStoragesForm = () => {
     await dispatch(getProducts()).unwrap();
   };
 
-  return (
-    <form className={styles.refreshButtonContainer} onSubmit={handleSubmit}>
-      <Button
-        icon={<IoRefresh />}
-        backgroundColor={componentColors.primary}
-        size={componentSizes.small}
-        loading={loading}
-      >
-        <Translate section={componentName} text="refreshButtonText" />
-      </Button>
-    </form>
-  );
+  return <RefreshForm onSubmit={handleSubmit} loading={loading} />;
 };
 
 export default RefreshProductsAndStoragesForm;

@@ -45,4 +45,5 @@ export { ProductLink } from "components/ProductLink";
 export { DropdownMenuButton } from "components/DropdownMenuButton";
 export { ActionsButtonsList } from "components/ActionsButtonsList";
 export { ControlledAccordion } from "components/ControlledAccordion";
+export { RefreshForm } from "components/RefreshForm";
 export { RefreshProductsAndStoragesForm } from "components/RefreshProductsAndStoragesForm";
