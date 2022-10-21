@@ -1,4 +1,8 @@
-import { PageContainer, ProductsList } from "components";
+import {
+  PageContainer,
+  ProductsList,
+  RefreshProductsAndStoragesForm,
+} from "components";
 import { useHandleProductsList, useScrollToElement } from "hooks";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -37,6 +41,7 @@ const Products = () => {
 
   return (
     <PageContainer>
+      <RefreshProductsAndStoragesForm />
       <ProductsList
         sortBy={sortProductsBy}
         highlight={highlightProducts}

@@ -458,5 +458,9 @@
   "UploadProductCard": {
     "amount": "ilość",
     "expirationDate": "termin ważności"
+  },
+
+  "RefreshProductsAndStoragesForm": {
+    "refreshButtonText": "odśwież"
   }
 }

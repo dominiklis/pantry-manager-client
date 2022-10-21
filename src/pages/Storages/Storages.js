@@ -1,4 +1,8 @@
-import { PageContainer, StoragesList } from "components";
+import {
+  PageContainer,
+  RefreshProductsAndStoragesForm,
+  StoragesList,
+} from "components";
 import { createOverlay } from "constantStrings";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,6 +29,7 @@ const Storages = () => {
 
   return (
     <PageContainer>
+      <RefreshProductsAndStoragesForm />
       <StoragesList
         noHeader
         sortBy={sortStoragesBy}
