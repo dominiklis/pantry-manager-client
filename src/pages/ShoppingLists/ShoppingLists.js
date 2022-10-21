@@ -1,6 +1,7 @@
 import {
   ListHeader,
   PageContainer,
+  RefreshListsAndItems,
   SortByNameButton,
   Translate,
 } from "components";
@@ -22,6 +23,7 @@ const ShoppingLists = () => {
   if (!shoppingListItems?.length && !shoppingLists?.length)
     return (
       <PageContainer>
+        <RefreshListsAndItems />
         <p className={styles.noItems}>
           <Translate section={componentName} text="noItemsInfo" />
         </p>
@@ -30,13 +32,13 @@ const ShoppingLists = () => {
 
   return (
     <PageContainer>
+      <RefreshListsAndItems />
       <ListHeader className={styles.listHeader}>
         <SortByNameButton
           onClick={handleSortByButton}
           sortingAsc={sortListsByName === sortByValues.nameAsc}
         />
       </ListHeader>
-
       <div className={styles.list}>
         {[
           {

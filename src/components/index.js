@@ -47,3 +47,4 @@ export { ActionsButtonsList } from "components/ActionsButtonsList";
 export { ControlledAccordion } from "components/ControlledAccordion";
 export { RefreshForm } from "components/RefreshForm";
 export { RefreshProductsAndStoragesForm } from "components/RefreshProductsAndStoragesForm";
+export { RefreshListsAndItems } from "components/RefreshListsAndItems";
