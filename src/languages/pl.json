@@ -466,5 +466,9 @@
 
   "RefreshProductsAndStoragesForm": {
     "successToastMessage": "lista produktów i magazynów jest aktualna"
+  },
+
+  "RefreshListsAndItems": {
+    "successToastMessage": "listy zakupów zostały zaktualizowane"
   }
 }

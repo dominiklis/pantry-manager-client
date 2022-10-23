@@ -466,5 +466,9 @@
 
   "RefreshProductsAndStoragesForm": {
     "successToastMessage": "products and storages are up to date"
+  },
+
+  "RefreshListsAndItems": {
+    "successToastMessage": "shopping lists and items are up to date"
   }
 }
