@@ -1,12 +1,15 @@
 import {
   ListHeader,
   PageContainer,
-  RefreshListsAndItems,
   SortByNameButton,
   Translate,
 } from "components";
 import { sortByValues } from "constantStrings";
-import { ShoppingList, useShoppingLists } from "pages/ShoppingLists";
+import {
+  RefreshListsAndItems,
+  ShoppingList,
+  useShoppingLists,
+} from "pages/ShoppingLists";
 import React from "react";
 import styles from "./ShoppingLists.module.css";
 
