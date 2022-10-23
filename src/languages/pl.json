@@ -462,5 +462,9 @@
 
   "RefreshForm": {
     "refreshButtonText": "odśwież"
+  },
+
+  "RefreshProductsAndStoragesForm": {
+    "successToastMessage": "lista produktów i magazynów jest aktualna"
   }
 }

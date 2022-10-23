@@ -462,5 +462,9 @@
 
   "RefreshForm": {
     "refreshButtonText": "refresh"
+  },
+
+  "RefreshProductsAndStoragesForm": {
+    "successToastMessage": "products and storages are up to date"
   }
 }
