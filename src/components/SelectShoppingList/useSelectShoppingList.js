@@ -12,6 +12,8 @@ const useSelectShoppingList = ({ componentName }) => {
     selectShoppingLists(state, { sortBy: sortByValues.nameAsc })
   );
 
+  const { defaultShoppingListId } = useSelector((state) => state.users.user);
+
   const selectStorageOptions = useMemo(() => {
     return [
       new SelectOption(
@@ -19,15 +21,17 @@ const useSelectShoppingList = ({ componentName }) => {
         <Translate section={componentName} text="noShoppingListOption" />,
         <IoClose />
       ),
-      ...shoppingLists.map(
-        (shoppingLists) =>
-          new SelectOption(
-            shoppingLists.shoppingListId,
-            shoppingLists.shoppingListName
-          )
-      ),
+      ...shoppingLists
+        .filter((list) => list.shoppingListId !== defaultShoppingListId)
+        .map(
+          (shoppingLists) =>
+            new SelectOption(
+              shoppingLists.shoppingListId,
+              shoppingLists.shoppingListName
+            )
+        ),
     ];
-  }, [componentName, shoppingLists]);
+  }, [componentName, defaultShoppingListId, shoppingLists]);
 
   return { selectStorageOptions };
 };

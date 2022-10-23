@@ -1,5 +1,6 @@
+import { various } from "constantStrings";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToast, editShoppingListItem } from "store/actions";
 
 const useEditShoppingListItem = ({
@@ -10,10 +11,15 @@ const useEditShoppingListItem = ({
   selected,
   shoppingListId,
 }) => {
+  const { defaultShoppingListId } = useSelector((state) => state.users.user);
+
   const [input, setInput] = useState({
     shoppingListItemName: shoppingListItemName ?? "",
     amount: amount ?? "",
-    shoppingListId: shoppingListId ?? "",
+    shoppingListId:
+      shoppingListId === defaultShoppingListId
+        ? various.noShoppingList
+        : shoppingListId,
   });
 
   const [errors, setErrors] = useState({
@@ -29,7 +35,16 @@ const useEditShoppingListItem = ({
     setLoading(true);
 
     await dispatch(
-      editShoppingListItem({ shoppingListItemId, selected, ...input })
+      editShoppingListItem({
+        shoppingListItemId,
+        selected,
+        ...input,
+        shoppingListId:
+          !input.shoppingListId ||
+          input.shoppingListId === various.noShoppingList
+            ? defaultShoppingListId
+            : input.shoppingListId,
+      })
     );
 
     setLoading(false);

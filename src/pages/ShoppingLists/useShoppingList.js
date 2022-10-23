@@ -16,7 +16,9 @@ const useShoppingList = ({ shoppingListId }) => {
   const { selectedAction, setSelectedAction, handleCloseAction } =
     useControlledActions();
 
-  const { userId } = useSelector((state) => state.users.user);
+  const { userId, defaultShoppingListId } = useSelector(
+    (state) => state.users.user
+  );
 
   return {
     darkTheme,
@@ -25,6 +27,7 @@ const useShoppingList = ({ shoppingListId }) => {
     setSelectedAction,
     handleCloseAction,
     userId,
+    defaultShoppingListId,
   };
 };
 

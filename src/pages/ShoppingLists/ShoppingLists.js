@@ -5,7 +5,7 @@ import {
   SortByNameButton,
   Translate,
 } from "components";
-import { sortByValues, various } from "constantStrings";
+import { sortByValues } from "constantStrings";
 import { ShoppingList, useShoppingLists } from "pages/ShoppingLists";
 import React from "react";
 import styles from "./ShoppingLists.module.css";
@@ -20,7 +20,7 @@ const ShoppingLists = () => {
     sortListsByName,
   } = useShoppingLists();
 
-  if (!shoppingListItems?.length && !shoppingLists?.length)
+  if (!shoppingListItems?.length)
     return (
       <PageContainer>
         <RefreshListsAndItems />
@@ -40,12 +40,7 @@ const ShoppingLists = () => {
         />
       </ListHeader>
       <div className={styles.list}>
-        {[
-          {
-            shoppingListId: various.noShoppingList,
-          },
-          ...shoppingLists,
-        ].map((shoppingList) => (
+        {shoppingLists.map((shoppingList) => (
           <ShoppingList key={shoppingList.shoppingListId} {...shoppingList} />
         ))}
       </div>

@@ -73,8 +73,8 @@ import {
 } from "./slices/shoppingLists/extraReducers";
 import {
   setShoppingListItems,
+  swapList,
   deleteItemsInList,
-  setListToNull,
   setGetShoppingListItemsLoading,
 } from "./slices/shoppingListItems/slice";
 import {
@@ -174,12 +174,12 @@ export {
   // shopping list items actions
   setShoppingListItems,
   deleteItemsInList,
-  setListToNull,
   setGetShoppingListItemsLoading,
   getShoppingListItems,
   createShoppingListItem,
   editShoppingListItem,
   deleteShopppingListItem,
+  swapList,
 
   // pages
   setHomeShowExpired,

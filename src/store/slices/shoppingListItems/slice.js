@@ -37,6 +37,13 @@ const shoppingListItemsSlice = createSlice({
       state.allIds = allIds;
     },
 
+    swapList: (state, action) => {
+      state.allIds.forEach((id) => {
+        if (state.byId[id].shoppingListId === action.payload.from)
+          state.byId[id].shoppingListId = action.payload.to;
+      });
+    },
+
     deleteItemsInList: (state, action) => {
       state.allIds = state.allIds.filter((id) => {
         if (state.byId[id].shoppingListId === action.payload) {
@@ -45,13 +52,6 @@ const shoppingListItemsSlice = createSlice({
         }
 
         return true;
-      });
-    },
-
-    setListToNull: (state, action) => {
-      state.allIds.forEach((id) => {
-        if (state.byId[id].shoppingListId === action.payload)
-          state.byId[id].shoppingListId = null;
       });
     },
 
@@ -141,7 +141,7 @@ export default shoppingListItemsSlice.reducer;
 
 export const {
   setShoppingListItems,
+  swapList,
   deleteItemsInList,
-  setListToNull,
   setGetShoppingListItemsLoading,
 } = shoppingListItemsSlice.actions;

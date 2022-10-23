@@ -3,10 +3,12 @@ import {
   addToast,
   deleteItemsInList,
   deleteShoppingList,
-  setListToNull,
+  swapList,
 } from "store/actions";
 
 const useDeleteShoppingList = ({ componentName, shoppingListId }) => {
+  const { defaultShoppingListId } = useSelector((state) => state.users.user);
+
   const { delete: loading } = useSelector(
     (state) => state.shoppingLists.loading
   );
@@ -42,7 +44,12 @@ const useDeleteShoppingList = ({ componentName, shoppingListId }) => {
 
   const handleKeepButton = async () => {
     await dispatch(deleteShoppingList({ shoppingListId, deleteItems: false }));
-    dispatch(setListToNull(shoppingListId));
+    dispatch(
+      swapList({
+        from: shoppingListId,
+        to: defaultShoppingListId,
+      })
+    );
 
     dispatch(
       addToast({

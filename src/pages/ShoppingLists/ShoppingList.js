@@ -1,5 +1,4 @@
 import { Accordion, Dropdown, DropdownMenuButton, Translate } from "components";
-import { various } from "constantStrings";
 import {
   ShoppingListItemsList,
   ShoppingListActionButtons,
@@ -26,10 +25,11 @@ const ShoppingList = ({
     setSelectedAction,
     handleCloseAction,
     userId,
+    defaultShoppingListId,
   } = useShoppingList({ shoppingListId });
 
   if (
-    shoppingListId === various.noShoppingList &&
+    shoppingListId === defaultShoppingListId &&
     (!listItems || !listItems.length)
   )
     return null;
@@ -40,15 +40,17 @@ const ShoppingList = ({
         key={shoppingListId}
         header={
           <div className={styles.header} data-dark-theme={darkTheme}>
-            {shoppingListName ?? (
+            {shoppingListId === defaultShoppingListId ? (
               <Translate section={componentName} text="withoutShoppingList" />
+            ) : (
+              shoppingListName
             )}
           </div>
         }
         initiallyOpen
         hideHeaderActionsOnClosed
         smallScreenHeaderActions={
-          shoppingListId !== various.noShoppingList ? (
+          shoppingListId !== defaultShoppingListId ? (
             <Dropdown
               hideOnClick
               dropdownButton={<DropdownMenuButton />}
@@ -67,12 +69,14 @@ const ShoppingList = ({
         <div className={styles.content}>
           <ShoppingListActions
             actionButtons={
-              <ShoppingListActionButtons
-                shoppingListId={shoppingListId}
-                selectedAction={selectedAction}
-                setSelectedAction={setSelectedAction}
-                ownerId={ownerId}
-              />
+              shoppingListId !== defaultShoppingListId ? (
+                <ShoppingListActionButtons
+                  shoppingListId={shoppingListId}
+                  selectedAction={selectedAction}
+                  setSelectedAction={setSelectedAction}
+                  ownerId={ownerId}
+                />
+              ) : null
             }
             shoppingListId={shoppingListId}
             shoppingListName={shoppingListName}
@@ -84,7 +88,7 @@ const ShoppingList = ({
             canShare={canShare}
           />
 
-          {ownerId !== userId && shoppingListId !== various.noShoppingList ? (
+          {ownerId !== userId && shoppingListId !== defaultShoppingListId ? (
             <p className={styles.sharedListInfo}>
               <Translate section={componentName} text="listIsShared" />
               <span className={styles.ownerName}>{ownerName}</span>

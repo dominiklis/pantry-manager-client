@@ -61,6 +61,7 @@ const usersSlice = createSlice({
           userName: action.payload.userName,
           email: action.payload.email,
           defaultStorageId: action.payload.defaultStorageId,
+          defaultShoppingListId: action.payload.defaultShoppingListId,
         };
 
         saveTokenInLocalStorage(action.payload.token);
@@ -84,6 +85,7 @@ const usersSlice = createSlice({
           userName: action.payload.userName,
           email: action.payload.email,
           defaultStorageId: action.payload.defaultStorageId,
+          defaultShoppingListId: action.payload.defaultShoppingListId,
         };
 
         saveTokenInLocalStorage(action.payload.token);
@@ -107,6 +109,7 @@ const usersSlice = createSlice({
           userName: action.payload.userName,
           email: action.payload.email,
           defaultStorageId: action.payload.defaultStorageId,
+          defaultShoppingListId: action.payload.defaultShoppingListId,
         };
 
         saveTokenInLocalStorage(action.payload.token);
@@ -127,6 +130,7 @@ const usersSlice = createSlice({
           userName: action.payload.userName,
           email: action.payload.email,
           defaultStorageId: action.payload.defaultStorageId,
+          defaultShoppingListId: action.payload.defaultShoppingListId,
         };
 
         saveTokenInLocalStorage(action.payload.token);

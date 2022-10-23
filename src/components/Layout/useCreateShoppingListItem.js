@@ -23,13 +23,15 @@ const useCreateShoppingListItem = ({ componentName, selectedList }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const { defaultShoppingListId } = useSelector((state) => state.users.user);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     let shoppingListId = input.shoppingListId;
 
     if (!shoppingListId || shoppingListId === various.noShoppingList)
-      shoppingListId = null;
+      shoppingListId = defaultShoppingListId;
 
     const result = await dispatch(
       createShoppingListItem({
