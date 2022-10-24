@@ -23,7 +23,7 @@ const ShoppingLists = () => {
     sortListsByName,
   } = useShoppingLists();
 
-  if (!shoppingListItems?.length)
+  if (!shoppingListItems?.length && shoppingLists.length === 1) {
     return (
       <PageContainer>
         <RefreshListsAndItems />
@@ -32,6 +32,7 @@ const ShoppingLists = () => {
         </p>
       </PageContainer>
     );
+  }
 
   return (
     <PageContainer>
