@@ -47,7 +47,7 @@ const useCreateProduct = ({
     ).unwrap();
 
     if (!dontNavigateToProduct && result?.productId) {
-      if (result?.storageId)
+      if (result.storageId !== defaultStorageId)
         navigate(`/storages/${result.storageId}#${result.productId}`);
       else navigate(`/products#${result.productId}`);
     }
