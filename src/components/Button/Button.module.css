@@ -172,7 +172,7 @@
 .button.loading[data-dark-theme="true"]:hover,
 .button.loading[data-dark-theme="true"]:active {
   cursor: default;
-  background-color: var(--clr-gray4);
+  background-color: var(--clr-gray5);
 }
 
 .button:disabled *,
