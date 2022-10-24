@@ -67,11 +67,12 @@ export const deleteStorage = createAsyncThunk(
 export const getStorageUsers = createAsyncThunk(
   "storages/getStorageUsers",
   async (storageId, { rejectWithValue }) => {
-    const response = await api.storages.getUsers(storageId);
-
-    if (response.data) return { storageId, users: response.data };
-
-    return rejectWithValue(response.message);
+    try {
+      const response = await api.storages.getUsers(storageId);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data?.message);
+    }
   }
 );
 
