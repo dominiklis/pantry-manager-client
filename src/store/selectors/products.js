@@ -116,6 +116,21 @@ export const makeSelectProducts = () =>
           );
         });
       }
+      // or only fresh products
+      else if (filterBy === filterProductsBy.fresh) {
+        const today = getToday();
+
+        results = results.filter((id) => {
+          const productExpirationtDate = new Date(
+            products.byId[id].expirationDate
+          );
+
+          return (
+            productExpirationtDate.getTime() >= today.getTime() ||
+            !products.byId[id].expirationDate
+          );
+        });
+      }
 
       // filter products by name
       if (search) {

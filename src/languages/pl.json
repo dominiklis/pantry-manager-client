@@ -80,7 +80,7 @@
     "header": "Produkty bez przypisanego magazynu"
   },
 
-  "ToolBar": {
+  "Toolbar": {
     "highlight": "podświetl:",
     "filter": "filtruj:",
     "name": "Nazwa",
@@ -89,6 +89,7 @@
     "closeToExpiry": "Bliskie wygaśnięciu",
     "all": "Wszystkie",
     "expired": "Przeterminowane",
+    "fresh": "Ważne",
     "showAll": "Pokaż wszystkie"
   },
 

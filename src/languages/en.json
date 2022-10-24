@@ -80,7 +80,7 @@
     "header": "Products without storage"
   },
 
-  "ToolBar": {
+  "Toolbar": {
     "highlight": "highlight:",
     "filter": "filter:",
     "name": "Name",
@@ -89,6 +89,7 @@
     "closeToExpiry": "Close to expiry",
     "all": "All",
     "expired": "Expired",
+    "fresh": "Fresh",
     "showAll": "Show all"
   },
 

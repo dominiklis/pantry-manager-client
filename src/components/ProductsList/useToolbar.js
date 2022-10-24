@@ -63,6 +63,10 @@ const useToolbar = ({ componentName }) => {
       filterProductsBy.expired,
       <Translate section={componentName} text="expired" />
     ),
+    new SelectOption(
+      filterProductsBy.fresh,
+      <Translate section={componentName} text="fresh" />
+    ),
   ];
 
   return { orderByOptions, highlightOptions, filterOptions };

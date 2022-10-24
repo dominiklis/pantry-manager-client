@@ -3,7 +3,7 @@ import { useToolbar } from "components/ProductsList";
 import React from "react";
 import styles from "./Toolbar.module.css";
 
-const componentName = "ToolBar";
+const componentName = "Toolbar";
 
 const Toolbar = ({
   sortBy,
