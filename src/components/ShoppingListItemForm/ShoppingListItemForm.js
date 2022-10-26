@@ -14,6 +14,7 @@ const ShoppingListItemForm = ({
   loading,
   onSubmit,
   submitButtonText,
+  disableShiftingDropdownToTheRight,
 }) => {
   const handleChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -55,6 +56,7 @@ const ShoppingListItemForm = ({
         label={<Translate section={componentName} text="shoppingListLabel" />}
         selectedShoppingList={input.shoppingListId}
         onChange={handleShoppingListChange}
+        disableShiftingToTheRight={disableShiftingDropdownToTheRight}
       />
 
       <div className={styles.submitButtonWrapper}>

@@ -7,6 +7,10 @@
   position: relative;
 }
 
+.justifyToTheLeft {
+  justify-content: flex-start;
+}
+
 @media screen and (min-width: 920px) {
   .container {
     gap: 8px;

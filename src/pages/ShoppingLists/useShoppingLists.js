@@ -1,7 +1,7 @@
-import { createOverlay } from "constantStrings";
+import { createMenuTabs } from "constantStrings";
 import { useEffect, useMemo } from "react";
 import { useDispatch } from "react-redux";
-import { setCreateOverlay, setShoppingListsSortListsBy } from "store/actions";
+import { setCreateMenu, setShoppingListsSortListsBy } from "store/actions";
 import { useSelector } from "react-redux";
 import { makeSelectShoppingLists } from "store/selectors";
 import { useScrollToElement } from "hooks";
@@ -28,8 +28,8 @@ const useShoppingLists = () => {
 
   useEffect(() => {
     dispatch(
-      setCreateOverlay({
-        selectedTab: createOverlay.tabs.createShoppingList,
+      setCreateMenu({
+        selectedTab: createMenuTabs.createShoppingList,
       })
     );
   }, [dispatch]);

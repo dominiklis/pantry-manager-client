@@ -10,23 +10,29 @@ const Select = ({
   selectedValue,
   onChange,
   hideOnClick,
+  showButtonBorder,
+  disableShiftingToTheRight,
 }) => {
-  const darkTheme = useIsDarkTheme();
+  const isDarkTheme = useIsDarkTheme();
 
   if (!options || !Array.isArray(options)) return null;
 
   return (
     <Dropdown
+      disableShiftingToTheRight={disableShiftingToTheRight}
       hideOnClick={hideOnClick}
       dropdownButton={
         <Button
           type="button"
           additionalStyles={buttonStyles}
-          backgroundColor={componentColors.transparent}
+          backgroundColor={
+            isDarkTheme ? componentColors.transparent : componentColors.white
+          }
           size={componentSizes.small}
           icon={
             options.filter((option) => option.value === selectedValue)[0]?.icon
           }
+          showBorder={showButtonBorder}
         >
           {options.filter((option) => option.value === selectedValue)[0]?.label}
         </Button>
@@ -37,7 +43,7 @@ const Select = ({
             <li
               key={index}
               className={styles.listItem}
-              data-dark-theme={darkTheme}
+              data-dark-theme={isDarkTheme}
             >
               <Button
                 type="button"

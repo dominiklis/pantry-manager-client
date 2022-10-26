@@ -1,7 +1,7 @@
 import { useScrollToElement } from "hooks";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setCreateOverlay } from "store/actions";
+import { setCreateMenu } from "store/actions";
 
 const useHome = () => {
   const products = useSelector((state) => state.products.allIds);
@@ -11,7 +11,7 @@ const useHome = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setCreateOverlay());
+    dispatch(setCreateMenu());
   }, [dispatch]);
 
   const {

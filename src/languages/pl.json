@@ -148,7 +148,7 @@
     "noShoppingListOption": "brak listy"
   },
 
-  "CreateOverlay": {
+  "CreateMenu": {
     "header": "Utwórz",
     "createProductButtonText": "Produkt",
     "createStorageButtonText": "Magazyn",
@@ -448,7 +448,7 @@
     "noItemsInfo": "Brak pozycji do kupienia do wyświetlenia."
   },
 
-  "UploadOverlay": {
+  "UploadMenu": {
     "header": "Importowanie",
     "fileTypeError": "nieprawidłowy typ pliku, dopuszczalne są jedynie pliki .csv i .json",
     "fileSizeError": "maksymalny dopuszczalny rozmiar pliku to 2MB",

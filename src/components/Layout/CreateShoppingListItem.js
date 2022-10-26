@@ -4,7 +4,10 @@ import React from "react";
 
 const componentName = "CreateShoppingListItem";
 
-const CreateShoppingListItem = ({ selectedList }) => {
+const CreateShoppingListItem = ({
+  selectedList,
+  disableShiftingDropdownToTheRight,
+}) => {
   const { input, setInput, errors, setErrors, loading, handleSubmit } =
     useCreateShoppingListItem({
       componentName,
@@ -22,6 +25,7 @@ const CreateShoppingListItem = ({ selectedList }) => {
       submitButtonText={
         <Translate section={componentName} text="submitButtonText" />
       }
+      disableShiftingDropdownToTheRight={disableShiftingDropdownToTheRight}
     />
   );
 };

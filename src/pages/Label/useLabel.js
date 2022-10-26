@@ -11,7 +11,7 @@ import {
   addToast,
   deleteLabel,
   deleteLabelInProducts,
-  setCreateOverlay,
+  setCreateMenu,
 } from "store/actions";
 import { makeSelectLabelsDetails } from "store/selectors";
 
@@ -66,7 +66,7 @@ const useLabel = ({ componentName }) => {
 
   useEffect(() => {
     dispatch(
-      setCreateOverlay({
+      setCreateMenu({
         labelId: label.labelId,
       })
     );

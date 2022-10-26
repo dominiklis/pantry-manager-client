@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./Actions.module.css";
 
-const useActions = ({ className, initialValue }) => {
+const useActions = ({ className, initialValue, buttonsJustifiedToTheLeft }) => {
   const [selectedAction, setSelectedAction] = useState(initialValue ?? -1);
 
   const handleCloseAction = () => {
@@ -16,6 +16,7 @@ const useActions = ({ className, initialValue }) => {
     let res = styles.container;
 
     if (className) res += ` ${className}`;
+    if (buttonsJustifiedToTheLeft) res += ` ${styles.justifyToTheLeft}`;
 
     return res;
   };

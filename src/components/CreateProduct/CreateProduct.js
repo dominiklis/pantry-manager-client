@@ -9,6 +9,7 @@ const CreateProduct = ({
   dontNavigateToProduct,
   selectedStorage,
   selectedLabel,
+  disableShiftingDropdownToTheRight,
 }) => {
   const { loading, input, setInput, setErrors, errors, handleSubmit } =
     useCreateProduct({
@@ -30,6 +31,7 @@ const CreateProduct = ({
         <Translate section={componentName} text="submitButton" />
       }
       loading={loading}
+      disableShiftingDropdownToTheRight={disableShiftingDropdownToTheRight}
     />
   );
 };

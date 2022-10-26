@@ -17,6 +17,7 @@ const Button = ({
   onClick,
   size,
   iconButton,
+  showBorder,
 }) => {
   const darkTheme = useIsDarkTheme();
 
@@ -38,6 +39,9 @@ const Button = ({
       case componentColors.transparent:
         res += ` ${styles.transparent}`;
         break;
+      case componentColors.white:
+        res += ` ${styles.white}`;
+        break;
       default:
         break;
     }
@@ -55,6 +59,7 @@ const Button = ({
     }
 
     if (iconButton) res += ` ${styles.iconButton}`;
+    if (showBorder) res += ` ${styles.border}`;
 
     return res;
   };

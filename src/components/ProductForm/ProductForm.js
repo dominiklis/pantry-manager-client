@@ -15,6 +15,7 @@ const ProductForm = ({
   setErrors,
   submitButtonText,
   loading,
+  disableShiftingDropdownToTheRight,
 }) => {
   const handleChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -76,6 +77,7 @@ const ProductForm = ({
         label={<Translate section={componentName} text="selectStorageLabel" />}
         selectedStorage={input.storageId}
         onChange={handleStorageChange}
+        disableShiftingToTheRight={disableShiftingDropdownToTheRight}
       />
 
       <SelectLabels

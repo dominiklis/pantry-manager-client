@@ -1,11 +1,45 @@
 .container {
-  width: 100%;
-  height: 100%;
+  padding: 0;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  height: var(--topbar-height);
+}
+
+.searchForm {
+  display: none;
+}
+
+.appName {
   display: flex;
   align-items: center;
-  justify-content: right;
-  padding: 8px;
-  max-width: var(--max-content-width);
-  width: 100%;
-  margin: 0 auto;
+  justify-content: center;
+  height: var(--topbar-height);
+}
+
+.appName[data-dark-theme] {
+  background-color: var(--clr-gray6);
+}
+
+@media screen and (min-width: 650px) {
+  .container {
+    padding: 8px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }
+
+  .searchForm {
+    display: block;
+    min-width: 320px;
+  }
+
+  .appName {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .container {
+    max-width: unset;
+  }
 }

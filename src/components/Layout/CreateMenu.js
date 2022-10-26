@@ -3,27 +3,27 @@ import {
   CreateLabel,
   CreateShoppingList,
   CreateStorage,
-  Overlay,
   CreateShoppingListItem,
-  useCreateOverlay,
+  Menu,
+  useCreateMenu,
 } from "components/Layout";
+import { screenSizesModes } from "constantStrings";
 import React from "react";
 import { IoAdd } from "react-icons/io5";
 import { ActionWtihButton } from "utils";
 
-const componentName = "CreateOverlay";
+const componentName = "CreateMenu";
 
-const CreateOverlay = React.forwardRef(({ onHideButtonClick }, ref) => {
-  const { initialAction, storageId, labelId, shoppingListId } =
-    useCreateOverlay();
+const CreateMenu = ({ toggleMenu, screenSize }) => {
+  const { initialAction, storageId, labelId, shoppingListId } = useCreateMenu();
 
   return (
-    <Overlay
+    <Menu
+      toggleMenu={toggleMenu}
       header={<Translate section={componentName} text="header" />}
-      onHideButtonClick={onHideButtonClick}
-      ref={ref}
     >
       <Actions
+        buttonsJustifiedToTheLeft={screenSize === screenSizesModes.wide}
         initialValue={initialAction}
         actions={[
           new ActionWtihButton(
@@ -32,6 +32,9 @@ const CreateOverlay = React.forwardRef(({ onHideButtonClick }, ref) => {
               <CreateProduct
                 selectedStorage={storageId}
                 selectedLabel={labelId}
+                disableShiftingDropdownToTheRight={
+                  screenSize === screenSizesModes.wide
+                }
               />
             ),
             (
@@ -82,7 +85,12 @@ const CreateOverlay = React.forwardRef(({ onHideButtonClick }, ref) => {
                 text="createShoppingListItemHeader"
               />
             ),
-            <CreateShoppingListItem selectedList={shoppingListId} />,
+            (
+              <CreateShoppingListItem
+                selectedList={shoppingListId}
+                disableShiftingDropdownToTheRight
+              />
+            ),
             (
               <Translate
                 section={componentName}
@@ -93,8 +101,8 @@ const CreateOverlay = React.forwardRef(({ onHideButtonClick }, ref) => {
           ),
         ]}
       />
-    </Overlay>
+    </Menu>
   );
-});
+};
 
-export default CreateOverlay;
+export default CreateMenu;

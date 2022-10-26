@@ -7,10 +7,9 @@ import {
   toggleTheme,
   setGetSettingsLoading,
   setSearch,
-  showCreateOverlay,
-  hideCreateOverlay,
-  setCreateOverlay,
-  setUploadOverlay,
+  hideMenus,
+  setCreateMenu,
+  setUploadMenu,
 } from "./slices/app/slice";
 import { setSettings, updateSettings } from "./slices/app/extraReducers";
 import { clearErrors, logoutUser } from "./slices/users/slice";
@@ -112,10 +111,9 @@ export {
   setSettings,
   updateSettings,
   setSearch,
-  showCreateOverlay,
-  hideCreateOverlay,
-  setCreateOverlay,
-  setUploadOverlay,
+  hideMenus,
+  setCreateMenu,
+  setUploadMenu,
 
   // users actions
   loginUser,

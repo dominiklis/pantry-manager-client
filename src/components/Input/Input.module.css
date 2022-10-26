@@ -18,7 +18,7 @@ label {
   outline: none;
   transition: 0.2s ease-in;
   transition-property: border-color;
-  background-color: transparent;
+  background-color: var(--clr-gray7);
 }
 
 /* focused input styles */

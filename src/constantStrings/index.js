@@ -13,7 +13,9 @@ import storageColors from "constantStrings/storageColors";
 import displayAs from "constantStrings/displayAs";
 import highlightProducts from "constantStrings/highlightProducts";
 import sortByValues from "constantStrings/sortByValues";
-import createOverlay from "constantStrings/createOverlay";
+import createMenuTabs from "constantStrings/createMenuTabs";
+import screenSizes from "constantStrings/screenSizes";
+import screenSizesModes from "constantStrings/screenSizesModes";
 
 export {
   localStorageKeys,
@@ -31,5 +33,7 @@ export {
   displayAs,
   highlightProducts,
   sortByValues,
-  createOverlay,
+  createMenuTabs,
+  screenSizes,
+  screenSizesModes,
 };

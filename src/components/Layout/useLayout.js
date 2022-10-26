@@ -1,57 +1,86 @@
-import { various } from "constantStrings";
-import { useIsDarkTheme } from "hooks";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  hideCreateOverlay,
-  setUploadOverlay,
-  showCreateOverlay,
-} from "store/actions";
+import { hideMenus, setCreateMenu } from "store/actions";
+import { useIsDarkTheme } from "hooks";
+import { screenSizes, screenSizesModes, various } from "constantStrings";
 
 const useLayout = () => {
-  const darkTheme = useIsDarkTheme();
+  const isDarkTheme = useIsDarkTheme();
   const { user } = useSelector((state) => state.users);
 
-  const [hidden, setHidden] = useState(false);
-  const handleHideMenu = () => setHidden(true);
-  const handleOpenMenu = () => setHidden(false);
+  const [screenSize, setScreenSize] = useState(screenSizesModes.mobile);
+
+  const handleResize = useCallback(() => {
+    if (
+      window.innerWidth <= screenSizes.mobileMaxWidth &&
+      screenSize !== screenSizesModes.mobile
+    ) {
+      setScreenSize(screenSizesModes.mobile);
+    } else if (
+      window.innerWidth > screenSizes.mobileMaxWidth &&
+      window.innerWidth <= screenSizes.smallScreenMaxWidth &&
+      screenSize !== screenSizesModes.narrow
+    ) {
+      setScreenSize(screenSizesModes.narrow);
+    } else if (
+      window.innerWidth > screenSizes.smallScreenMaxWidth &&
+      screenSize !== screenSizesModes.wide
+    ) {
+      setScreenSize(screenSizesModes.wide);
+    }
+  }, [screenSize]);
+
+  useEffect(() => {
+    handleResize();
+  }, [handleResize]);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
 
   const dispatch = useDispatch();
 
-  const { isVisible: isCreateOverlayVisible } = useSelector(
-    (state) => state.app.createOverlay
+  const { isVisible: isCreateMenuVisible } = useSelector(
+    (state) => state.app.createMenu
+  );
+  const { isVisible: isUploadMenuVisible } = useSelector(
+    (state) => state.app.uploadMenu
   );
 
-  const { isVisible: isUploadOverlayVisible } = useSelector(
-    (state) => state.app.uploadOverlay
-  );
-
-  const handleShowCreateOverlay = () => dispatch(showCreateOverlay());
-  const handleHideCreateOverlay = () => dispatch(hideCreateOverlay());
-
-  const handleHideUploadOverlay = () =>
-    dispatch(setUploadOverlay({ isVisible: false }));
-
-  const createOverlayRef = useRef(null);
-  const uploadOverlayRef = useRef(null);
+  const sideMenuRef = useRef(null);
+  const [showSideMenu, setShowSideMenu] = useState(false);
+  const toggleSideMenu = () => {
+    setShowSideMenu((prev) => !prev);
+  };
 
   useEffect(() => {
-    if (window.innerWidth <= various.smallScreen) setHidden(true);
+    if (window.innerWidth <= various.smallScreen) setShowSideMenu(false);
   }, []);
+
+  const createAndUploadMenuRef = useRef(null);
+  const hideCreateAndUploadMenu = () => {
+    dispatch(hideMenus());
+  };
+  const showCreateAndUploadMenu = () => {
+    dispatch(setCreateMenu({ isVisible: true }));
+  };
 
   return {
     user,
-    darkTheme,
-    hidden,
-    handleHideMenu,
-    handleOpenMenu,
-    createOverlayRef,
-    uploadOverlayRef,
-    isCreateOverlayVisible,
-    isUploadOverlayVisible,
-    handleShowCreateOverlay,
-    handleHideCreateOverlay,
-    handleHideUploadOverlay,
+    isDarkTheme,
+    sideMenuRef,
+    showSideMenu,
+    screenSize,
+    toggleSideMenu,
+    createAndUploadMenuRef,
+    isCreateMenuVisible,
+    isUploadMenuVisible,
+    hideCreateAndUploadMenu,
+    showCreateAndUploadMenu,
   };
 };
 

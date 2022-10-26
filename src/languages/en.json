@@ -148,7 +148,7 @@
     "noShoppingListOption": "no shopping list"
   },
 
-  "CreateOverlay": {
+  "CreateMenu": {
     "header": "Create",
     "createProductButtonText": "Product",
     "createStorageButtonText": "Storage",
@@ -448,7 +448,7 @@
     "noItemsInfo": "No items to display."
   },
 
-  "UploadOverlay": {
+  "UploadMenu": {
     "header": "Upload",
     "fileTypeError": "invalid file type, only .csv and .json files are allowed",
     "fileSizeError": "the maximum acceptable file size is 2MB",

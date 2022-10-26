@@ -1,11 +1,19 @@
 import React from "react";
 import styles from "./Topbar.module.css";
-import { SearchForm } from "components/Layout";
+import { AppName, SearchForm } from "components/Layout";
+import { useIsDarkTheme } from "hooks";
 
 const Topbar = () => {
+  const isDarkTheme = useIsDarkTheme();
+
   return (
     <div className={styles.container}>
-      <SearchForm />
+      <div className={styles.appName} data-dark-theme={isDarkTheme}>
+        <AppName />
+      </div>
+      <div className={styles.searchForm}>
+        <SearchForm />
+      </div>
     </div>
   );
 };

@@ -7,3 +7,4 @@ export { default as useGetSearch } from "./useGetSearch";
 export { default as useWindowSize } from "./useWindowSize";
 export { default as useIsSmallScreen } from "./useIsSmallScreen";
 export { default as useControlledActions } from "./useControlledActions";
+export { default as useIsWideScreen } from "./useIsWideScreen";

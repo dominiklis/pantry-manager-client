@@ -5,6 +5,7 @@ import { useActions } from "components/Actions";
 
 const Actions = ({
   className,
+  buttonsJustifiedToTheLeft,
   initialValue,
   additionalButtonsBefore,
   additionalButtonsAfter,
@@ -19,6 +20,7 @@ const Actions = ({
   } = useActions({
     initialValue,
     className,
+    buttonsJustifiedToTheLeft,
   });
 
   return (

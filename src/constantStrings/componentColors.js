@@ -4,6 +4,7 @@ const componentColors = {
   warning: "warning",
   error: "error",
   transparent: "transparent",
+  white: "white",
 };
 
 export default componentColors;

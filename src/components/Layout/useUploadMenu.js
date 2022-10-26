@@ -1,8 +1,9 @@
 import { Translate } from "components";
 import { useIsDarkTheme } from "hooks";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createCollectionOfProducts } from "store/actions";
+import { useLocation } from "react-router-dom";
+import { createCollectionOfProducts, hideMenus } from "store/actions";
 
 const handleJson = (text, storageId) => {
   const json = JSON.parse(text);
@@ -58,13 +59,13 @@ const handleCSV = (text, storageId) => {
   return products.filter((product) => product.productName);
 };
 
-const useUploadOverlay = ({ componentName, onHideButtonClick }) => {
+const useUploadMenu = ({ componentName, toggleMenu }) => {
   const darkTheme = useIsDarkTheme();
 
   const [products, setProducts] = useState([]);
   const [error, setError] = useState("");
 
-  const { storageId } = useSelector((state) => state.app.uploadOverlay);
+  const { storageId } = useSelector((state) => state.app.uploadMenu);
 
   const handleChange = (e) => {
     const file = e.target.files[0];
@@ -116,10 +117,20 @@ const useUploadOverlay = ({ componentName, onHideButtonClick }) => {
       )
     ).unwrap();
 
-    onHideButtonClick();
+    toggleMenu();
   };
 
   const { create: loading } = useSelector((state) => state.products.loading);
+
+  const { uploadMenu } = useSelector((state) => state.app);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname !== `/storages/${uploadMenu.storageId}`) {
+      dispatch(hideMenus());
+    }
+  }, [dispatch, location, uploadMenu.storageId]);
 
   return {
     products,
@@ -132,4 +143,4 @@ const useUploadOverlay = ({ componentName, onHideButtonClick }) => {
   };
 };
 
-export default useUploadOverlay;
+export default useUploadMenu;

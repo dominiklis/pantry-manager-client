@@ -10,6 +10,7 @@ const Dropdown = ({
   dropdownButton,
   dropdownContent,
   hideOnClick,
+  disableShiftingToTheRight,
 }) => {
   const {
     darkTheme,
@@ -21,7 +22,7 @@ const Dropdown = ({
     getContainerStyles,
     getBackdropStyles,
     getContentStyles,
-  } = useDropdown({ className, visibleBackdrop });
+  } = useDropdown({ className, visibleBackdrop, disableShiftingToTheRight });
 
   return (
     <div

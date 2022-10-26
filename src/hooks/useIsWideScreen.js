@@ -1,10 +1,10 @@
 import { screenSizes } from "constantStrings";
 import { useWindowSize } from "hooks";
 
-const useIsSmallScreen = () => {
+const useIsWideScreen = () => {
   const windowSize = useWindowSize();
 
-  return windowSize.width <= screenSizes.mobileMaxWidth;
+  return windowSize.width > screenSizes.smallScreenMaxWidth;
 };
 
-export default useIsSmallScreen;
+export default useIsWideScreen;

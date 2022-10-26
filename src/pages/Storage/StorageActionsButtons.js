@@ -17,7 +17,7 @@ import {
   IoTrash,
 } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
-import { setUploadOverlay } from "store/actions";
+import { setUploadMenu } from "store/actions";
 
 const componentName = "StorageActionsButtons";
 
@@ -33,7 +33,7 @@ const StorageActionsButtons = ({
   const dispatch = useDispatch();
 
   const handleUploadButton = () => {
-    dispatch(setUploadOverlay({ isVisible: true }));
+    dispatch(setUploadMenu({ isVisible: true }));
   };
 
   const { userId } = useSelector((state) => state.users.user);

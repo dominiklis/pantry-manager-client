@@ -6,7 +6,12 @@ import styles from "./SelectStorage.module.css";
 
 const componentName = "SelectStorage";
 
-const SelectStorage = ({ onChange, selectedStorage, label }) => {
+const SelectStorage = ({
+  onChange,
+  selectedStorage,
+  label,
+  disableShiftingToTheRight,
+}) => {
   const { selectStorageOptions } = useSelectStorage({ componentName });
 
   return (
@@ -19,6 +24,8 @@ const SelectStorage = ({ onChange, selectedStorage, label }) => {
         onChange={onChange}
         listStyles={styles.selectStorageList}
         buttonStyles={styles.buttonStyles}
+        showButtonBorder
+        disableShiftingToTheRight={disableShiftingToTheRight}
       />
     </div>
   );

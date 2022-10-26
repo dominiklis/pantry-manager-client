@@ -7,7 +7,7 @@ import { useHandleProductsList, useScrollToElement } from "hooks";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  setCreateOverlay,
+  setCreateMenu,
   setProductsFilterProducts,
   setProductsHighlightProducts,
   setProductsSortProductsBy,
@@ -19,7 +19,7 @@ const Products = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setCreateOverlay());
+    dispatch(setCreateMenu());
   }, [dispatch]);
 
   const { sortProductsBy, highlightProducts, filterProducts } = useSelector(

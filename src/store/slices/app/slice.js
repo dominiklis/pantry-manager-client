@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
-  createOverlay,
+  createMenuTabs,
   languages,
   localStorageKeys,
   themes,
@@ -21,13 +21,13 @@ const initialState = {
     updateSettings: false,
   },
   search: "",
-  createOverlay: {
+  createMenu: {
     isVisible: false,
-    selectedTab: createOverlay.tabs.createProduct,
+    selectedTab: createMenuTabs.createProduct,
     storageId: various.noStorage,
     labelId: null,
   },
-  uploadOverlay: {
+  uploadMenu: {
     isVisible: false,
     storageId: various.noStorage,
   },
@@ -78,38 +78,35 @@ const appSlice = createSlice({
       state.search = action.payload;
     },
 
-    showCreateOverlay: (state) => {
-      state.createOverlay.isVisible = true;
+    hideMenus: (state) => {
+      state.createMenu.isVisible = false;
+      state.uploadMenu.isVisible = false;
     },
 
-    hideCreateOverlay: (state) => {
-      state.createOverlay.isVisible = false;
-    },
-
-    setCreateOverlay: (state, action) => {
+    setCreateMenu: (state, action) => {
       if (!action.payload) action.payload = {};
 
       const { isVisible, selectedTab, storageId, labelId, shoppingListId } =
         action.payload;
       if (isVisible === true || isVisible === false)
-        state.createOverlay.isVisible = isVisible;
+        state.createMenu.isVisible = isVisible;
 
-      state.createOverlay.selectedTab =
-        selectedTab ?? createOverlay.tabs.createProduct;
-      state.createOverlay.storageId = storageId ?? various.noStorage;
-      state.createOverlay.labelId = labelId ?? null;
-      state.createOverlay.shoppingListId =
+      state.createMenu.selectedTab =
+        selectedTab ?? createMenuTabs.createProduct;
+      state.createMenu.storageId = storageId ?? various.noStorage;
+      state.createMenu.labelId = labelId ?? null;
+      state.createMenu.shoppingListId =
         shoppingListId ?? various.noShoppingList;
     },
 
-    setUploadOverlay: (state, action) => {
+    setUploadMenu: (state, action) => {
       const { isVisible, storageId } = action.payload;
 
       if (isVisible === true || isVisible === false)
-        state.uploadOverlay.isVisible = isVisible;
+        state.uploadMenu.isVisible = isVisible;
 
       if (storageId && storageId !== various.noStorage)
-        state.uploadOverlay.storageId = storageId;
+        state.uploadMenu.storageId = storageId;
     },
   },
   extraReducers: (builder) =>
@@ -152,8 +149,7 @@ export const {
   toggleTheme,
   setGetSettingsLoading,
   setSearch,
-  showCreateOverlay,
-  hideCreateOverlay,
-  setCreateOverlay,
-  setUploadOverlay,
+  hideMenus,
+  setCreateMenu,
+  setUploadMenu,
 } = appSlice.actions;

@@ -1,27 +1,18 @@
 .container {
-  z-index: 9999;
+  --menu-item-height: 48px;
+
   height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  transition: 0.2s ease-in-out;
-  transition-property: left;
   background-color: var(--clr-gray7);
-  display: flex;
-  --clr-width: 200px;
+  overflow: auto;
 }
 
 .container[data-dark-theme="true"] {
   background-color: var(--clr-gray6);
 }
 
-.container.hidden {
-  left: -100%;
-}
-
 .hideButton {
   display: block;
-  height: var(--menu-item-height);
+  height: var(--topbar-height);
   width: 100%;
   font-size: 20px;
   border: none;
@@ -45,16 +36,23 @@
   color: var(--clr-prim2);
 }
 
-.sidebarItem {
-  height: var(--menu-item-height);
-  transition: 0.2s ease-in;
-  transition-property: background-color;
-  border-left: 4px solid transparent;
+.appName {
+  display: none;
+}
+
+.menuItemsList {
+  border-top: 1px solid var(--clr-gray7);
 }
 
 .searchItem {
-  padding: 0 8px;
+  padding: 8px;
   display: block;
+}
+
+.sidebarItem {
+  height: var(--menu-item-height);
+  transition: 0.2s ease-in;
+  border-left: 4px solid transparent;
 }
 
 .sidebarItem > button,
@@ -126,67 +124,29 @@
   color: var(--clr-war1);
 }
 
-.hideOnMobile {
-  display: none;
-}
-
-.content {
-  width: var(--clr-width);
-  z-index: 2;
-}
-
-.backdrop {
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: var(--clr-width);
-  right: 0;
-  transition: 0.2s ease-in-out;
-  transition-property: left, right;
-  background-color: rgba(1, 1, 1, 0.5);
-}
-
-.backdrop.hidden {
-  left: 0;
-  right: 100%;
-}
-
 @media screen and (min-width: 650px) {
-  .container {
-    position: static;
-    height: calc(100vh - var(--menu-top-row-heigh));
-    height: 100%;
-    z-index: 1;
+  .hideButton {
+    display: none;
   }
 
-  .container.hidden {
-    left: 0;
-  }
-
-  .content {
-    position: fixed;
-    top: 64px;
-    height: 100%;
-  }
-
-  .content[data-dark-theme="true"] {
-    background-color: var(--clr-gray6);
+  .appName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--topbar-height);
   }
 
   .searchItem {
     display: none;
   }
+}
 
-  .hideButton {
-    display: none;
-  }
+@media screen and (min-width: 1800px) {
+  .container {
+    --menu-item-height: 54px;
 
-  .backdrop {
-    display: none;
-  }
-
-  .hideOnMobile {
-    display: flex;
+    background-color: var(--clr-gray6);
+    height: auto;
+    border-radius: 16px;
   }
 }

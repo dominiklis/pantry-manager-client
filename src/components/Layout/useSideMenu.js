@@ -1,4 +1,5 @@
 import { Translate } from "components";
+import { useIsDarkTheme } from "hooks";
 import { useMemo } from "react";
 import {
   IoAlbumsOutline,
@@ -9,10 +10,15 @@ import {
   IoSettingsSharp,
 } from "react-icons/io5";
 import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 import { logoutUser } from "store/actions";
-import styles from "./Sidebar.module.css";
+import styles from "./SideMenu.module.css";
 
-const useSidebar = ({ componentName, hidden, pathname }) => {
+const useSidebar = ({ componentName }) => {
+  const darkTheme = useIsDarkTheme();
+
+  let location = useLocation();
+
   const items = useMemo(() => {
     return [
       {
@@ -48,26 +54,10 @@ const useSidebar = ({ componentName, hidden, pathname }) => {
     ];
   }, [componentName]);
 
-  const getContainerStyles = () => {
-    let res = styles.container;
-
-    if (hidden) res += ` ${styles.hidden}`;
-
-    return res;
-  };
-
-  const getBackdropStyles = () => {
-    let res = styles.backdrop;
-
-    if (hidden) res += ` ${styles.hidden}`;
-
-    return res;
-  };
-
   const getItemStyles = (path) => {
     let res = styles.sidebarItem;
 
-    if (pathname.split("/")[1] === path?.split("/")[1]) {
+    if (location.pathname.split("/")[1] === path?.split("/")[1]) {
       res += ` ${styles.sidebarItemSelected}`;
     }
 
@@ -78,13 +68,7 @@ const useSidebar = ({ componentName, hidden, pathname }) => {
 
   const handleLogout = async () => await dispatch(logoutUser());
 
-  return {
-    items,
-    getContainerStyles,
-    getBackdropStyles,
-    getItemStyles,
-    handleLogout,
-  };
+  return { darkTheme, items, getItemStyles, handleLogout };
 };
 
 export default useSidebar;

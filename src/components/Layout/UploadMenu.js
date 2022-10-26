@@ -1,17 +1,13 @@
 import { Button, Translate } from "components";
-import {
-  Overlay,
-  UploadProductCard,
-  useUploadOverlay,
-} from "components/Layout";
+import { Menu, UploadProductCard, useUploadMenu } from "components/Layout";
 import { componentColors, componentSizes } from "constantStrings";
 import React from "react";
 import { IoSend } from "react-icons/io5";
-import styles from "./UploadOverlay.module.css";
+import styles from "./UploadMenu.module.css";
 
-const componentName = "UploadOverlay";
+const componentName = "UploadMenu";
 
-const UploadOverlay = React.forwardRef(({ onHideButtonClick }, ref) => {
+const UploadMenu = ({ toggleMenu, isWideScreen }) => {
   const {
     products,
     setProducts,
@@ -20,16 +16,16 @@ const UploadOverlay = React.forwardRef(({ onHideButtonClick }, ref) => {
     handleChange,
     handleSubmitProducts,
     loading,
-  } = useUploadOverlay({
+  } = useUploadMenu({
     componentName,
-    onHideButtonClick,
+    toggleMenu,
   });
 
   return (
-    <Overlay
+    <Menu
+      toggleMenu={toggleMenu}
       header={<Translate section={componentName} text="header" />}
-      onHideButtonClick={onHideButtonClick}
-      ref={ref}
+      closeButton={isWideScreen}
     >
       <>
         <input
@@ -75,8 +71,8 @@ const UploadOverlay = React.forwardRef(({ onHideButtonClick }, ref) => {
           </>
         ) : null}
       </>
-    </Overlay>
+    </Menu>
   );
-});
+};
 
-export default UploadOverlay;
+export default UploadMenu;

@@ -12,6 +12,7 @@ const SelectShoppingList = ({
   label,
   setInput,
   onChange,
+  disableShiftingToTheRight,
 }) => {
   const { selectStorageOptions } = useSelectShoppingList({
     componentName,
@@ -30,6 +31,8 @@ const SelectShoppingList = ({
         onChange={onChange}
         listStyles={styles.selectShoppingListList}
         buttonStyles={styles.buttonStyles}
+        showButtonBorder
+        disableShiftingToTheRight={disableShiftingToTheRight}
       />
     </div>
   );

@@ -1,23 +1,10 @@
-.container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.appName {
   color: var(--clr-prim4);
   font-size: 20px;
   font-weight: 600;
   user-select: none;
 }
 
-.container[data-dark-theme="true"] {
+.appName[data-dark-theme="true"] {
   color: var(--clr-prim2);
-  background-color: var(--clr-gray6);
-}
-
-@media screen and (min-width: 650px) {
-  .container span {
-    position: fixed;
-    z-index: 2;
-  }
 }

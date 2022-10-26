@@ -3,10 +3,10 @@ import {
   RefreshProductsAndStoragesForm,
   StoragesList,
 } from "components";
-import { createOverlay } from "constantStrings";
+import { createMenuTabs } from "constantStrings";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setCreateOverlay } from "store/actions";
+import { setCreateMenu } from "store/actions";
 import {
   setStoragesDisplayStoragesAs,
   setStoragesSortStoragesBy,
@@ -17,8 +17,8 @@ const Storages = () => {
 
   useEffect(() => {
     dispatch(
-      setCreateOverlay({
-        selectedTab: createOverlay.tabs.createStorage,
+      setCreateMenu({
+        selectedTab: createMenuTabs.createStorage,
       })
     );
   }, [dispatch]);
