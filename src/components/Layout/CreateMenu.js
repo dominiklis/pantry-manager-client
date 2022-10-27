@@ -21,6 +21,7 @@ const CreateMenu = ({ toggleMenu, screenSize }) => {
     <Menu
       toggleMenu={toggleMenu}
       header={<Translate section={componentName} text="header" />}
+      closeButton={screenSize === screenSizesModes.wide}
     >
       <Actions
         buttonsJustifiedToTheLeft={screenSize === screenSizesModes.wide}

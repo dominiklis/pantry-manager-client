@@ -12,9 +12,9 @@ import {
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { logoutUser } from "store/actions";
-import styles from "./SideMenu.module.css";
+import styles from "./NavMenu.module.css";
 
-const useSidebar = ({ componentName }) => {
+const useNavMenu = ({ componentName }) => {
   const darkTheme = useIsDarkTheme();
 
   let location = useLocation();
@@ -71,4 +71,4 @@ const useSidebar = ({ componentName }) => {
   return { darkTheme, items, getItemStyles, handleLogout };
 };
 
-export default useSidebar;
+export default useNavMenu;

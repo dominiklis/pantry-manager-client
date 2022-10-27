@@ -63,6 +63,7 @@ const StorageForm = ({
             <Translate section={componentName} text="storageColorLabel" />
           </Label>
           <Dropdown
+            forceShiftingToTheRight
             className={styles.selectColor}
             hideOnClick
             dropdownButton={<ColorButton color={input.color} />}

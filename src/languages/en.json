@@ -41,7 +41,7 @@
     "changeLanguage": "app language:"
   },
 
-  "Sidebar": {
+  "NavMenu": {
     "create": "Create",
     "myPantry": "My Pantry",
     "products": "Products",
@@ -471,5 +471,9 @@
 
   "RefreshListsAndItems": {
     "successToastMessage": "shopping lists and items are up to date"
+  },
+
+  "Layout": {
+    "createButton": "Create"
   }
 }

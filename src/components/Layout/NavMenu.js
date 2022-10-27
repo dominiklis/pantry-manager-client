@@ -1,14 +1,14 @@
 import React from "react";
-import styles from "./SideMenu.module.css";
+import styles from "./NavMenu.module.css";
 import { IoClose, IoLogOut } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { Translate } from "components";
-import { AppName, SearchForm, useSideMenu } from "components/Layout";
+import { AppName, SearchForm, useNavMenu } from "components/Layout";
 
-const componentName = "Sidebar";
+const componentName = "NavMenu";
 
-const Sidebar = ({ toggleMenu }) => {
-  const { darkTheme, items, getItemStyles, handleLogout } = useSideMenu({
+const NavMenu = ({ toggleMenu }) => {
+  const { darkTheme, items, getItemStyles, handleLogout } = useNavMenu({
     componentName,
   });
 
@@ -60,4 +60,4 @@ const Sidebar = ({ toggleMenu }) => {
   );
 };
 
-export default Sidebar;
+export default NavMenu;

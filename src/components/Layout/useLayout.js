@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { hideMenus, setCreateMenu } from "store/actions";
+import { hideMenus, setCreateMenu, setUploadMenu } from "store/actions";
 import { useIsDarkTheme } from "hooks";
 import { screenSizes, screenSizesModes, various } from "constantStrings";
 
@@ -67,6 +67,7 @@ const useLayout = () => {
   };
   const showCreateAndUploadMenu = () => {
     dispatch(setCreateMenu({ isVisible: true }));
+    dispatch(setUploadMenu({ isVisible: false }));
   };
 
   return {

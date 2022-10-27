@@ -143,10 +143,19 @@
 
 @media screen and (min-width: 1800px) {
   .container {
-    --menu-item-height: 54px;
-
-    background-color: var(--clr-gray6);
     height: auto;
-    border-radius: 16px;
+    border-radius: 8px;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .container,
+  .container[data-dark-theme="true"] {
+    background-color: transparent;
+  }
+
+  .menuItemsList {
+    background-color: var(--clr-gray6);
+    border-radius: 8px;
   }
 }

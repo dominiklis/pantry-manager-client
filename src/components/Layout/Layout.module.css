@@ -13,25 +13,33 @@
   grid-template-columns: 1fr;
 }
 
+.menus {
+  position: relative;
+  z-index: 1;
+}
+
 .content {
   position: relative;
+  z-index: 0;
   min-height: 100vh;
   max-width: var(--max-content-width);
   width: 100%;
   margin: 0 auto;
-  z-index: 0;
 }
 
-.sideMenu {
+.navMenu {
   position: fixed;
-  height: 100%;
-  width: 100vw;
   z-index: 3;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
 }
 
-.sideMenuBackdrop {
-  z-index: 1;
+.navMenuBackdrop {
   position: fixed;
+  z-index: 1;
   top: 0;
   bottom: 0;
   left: 0;
@@ -39,24 +47,28 @@
   background-color: rgba(1, 1, 1, 0.5);
 }
 
-.sideMenuWrapper {
+.navMenuWrapper {
   position: relative;
   z-index: 2;
   max-width: 250px;
   min-height: 100%;
 }
 
-.sideMenuWrapper > nav {
+.menusWrapper {
   position: sticky;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   top: 0;
 }
 
 .createAndUploadMenu {
   position: fixed;
-  height: 100vh;
-  width: 100vw;
   z-index: 3;
-
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -71,8 +83,8 @@
 }
 
 .createAndUploadMenuBackdrop {
-  z-index: 1;
   position: fixed;
+  z-index: 1;
   width: 100vw;
   height: 100vh;
   background-color: rgba(1, 1, 1, 0.5);
@@ -97,7 +109,17 @@
   z-index: 1;
 }
 
-.floatingButton {
+.createButtonWrapper {
+  height: 10px;
+  max-height: 100px;
+}
+
+.createButtonWrapperHidden {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.createButton {
   position: fixed;
   bottom: 12px;
   right: 12px;
@@ -110,15 +132,15 @@
   }
 
   .wrapper {
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 260px 1fr;
   }
 
-  .sideMenu {
+  .navMenu {
     position: static;
     width: 100%;
   }
 
-  .sideMenuBackdrop {
+  .navMenuBackdrop {
     display: none;
   }
 
@@ -126,7 +148,7 @@
     display: none;
   }
 
-  .floatingButton {
+  .createButton {
     bottom: 24px;
     right: 24px;
   }
@@ -134,9 +156,9 @@
 
 @media screen and (min-width: 1800px) {
   .wrapper {
-    max-width: 1800px;
+    max-width: 1750px;
     margin: 0 auto;
-    grid-template-columns: 2fr 5fr 2fr;
+    grid-template-columns: 2fr 6fr;
     gap: 12px;
   }
 
@@ -145,42 +167,44 @@
     max-width: 100%;
   }
 
+  .menus {
+    position: relative;
+    z-index: 1;
+  }
+
+  .menusWrapper {
+    height: 100vh;
+    overflow: auto;
+  }
+
+  .menusWrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .createButton {
+    position: static;
+    width: 100%;
+  }
+
+  .navMenu {
+    height: auto;
+  }
+
+  .navMenuWrapper {
+    max-width: unset;
+  }
+
   .createAndUploadMenu {
     position: static;
-    height: auto;
-    width: 100%;
-    z-index: 1;
-    background-color: transparent;
   }
 
   .createAndUploadMenuWrapper {
     border-radius: 16px;
-    margin-top: var(--top-menus);
+    margin-top: unset;
+    position: static;
   }
 
   .createAndUploadMenuBackdrop {
     display: none;
-  }
-
-  .floatingButton {
-    display: none;
-  }
-
-  .sideMenuWrapper {
-    max-width: unset;
-  }
-
-  .sideMenuWrapper > nav {
-    top: var(--top-menus);
-  }
-
-  .createAndUploadMenuWrapper {
-    min-height: 100%;
-  }
-
-  .createAndUploadMenuWrapper > div {
-    position: sticky;
-    top: var(--top-menus);
-    border-radius: 16px;
   }
 }

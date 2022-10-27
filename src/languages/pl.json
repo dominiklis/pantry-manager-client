@@ -41,7 +41,7 @@
     "changeLanguage": "język aplikacji:"
   },
 
-  "Sidebar": {
+  "NavMenu": {
     "create": "Utwórz",
     "myPantry": "Moja Spiżarnia",
     "products": "Produkty",
@@ -471,5 +471,9 @@
 
   "RefreshListsAndItems": {
     "successToastMessage": "listy zakupów zostały zaktualizowane"
+  },
+
+  "Layout": {
+    "createButton": "Utwórz"
   }
 }

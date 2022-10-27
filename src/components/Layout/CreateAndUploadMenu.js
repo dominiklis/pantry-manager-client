@@ -25,7 +25,10 @@ const CreateAndUploadMenu = ({ screenSize }) => {
     } else if (isUploadMenuVisible) {
       return <UploadMenu toggleMenu={toggleMenu} />;
     }
-  } else {
+  } else if (
+    screenSize === screenSizesModes.wide &&
+    (isCreateMenuVisible || isUploadMenuVisible)
+  ) {
     return isUploadMenuVisible ? (
       <UploadMenu
         toggleMenu={toggleMenu}

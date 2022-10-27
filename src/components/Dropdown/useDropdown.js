@@ -6,6 +6,7 @@ const useDropdown = ({
   className,
   visibleBackdrop,
   disableShiftingToTheRight,
+  forceShiftingToTheRight,
 }) => {
   const darkTheme = useIsDarkTheme();
 
@@ -48,7 +49,7 @@ const useDropdown = ({
   const getContentStyles = () => {
     let res = styles.content;
 
-    if (!inLeftHalf && !disableShiftingToTheRight)
+    if ((!inLeftHalf || forceShiftingToTheRight) && !disableShiftingToTheRight)
       res += ` ${styles.contentRight}`;
 
     return res;
