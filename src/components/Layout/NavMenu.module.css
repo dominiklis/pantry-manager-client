@@ -146,9 +146,7 @@
     height: auto;
     border-radius: 8px;
   }
-}
 
-@media screen and (min-width: 1800px) {
   .container,
   .container[data-dark-theme="true"] {
     background-color: transparent;
@@ -157,5 +155,10 @@
   .menuItemsList {
     background-color: var(--clr-gray6);
     border-radius: 8px;
+  }
+
+  .sidebarItem:nth-child(2):hover,
+  .sidebarItemSelected:nth-child(2) {
+    border-radius: 8px 8px 0 0;
   }
 }
