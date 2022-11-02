@@ -3,19 +3,19 @@ const storageColors = {
   red: "red",
   pink: "pink",
   purple: "purple",
-  deepPurple: "deepPurple",
+  deepPurple: "deep purple",
   indigo: "indigo",
   blue: "blue",
-  lightBlue: "lightBlue",
+  lightBlue: "light blue",
   cyan: "cyan",
   teal: "teal",
   green: "green",
-  lightGreen: "lightGreen",
+  lightGreen: "light green",
   lime: "lime",
   yellow: "yellow",
   amber: "amber",
   orange: "orange",
-  deepOrange: "deepOrange",
+  deepOrange: "deep orange",
 };
 
 export default storageColors;
