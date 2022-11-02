@@ -17,7 +17,7 @@ const ProductsWithoutStoragesList = ({
   setHighlightDispatchAction,
   setFilterByDispatchAction,
 }) => {
-  const { defaultStorageId } = useSelector((state) => state.users.user);
+  const { defaultStorageId } = useSelector((state) => state.app);
 
   const {
     products,

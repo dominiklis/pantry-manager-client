@@ -11,7 +11,7 @@ import {
   setCreateMenu,
   setUploadMenu,
 } from "./slices/app/slice";
-import { setSettings, updateSettings } from "./slices/app/extraReducers";
+import { getSettings, updateSettings } from "./slices/app/extraReducers";
 import { clearErrors, logoutUser } from "./slices/users/slice";
 import {
   loginUser,
@@ -108,7 +108,7 @@ export {
   setTheme,
   toggleTheme,
   setGetSettingsLoading,
-  setSettings,
+  getSettings,
   updateSettings,
   setSearch,
   hideMenus,

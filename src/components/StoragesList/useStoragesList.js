@@ -6,7 +6,7 @@ import { makeSelectStorages } from "store/selectors";
 import styles from "./StoragesList.module.css";
 
 const useStoragesList = ({ className, sortBy, displayAs }) => {
-  const { defaultStorageId } = useSelector((state) => state.users.user);
+  const { defaultStorageId } = useSelector((state) => state.app);
 
   const selectStorages = useMemo(makeSelectStorages, []);
   const storages = useSelector((state) =>

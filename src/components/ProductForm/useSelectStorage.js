@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { makeSelectStorages } from "store/selectors";
 
 const useSelectStorage = ({ componentName }) => {
-  const { defaultStorageId } = useSelector((state) => state.users.user);
+  const { defaultStorageId } = useSelector((state) => state.app);
 
   const selectStorages = useMemo(makeSelectStorages, []);
   const storages = useSelector((state) =>

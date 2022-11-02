@@ -16,7 +16,7 @@ const ProductDetails = ({
   storageName,
   labels,
 }) => {
-  const { defaultStorageId } = useSelector((state) => state.users.user);
+  const { defaultStorageId } = useSelector((state) => state.app);
   const { language } = useSelector((state) => state.app);
 
   return (

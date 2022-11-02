@@ -9,7 +9,7 @@ import {
   registerUser,
   setLabels,
   setProducts,
-  setSettings,
+  getSettings,
   setShoppingListItems,
   setShoppingLists,
   setStorages,
@@ -63,7 +63,7 @@ const Register = () => {
         dispatch(setLabels([]));
         dispatch(setShoppingLists([]));
         dispatch(setShoppingListItems([]));
-        dispatch(setSettings(userId));
+        dispatch(getSettings(userId));
       }
     } catch {}
   };

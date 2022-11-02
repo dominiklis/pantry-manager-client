@@ -7,7 +7,7 @@ import {
 } from "store/actions";
 
 const useDeleteStorage = ({ storageId, componentName }) => {
-  const { defaultStorageId } = useSelector((state) => state.users.user);
+  const { defaultStorageId } = useSelector((state) => state.app);
   const { delete: loading } = useSelector((state) => state.storages.loading);
 
   const dispatch = useDispatch();

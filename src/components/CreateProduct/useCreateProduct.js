@@ -11,7 +11,7 @@ const useCreateProduct = ({
   selectedStorage,
   selectedLabel,
 }) => {
-  const { defaultStorageId } = useSelector((state) => state.users.user);
+  const { defaultStorageId } = useSelector((state) => state.app);
   const { create: loading } = useSelector((state) => state.products.loading);
 
   const [input, setInput] = useState({

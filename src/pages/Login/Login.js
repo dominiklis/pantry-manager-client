@@ -12,7 +12,7 @@ import {
   getShoppingLists,
   getStorages,
   loginUser,
-  setSettings,
+  getSettings,
 } from "store/actions";
 import { validateInput } from "utils";
 import image from "../../images/undraw_secure_login_pdn4.svg";
@@ -61,7 +61,7 @@ const Login = () => {
         dispatch(getLabels());
         dispatch(getShoppingLists());
         dispatch(getShoppingListItems());
-        dispatch(setSettings(userId));
+        dispatch(getSettings(userId));
       }
     } catch {}
   };

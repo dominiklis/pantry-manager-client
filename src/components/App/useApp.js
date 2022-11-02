@@ -15,7 +15,7 @@ import {
   setGetShoppingListsLoading,
   setGetStoragesLoading,
   setInitialLoad,
-  setSettings,
+  getSettings,
 } from "store/actions";
 
 const useApp = () => {
@@ -70,7 +70,7 @@ const useApp = () => {
           dispatch(getLabels());
           dispatch(getShoppingLists());
           dispatch(getShoppingListItems());
-          dispatch(setSettings(result.userId));
+          dispatch(getSettings(result.userId));
         }
       } catch (error) {
         setLoadingsToFalse();

@@ -23,7 +23,7 @@ const useCreateShoppingListItem = ({ componentName, selectedList }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { defaultShoppingListId } = useSelector((state) => state.users.user);
+  const { defaultShoppingListId } = useSelector((state) => state.app);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

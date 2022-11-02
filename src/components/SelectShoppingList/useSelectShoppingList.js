@@ -12,7 +12,7 @@ const useSelectShoppingList = ({ componentName }) => {
     selectShoppingLists(state, { sortBy: sortByValues.nameAsc })
   );
 
-  const { defaultShoppingListId } = useSelector((state) => state.users.user);
+  const { defaultShoppingListId } = useSelector((state) => state.app);
 
   const selectStorageOptions = useMemo(() => {
     return [

@@ -9,7 +9,7 @@ import styles from "./ProductLink.module.css";
 const ProductLink = ({ children, product, daysColor }) => {
   const darkTheme = useIsDarkTheme();
 
-  const { defaultStorageId } = useSelector((state) => state.users.user);
+  const { defaultStorageId } = useSelector((state) => state.app);
   const { language } = useSelector((state) => state.app);
 
   const getDaysStyles = () => {

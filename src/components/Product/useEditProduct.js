@@ -6,7 +6,7 @@ import { makeSelectProductById } from "store/selectors";
 import { formatDate } from "utils";
 
 const useEditProduct = ({ productId, componentName }) => {
-  const { defaultStorageId } = useSelector((state) => state.users.user);
+  const { defaultStorageId } = useSelector((state) => state.app);
 
   const selectProduct = useMemo(makeSelectProductById, []);
   const { productName, expirationDate, amount, storageId, labels } =

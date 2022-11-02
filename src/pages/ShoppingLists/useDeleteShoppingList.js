@@ -7,7 +7,7 @@ import {
 } from "store/actions";
 
 const useDeleteShoppingList = ({ componentName, shoppingListId }) => {
-  const { defaultShoppingListId } = useSelector((state) => state.users.user);
+  const { defaultShoppingListId } = useSelector((state) => state.app);
 
   const { delete: loading } = useSelector(
     (state) => state.shoppingLists.loading

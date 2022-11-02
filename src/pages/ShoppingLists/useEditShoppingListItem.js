@@ -11,7 +11,7 @@ const useEditShoppingListItem = ({
   selected,
   shoppingListId,
 }) => {
-  const { defaultShoppingListId } = useSelector((state) => state.users.user);
+  const { defaultShoppingListId } = useSelector((state) => state.app);
 
   const [input, setInput] = useState({
     shoppingListItemName: shoppingListItemName ?? "",

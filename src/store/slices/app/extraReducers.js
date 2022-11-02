@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import api from "api";
 
-export const setSettings = createAsyncThunk(
-  "app/setSettings",
+export const getSettings = createAsyncThunk(
+  "app/getSettings",
   async (userId, { rejectWithValue }) => {
     try {
       const response = await api.settings.get(userId);
