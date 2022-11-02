@@ -7,7 +7,7 @@ import {
   various,
 } from "constantStrings";
 import { v4 as uuid } from "uuid";
-import { setSettings, updateSettings } from "./extraReducers";
+import { getSettings, updateSettings } from "./extraReducers";
 
 const initialState = {
   initialLoad: false,
@@ -15,11 +15,6 @@ const initialState = {
   language:
     localStorage.getItem(localStorageKeys.language) ?? languages.english,
   theme: localStorage.getItem(localStorageKeys.theme) ?? themes.light,
-  defaultNumberOfDaysForWarning: 3,
-  loading: {
-    getSettings: true,
-    updateSettings: false,
-  },
   search: "",
   createMenu: {
     isVisible: false,
@@ -30,6 +25,16 @@ const initialState = {
   uploadMenu: {
     isVisible: false,
     storageId: various.noStorage,
+  },
+  defaultNumberOfDaysForWarning: 3,
+  defaultStorageId: null,
+  defaultShoppingListId: null,
+  languages: null,
+  themes: null,
+  colors: null,
+  loading: {
+    getSettings: true,
+    updateSettings: false,
   },
 };
 
@@ -111,15 +116,19 @@ const appSlice = createSlice({
   },
   extraReducers: (builder) =>
     builder
-      .addCase(setSettings.pending, (state) => {
+      .addCase(getSettings.pending, (state) => {
         state.loading.getSettings = true;
       })
-      .addCase(setSettings.fulfilled, (state, action) => {
-        const { defaultNumberOfDaysForWarning, language, theme } =
-          action.payload;
-        state.defaultNumberOfDaysForWarning = defaultNumberOfDaysForWarning;
-        state.language = language;
-        state.theme = theme;
+      .addCase(getSettings.fulfilled, (state, action) => {
+        state.defaultNumberOfDaysForWarning =
+          action.payload.defaultNumberOfDaysForWarning;
+        state.language = action.payload.language;
+        state.theme = action.payload.theme;
+        state.defaultStorageId = action.payload.defaultStorageId;
+        state.defaultShoppingListId = action.payload.defaultShoppingListId;
+        state.lagnuages = action.payload.languages;
+        state.themes = action.payload.themes;
+        state.colors = action.payload.colors;
 
         state.loading.getSettings = false;
       })
@@ -128,11 +137,10 @@ const appSlice = createSlice({
         state.loading.updateSettings = true;
       })
       .addCase(updateSettings.fulfilled, (state, action) => {
-        const { defaultNumberOfDaysForWarning, language, theme } =
-          action.payload;
-        state.defaultNumberOfDaysForWarning = defaultNumberOfDaysForWarning;
-        state.language = language;
-        state.theme = theme;
+        state.defaultNumberOfDaysForWarning =
+          action.payload.defaultNumberOfDaysForWarning;
+        state.language = action.payload.language;
+        state.theme = action.payload.theme;
 
         state.loading.updateSettings = false;
       }),
