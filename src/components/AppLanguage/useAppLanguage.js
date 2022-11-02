@@ -1,8 +1,10 @@
 import { languages } from "constantStrings";
+import { useIsDarkTheme } from "hooks";
 import { useDispatch, useSelector } from "react-redux";
 import { setLanguage, updateSettings } from "store/actions";
 
 const useAppLanguage = () => {
+  const isDarkTheme = useIsDarkTheme();
   const dispatch = useDispatch();
 
   const { user } = useSelector((state) => state.users);
@@ -22,7 +24,7 @@ const useAppLanguage = () => {
 
   const handleSetPolish = () => setAppLanguage(languages.polish);
 
-  return { language, handleSetEnglish, handleSetPolish };
+  return { isDarkTheme, language, handleSetEnglish, handleSetPolish };
 };
 
 export default useAppLanguage;

@@ -4,12 +4,13 @@ import { componentColors, languages } from "constantStrings";
 import React from "react";
 
 const AppLanguage = ({ buttonSize }) => {
-  const { language, handleSetEnglish, handleSetPolish } = useAppLanguage();
+  const { isDarkTheme, language, handleSetEnglish, handleSetPolish } =
+    useAppLanguage();
 
   return (
     <>
       <Button
-        showBorder
+        showBorder={!isDarkTheme}
         backgroundColor={
           language === languages.english ? componentColors.primary : ""
         }
@@ -19,7 +20,7 @@ const AppLanguage = ({ buttonSize }) => {
         english
       </Button>
       <Button
-        showBorder
+        showBorder={!isDarkTheme}
         backgroundColor={
           language === languages.polish ? componentColors.primary : ""
         }
