@@ -10,6 +10,8 @@ import {
   hideMenus,
   setCreateMenu,
   setUploadMenu,
+  showCreateMenu,
+  hideUploadMenu,
 } from "./slices/app/slice";
 import { getSettings, updateSettings } from "./slices/app/extraReducers";
 import { clearErrors, logoutUser } from "./slices/users/slice";
@@ -114,6 +116,8 @@ export {
   hideMenus,
   setCreateMenu,
   setUploadMenu,
+  showCreateMenu,
+  hideUploadMenu,
 
   // users actions
   loginUser,

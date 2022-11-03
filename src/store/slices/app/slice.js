@@ -88,6 +88,14 @@ const appSlice = createSlice({
       state.uploadMenu.isVisible = false;
     },
 
+    showCreateMenu: (state) => {
+      state.createMenu.isVisible = true;
+    },
+
+    hideUploadMenu: (state) => {
+      state.uploadMenu.isVisible = false;
+    },
+
     setCreateMenu: (state, action) => {
       if (!action.payload) action.payload = {};
 
@@ -160,4 +168,6 @@ export const {
   hideMenus,
   setCreateMenu,
   setUploadMenu,
+  showCreateMenu,
+  hideUploadMenu,
 } = appSlice.actions;
