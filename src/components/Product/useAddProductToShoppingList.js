@@ -11,6 +11,8 @@ const useAddProductToShoppingList = ({
   componentName,
   onSubmit,
 }) => {
+  const { defaultShoppingListId } = useSelector((state) => state.app);
+
   const selectProduct = useMemo(makeSelectProductById, []);
   const { productName, amount } = useSelector((state) =>
     selectProduct(state, productId)
@@ -56,7 +58,9 @@ const useAddProductToShoppingList = ({
       createShoppingListItem({
         shoppingListItemName: input.shoppingListItemName,
         quantity: input.amount,
-        shoppingListId: input.shoppingListId,
+        shoppingListId: !input.shoppingListId
+          ? defaultShoppingListId
+          : input.shoppingListId,
       })
     );
 
