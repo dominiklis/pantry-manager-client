@@ -1,7 +1,7 @@
 import requests from "../axios";
 import validator from "validator";
 
-export const users = {
+const users = {
   login: (login, password) => {
     let userName = "",
       email = "";
