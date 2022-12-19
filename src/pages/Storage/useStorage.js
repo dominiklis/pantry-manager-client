@@ -7,9 +7,9 @@ import {
   useControlledActions,
   useHandleProductsList,
   useIsDarkTheme,
-  useIsSmallScreen,
   useScrollToElement,
 } from "hooks";
+import { useIsMediumScreen } from "pages/Storage";
 import { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -47,7 +47,7 @@ const useStorage = () => {
     setFilterByFunction: setFilterBy,
   });
 
-  const isSmallScreen = useIsSmallScreen();
+  const isMediumScreen = useIsMediumScreen();
 
   const { selectedAction, setSelectedAction, handleCloseAction } =
     useControlledActions();
@@ -78,7 +78,7 @@ const useStorage = () => {
     handleSortByChange,
     handleHighlightChange,
     handleFilterByChange,
-    isSmallScreen,
+    isMediumScreen,
     selectedAction,
     setSelectedAction,
     handleCloseAction,

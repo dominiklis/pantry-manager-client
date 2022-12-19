@@ -8,3 +8,4 @@ export { default as DeleteStorage } from "./DeleteStorage";
 export { default as useDeleteStorage } from "./useDeleteStorage";
 export { default as StorageActionsButtons } from "./StorageActionsButtons";
 export { default as StorageDetails } from "./StorageDetails";
+export { default as useIsMediumScreen } from "./useIsMediumScreen";

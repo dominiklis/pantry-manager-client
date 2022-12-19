@@ -30,7 +30,7 @@ const Storage = () => {
     handleHighlightChange,
     filterBy,
     handleFilterByChange,
-    isSmallScreen,
+    isMediumScreen,
     selectedAction,
     setSelectedAction,
     handleCloseAction,
@@ -61,7 +61,7 @@ const Storage = () => {
             size={componentSizes.veryLarge}
           />
           <h1 className={styles.header}>{storage.storageName}</h1>
-          {isSmallScreen ? (
+          {!isMediumScreen ? (
             <Dropdown
               hideOnClick
               dropdownButton={<DropdownMenuButton />}
@@ -86,6 +86,7 @@ const Storage = () => {
         />
 
         <StorageActions
+          isMediumScreen={isMediumScreen}
           storageId={storage.storageId}
           ownerId={storage.ownerId}
           storageName={storage.storageName}

@@ -1,5 +1,4 @@
 import { ControlledActions, Share, Translate } from "components";
-import { useIsSmallScreen } from "hooks";
 import { DeleteStorage, EditStorage } from "pages/Storage";
 import React from "react";
 import { Action, sortByName } from "utils";
@@ -18,12 +17,11 @@ const StorageActions = ({
   selectedAction,
   onCloseAction,
   canShare,
+  isMediumScreen,
 }) => {
-  const isSmallScreen = useIsSmallScreen();
-
   return (
     <>
-      {!isSmallScreen ? actionButtons : null}
+      {isMediumScreen ? actionButtons : null}
       <ControlledActions
         selectedAction={selectedAction}
         onCloseAction={onCloseAction}
