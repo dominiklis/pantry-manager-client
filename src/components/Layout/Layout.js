@@ -105,9 +105,11 @@ const Layout = () => {
         </div>
       </div>
 
-      <button onClick={toggleSideMenu} className={styles.mobileMenuButton}>
-        <IoMenu />
-      </button>
+      {!showSideMenu && (
+        <button onClick={toggleSideMenu} className={styles.mobileMenuButton}>
+          <IoMenu />
+        </button>
+      )}
     </div>
   );
 };
