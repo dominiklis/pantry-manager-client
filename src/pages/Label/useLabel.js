@@ -67,10 +67,10 @@ const useLabel = ({ componentName }) => {
   useEffect(() => {
     dispatch(
       setCreateMenu({
-        labelId: label.labelId,
+        labelId: label?.labelId,
       })
     );
-  }, [dispatch, label.labelId]);
+  }, [dispatch, label?.labelId]);
 
   return {
     products,
