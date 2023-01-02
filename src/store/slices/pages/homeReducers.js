@@ -1,3 +1,4 @@
+import { localStorageKeys } from "constantStrings";
 import { toggleDisplayAs, toggleSortByName } from "utils";
 
 const homeReducers = {
@@ -13,19 +14,41 @@ const homeReducers = {
   },
 
   setHomeSortStoragesBy: (state) => {
-    state.home.sortStoragesBy = toggleSortByName(state.home.sortStoragesBy);
+    const value = toggleSortByName(state.home.sortStoragesBy);
+
+    state.home.sortStoragesBy = value;
+
+    localStorage.setItem(
+      localStorageKeys.pagesSettings.home.sortStoragesBy,
+      value
+    );
   },
   setHomeDisplayStoragesAs: (state) => {
-    state.home.displayStoragesAs = toggleDisplayAs(
-      state.home.displayStoragesAs
+    const value = toggleDisplayAs(state.home.displayStoragesAs);
+
+    state.home.displayStoragesAs = value;
+
+    localStorage.setItem(
+      localStorageKeys.pagesSettings.home.displayStoragesAs,
+      value
     );
   },
 
   setHomeSortProductsBy: (state, action) => {
     state.home.sortProductsBy = action.payload;
+
+    localStorage.setItem(
+      localStorageKeys.pagesSettings.home.sortProductsBy,
+      action.payload
+    );
   },
   setHomeHighlightProducts: (state, action) => {
     state.home.highlightProducts = action.payload;
+
+    localStorage.setItem(
+      localStorageKeys.pagesSettings.home.highlightProducts,
+      action.payload
+    );
   },
   setHomeFilterProducts: (state, action) => {
     state.home.filterProducts = action.payload;

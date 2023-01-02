@@ -1,14 +1,23 @@
+import { localStorageKeys } from "constantStrings";
 import { toggleDisplayAs, toggleSortByName } from "utils";
 
 const storagesReducers = {
   setStoragesSortStoragesBy: (state) => {
-    state.storages.sortStoragesBy = toggleSortByName(
-      state.storages.sortStoragesBy
-    );
+    const value = toggleSortByName(state.storages.sortStoragesBy);
+
+    state.storages.sortStoragesBy = value;
+
+    localStorage.setItem(localStorageKeys.pagesSettings.storages.sortBy, value);
   },
+
   setStoragesDisplayStoragesAs: (state) => {
-    state.storages.displayStoragesAs = toggleDisplayAs(
-      state.storages.displayStoragesAs
+    const value = toggleDisplayAs(state.storages.displayStoragesAs);
+
+    state.storages.displayStoragesAs = value;
+
+    localStorage.setItem(
+      localStorageKeys.pagesSettings.storages.displayAs,
+      value
     );
   },
 };

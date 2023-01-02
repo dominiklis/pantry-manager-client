@@ -1,12 +1,23 @@
+import { localStorageKeys } from "constantStrings";
 import { toggleDisplayAs, toggleSortByName } from "utils";
 
 const labelsReducers = {
   setLabelsSortLabelsBy: (state) => {
-    state.labels.sortLabelsBy = toggleSortByName(state.labels.sortLabelsBy);
+    const value = toggleSortByName(state.labels.sortLabelsBy);
+
+    state.labels.sortLabelsBy = value;
+
+    localStorage.setItem(localStorageKeys.pagesSettings.labels.sortsBy, value);
   },
+
   setLabelsDisplayLabelsAs: (state) => {
-    state.labels.displayLabelsAs = toggleDisplayAs(
-      state.labels.displayLabelsAs
+    const value = toggleDisplayAs(state.labels.displayLabelsAs);
+
+    state.labels.displayLabelsAs = value;
+
+    localStorage.setItem(
+      localStorageKeys.pagesSettings.labels.displayAs,
+      value
     );
   },
 };

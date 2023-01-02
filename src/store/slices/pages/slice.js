@@ -4,6 +4,7 @@ import {
   sortByValues,
   filterProductsBy,
   highlightProducts,
+  localStorageKeys,
 } from "constantStrings";
 import {
   homeReducers,
@@ -17,27 +18,54 @@ const initialState = {
   home: {
     showExpired: true,
     showCloseToExpiry: true,
-    sortStoragesBy: sortByValues.nameAsc,
-    displayStoragesAs: displayAs.list,
-    sortProductsBy: sortByValues.nameAsc,
-    highlightProducts: highlightProducts.none,
+    sortStoragesBy:
+      localStorage.getItem(
+        localStorageKeys.pagesSettings.home.sortStoragesBy
+      ) ?? sortByValues.nameAsc,
+    displayStoragesAs:
+      localStorage.getItem(
+        localStorageKeys.pagesSettings.home.displayStoragesAs
+      ) ?? displayAs.list,
+    sortProductsBy:
+      localStorage.getItem(
+        localStorageKeys.pagesSettings.home.sortProductsBy
+      ) ?? sortByValues.nameAsc,
+    highlightProducts:
+      localStorage.getItem(
+        localStorageKeys.pagesSettings.home.highlightProducts
+      ) ?? highlightProducts.none,
     filterProducts: filterProductsBy.all,
   },
   products: {
-    sortProductsBy: sortByValues.nameAsc,
-    highlightProducts: highlightProducts.none,
+    sortProductsBy:
+      localStorage.getItem(localStorageKeys.pagesSettings.products.sortBy) ??
+      sortByValues.nameAsc,
+    highlightProducts:
+      localStorage.getItem(localStorageKeys.pagesSettings.products.highlight) ??
+      highlightProducts.none,
     filterProducts: filterProductsBy.all,
   },
   storages: {
-    sortStoragesBy: sortByValues.nameAsc,
-    displayStoragesAs: displayAs.list,
+    sortStoragesBy:
+      localStorage.getItem(localStorageKeys.pagesSettings.storages.sortBy) ??
+      sortByValues.nameAsc,
+    displayStoragesAs:
+      localStorage.getItem(localStorageKeys.pagesSettings.storages.displayAs) ??
+      displayAs.list,
   },
   labels: {
-    sortLabelsBy: sortByValues.nameAsc,
-    displayLabelsAs: displayAs.grid,
+    sortLabelsBy:
+      localStorage.getItem(localStorageKeys.pagesSettings.labels.sortBy) ??
+      sortByValues.nameAsc,
+    displayLabelsAs:
+      localStorage.getItem(localStorageKeys.pagesSettings.labels.displayAs) ??
+      displayAs.grid,
   },
   shoppingLists: {
-    sortListsByName: sortByValues.nameAsc,
+    sortListsByName:
+      localStorage.getItem(
+        localStorageKeys.pagesSettings.shoppingLists.sortBy
+      ) ?? sortByValues.nameAsc,
   },
 };
 
