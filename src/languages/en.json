@@ -163,7 +163,7 @@
   },
 
   "ProductForm": {
-    "nameInputLabel": "product name",
+    "nameInputLabel": "product name *",
     "expDateInputLabel": "expiration date",
     "amountInputLabel": "amount",
     "selectStorageLabel": "storage"
@@ -175,7 +175,7 @@
   },
 
   "StorageForm": {
-    "nameInputLabel": "name",
+    "nameInputLabel": "name *",
     "daysLabel": "number of days for warning (leave empty to use default value)",
     "storageColorLabel": "storage color",
     "colorsToChooseLabel": "colors to choose"
@@ -187,7 +187,7 @@
   },
 
   "LabelForm": {
-    "nameInputLabel": "label name"
+    "nameInputLabel": "label name *"
   },
 
   "CreateLabel": {
@@ -196,7 +196,7 @@
   },
 
   "ShoppingListForm": {
-    "nameInputLabel": "shopping list name"
+    "nameInputLabel": "shopping list name *"
   },
 
   "CreateShoppingList": {
@@ -205,7 +205,7 @@
   },
 
   "ShoppingListItemForm": {
-    "nameInputLabel": "shopping list item name",
+    "nameInputLabel": "shopping list item name *",
     "shoppingListLabel": "shopping list",
     "itemCreatedToast": "shopping list item has been created",
     "amountLabel": "amount"

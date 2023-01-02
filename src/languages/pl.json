@@ -163,7 +163,7 @@
   },
 
   "ProductForm": {
-    "nameInputLabel": "nazwa produktu",
+    "nameInputLabel": "nazwa produktu *",
     "expDateInputLabel": "termin ważności",
     "amountInputLabel": "ilość",
     "selectStorageLabel": "magazyn"
@@ -175,7 +175,7 @@
   },
 
   "StorageForm": {
-    "nameInputLabel": "nazwa",
+    "nameInputLabel": "nazwa *",
     "daysLabel": "liczba dni, dla których aplikacja będzie ostrzegać (zostaw puste by użyć domyślnej wartości)",
     "storageColorLabel": "kolor magazynu",
     "colorsToChooseLabel": "kolory do wyboru"
@@ -187,7 +187,7 @@
   },
 
   "LabelForm": {
-    "nameInputLabel": "nazwa etykiety"
+    "nameInputLabel": "nazwa etykiety *"
   },
 
   "CreateLabel": {
@@ -196,7 +196,7 @@
   },
 
   "ShoppingListForm": {
-    "nameInputLabel": "nazwa listy zakupów"
+    "nameInputLabel": "nazwa listy zakupów *"
   },
 
   "CreateShoppingList": {
@@ -205,7 +205,7 @@
   },
 
   "ShoppingListItemForm": {
-    "nameInputLabel": "nazwa pozycji do kupienia",
+    "nameInputLabel": "nazwa pozycji do kupienia *",
     "shoppingListLabel": "lista zakupów",
     "itemCreatedToast": "pozycja do zakupienia została dodana",
     "amountLabel": "ilość"
