@@ -12,11 +12,18 @@ const Menu = ({ children, toggleMenu, header, closeButton }) => {
     e.stopPropagation();
   };
 
+  const handleEscapeButton = (e) => {
+    if (e.key === "Escape") {
+      toggleMenu();
+    }
+  };
+
   return (
     <div
       className={styles.container}
       onClick={handleClick}
       data-dark-theme={isDarkTheme}
+      onKeyDown={handleEscapeButton}
     >
       <Button
         iconButton

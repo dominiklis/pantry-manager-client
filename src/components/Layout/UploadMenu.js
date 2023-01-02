@@ -32,6 +32,7 @@ const UploadMenu = ({ toggleMenu, isWideScreen }) => {
           type="file"
           onChange={handleChange}
           accept="text/csv, application/json"
+          autoFocus
         />
         <br />
 
