@@ -12,6 +12,7 @@ const Dropdown = ({
   hideOnClick,
   disableShiftingToTheRight,
   forceShiftingToTheRight,
+  disabledButton,
 }) => {
   const {
     darkTheme,
@@ -28,6 +29,7 @@ const Dropdown = ({
     visibleBackdrop,
     disableShiftingToTheRight,
     forceShiftingToTheRight,
+    disabledButton,
   });
 
   return (

@@ -190,10 +190,12 @@
 .button.loading[data-dark-theme="true"]:hover,
 .button.loading[data-dark-theme="true"]:active {
   cursor: default;
-  background-color: var(--clr-gray5);
+  background-color: var(--clr-gray4);
 }
 
 .button:disabled *,
+.transparent:active:disabled,
+.transparent:hover:disabled .text,
 .button[data-dark-theme="true"]:disabled *,
 .button[data-dark-theme="true"]:disabled:hover *,
 .button[data-dark-theme="true"]:disabled:active * {

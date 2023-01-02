@@ -6,6 +6,7 @@ const DropdownMenu = ({
   menuItems,
   stopPropagation,
   visibleBackdrop,
+  disabledButton,
 }) => {
   return (
     <Dropdown
@@ -19,6 +20,7 @@ const DropdownMenu = ({
           ))}
         </ul>
       }
+      disabledButton={disabledButton}
     />
   );
 };

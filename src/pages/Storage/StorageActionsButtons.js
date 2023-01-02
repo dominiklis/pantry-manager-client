@@ -54,26 +54,20 @@ const StorageActionsButtons = ({
         <DropdownMenu
           stopPropagation
           visibleBackdrop
+          disabledButton={!products || !products.length}
           menuButton={
             <Button
               icon={<IoDownload />}
               size={componentSizes.small}
               backgroundColor={componentColors.transparent}
+              disabled={!products || !products.length}
             >
               <Translate section={componentName} text="menuButtonText" />
             </Button>
           }
           menuItems={[
-            <ExportAsCSV
-              filename={storageName}
-              products={products}
-              disabled={!products || !products.length}
-            />,
-            <ExportAsJSON
-              filename={storageName}
-              products={products}
-              disabled={!products || !products.length}
-            />,
+            <ExportAsCSV filename={storageName} products={products} />,
+            <ExportAsJSON filename={storageName} products={products} />,
           ]}
         />,
         <Button

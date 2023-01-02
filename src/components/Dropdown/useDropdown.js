@@ -7,6 +7,7 @@ const useDropdown = ({
   visibleBackdrop,
   disableShiftingToTheRight,
   forceShiftingToTheRight,
+  disabledButton,
 }) => {
   const darkTheme = useIsDarkTheme();
 
@@ -20,6 +21,8 @@ const useDropdown = ({
   const handleHideContent = () => setShowContent(false);
 
   const handleButton = () => {
+    if (disabledButton) return;
+
     if (buttonRef.current) {
       setInLeftHalf(
         window.innerWidth / 2 > buttonRef.current.getBoundingClientRect().left
