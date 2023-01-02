@@ -453,7 +453,8 @@
     "fileTypeError": "nieprawidłowy typ pliku, dopuszczalne są jedynie pliki .csv i .json",
     "fileSizeError": "maksymalny dopuszczalny rozmiar pliku to 2MB",
     "uploadedFilesHeader": "Wybierz produkty, które mają zostać dodane do tego magazynu",
-    "uploadButton": "Prześlij"
+    "uploadButton": "Prześlij",
+    "toastText": "produkty zostały dodane"
   },
 
   "UploadProductCard": {

@@ -3,7 +3,7 @@ import { useIsDarkTheme } from "hooks";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { createCollectionOfProducts, hideMenus } from "store/actions";
+import { addToast, createCollectionOfProducts, hideMenus } from "store/actions";
 
 const handleJson = (text, storageId) => {
   const json = JSON.parse(text);
@@ -116,6 +116,15 @@ const useUploadMenu = ({ componentName, toggleMenu }) => {
           })
       )
     ).unwrap();
+
+    dispatch(
+      addToast({
+        translate: {
+          section: componentName,
+          text: "toastText",
+        },
+      })
+    );
 
     toggleMenu();
   };

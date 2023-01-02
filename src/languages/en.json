@@ -453,7 +453,8 @@
     "fileTypeError": "invalid file type, only .csv and .json files are allowed",
     "fileSizeError": "the maximum acceptable file size is 2MB",
     "uploadedFilesHeader": "Select products that you want to upload to this storage",
-    "uploadButton": "Upload"
+    "uploadButton": "Upload",
+    "toastText": "products have been created"
   },
 
   "UploadProductCard": {
