@@ -475,5 +475,9 @@
 
   "Layout": {
     "createButton": "Utwórz"
+  },
+
+  "NotFound": {
+    "header": "Strona, której szukasz nie istnieje"
   }
 }

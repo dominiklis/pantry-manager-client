@@ -9,3 +9,4 @@ export { Label } from "./Label";
 export { ShoppingLists } from "./ShoppingLists";
 export { Settings } from "./Settings";
 export { Search } from "./Search";
+export { NotFound } from "./NotFound";

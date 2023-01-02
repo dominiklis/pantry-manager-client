@@ -12,6 +12,7 @@ import {
   ShoppingLists,
   Settings,
   Search,
+  NotFound,
 } from "pages";
 import { Routes, Route } from "react-router-dom";
 
@@ -43,6 +44,7 @@ const App = () => {
           <Route path="/lists" element={<ShoppingLists />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/search" element={<Search />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />

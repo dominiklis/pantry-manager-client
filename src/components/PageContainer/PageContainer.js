@@ -2,10 +2,10 @@ import { Navigation } from "components/PageContainer";
 import React from "react";
 import styles from "./PageContainer.module.css";
 
-const PageContainer = ({ children }) => {
+const PageContainer = ({ children, hideNavigation }) => {
   return (
     <main className={styles.container}>
-      <Navigation />
+      {hideNavigation ? null : <Navigation />}
       {children}
     </main>
   );
