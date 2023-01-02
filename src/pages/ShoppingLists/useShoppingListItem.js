@@ -19,7 +19,7 @@ const useShoppingListItem = ({ shoppingListItemId }) => {
       editShoppingListItem({
         shoppingListItemId: shoppingListItem.shoppingListItemId,
         shoppingListItemName: shoppingListItem.shoppingListItemName,
-        quantity: shoppingListItem.quantity,
+        amount: shoppingListItem.amount,
         ownerId: shoppingListItem.ownerId,
         shoppingListId: shoppingListItem.shoppingListId,
         selected: !shoppingListItem.selected,

@@ -2,7 +2,12 @@ import { useIsDarkTheme } from "hooks";
 import React from "react";
 import styles from "./ShoppingListItemHeader.module.css";
 
-const ShoppingListItemHeader = ({ shoppingListItemName, amount, selected }) => {
+const ShoppingListItemHeader = ({
+  shoppingListItemName,
+  amount,
+  selected,
+  hideAmount,
+}) => {
   const darkTheme = useIsDarkTheme();
 
   const getContainerStyles = () => {
@@ -16,7 +21,7 @@ const ShoppingListItemHeader = ({ shoppingListItemName, amount, selected }) => {
   return (
     <div className={getContainerStyles()} data-dark-theme={darkTheme}>
       <span>{shoppingListItemName}</span>
-      <span className={styles.amount}>{amount}</span>
+      {hideAmount ? null : <span className={styles.amount}>{amount}</span>}
     </div>
   );
 };

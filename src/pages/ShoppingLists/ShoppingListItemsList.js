@@ -20,7 +20,10 @@ const ShoppingListItemsList = ({ items }) => {
         .filter((item) => item.selected)
         .map((item) => (
           <li key={item.shoppingListItemId}>
-            <ShoppingListItem shoppingListItemId={item.shoppingListItemId} />
+            <ShoppingListItem
+              shoppingListItemId={item.shoppingListItemId}
+              hideAmount
+            />
           </li>
         ))}
     </ul>

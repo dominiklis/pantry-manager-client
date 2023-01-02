@@ -8,7 +8,7 @@ import {
 import React from "react";
 import { IoCheckboxOutline, IoSquareOutline } from "react-icons/io5";
 
-const ShoppingListItem = ({ shoppingListItemId }) => {
+const ShoppingListItem = ({ shoppingListItemId, hideAmount }) => {
   const { handleSubmit, shoppingListItem, loading } = useShoppingListItem({
     shoppingListItemId,
   });
@@ -34,7 +34,9 @@ const ShoppingListItem = ({ shoppingListItemId }) => {
           />
         </form>
       }
-      header={<ShoppingListItemHeader {...shoppingListItem} />}
+      header={
+        <ShoppingListItemHeader {...shoppingListItem} hideAmount={hideAmount} />
+      }
     >
       <ShoppingListItemActions {...shoppingListItem} />
     </Accordion>
