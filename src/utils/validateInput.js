@@ -180,8 +180,6 @@ const validateInput = (inputName, value, noErrorOnEmpty = false) => {
       return "";
 
     case "amount":
-      console.log("SPRAWDZANIE AMOUNT");
-
       if (!value && noErrorOnEmpty) return "";
 
       if (value.length > maxAndMinValues.maxAmountLength)
