@@ -47,12 +47,13 @@ const handleJson = (text, storageId) => {
 };
 
 const handleCSV = (text, storageId) => {
-  const rows = text.split("\n");
+  const rows = text.trim().split("\n");
   if (!rows?.length || rows.length === 1) return;
 
   rows.shift();
 
-  const products = [];
+  const validProducts = [];
+  const invalidProducts = [];
 
   rows.forEach((row) => {
     const productValues = row.split(",");
@@ -70,10 +71,13 @@ const handleCSV = (text, storageId) => {
     product.storageId = storageId;
     product.selected = true;
 
-    products.push(product);
+    const errors = getValidationProductErrors(product);
+
+    if (errors?.length) invalidProducts.push({ ...product, errors });
+    else validProducts.push(product);
   });
 
-  return products.filter((product) => product.productName);
+  return { validProducts, invalidProducts };
 };
 
 const useUploadMenu = ({ componentName, toggleMenu }) => {
@@ -120,8 +124,13 @@ const useUploadMenu = ({ componentName, toggleMenu }) => {
           setFileError(error.message);
         }
       } else {
-        const productsFromCSV = handleCSV(text, storageId);
-        setProducts(productsFromCSV);
+        try {
+          const { validProducts, invalidProducts } = handleCSV(text, storageId);
+          setProducts(validProducts);
+          setInvalidProducts(invalidProducts);
+        } catch (error) {
+          setFileError(error.message);
+        }
       }
     };
   };
