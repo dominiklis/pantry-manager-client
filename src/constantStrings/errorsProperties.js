@@ -12,6 +12,8 @@ const errorsProperties = {
   daysForWarning: "daysForWarning",
   tooLongLabel: "tooLongLabel",
   tooLongQuantity: "tooLongQuantity",
+  nameIsRequired: "nameIsRequired",
+  invalidExpirationDate: "invalidExpirationDate",
 };
 
 export default errorsProperties;

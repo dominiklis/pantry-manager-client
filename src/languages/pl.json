@@ -9,9 +9,11 @@
     "passwordUppercase": "* 1 wielka litera",
     "passwordSpecialCharacter": "* 1 znak specjalny",
     "tooLongName": "nazwa może składać się maks. z 255 znaków",
-    "tooLongAmount": "wartość w polu ilość nie może być dłuższa niż 255 znaków",
+    "tooLongAmount": "wartość w polu ilość nie może być dłuższa niż 100 znaków",
     "tooLongLabel": "etykieta może składać maks. ze 90 znaków",
-    "daysForWarning": "niepoprawna wartość"
+    "daysForWarning": "niepoprawna wartość",
+    "nameIsRequired": "nazwa jest wymagana",
+    "invalidExpirationDate": "niepoprawny zapis daty"
   },
 
   "Login": {
@@ -453,6 +455,7 @@
     "fileTypeError": "nieprawidłowy typ pliku, dopuszczalne są jedynie pliki .csv i .json",
     "fileSizeError": "maksymalny dopuszczalny rozmiar pliku to 2MB",
     "uploadedFilesHeader": "Wybierz produkty, które mają zostać dodane do tego magazynu",
+    "invalidProductsHeader": "Pominięte produkty ze względu na niewłaściwy format",
     "uploadButton": "Prześlij",
     "toastText": "produkty zostały dodane"
   },

@@ -4,29 +4,46 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { addToast, createCollectionOfProducts, hideMenus } from "store/actions";
+import { validateInput } from "utils";
+
+const getValidationProductErrors = (product) => {
+  let errors = [];
+
+  errors.push(validateInput("amount", product.amount, true));
+  errors.push(validateInput("productName", product.productName));
+  errors.push(validateInput("expirationDate", product.expirationDate, true));
+
+  return errors.filter((e) => e !== "");
+};
 
 const handleJson = (text, storageId) => {
   const json = JSON.parse(text);
 
-  return json
-    .map((product) => {
-      product.productId = product["product id"];
-      delete product["product id"];
+  const validProducts = [];
+  const invalidProducts = [];
 
-      product.productName = product["product name"];
-      delete product["product name"];
+  json.forEach((product) => {
+    product.productId = product["product id"];
+    delete product["product id"];
 
-      product.expirationDate = product["expiration date"]
-        ? product["expiration date"]
-        : null;
-      delete product["expiration date"];
+    product.productName = product["product name"];
+    delete product["product name"];
 
-      product.storageId = storageId;
-      product.selected = true;
+    product.expirationDate = product["expiration date"]
+      ? product["expiration date"]
+      : null;
+    delete product["expiration date"];
 
-      return product;
-    })
-    .filter((product) => product.productName);
+    product.storageId = storageId;
+    product.selected = true;
+
+    const errors = getValidationProductErrors(product);
+
+    if (errors?.length) invalidProducts.push({ ...product, errors });
+    else validProducts.push(product);
+  });
+
+  return { validProducts, invalidProducts };
 };
 
 const handleCSV = (text, storageId) => {
@@ -63,7 +80,8 @@ const useUploadMenu = ({ componentName, toggleMenu }) => {
   const darkTheme = useIsDarkTheme();
 
   const [products, setProducts] = useState([]);
-  const [error, setError] = useState("");
+  const [invalidProducts, setInvalidProducts] = useState([]);
+  const [fileError, setFileError] = useState("");
 
   const { storageId } = useSelector((state) => state.app.uploadMenu);
 
@@ -71,17 +89,17 @@ const useUploadMenu = ({ componentName, toggleMenu }) => {
     const file = e.target.files[0];
 
     if (!file) {
-      setError("");
+      setFileError("");
       return;
     }
 
     if (file.type !== "text/csv" && file.type !== "application/json") {
-      setError(<Translate section={componentName} text="fileTypeError" />);
+      setFileError(<Translate section={componentName} text="fileTypeError" />);
       return;
     }
 
     if (file.size > 2000000) {
-      setError(<Translate section={componentName} text="fileSizeError" />);
+      setFileError(<Translate section={componentName} text="fileSizeError" />);
       return;
     }
 
@@ -91,8 +109,16 @@ const useUploadMenu = ({ componentName, toggleMenu }) => {
       const text = e.target.result;
 
       if (file.type === "application/json") {
-        const productsFromJson = handleJson(text, storageId);
-        setProducts(productsFromJson);
+        try {
+          const { validProducts, invalidProducts } = handleJson(
+            text,
+            storageId
+          );
+          setProducts(validProducts);
+          setInvalidProducts(invalidProducts);
+        } catch (error) {
+          setFileError(error.message);
+        }
       } else {
         const productsFromCSV = handleCSV(text, storageId);
         setProducts(productsFromCSV);
@@ -143,12 +169,14 @@ const useUploadMenu = ({ componentName, toggleMenu }) => {
 
   return {
     products,
+    invalidProducts,
     setProducts,
     darkTheme,
-    error,
+    fileError,
     handleChange,
     handleSubmitProducts,
     loading,
+    disableSubmitButton: products.filter((p) => p.selected).length === 0,
   };
 };
 

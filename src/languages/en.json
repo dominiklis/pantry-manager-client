@@ -9,9 +9,11 @@
     "passwordUppercase": "* 1 uppercase letter",
     "passwordSpecialCharacter": "* 1 special character",
     "tooLongName": "name length cannot be more than 255 characters",
-    "tooLongAmount": "amount length cannot be more than 255 characters",
+    "tooLongAmount": "amount length cannot be more than 100 characters",
     "tooLongLabel": "label length cannot be more than 90 characters",
-    "daysForWarning": "invalid value"
+    "daysForWarning": "invalid value",
+    "nameIsRequired": "name is required",
+    "invalidExpirationDate": "invalid date format"
   },
 
   "Login": {
@@ -453,6 +455,7 @@
     "fileTypeError": "invalid file type, only .csv and .json files are allowed",
     "fileSizeError": "the maximum acceptable file size is 2MB",
     "uploadedFilesHeader": "Select products that you want to upload to this storage",
+    "invalidProductsHeader": "Omitted products due to invalid format",
     "uploadButton": "Upload",
     "toastText": "products have been created"
   },

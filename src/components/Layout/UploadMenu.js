@@ -10,12 +10,14 @@ const componentName = "UploadMenu";
 const UploadMenu = ({ toggleMenu, isWideScreen }) => {
   const {
     products,
+    invalidProducts,
     setProducts,
     darkTheme,
-    error,
+    fileError,
     handleChange,
     handleSubmitProducts,
     loading,
+    disableSubmitButton,
   } = useUploadMenu({
     componentName,
     toggleMenu,
@@ -37,7 +39,7 @@ const UploadMenu = ({ toggleMenu, isWideScreen }) => {
         <br />
 
         <p data-dark-theme={darkTheme} className={styles.error}>
-          {error}
+          {fileError}
         </p>
 
         {products?.length ? (
@@ -54,6 +56,7 @@ const UploadMenu = ({ toggleMenu, isWideScreen }) => {
                   backgroundColor={componentColors.primary}
                   size={componentSizes.small}
                   loading={loading}
+                  disabled={disableSubmitButton}
                 >
                   <Translate section={componentName} text="uploadButton" />
                 </Button>
@@ -66,6 +69,30 @@ const UploadMenu = ({ toggleMenu, isWideScreen }) => {
                   index={index}
                   {...product}
                   setFiles={setProducts}
+                />
+              ))}
+            </div>
+          </>
+        ) : null}
+
+        {invalidProducts?.length ? (
+          <>
+            <div className={styles.headerContainer}>
+              <h5 className={styles.invalidProductsHeader}>
+                <Translate
+                  section={componentName}
+                  text="invalidProductsHeader"
+                />
+              </h5>
+            </div>
+            <div className={styles.productsContainer}>
+              {invalidProducts.map((product, index) => (
+                <UploadProductCard
+                  invalid
+                  key={index}
+                  index={index}
+                  {...product}
+                  errors={product.errors}
                 />
               ))}
             </div>

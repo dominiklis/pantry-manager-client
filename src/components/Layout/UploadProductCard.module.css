@@ -32,6 +32,17 @@
   border-color: var(--clr-prim4);
 }
 
+.container.invalid {
+  cursor: default;
+}
+
+.container.invalid:hover,
+.container.invalid:active,
+.container.invalid[data-dark-theme="true"]:hover,
+.container.invalid[data-dark-theme="true"]:active {
+  border-color: transparent;
+}
+
 .value {
   color: var(--clr-gray3);
   display: flex;
@@ -52,4 +63,24 @@
 
 .container[data-dark-theme="true"] .selectedIcon {
   color: var(--clr-prim2);
+}
+
+.container.invalid .selectedIcon,
+.container.invalid[data-dark-theme="true"] .selectedIcon {
+  color: var(--clr-err1);
+}
+
+.errorList {
+  margin-top: 16px;
+  margin-left: 24px;
+  list-style: circle;
+}
+
+.errorList li {
+  margin-top: 8px;
+  color: var(--clr-err1);
+}
+
+.amountSpan {
+  overflow: hidden;
 }

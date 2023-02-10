@@ -17,6 +17,12 @@
   font-weight: normal;
 }
 
+.invalidProductsHeader {
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--clr-err1);
+}
+
 .productsContainer {
   display: flex;
   flex-wrap: wrap;

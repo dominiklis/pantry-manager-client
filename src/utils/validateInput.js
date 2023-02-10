@@ -150,6 +150,14 @@ const validateInput = (inputName, value, noErrorOnEmpty = false) => {
     case "storageName":
     case "shoppingListName":
     case "shoppingListItemName":
+      if (!value)
+        return (
+          <Translate
+            section={sectionName}
+            text={errorsProperties.nameIsRequired}
+          />
+        );
+
       if (value.length > maxAndMinValues.maxNameLength)
         return (
           <Translate
@@ -172,7 +180,11 @@ const validateInput = (inputName, value, noErrorOnEmpty = false) => {
       return "";
 
     case "amount":
-      if (value.length > maxAndMinValues.maxNameLength)
+      console.log("SPRAWDZANIE AMOUNT");
+
+      if (!value && noErrorOnEmpty) return "";
+
+      if (value.length > maxAndMinValues.maxAmountLength)
         return (
           <Translate
             section={sectionName}
@@ -192,6 +204,19 @@ const validateInput = (inputName, value, noErrorOnEmpty = false) => {
           <Translate
             section={sectionName}
             text={errorsProperties.daysForWarning}
+          />
+        );
+
+      return "";
+
+    case "expirationDate":
+      if (!value && noErrorOnEmpty) return "";
+
+      if (isNaN(Date.parse(value)))
+        return (
+          <Translate
+            section={sectionName}
+            text={errorsProperties.invalidExpirationDate}
           />
         );
 
